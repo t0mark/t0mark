@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Dynamic height based on header
+document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.top-nav');
   const graphContainer = document.querySelector('.graph-container');
 
@@ -7,16 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerHeight = header.offsetHeight;
     graphContainer.style.height = `calc(100vh - ${headerHeight}px)`;
   }
+
   setGraphHeight();
   window.addEventListener('resize', setGraphHeight);
 
-  // Prepare base node data
   const container = document.getElementById('network');
   const baseNodes = [
-    // Anchors: fixed initial position, draggable, no physics
+    // Anchors
     { id: 'computer', label: 'Computer', group: 'level2', title: 'Computer', x: -400, y: 0, physics: false, image: 'images/icons/computer.png' },
-    { id: 'ee', label: 'EE', group: 'level1', title: 'Electrical Engineering', x: 0, y: 0, physics: false, image: 'images/icons/ee.png' },
-    { id: 'me', label: 'ME', group: 'level1', title: 'Mechanical Engineering', x: 400, y: 0, physics: false, image: 'images/icons/me.png' },
+    { id: 'ee', label: 'Electrical Engineering', group: 'level1', title: 'Electrical Engineering', x: 0, y: 0, physics: false, image: 'images/icons/ee.png' },
+    { id: 'me', label: 'Mechanical Engineering', group: 'level1', title: 'Mechanical Engineering', x: 400, y: 0, physics: false, image: 'images/icons/me.png' },
 
     // EE
     { id: 'signal', label: 'Signal & Comm.', group: 'level2', x: -80, y: 110, image: 'images/icons/signal.png' },
@@ -35,24 +34,21 @@ document.addEventListener('DOMContentLoaded', function () {
     { id: 'hci', label: 'HCI', group: 'level3', x: -360, y: 160, image: 'images/icons/hci.png' },
 
     // Interdisciplinary
-    { id: 'mechatronics', label: 'Mechatronics', group: 'inter', title: 'Interdisciplinary', x: 200, y: 110, image: 'images/icons/mechatronics.png' },
+    { id: 'mechatronics', label: 'Mechatronics', group: 'inter', title: 'Interdisciplinary', x: 200, y: 110, image: 'images/icons/mechatronics.png' }
   ];
 
   const edgesData = [
     { from: 'ee', to: 'signal', length: 170 },
     { from: 'ee', to: 'control', length: 170 },
     { from: 'ee', to: 'computer' },
-
     { from: 'computer', to: 'cs', length: 150 },
     { from: 'computer', to: 'ca', length: 150 },
     { from: 'computer', to: 'se', length: 150 },
     { from: 'computer', to: 'net', length: 150 },
     { from: 'computer', to: 'ai', length: 150 },
     { from: 'computer', to: 'hci', length: 150 },
-
     { from: 'me', to: 'robotics', length: 170 },
     { from: 'robotics', to: 'kinematics', length: 150 },
-
     { from: 'ee', to: 'mechatronics' },
     { from: 'me', to: 'mechatronics' }
   ];
@@ -63,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       shapeProperties: { useBorderWithImage: true },
       shadow: { enabled: true, x: 3, y: 3, size: 10, color: 'rgba(0, 0, 0, 0.2)' },
       font: { color: '#343434', size: 14, face: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif', vadjust: 10 },
-      borderWidth: 3,
+      borderWidth: 3
     },
     edges: {
       width: 2,
@@ -94,12 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
       level1: { color: { border: '#FF7272', background: 'rgba(255, 138, 138, 0.9)' }, size: 62 },
       level2: { color: { border: '#61AFFF', background: 'rgba(138, 198, 255, 0.9)' }, size: 50 },
       level3: { color: { border: '#69D483', background: 'rgba(148, 226, 166, 0.9)' }, size: 38 },
-      inter:  { color: { border: '#FFD35A', background: 'rgba(255, 217, 120, 0.9)' }, size: 50 },
+      inter: { color: { border: '#FFD35A', background: 'rgba(255, 217, 120, 0.9)' }, size: 50 }
     }
   };
-
-  // Reduce displayed image size by padding before first render
-  const TARGET_RATIO = 0.6; // 60%
 
   function padImageToRatio(url, ratio) {
     return new Promise((resolve, reject) => {
@@ -128,19 +121,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   async function buildPaddedNodes(base) {
-    // Collect unique image URLs used by nodes
     const urlSet = new Set(base.filter(n => n.image).map(n => n.image));
     const urlToData = new Map();
+    
     await Promise.all(Array.from(urlSet).map(async (url) => {
       try {
-        const dataUrl = await padImageToRatio(url, TARGET_RATIO);
+        const dataUrl = await padImageToRatio(url, 0.6);
         urlToData.set(url, dataUrl);
       } catch (e) {
-        // If padding fails, fall back to original image URL
         urlToData.set(url, url);
       }
     }));
-    // Apply data URLs to a cloned node array
+    
     return base.map(n => n.image ? { ...n, image: urlToData.get(n.image) || n.image } : { ...n });
   }
 
@@ -149,7 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const nodes = new vis.DataSet(paddedNodes);
     const edges = new vis.DataSet(edgesData);
     const network = new vis.Network(container, { nodes, edges }, options);
-    network.once('stabilizationIterationsDone', function () { network.moveTo({ scale: 1.0 }); });
+    network.once('stabilizationIterationsDone', function() {
+      network.moveTo({ scale: 1.0 });
+    });
   })();
 });
-

@@ -1,308 +1,307 @@
-/* styles.css — CV layout */
 :root {
-    --bg: #ffffff;
-    --text: #0f172a;
-    --muted: #475569;
-    --line: #e5e7eb;
-    --accent: #111827;
-    --chip: #f3f4f6;
+  --bg: #fff;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #e5e7eb;
+  --accent: #111827;
+  --chip: #f3f4f6;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
 }
 
 a {
-    color: inherit;
-    text-underline-offset: 2px;
+  color: inherit;
+  text-underline-offset: 2px;
 }
 
 .page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 24px;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
 }
 
 .sidebar {
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 20px;
-    height: fit-content;
-    position: sticky;
-    top: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .profile {
-    text-align: center;
+  text-align: center;
 }
 
 .profile-photo {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    border: 4px solid var(--line);
-    display: block;
-    margin: 8px auto 12px;
-    overflow: hidden;
-    position: relative;
-    background-image: url('../images/profile.png');
-    background-position: center 38%;
-    background-size: cover;
-    background-repeat: no-repeat;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 4px solid var(--line);
+  display: block;
+  margin: 8px auto 12px;
+  background: url('../images/profile.png') center 38%/cover no-repeat;
 }
 
 .name {
-    margin: 0;
-    font-size: 1.6rem;
-    line-height: 1.2;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
 }
 
 .role {
-    margin: 6px 0 0;
-    color: var(--muted);
-    font-size: .95rem;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .section-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.05rem;
-    margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  margin: 0 0 10px;
 }
 
 .links .section-title,
 .skills .section-title {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .list li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .tags {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .tags li {
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: var(--chip);
-    border: 1px solid var(--line);
-    font-size: .85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
 }
 
-/* Emoji icon helpers */
 .emoji {
-    display: inline-flex;
-    width: 18px;
-    justify-content: center;
+  display: inline-flex;
+  width: 18px;
+  justify-content: center;
 }
 
 .section-title .emoji {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
-/* Make subsection items look indented/child under Contact, Links, Skills */
 .contact .list,
 .links .list,
 .skills .list {
-    border-left: 2px solid var(--line);
-    padding-left: 12px;
-    gap: 10px;
-    margin-top: 6px;
+  border-left: 2px solid var(--line);
+  padding-left: 12px;
+  gap: 10px;
+  margin-top: 6px;
 }
 
 .contact .list li,
 .links .list li,
 .skills .list li {
-    color: var(--muted);
+  color: var(--muted);
 }
 
 .item {
-    border-left: 3px solid var(--line);
-    padding-left: 14px;
-    margin: 10px 0;
+  border-left: 3px solid var(--line);
+  padding-left: 14px;
+  margin: 10px 0;
 }
 
 .projects-undergrad {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
 
 .projects-undergrad .item {
-    margin: 0;
+  margin: 0;
 }
 
 .projects .section-title {
-    padding-bottom: 6px;
-    margin-bottom: 8px;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .subheading {
-    font-size: 1.06rem;
-    font-weight: 700;
-    margin: 14px 0 8px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: .03em;
-    border-left: 4px solid var(--accent);
-    padding-left: 10px;
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin: 14px 0 8px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
 }
 
 .subheading.master {
-    border-color: #2563eb;
+  border-color: #2563eb;
 }
 
 .subheading.undergrad {
-    border-color: #10b981;
+  border-color: #10b981;
 }
 
 .projects-master,
 .projects-undergrad {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .projects .item h3 {
-    font-size: 1rem;
-    font-weight: 600;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .projects .item .meta {
-    font-size: .9rem;
-    color: var(--muted);
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .item-head {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
 }
 
 .item h3 {
-    margin: 0 0 4px;
-    font-size: 1.05rem;
+  margin: 0 0 4px;
+  font-size: 1.05rem;
 }
 
 .sub {
-    margin: 0;
-    color: var(--muted);
+  margin: 0;
+  color: var(--muted);
 }
 
 .meta {
-    white-space: nowrap;
-    color: var(--muted);
-    font-size: .92rem;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .desc {
-    margin: 8px 0 0;
+  margin: 8px 0 0;
 }
 
 .bullets {
-    margin: 8px 0 0 16px;
+  margin: 8px 0 0 16px;
 }
 
 .bullets li {
-    margin: 4px 0;
+  margin: 4px 0;
 }
 
 .timeline {
-    list-style: disc;
-    margin: 0 0 0 18px;
-    padding: 0;
-    border-left: none;
+  list-style: disc;
+  margin: 0 0 0 18px;
+  padding: 0;
 }
 
 .timeline li {
-    padding: 4px 0;
-    position: static;
-}
-
-.timeline li::before {
-    display: none;
+  padding: 4px 0;
 }
 
 .timeline .time {
-    font-weight: 600;
-    color: var(--muted);
-    margin-right: 6px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-right: 6px;
 }
 
 .print-note {
-    max-width: 1100px;
-    margin: 10px auto 24px;
-    padding: 0 24px;
-    color: var(--muted);
-    font-size: .9rem;
+  max-width: 1100px;
+  margin: 10px auto 24px;
+  padding: 0 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-/* Back to Home button */
 .back-home {
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    z-index: 1000;
-    background: #fff;
-    border: 1px solid var(--line);
-    color: var(--accent);
-    padding: 6px 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
-    font-size: .9rem;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  font-size: 0.9rem;
 }
 
 .back-home:hover {
-    background: #f3f4f6;
+  background: #f3f4f6;
 }
 
-/* Print styles */
 @media print {
-    .page { padding: 0; gap: 16px; }
-    .sidebar { position: static; }
-    a { text-decoration: none; }
-    .back-home { display: none; }
+  .page {
+    padding: 0;
+    gap: 16px;
+  }
+  .sidebar {
+    position: static;
+  }
+  a {
+    text-decoration: none;
+  }
+  .back-home {
+    display: none;
+  }
 }
 
-/* Mobile */
 @media (max-width: 1300px) {
-    .page { grid-template-columns: 1fr; }
-    .profile-photo { width: 180px; height: 180px; }
-    .sidebar { position: static; }
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+  }
+  .sidebar {
+    position: static;
+  }
 }
