@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     { id: 'control', label: 'Control', group: 'level2', x: 80, y: 110, image: 'images/icons/control.png' },
 
     // ME
-    { id: 'robotics', label: 'Robotics', group: 'level2', x: 380, y: 110, image: 'images/icons/robotics.png' },
-    { id: 'kinematics', label: 'Kinematics & Dynamics', group: 'level3', x: 430, y: 170, image: 'images/icons/kinematics.png' },
+    { id: 'robotics', label: 'Robotics', group: 'level2', x: 380, y: -80, image: 'images/icons/robotics.png' },
+    { id: 'kinematics', label: 'Kinematics & Dynamics', group: 'level3', x: 440, y: -150, image: 'images/icons/kinematics.png' },
 
     // Computer
     { id: 'cs', label: 'CS', group: 'level3', x: -520, y: -80, image: 'images/icons/cs.png' },
@@ -39,19 +39,19 @@ document.addEventListener('DOMContentLoaded', function () {
   ];
 
   const edgesData = [
-    { from: 'ee', to: 'signal', length: 140 },
-    { from: 'ee', to: 'control', length: 140 },
+    { from: 'ee', to: 'signal', length: 170 },
+    { from: 'ee', to: 'control', length: 170 },
     { from: 'ee', to: 'computer' },
 
     { from: 'computer', to: 'cs', length: 150 },
     { from: 'computer', to: 'ca', length: 150 },
     { from: 'computer', to: 'se', length: 150 },
-    { from: 'computer', to: 'net', length: 160 },
-    { from: 'computer', to: 'ai', length: 160 },
+    { from: 'computer', to: 'net', length: 150 },
+    { from: 'computer', to: 'ai', length: 150 },
     { from: 'computer', to: 'hci', length: 150 },
 
-    { from: 'me', to: 'robotics', length: 140 },
-    { from: 'robotics', to: 'kinematics' },
+    { from: 'me', to: 'robotics', length: 170 },
+    { from: 'robotics', to: 'kinematics', length: 150 },
 
     { from: 'ee', to: 'mechatronics' },
     { from: 'me', to: 'mechatronics' }
@@ -152,3 +152,4 @@ document.addEventListener('DOMContentLoaded', function () {
     network.once('stabilizationIterationsDone', function () { network.moveTo({ scale: 1.0 }); });
   })();
 });
+

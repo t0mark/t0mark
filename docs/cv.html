@@ -3,37 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV — Hyeonung Yang</title>
-  <link rel="stylesheet" href="styles/cv_styles.css" />
+  <title>CV</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles/cv.css?v=1" />
 </head>
 <body>
+  <a class="back-home" href="index.html" aria-label="Back to Home">Home</a>
   <main class="page">
     <aside class="sidebar">
       <div class="profile">
-        <img src="images/profile.png" alt="Profile photo" class="profile-photo" />
+        <div class="profile-photo"></div>
         <h1 class="name">Hyeonung Yang</h1>
-        <p class="role">Undergraduate Researcher · AI Robotics / EE &amp; CE</p>
+        <p class="role">AI Robotics Engineer</p>
       </div>
 
       <section class="contact">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title"><span class="emoji" aria-hidden="true">📇</span>Contact</h2>
         <ul class="list">
-          <li><a href="tel:+821096536009">+82 10-9653-6009</a></li>
-          <li><a href="mailto:iwagoho@gmail.com">iwagoho@gmail.com</a></li>
-          <li><span>Jeonbuk National University, Jeonju-si, Jeollabuk-do</span></li>
+          <li><span class="emoji" aria-hidden="true">📞</span><a href="tel:+821096536009">+82 10-9653-6009</a></li>
+          <li><span class="emoji" aria-hidden="true">✉️</span><a href="mailto:iwagoho@gmail.com">iwagoho@gmail.com</a></li>
+          <li><span class="emoji" aria-hidden="true">📍</span><span>Jeonbuk National University</span></li>
         </ul>
       </section>
 
       <section class="links">
-        <h2 class="section-title">Links</h2>
+        <h2 class="section-title"><span class="emoji" aria-hidden="true">🔗</span>Links</h2>
         <ul class="list">
-          <li><a href="https://github.com/t0mark" target="_blank" rel="noreferrer">github.com/t0mark</a></li>
-          <li><a href="https://solved.ac/profile/gusdnd5297" target="_blank" rel="noreferrer">solved.ac/profile/gusdnd5297</a></li>
+          <li><span class="emoji" aria-hidden="true">💼</span><a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" rel="noreferrer">linkedin.com/in/hyeonung-yang</a></li>
+          <li><span class="emoji" aria-hidden="true">💻</span><a href="https://github.com/t0mark" target="_blank" rel="noreferrer">github.com/t0mark</a></li>
+          <li><span class="emoji" aria-hidden="true">🎯</span><a href="https://solved.ac/profile/gusdnd5297" target="_blank" rel="noreferrer">solved.ac/profile/gusdnd5297</a></li>
         </ul>
       </section>
 
       <section class="skills">
-        <h2 class="section-title"><img src="images/skills_icon.png" alt="" class="icon" />Skills</h2>
+        <h2 class="section-title"><span class="emoji" aria-hidden="true">🛠️</span>Skills</h2>
         <ul class="tags">
           <li>Python</li>
           <li>C/C++</li>
@@ -49,17 +53,30 @@
     <section class="content">
       <section>
         <h2 class="section-title">Education</h2>
+
         <div class="item">
           <div class="item-head">
             <div>
               <h3>Jeonbuk National University</h3>
-              <p class="sub">B.S. in Electronic Engineering &amp; Computer Engineering</p>
             </div>
-            <div class="meta">2020.03 – 2026.02</div>
+            <div class="meta">Mar. 2026 – Present</div>
           </div>
+          <p class="desc">Master of Electronics and Information Engineering</p>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <h3>Jeonbuk National University</h3>
+            </div>
+            <div class="meta">Mar. 2020 – Feb. 2026</div>
+          </div>
+          <p class="desc">Department of Electronic Engineering</p>
+          <p class="desc">Department of Computer Engineering</p>
           <ul class="bullets">
-            <li>Total GPA: 4.08 / 4.5</li>
-            <li>Major GPA: 4.13 / 4.5</li>
+            <li>Total GPA of 4.12/4.5</li>
+            <li>Major GPA of 4.12/4.5</li>
+            <li>credits taken (5/37)</li>
           </ul>
         </div>
       </section>
@@ -72,74 +89,68 @@
               <h3>AI Robotics Lab (Advisor: Hyungi Jo)</h3>
               <p class="sub">Undergraduate Researcher</p>
             </div>
-            <div class="meta">2024.08 – Present</div>
+            <div class="meta">Aug. 2024 – Present</div>
           </div>
           <p class="desc">Researching robotics perception &amp; autonomy.</p>
         </div>
       </section>
 
-      <section>
+      <section class="projects">
         <h2 class="section-title">Projects</h2>
 
-        <div class="item">
-          <div class="item-head">
-            <h3>LiDAR &amp; GPS‑Based Map‑less Outdoor Self‑Driving</h3>
-            <div class="meta">Robotics · 진행중</div>
-          </div>
-        </div>
+        <h3 class="subheading master">Master</h3>
+        <div class="projects-master"></div>
 
-        <div class="columns">
+        <h3 class="subheading undergrad">Undergraduate</h3>
+        <div class="projects-undergrad">
           <div class="item">
             <div class="item-head">
-              <h3>컴퓨터 비전 모델 가속기 설계</h3>
+              <h3>LiDAR &amp; GPS‑Based Map‑less Outdoor Self‑Driving</h3>
+              <div class="meta">Robotics · In Progress</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Computer Vision Model Accelerator Design</h3>
               <div class="meta">Computer Vision</div>
             </div>
           </div>
-
           <div class="item">
             <div class="item-head">
-              <h3>VLA 로봇팔 제어</h3>
+              <h3>VLA Robotic Arm Control</h3>
               <div class="meta">Robotics</div>
             </div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <h3>Kickboard Problem Improvement Kit</h3>
-            <div class="meta">Team Member · 2025.02 – 2025.08</div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Kickboard Problem Improvement Kit</h3>
+              <div class="meta">Team Member · 2025.02 – 2025.08</div>
+            </div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <h3>MCU‑Controlled Function Generator</h3>
-            <div class="meta">Team Leader · 2024.05 – 2024.06</div>
+          <div class="item">
+            <div class="item-head">
+              <h3>MCU‑Controlled Function Generator</h3>
+              <div class="meta">Team Leader · 2024.05 – 2024.06</div>
+            </div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <h3>Floating Point Calculator</h3>
-            <div class="meta">Team Leader · 2024.09 – 2024.12</div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Floating Point Calculator</h3>
+              <div class="meta">Team Leader · 2024.09 – 2024.12</div>
+            </div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <h3>Heart Rate Monitor Circuit</h3>
-            <div class="meta">Team Leader · 2024.05 – 2024.06</div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Heart Rate Monitor Circuit</h3>
+              <div class="meta">Team Leader · 2024.05 – 2024.06</div>
+            </div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <h3>Gate Circuit &amp; Filter‑based Function Generator</h3>
-            <div class="meta">Team Leader · 2023.11 – 2023.12</div>
+          <div class="item">
+            <div class="item-head">
+              <h3>Gate Circuit &amp; Filter‑based Function Generator</h3>
+              <div class="meta">Team Leader · 2023.11 – 2023.12</div>
+            </div>
           </div>
-        </div>
-
-        <div class="columns">
           <div class="item">
             <div class="item-head">
               <h3>University Assistance App</h3>
@@ -164,29 +175,29 @@
       <section>
         <h2 class="section-title">Awards</h2>
         <ul class="timeline">
-          <li><span class="time">2025.07</span> 대상 · JST 공유대학 데이터분석 경진대회</li>
-          <li><span class="time">2024.02</span> 총장상(성적우수상) · 전북대학교</li>
-          <li><span class="time">2024.02</span> 장려상 · 반도체소부장혁신융합대학 진로설계 경진대회</li>
-          <li><span class="time">2023.06</span> 우수상 · 전주ICT이노베이션 AI코딩 경진대회</li>
+          <li><span class="time">2025.07</span> Grand Prize · JST Shared University Data Analysis Competition</li>
+          <li><span class="time">2024.02</span> President's Award (Academic Excellence) · Jeonbuk National University</li>
+          <li><span class="time">2024.02</span> Encouragement Award · Semiconductor Convergence University Career Design Competition</li>
+          <li><span class="time">2023.06</span> Excellence Award · Jeonju ICT Innovation AI Coding Competition</li>
         </ul>
       </section>
 
       <section>
         <h2 class="section-title">Scholarships / Honors</h2>
         <ul class="timeline">
-          <li><span class="time">2024.03</span> 장흥군인재육성장학생 · 장흥군인재육성장학회</li>
-          <li><span class="time">2024.03</span> KOSCA 희망세움 장학생 · 대한전문건설협회 전라남도회 장학회</li>
-          <li><span class="time">2024.02</span> 천관장학생 · 천관문화장학회</li>
-          <li><span class="time">2023.09</span> 천관농협 조합원자녀 장학생 · 천관농업협동조합</li>
+          <li><span class="time">2024.03</span> Jangheung Talent Scholarship · Jangheung Scholarship Foundation</li>
+          <li><span class="time">2024.03</span> KOSCA Hope Scholarship · Korea Specialty Contractors Association (Jeonnam Chapter)</li>
+          <li><span class="time">2024.02</span> Cheongwan Scholarship · Cheongwan Cultural Scholarship Foundation</li>
+          <li><span class="time">2023.09</span> Cheongwan Nonghyup Member's Child Scholarship · Cheongwan Agricultural Cooperative</li>
         </ul>
       </section>
 
       <section>
         <h2 class="section-title">Extracurricular</h2>
-        <ul class="bullets">
-          <li>CPU 멘토링 (Python)</li>
-          <li>전봇대 멘토링 (F1 Tenth)</li>
-          <li>전봇대 멘토링 (FCA)</li>
+        <ul class="timeline">
+          <li>CPU Mentoring (Python)</li>
+          <li>Department Mentoring (F1TENTH)</li>
+          <li>Department Mentoring (FCA)</li>
         </ul>
       </section>
     </section>
