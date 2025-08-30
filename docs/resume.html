@@ -5,693 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이력서 - T0mark Portfolio</title>
     <link rel="stylesheet" href="styles/resume.css">
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.collection-content td {
-	white-space: pre-wrap;
-	word-break: break-word;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-	margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-blockquote.quote-large {
-	font-size: 1.25em;
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
-}
-.highlight-default_background {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
-.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
-.select-value-color-brown { background-color: rgba(142, 58, 1, 0.141); }
-.select-value-color-orange { background-color: rgba(213, 96, 0, 0.188); }
-.select-value-color-yellow { background-color: rgba(209, 155, 0, 0.238); }
-.select-value-color-green { background-color: rgba(1, 104, 42, 0.145); }
-.select-value-color-blue { background-color: rgba(45, 149, 218, 0.236); }
-.select-value-color-purple { background-color: rgba(104, 1, 184, 0.125); }
-.select-value-color-pink { background-color: rgba(204, 1, 88, 0.137); }
-.select-value-color-red { background-color: rgba(228, 26, 0, 0.148); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-</head><body><article id="110923d8-3eb5-8090-9193-cf51cd31f84e" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📋</span></div><h1 class="page-title">CV</h1><p class="page-description"></p></header><div class="page-body"><div id="110923d8-3eb5-8196-8a42-e5af26aaaf5b" class="column-list"><div id="110923d8-3eb5-814c-97b1-e8ebaf1d756e" style="width:43.75%" class="column"><p id="216923d8-3eb5-80c7-b141-e29ed8181e29" class="">
-</p><figure id="216923d8-3eb5-80a2-8c32-cc8aa05f2d01" class="image"><a href="images/profile.png"><img style="width:144px" src="images/profile.png"/></a></figure></div><div id="110923d8-3eb5-81d4-8d6a-e09d4406e06b" style="width:56.25000000000002%" class="column"><h1 id="216923d8-3eb5-80c1-b3cc-d699f058fc0d" class=""><mark class="highlight-default">Hyeonung Yang</mark></h1><hr id="216923d8-3eb5-8007-a28d-c38d1231e967"/><p id="216923d8-3eb5-809c-89e3-dd894a99a270" class=""><mark class="highlight-gray">📱 (+82) 10-9653-6009</mark></p><p id="216923d8-3eb5-80ba-a120-fa5ce6d501e4" class=""><mark class="highlight-default">📧 </mark><mark class="highlight-default"><a href="mailto:adalovelace@mail.com">iwagoho@gamil.com</a></mark></p><p id="216923d8-3eb5-80ab-b2ed-c1d664f7237f" class=""><mark class="highlight-default"><img alt="boj" src="images/boj-icon.png" style="width:1em;height:1em"/></mark><mark class="highlight-default"> </mark><mark class="highlight-default"><a href="https://solved.ac/profile/gusdnd5297#">BOJ</a></mark></p><p id="216923d8-3eb5-8002-a3db-dddf454630d0" class=""><mark class="highlight-default"><img alt="github" src="images/github-icon.png" style="width:1em;height:1em"/></mark><mark class="highlight-default"> </mark><mark class="highlight-default"><a href="https://github.com/t0mark">Github</a></mark></p></div></div><h1 id="216923d8-3eb5-80d1-8d04-d6b60ae233ab" class="">Education</h1><hr id="216923d8-3eb5-8055-a8fc-df54cf8eb7eb"/><p id="216923d8-3eb5-807d-a0b2-db9f444a65e5" class="">Mar. 2020 ~ Feb. 2026</p><h3 id="216923d8-3eb5-8078-8aa8-d747320ee2f6" class=""><strong>Jeonbuk National University </strong></h3><p id="216923d8-3eb5-804c-856b-eb3b46fb9bba" class=""><mark class="highlight-gray"><strong>(567, Baekje-daero / Deokjin-gu / Jeonju-si / Jeollabuk-do)</strong></mark><strong><br/></strong></p><p id="216923d8-3eb5-809a-967c-e81ba7e5f06f" class="">Department of Electronic Engineering</p><p id="216923d8-3eb5-80b7-9562-f0a2c6e3ca64" class="">Department of Computer Engineering<div class="indented"><ul id="216923d8-3eb5-8036-aa97-fb951d057164" class="bulleted-list"><li style="list-style-type:disc">Total GPA of 4.08/4.5</li></ul><ul id="216923d8-3eb5-802d-926c-da06a18acbf0" class="bulleted-list"><li style="list-style-type:disc">Major GPA of 4.13/4.5</li></ul><ul id="216923d8-3eb5-8089-90f6-f7b2471e49ce" class="bulleted-list"><li style="list-style-type:disc">credits taken (4/37)</li></ul></div></p><h1 id="216923d8-3eb5-8070-995f-c4eb35e12955" class="">Internships</h1><hr id="216923d8-3eb5-80d4-af8f-f51e7136bd82"/><h3 id="216923d8-3eb5-80c5-a258-f2e321ac0569" class="">AI Robotics Lab     (Advisor. Hyungi Jo)</h3><p id="216923d8-3eb5-80fc-8f32-ed8c994c8983" class=""><mark class="highlight-gray">(Undergraduate Researcher) (Aug. 2024 ~ Present)</mark><div class="indented"><ul id="216923d8-3eb5-8017-aa3d-dd246060b359" class="bulleted-list"><li style="list-style-type:disc">LiDAR &amp; GPS-Based Map-less outdoor self-Driving</li></ul></div></p><h1 id="216923d8-3eb5-8028-a8dc-d985c1ca5087" class="">Project Experience</h1><hr id="216923d8-3eb5-80e0-bd5a-cbaba434c0e3"/><h2 id="21b923d8-3eb5-80dc-b36a-d668f791b9c0" class="">진행중</h2><h3 id="21b923d8-3eb5-8095-84bd-fafd0c2c0236" class="">컴퓨터 비전 모델 가속기 설계</h3><h3 id="21b923d8-3eb5-8033-afd4-fb14776640ba" class="">VLA 로봇팔 제어</h3><p id="21b923d8-3eb5-806d-963d-f5de1e7654fa" class="">
-</p><h2 id="21b923d8-3eb5-803e-b13e-ef07daf19c6d" class="">로보틱스</h2><h3 id="217923d8-3eb5-804b-bb19-c1a27dcf0de1" class="">LiDAR &amp; GPS-Based Map-less outdoor self-Driving</h3><p id="21b923d8-3eb5-800c-9f30-ea7a22431dd1" class="">
-</p><h2 id="21b923d8-3eb5-801b-97e3-ffbb4a30cc4f" class="">임베디드</h2><p id="217923d8-3eb5-80c9-96a6-d702a54a6a54" class="">Team Member <mark class="highlight-gray">(Feb. 2025 ~ Aug. 2025)</mark><div class="indented"><ul id="217923d8-3eb5-80ee-ab23-f889f0ae702d" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></p><h3 id="217923d8-3eb5-8030-8d36-d4b87bfaf7af" class=""><strong>Kickboard Problem Improvement Kit</strong></h3><p id="217923d8-3eb5-8073-a4d3-f6626673e57f" class="">Team Leader <mark class="highlight-gray">(Feb. 2025 ~ Mar. 2025)</mark><div class="indented"><ul id="217923d8-3eb5-805a-aa8f-ccbd94596d51" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></p><h3 id="217923d8-3eb5-8009-a929-c7b541961de6" class="">MCU-Controlled Function Generator</h3><p id="217923d8-3eb5-80af-abd7-e8bc67840731" class="">Team Leader <mark class="highlight-gray">(May. 2024 ~ Jun. 2024)</mark></p><p id="21b923d8-3eb5-80aa-8ebd-eb12450cd266" class="">
-</p><h2 id="21b923d8-3eb5-8051-9911-e9ea861d87b1" class="">디지털 회로 설계</h2><h3 id="217923d8-3eb5-80d0-967e-f4c21696f28d" class=""><strong>Floating Point Calculator</strong></h3><p id="217923d8-3eb5-80bd-82cc-fcb461be1834" class="">Team Leader <mark class="highlight-gray">(Sep. 2024 ~ Dec. 2024)</mark><div class="indented"><ul id="217923d8-3eb5-805d-b664-e599d7d2d90c" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></p><p id="21b923d8-3eb5-806a-b1e7-e6c78ec73259" class="">
-</p><h2 id="21b923d8-3eb5-8005-9a1e-c8dd0eedaeef" class="">회로 설계</h2><h3 id="217923d8-3eb5-809d-92dd-fc6fbbfca842" class="">Heart Rate Monitor Circuit</h3><p id="217923d8-3eb5-809b-b5a6-f41927ec36f0" class="">Team Leader <mark class="highlight-gray">(May. 2024 ~ Jun. 2024)</mark></p><h3 id="217923d8-3eb5-8001-ba72-ec7cb9a040e2" class="">Gate Circuit &amp; Filter-based Function Generator</h3><p id="217923d8-3eb5-80f9-80b9-deccba5e7b7b" class="">Team Leader <mark class="highlight-gray">(Nov. 2023 ~ Dec. 2023)</mark></p><p id="21b923d8-3eb5-80a9-be92-d7dcb633cc3b" class="">
-</p><h2 id="21b923d8-3eb5-80fc-8692-d843abce9bf8" class="">Applications (App, Web etc)</h2><h3 id="21b923d8-3eb5-80db-ac45-d4d6235ffc6d" class="">University Assistanc App</h3><p id="21b923d8-3eb5-8052-8657-ea8f3d420add" class="">Team Leader <mark class="highlight-gray">(Sep. 2024 ~ Dec. 2024)</mark><div class="indented"><ul id="21b923d8-3eb5-8063-947e-d854da7645d8" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></p><h3 id="21b923d8-3eb5-8072-82ff-ec9669357fb2" class="">Cookie Run PVE Game</h3><p id="21b923d8-3eb5-80d0-8634-d954d9ae5fa6" class="">Team Leader <mark class="highlight-gray">(Mar. 2024 ~ Jun. 2024)</mark></p><h3 id="217923d8-3eb5-80bc-bed8-ea75d4c450da" class="">Electronics Engineering Community Web</h3><p id="217923d8-3eb5-806f-9321-ed5c76e82960" class="">Individual <mark class="highlight-gray">(Nov. 2023 ~ Dec. 2023)</mark></p><p id="110923d8-3eb5-81c4-b9b4-e5ac65477df8" class="">
-</p><hr id="110923d8-3eb5-8186-872e-ec08eaaed433"/><h1 id="216923d8-3eb5-808d-bb83-ed79285154f8" class="">Awards &amp; Honors</h1><hr id="216923d8-3eb5-8080-90cb-fbcbe9b8be63"/><h3 id="217923d8-3eb5-80f1-817d-d9fd049743a5" class="">Awards</h3><p id="229923d8-3eb5-80bb-947f-d34a2c20308f" class="">2025. 07 대상, JST공유대학 데이터분석 경진대회</p><p id="217923d8-3eb5-806e-ab4b-f955af510890" class="">2024. 02 총장상(성적우수상), 전북대학교</p><p id="218923d8-3eb5-8082-8b44-f60d4880b40e" class="">2024. 02 장려상, 반도체소부장혁신융합대학 진로설계 경진대회</p><p id="218923d8-3eb5-8057-8097-c8e02b8b9397" class="">2023. 06 우수상, 전주정보문화산업진흥원 전주ICT이노베이션 AI코딩 경진대회</p><h3 id="217923d8-3eb5-80c1-96e0-ffbbb50877c1" class="">Honors</h3><p id="218923d8-3eb5-8063-9d1d-d43897044623" class="">2024. 03 장흥군인재육성장학생, 장흥군인재육성장학회</p><p id="218923d8-3eb5-8050-aec2-eb88deb7be9a" class="">2024. 03 KOSCA 희망세움 장학생, 대한전문건설협회 전라남도회 장학회</p><p id="217923d8-3eb5-80f7-a41a-e0a142f22339" class="">2024. 02 천관장학생, 천관문화장학회</p><p id="218923d8-3eb5-8010-912c-eeee403f006a" class="">2023. 09 천관농협 조합원자녀 장학생, 천관농업협동조합</p><h1 id="216923d8-3eb5-80a3-a0be-fa992b7cef3b" class="">Extracurricular Activity</h1><hr id="216923d8-3eb5-80ab-aa9b-febc2a44824b"/><h3 id="217923d8-3eb5-8018-b5c3-e3de7067b47b" class="">CPU 멘토링 (Python)</h3><h3 id="217923d8-3eb5-80e7-8c9c-fcdf271cce0d" class="">전봇대 멘토링 (F1 Tenth)</h3><h3 id="217923d8-3eb5-80a9-b9cd-c26b0abe9524" class="">전봇대 멘토링 (FCA)</h3><h1 id="216923d8-3eb5-8016-8ae4-ee44e4f6e692" class="">Skills</h1><hr id="216923d8-3eb5-803e-aafd-ec7f4c1e5389"/><h1 id="216923d8-3eb5-8072-af9a-ef82a5c5efd2" class="">Others</h1><hr id="216923d8-3eb5-80d1-aa17-f42ed1d022da"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</head>
+<body>
+    <article id="110923d8-3eb5-8090-9193-cf51cd31f84e" class="page sans">
+        <header>
+            <div class="page-header-icon undefined">
+                <span class="icon">📋</span>
+            </div>
+            <h1 class="page-title">CV</h1>
+            <p class="page-description"></p>
+        </header>
+        <div class="page-body">
+            <div id="110923d8-3eb5-8196-8a42-e5af26aaaf5b" class="column-list">
+                <div id="110923d8-3eb5-814c-97b1-e8ebaf1d756e" style="width:43.75%" class="column">
+                    <p id="216923d8-3eb5-80c7-b141-e29ed8181e29" class=""></p>
+                    <figure id="216923d8-3eb5-80a2-8c32-cc8aa05f2d01" class="image">
+                        <a href="images/profile.png">
+                            <img style="width:144px" src="images/profile.png"/>
+                        </a>
+                    </figure>
+                </div>
+                <div id="110923d8-3eb5-81d4-8d6a-e09d4406e06b" style="width:56.25000000000002%" class="column">
+                    <h1 id="216923d8-3eb5-80c1-b3cc-d699f058fc0d" class="">
+                        <mark class="highlight-default">Hyeonung Yang</mark>
+                    </h1>
+                    <hr id="216923d8-3eb5-8007-a28d-c38d1231e967"/>
+                    <p id="216923d8-3eb5-809c-89e3-dd894a99a270" class="">
+                        <mark class="highlight-gray">📱 (+82) 10-9653-6009</mark>
+                    </p>
+                    <p id="216923d8-3eb5-80ba-a120-fa5ce6d501e4" class="">
+                        <mark class="highlight-default">📧 </mark>
+                        <mark class="highlight-default">
+                            <a href="mailto:iwagoho@gmail.com">iwagoho@gmail.com</a>
+                        </mark>
+                    </p>
+                    <p id="216923d8-3eb5-80ab-b2ed-c1d664f7237f" class="">
+                        <mark class="highlight-default">
+                            <img alt="boj" src="images/boj-icon.png" style="width:1em;height:1em"/>
+                        </mark>
+                        <mark class="highlight-default"> </mark>
+                        <mark class="highlight-default">
+                            <a href="https://solved.ac/profile/gusdnd5297#">BOJ</a>
+                        </mark>
+                    </p>
+                    <p id="216923d8-3eb5-8002-a3db-dddf454630d0" class="">
+                        <mark class="highlight-default">
+                            <img alt="github" src="images/github-icon.png" style="width:1em;height:1em"/>
+                        </mark>
+                        <mark class="highlight-default"> </mark>
+                        <mark class="highlight-default">
+                            <a href="https://github.com/t0mark">Github</a>
+                        </mark>
+                    </p>
+                </div>
+            </div>
+            
+            <h1 id="216923d8-3eb5-80d1-8d04-d6b60ae233ab" class="">Education</h1>
+            <hr id="216923d8-3eb5-8055-a8fc-df54cf8eb7eb"/>
+            <p id="216923d8-3eb5-807d-a0b2-db9f444a65e5" class="">Mar. 2020 ~ Feb. 2026</p>
+            <h3 id="216923d8-3eb5-8078-8aa8-d747320ee2f6" class="">
+                <strong>Jeonbuk National University</strong>
+            </h3>
+            <p id="216923d8-3eb5-804c-856b-eb3b46fb9bba" class="">
+                <mark class="highlight-gray">
+                    <strong>(567, Baekje-daero / Deokjin-gu / Jeonju-si / Jeollabuk-do)</strong>
+                </mark>
+                <strong><br/></strong>
+            </p>
+            <p id="216923d8-3eb5-809a-967c-e81ba7e5f06f" class="">Department of Electronic Engineering</p>
+            <p id="216923d8-3eb5-80b7-9562-f0a2c6e3ca64" class="">
+                Department of Computer Engineering
+                <div class="indented">
+                    <ul id="216923d8-3eb5-8036-aa97-fb951d057164" class="bulleted-list">
+                        <li style="list-style-type:disc">Total GPA of 4.08/4.5</li>
+                    </ul>
+                    <ul id="216923d8-3eb5-802d-926c-da06a18acbf0" class="bulleted-list">
+                        <li style="list-style-type:disc">Major GPA of 4.13/4.5</li>
+                    </ul>
+                    <ul id="216923d8-3eb5-8089-90f6-f7b2471e49ce" class="bulleted-list">
+                        <li style="list-style-type:disc">credits taken (4/37)</li>
+                    </ul>
+                </div>
+            </p>
+            
+            <h1 id="216923d8-3eb5-8070-995f-c4eb35e12955" class="">Internships</h1>
+            <hr id="216923d8-3eb5-80d4-af8f-f51e7136bd82"/>
+            <h3 id="216923d8-3eb5-80c5-a258-f2e321ac0569" class="">AI Robotics Lab (Advisor. Hyungi Jo)</h3>
+            <p id="216923d8-3eb5-80fc-8f32-ed8c994c8983" class="">
+                <mark class="highlight-gray">(Undergraduate Researcher) (Aug. 2024 ~ Present)</mark>
+                <div class="indented">
+                    <ul id="216923d8-3eb5-8017-aa3d-dd246060b359" class="bulleted-list">
+                        <li style="list-style-type:disc">LiDAR & GPS-Based Map-less outdoor self-Driving</li>
+                    </ul>
+                </div>
+            </p>
+            
+            <h1 id="216923d8-3eb5-8028-a8dc-d985c1ca5087" class="">Project Experience</h1>
+            <hr id="216923d8-3eb5-80e0-bd5a-cbaba434c0e3"/>
+            
+            <h2 id="21b923d8-3eb5-80dc-b36a-d668f791b9c0" class="">진행중</h2>
+            <h3 id="21b923d8-3eb5-8095-84bd-fafd0c2c0236" class="">컴퓨터 비전 모델 가속기 설계</h3>
+            <h3 id="21b923d8-3eb5-8033-afd4-fb14776640ba" class="">VLA 로봇팔 제어</h3>
+            
+            <h2 id="21b923d8-3eb5-803e-b13e-ef07daf19c6d" class="">로보틱스</h2>
+            <h3 id="217923d8-3eb5-804b-bb19-c1a27dcf0de1" class="">LiDAR & GPS-Based Map-less outdoor self-Driving</h3>
+            
+            <h2 id="21b923d8-3eb5-801b-97e3-ffbb4a30cc4f" class="">임베디드</h2>
+            <p id="217923d8-3eb5-80c9-96a6-d702a54a6a54" class="">
+                Team Member <mark class="highlight-gray">(Feb. 2025 ~ Aug. 2025)</mark>
+                <div class="indented">
+                    <ul id="217923d8-3eb5-80ee-ab23-f889f0ae702d" class="bulleted-list">
+                        <li style="list-style-type:disc"></li>
+                    </ul>
+                </div>
+            </p>
+            <h3 id="217923d8-3eb5-8030-8d36-d4b87bfaf7af" class="">
+                <strong>Kickboard Problem Improvement Kit</strong>
+            </h3>
+            <p id="217923d8-3eb5-8073-a4d3-f6626673e57f" class="">
+                Team Leader <mark class="highlight-gray">(Feb. 2025 ~ Mar. 2025)</mark>
+                <div class="indented">
+                    <ul id="217923d8-3eb5-805a-aa8f-ccbd94596d51" class="bulleted-list">
+                        <li style="list-style-type:disc"></li>
+                    </ul>
+                </div>
+            </p>
+            <h3 id="217923d8-3eb5-8009-a929-c7b541961de6" class="">MCU-Controlled Function Generator</h3>
+            <p id="217923d8-3eb5-80af-abd7-e8bc67840731" class="">Team Leader <mark class="highlight-gray">(May. 2024 ~ Jun. 2024)</mark></p>
+            
+            <h2 id="21b923d8-3eb5-8051-9911-e9ea861d87b1" class="">디지털 회로 설계</h2>
+            <h3 id="217923d8-3eb5-80d0-967e-f4c21696f28d" class="">
+                <strong>Floating Point Calculator</strong>
+            </h3>
+            <p id="217923d8-3eb5-80bd-82cc-fcb461be1834" class="">
+                Team Leader <mark class="highlight-gray">(Sep. 2024 ~ Dec. 2024)</mark>
+                <div class="indented">
+                    <ul id="217923d8-3eb5-805d-b664-e599d7d2d90c" class="bulleted-list">
+                        <li style="list-style-type:disc"></li>
+                    </ul>
+                </div>
+            </p>
+            
+            <h2 id="21b923d8-3eb5-8005-9a1e-c8dd0eedaeef" class="">회로 설계</h2>
+            <h3 id="217923d8-3eb5-809d-92dd-fc6fbbfca842" class="">Heart Rate Monitor Circuit</h3>
+            <p id="217923d8-3eb5-809b-b5a6-f41927ec36f0" class="">Team Leader <mark class="highlight-gray">(May. 2024 ~ Jun. 2024)</mark></p>
+            <h3 id="217923d8-3eb5-8001-ba72-ec7cb9a040e2" class="">Gate Circuit & Filter-based Function Generator</h3>
+            <p id="217923d8-3eb5-80f9-80b9-deccba5e7b7b" class="">Team Leader <mark class="highlight-gray">(Nov. 2023 ~ Dec. 2023)</mark></p>
+            
+            <h2 id="21b923d8-3eb5-80fc-8692-d843abce9bf8" class="">Applications (App, Web etc)</h2>
+            <h3 id="21b923d8-3eb5-80db-ac45-d4d6235ffc6d" class="">University Assistance App</h3>
+            <p id="21b923d8-3eb5-8052-8657-ea8f3d420add" class="">
+                Team Leader <mark class="highlight-gray">(Sep. 2024 ~ Dec. 2024)</mark>
+                <div class="indented">
+                    <ul id="21b923d8-3eb5-8063-947e-d854da7645d8" class="bulleted-list">
+                        <li style="list-style-type:disc"></li>
+                    </ul>
+                </div>
+            </p>
+            <h3 id="21b923d8-3eb5-8072-82ff-ec9669357fb2" class="">Cookie Run PVE Game</h3>
+            <p id="21b923d8-3eb5-80d0-8634-d954d9ae5fa6" class="">Team Leader <mark class="highlight-gray">(Mar. 2024 ~ Jun. 2024)</mark></p>
+            <h3 id="217923d8-3eb5-80bc-bed8-ea75d4c450da" class="">Electronics Engineering Community Web</h3>
+            <p id="217923d8-3eb5-806f-9321-ed5c76e82960" class="">Individual <mark class="highlight-gray">(Nov. 2023 ~ Dec. 2023)</mark></p>
+            
+            <hr id="110923d8-3eb5-8186-872e-ec08eaaed433"/>
+            <h1 id="216923d8-3eb5-808d-bb83-ed79285154f8" class="">Awards & Honors</h1>
+            <hr id="216923d8-3eb5-8080-90cb-fbcbe9b8be63"/>
+            
+            <h3 id="217923d8-3eb5-80f1-817d-d9fd049743a5" class="">Awards</h3>
+            <p id="229923d8-3eb5-80bb-947f-d34a2c20308f" class="">2025. 07 대상, JST공유대학 데이터분석 경진대회</p>
+            <p id="217923d8-3eb5-806e-ab4b-f955af510890" class="">2024. 02 총장상(성적우수상), 전북대학교</p>
+            <p id="218923d8-3eb5-8082-8b44-f60d4880b40e" class="">2024. 02 장려상, 반도체소부장혁신융합대학 진로설계 경진대회</p>
+            <p id="218923d8-3eb5-8057-8097-c8e02b8b9397" class="">2023. 06 우수상, 전주정보문화산업진흥원 전주ICT이노베이션 AI코딩 경진대회</p>
+            
+            <h3 id="217923d8-3eb5-80c1-96e0-ffbbb50877c1" class="">Honors</h3>
+            <p id="218923d8-3eb5-8063-9d1d-d43897044623" class="">2024. 03 장흥군인재육성장학생, 장흥군인재육성장학회</p>
+            <p id="218923d8-3eb5-8050-aec2-eb88deb7be9a" class="">2024. 03 KOSCA 희망세움 장학생, 대한전문건설협회 전라남도회 장학회</p>
+            <p id="217923d8-3eb5-80f7-a41a-e0a142f22339" class="">2024. 02 천관장학생, 천관문화장학회</p>
+            <p id="218923d8-3eb5-8010-912c-eeee403f006a" class="">2023. 09 천관농협 조합원자녀 장학생, 천관농업협동조합</p>
+            
+            <h1 id="216923d8-3eb5-80a3-a0be-fa992b7cef3b" class="">Extracurricular Activity</h1>
+            <hr id="216923d8-3eb5-80ab-aa9b-febc2a44824b"/>
+            <h3 id="217923d8-3eb5-8018-b5c3-e3de7067b47b" class="">CPU 멘토링 (Python)</h3>
+            <h3 id="217923d8-3eb5-80e7-8c9c-fcdf271cce0d" class="">전봇대 멘토링 (F1 Tenth)</h3>
+            <h3 id="217923d8-3eb5-80a9-b9cd-c26b0abe9524" class="">전봇대 멘토링 (FCA)</h3>
+            
+            <h1 id="216923d8-3eb5-8016-8ae4-ee44e4f6e692" class="">Skills</h1>
+            <hr id="216923d8-3eb5-803e-aafd-ec7f4c1e5389"/>
+            
+            <h1 id="216923d8-3eb5-8072-af9a-ef82a5c5efd2" class="">Others</h1>
+            <hr id="216923d8-3eb5-80d1-aa17-f42ed1d022da"/>
+        </div>
+    </article>
+    <span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+</html>
