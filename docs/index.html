@@ -3,60 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T0mark Portfolio</title>
+    <title>양현웅 블로그</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">T0mark</div>
-            <ul class="nav-links">
-                <li><a href="#resume">이력서</a></li>
-                <li><a href="#study">공부기록</a></li>
-                <li><a href="#projects">프로젝트</a></li>
-                <li><a href="#contact">연락처</a></li>
-            </ul>
+
+    <!-- Header Navigation -->
+    <header class="top-nav">
+        <nav class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Post</a>
+                <a href="#" class="nav-link">Project</a>
+                <a href="cv.html" class="nav-link">CV</a>
+            </div>
+            <div class="social-nav">
+                <a href="https://solved.ac/profile/gusdnd5297#" class="social-nav-link">
+                    <img src="images/boj-icon.png" alt="백준">
+                </a>
+                <a href="https://github.com/t0mark" class="social-nav-link">
+                    <img src="images/github_icon.png" alt="GitHub">
+                </a>
+                <a href="mailto:iwagoho@gmail.com" class="social-nav-link">
+                    <img src="images/Gmail_icon.svg" alt="Gmail">
+                </a>
+                <a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" class="social-nav-link">
+                    <img src="images/LinkedIn_icon.svg" alt="LinkedIn">
+                </a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <h1>안녕하세요, T0mark입니다</h1>
-                <p>개발자로서의 여정과 성장 과정을 기록하는 포트폴리오 웹사이트입니다.</p>
-                <a href="#sections" class="cta-button">둘러보기</a>
+        <section class="graph-section">
+            <div class="graph-container">
+                <h2 class="graph-title">학문 분야 구조도</h2>
+                <div id="network"></div>
+                
             </div>
         </section>
-
-        <div id="sections" class="container">
-            <div class="sections">
-                <div class="section-card">
-                    <h2>📄 이력서</h2>
-                    <p>경력, 기술 스택, 그리고 개발자로서의 배경을 소개합니다.</p>
-                    <a href="resume.html" class="section-link">이력서 보기</a>
-                </div>
-
-                <div class="section-card">
-                    <h2>📚 공부기록</h2>
-                    <p>새로운 기술 학습과 개발 지식 습득 과정을 정리합니다.</p>
-                    <a href="study.html" class="section-link">공부기록 보기</a>
-                </div>
-
-                <div class="section-card">
-                    <h2>🚀 프로젝트</h2>
-                    <p>진행했던 프로젝트들과 개발 경험을 공유합니다.</p>
-                    <a href="projects.html" class="section-link">프로젝트 보기</a>
-                </div>
-            </div>
+        <div class="container">
+            <!-- Other content can go here -->
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 T0mark. GitHub Pages를 통해 호스팅됩니다.</p>
-        </div>
-    </footer>
-
-    <script src="scripts/main.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>

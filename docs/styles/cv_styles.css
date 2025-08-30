@@ -1,0 +1,58 @@
+/* styles.css — CV layout */
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --line:#e5e7eb;
+  --accent:#111827;
+  --chip:#f3f4f6;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji'}
+a{color:inherit;text-underline-offset:2px}
+.page{max-width:1100px;margin:0 auto;padding:24px;display:grid;grid-template-columns:320px 1fr;gap:28px}
+.sidebar{border:1px solid var(--line);border-radius:16px;padding:20px;height:fit-content;position:sticky;top:20px}
+.content{display:flex;flex-direction:column;gap:28px}
+.profile{text-align:center}
+.profile-photo{width:200px;height:200px;object-fit:cover;border-radius:50%;border:4px solid var(--line);display:block;margin:8px auto 12px}
+.name{margin:0;font-size:1.6rem;line-height:1.2}
+.role{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+
+.section-title{display:flex;align-items:center;gap:10px;font-size:1.05rem;margin:0 0 10px}
+.icon{width:18px;height:18px;vertical-align:middle}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--line);font-size:.85rem}
+
+/* Make subsection items look indented/child under Contact, Links, Skills */
+.contact .list, .links .list, .skills .list{border-left:2px solid var(--line);padding-left:12px;gap:10px;margin-top:6px}
+.contact .list li, .links .list li, .skills .list li{color:var(--muted)}
+
+.item{border-left:3px solid var(--line);padding-left:14px;margin:10px 0}
+.item-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.item h3{margin:0 0 4px;font-size:1.05rem}
+.sub{margin:0;color:var(--muted)}
+.meta{white-space:nowrap;color:var(--muted);font-size:.92rem}
+.desc{margin:8px 0 0}
+.bullets{margin:8px 0 0 16px}
+.bullets li{margin:4px 0}
+.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--line)}
+.timeline li{padding:6px 10px 6px 12px;margin-left:10px;position:relative}
+.timeline li::before{content:'';position:absolute;left:-10px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+
+.print-note{max-width:1100px;margin:10px auto 24px;padding:0 24px;color:var(--muted);font-size:.9rem}
+
+/* Print styles */
+@media print{
+  .page{padding:0;gap:16px}
+  .sidebar{position:static}
+  a{text-decoration:none}
+}
+/* Mobile */
+@media (max-width:900px){
+  .page{grid-template-columns:1fr}
+  .columns{grid-template-columns:1fr}
+  .profile-photo{width:160px;height:160px}
+}
