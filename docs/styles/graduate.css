@@ -230,24 +230,7 @@ body {
     }
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: var(--space-xl);
-}
-
-.section-header h2 {
-    font-size: var(--text-3xl);
-    color: var(--text);
-    margin-bottom: var(--space-md);
-    font-weight: 700;
-}
-
-.section-header p {
-    font-size: var(--text-lg);
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
+ 
 
 /* ===== FIELDS SECTION ===== */
 .field-grid {
@@ -899,7 +882,7 @@ body {
     border-radius: var(--border-radius);
     padding: var(--space-sm) var(--space-md);
     display: grid;
-    grid-template-columns: 200px 90px 1fr 200px;
+    grid-template-columns: 200px 60px 1fr 200px;
     align-items: center;
     gap: var(--space-md);
     transition: var(--transition);
@@ -1250,7 +1233,7 @@ body {
 .timeline-container::before {
     content: '';
     position: absolute;
-    left: 15px;
+    left: 29px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -1271,7 +1254,7 @@ body {
     content: '';
     position: absolute;
     left: -27px;
-    top: 20px;
+    top: 0px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -1674,7 +1657,7 @@ body {
 .publication-strategy {
     margin-top: var(--space-2xl);
     background: var(--bg-light);
-    padding: var(--space-2xl);
+    padding: var(--space-xl);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border);
 }
@@ -1682,7 +1665,7 @@ body {
 .publication-strategy h3 {
     font-size: var(--text-2xl);
     color: var(--text);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1694,7 +1677,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-lg);
 }
 
 .strategy-card {
@@ -1737,7 +1720,7 @@ body {
 .publication-tips h4 {
     font-size: var(--text-xl);
     color: var(--text);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     display: flex;
     align-items: center;
     gap: 10px;
