@@ -5,35 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/index.css">
     <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header class="top-nav">
-        <nav class="nav-container">
-            <div class="nav-links">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">Post</a>
-                <a href="#" class="nav-link">Project</a>
-                <a href="cv.html" class="nav-link">CV</a>
-            </div>
-            <div class="social-nav">
-                <a href="https://solved.ac/profile/gusdnd5297#" class="social-nav-link">
-                    <img src="images/boj-icon.png" alt="백준">
-                </a>
-                <a href="https://github.com/t0mark" class="social-nav-link">
-                    <img src="images/github_icon.png" alt="GitHub">
-                </a>
-                <a href="mailto:iwagoho@gmail.com" class="social-nav-link">
-                    <img src="images/Gmail_icon.svg" alt="Gmail">
-                </a>
-                <a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" class="social-nav-link">
-                    <img src="images/LinkedIn_icon.svg" alt="LinkedIn">
-                </a>
-            </div>
-        </nav>
-    </header>
+    <!-- Header Navigation (loaded via partial) -->
+    <div id="navbar"></div>
 
     <main>
         <section class="graph-section">
@@ -42,10 +20,11 @@
                 <div id="network"></div>
             </div>
         </section>
-        <div class="container"></div>
+        
     </main>
 
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="scripts/navbar.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>
