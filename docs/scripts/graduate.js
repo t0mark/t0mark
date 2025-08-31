@@ -1,21 +1,22 @@
 // Graduate Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Inner tabs (Learning section)
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabButtons.forEach(button => {
+    // Learning section inner tabs (path-tab)
+    const pathTabs = document.querySelectorAll('.path-tab');
+    const pathContents = document.querySelectorAll('.path-content');
+    pathTabs.forEach(button => {
         button.addEventListener('click', function() {
-            const tabName = this.getAttribute('data-tab');
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            const tabName = this.getAttribute('data-path');
+            pathTabs.forEach(btn => btn.classList.remove('active'));
+            pathContents.forEach(content => content.classList.remove('active'));
             this.classList.add('active');
             document.getElementById(tabName).classList.add('active');
         });
     });
 
-    // Main top-level tabs
-    const mainTabs = Array.from(document.querySelectorAll('.main-tabs .main-tab'));
+    // Main navigation tabs
+    const mainTabs = Array.from(document.querySelectorAll('.main-navigation .nav-tab'));
     const panes = Array.from(document.querySelectorAll('.tab-pane'));
+    
     function activatePane(targetId) {
         panes.forEach(p => p.classList.toggle('active', p.id === targetId));
         mainTabs.forEach(btn => {
@@ -24,19 +25,21 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
     }
+    
     if (mainTabs.length) {
         mainTabs.forEach(btn => {
             btn.addEventListener('click', () => {
                 const target = btn.dataset.target;
                 activatePane(target);
                 history.replaceState(null, '', `#${target}`);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
+        
         // Initialize from hash if present
         const hash = (location.hash || '').replace('#','');
         const valid = panes.some(p => p.id === hash);
         activatePane(valid ? hash : mainTabs[0].dataset.target);
+        
         window.addEventListener('hashchange', () => {
             const h = (location.hash || '').replace('#','');
             if (panes.some(p => p.id === h)) activatePane(h);

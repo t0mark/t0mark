@@ -3,93 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotics Graduate Study Guide</title>
+    <title>AI Robotics Graduate</title>
+    <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/graduate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Navigation (loaded via partial) -->
+    <!-- Header Navigation -->
     <div id="navbar"></div>
 
     <main>
-        <div class="container">
-            <header class="main-header">
-                <p class="subtitle">AI Robotics Lab</p>
-            </header>
-
-        <!-- Main Tabs -->
-        <nav class="main-tabs" role="tablist" aria-label="주요 섹션">
-            <button class="main-tab active" role="tab" aria-selected="true" aria-controls="fields" data-target="fields">Technical Fields</button>
-            <button class="main-tab" role="tab" aria-selected="false" aria-controls="trend" data-target="trend">Trend</button>
-            <button class="main-tab" role="tab" aria-selected="false" aria-controls="confs" data-target="confs">Conferences & Journals</button>
-            <button class="main-tab" role="tab" aria-selected="false" aria-controls="learning" data-target="learning">Learning Guide</button>
-        </nav>
-
-        <section class="tech-fields tab-pane active" id="fields" role="tabpanel" aria-labelledby="tab-fields">
-            <div class="field-grid">
-                <div class="field-card perception">
-                    <h3>Perception</h3>
-                    <ul>
-                        <li>Computer Vision</li>
-                        <li>3D Vision</li>
-                        <li>Sensor Fusion</li>
-                        <li>Object Detection and Tracking</li>
-                    </ul>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-particles"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Robotics Graduate Guide</h1>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label">Technical Fields</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Top Conferences</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Learning Resources</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="field-card localization">
-                    <h3>Localization and Mapping</h3>
-                    <ul>
-                        <li>SLAM</li>
-                        <li>Localization</li>
-                        <li>Mapping</li>
-                        <li>State Estimation</li>
-                    </ul>
-                </div>
-                <div class="field-card planning">
-                    <h3>Planning and Decision Making</h3>
-                    <ul>
-                        <li>Motion Planning</li>
-                        <li>Task Planning</li>
-                        <li>Multi-Robot Coordination</li>
-                        <li>Real-time Planning</li>
-                    </ul>
-                </div>
-                <div class="field-card control">
-                    <h3>Control</h3>
-                    <ul>
-                        <li>Robot Kinematics and Dynamics</li>
-                        <li>Control Theory</li>
-                        <li>Force Control</li>
-                        <li>Real-time Control</li>
-                    </ul>
-                </div>
-                <div class="field-card manipulation">
-                    <h3>Manipulation</h3>
-                    <ul>
-                        <li>Grasping</li>
-                        <li>Dexterous Manipulation</li>
-                        <li>Tactile Sensing</li>
-                        <li>Manipulation Planning</li>
-                    </ul>
-                </div>
-                <div class="field-card learning">
-                    <h3>Learning and Intelligence</h3>
-                    <ul>
-                        <li>Reinforcement Learning</li>
-                        <li>Imitation Learning</li>
-                        <li>Deep Learning</li>
-                        <li>Foundation Models</li>
-                    </ul>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="floating-card" data-speed="0.5">
+                            <div class="card-icon">🤖</div>
+                            <div class="card-title">AI Robotics</div>
+                        </div>
+                        <div class="floating-card" data-speed="0.8">
+                            <div class="card-icon">🧠</div>
+                            <div class="card-title">Machine Learning</div>
+                        </div>
+                        <div class="floating-card" data-speed="0.3">
+                            <div class="card-icon">👁️</div>
+                            <div class="card-title">Computer Vision</div>
+                        </div>
+                        <div class="floating-card" data-speed="0.6">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-title">Path Planning</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Navigation Tabs -->
+        <nav class="main-navigation" role="tablist">
+            <button class="nav-tab active" role="tab" data-target="fields" aria-selected="true">
+                <div class="tab-icon">🔬</div>
+                <div class="tab-content">
+                    <div class="tab-title">Technical Fields</div>
+                    <div class="tab-desc">핵심 연구 분야</div>
+                </div>
+            </button>
+            <button class="nav-tab" role="tab" data-target="trend" aria-selected="false">
+                <div class="tab-icon">📈</div>
+                <div class="tab-content">
+                    <div class="tab-title">Trends</div>
+                    <div class="tab-desc">최신 동향</div>
+                </div>
+            </button>
+            <button class="nav-tab" role="tab" data-target="confs" aria-selected="false">
+                <div class="tab-icon">🏆</div>
+                <div class="tab-content">
+                    <div class="tab-title">Conferences</div>
+                    <div class="tab-desc">학회 & 저널</div>
+                </div>
+            </button>
+            <button class="nav-tab" role="tab" data-target="learning" aria-selected="false">
+                <div class="tab-icon">📚</div>
+                <div class="tab-content">
+                    <div class="tab-title">Learning</div>
+                    <div class="tab-desc">학습 가이드</div>
+                </div>
+            </button>
+        </nav>
+
+        <!-- Technical Fields Section -->
+        <section class="tab-pane active" id="fields" role="tabpanel">
+            <div class="section-container">
+                <div class="section-header">
+                </div>
+
+                <div class="fields-showcase">
+                    <div class="field-card-modern perception" data-field="perception">
+                        <div class="card-background">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop&crop=center" alt="Perception & Computer Vision" />
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-modern">
+                            <h3>Perception & Vision</h3>
+                            <p>컴퓨터 비전과 센서 융합을 통한 환경 인식</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">3D Perception</span>
+                                <span class="tech-tag">Sensor Fusion</span>
+                                <span class="tech-tag">Object Detection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-card-modern localization" data-field="localization">
+                        <div class="card-background">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_cxqV-4bIlSigIwRB4DX7V79aUiM15qBF2w&s" alt="SLAM & Localization" />
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-modern">
+                            <h3>SLAM & Localization</h3>
+                            <p>동시적 위치추정 및 지도작성 기술</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Visual SLAM</span>
+                                <span class="tech-tag">LiDAR SLAM</span>
+                                <span class="tech-tag">Mapping</span>
+                                <span class="tech-tag">State Estimation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-card-modern planning" data-field="planning">
+                        <div class="card-background">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop&crop=center" alt="Motion Planning" />
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-modern">
+                            <h3>Motion Planning</h3>
+                            <p>지능적 경로 계획 및 의사결정 시스템</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Path Planning</span>
+                                <span class="tech-tag">Task Planning</span>
+                                <span class="tech-tag">Multi-Robot</span>
+                                <span class="tech-tag">Real-time Planning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-card-modern control" data-field="control">
+                        <div class="card-background">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center" alt="Control Systems" />
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-modern">
+                            <h3>Control Systems</h3>
+                            <p>로봇 동역학 및 제어 이론</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Kinematics</span>
+                                <span class="tech-tag">Dynamics</span>
+                                <span class="tech-tag">Control Theory</span>
+                                <span class="tech-tag">Force Control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-card-modern manipulation" data-field="manipulation">
+                        <div class="card-background">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMP5Asl8DNGeik4z277o2b4VcEquiPEe2JFw&s" alt="Manipulation" />
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-modern">
+                            <h3>Manipulation</h3>
+                            <p>정교한 로봇 조작 및 그리핑 기술</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Grasping</span>
+                                <span class="tech-tag">Dexterous</span>
+                                <span class="tech-tag">Tactile Sensing</span>
+                                <span class="tech-tag">Manipulation Planning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-card-modern learning" data-field="learning">
+                        <div class="card-background">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop&crop=center" alt="AI & Learning" />
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-modern">
+                            <h3>AI & Learning</h3>
+                            <p>기계학습 및 인공지능 기반 로봇 시스템</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Reinforcement Learning</span>
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">Imitation Learning</span>
+                                <span class="tech-tag">Foundation Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trends Section -->
         <section class="trends tab-pane" id="trend" role="tabpanel" aria-labelledby="tab-trend">
-            <div class="trend-container">
-                <div class="research-trends" id="research-trend">
-                    <h3>Research Trends</h3>
-                    <div class="trend-cards">
-                        <div class="trend-card">
+            <div class="trends-container">
+                
+                <!-- 연구 동향 -->
+                <div class="trend-section">
+                    <h2 class="section-title">연구 동향</h2>
+                    
+                    <div class="research-grid">
+                        <div class="research-category">
                             <h4>Foundation Models for Robotics</h4>
                             <ul>
                                 <li>Large Language Models (LLMs) 기반 로봇 제어</li>
@@ -98,7 +220,8 @@
                                 <li>웹 스케일 지식 전이</li>
                             </ul>
                         </div>
-                        <div class="trend-card">
+
+                        <div class="research-category">
                             <h4>Learning Paradigms</h4>
                             <ul>
                                 <li>Few-shot and Zero-shot Robot Learning</li>
@@ -107,7 +230,8 @@
                                 <li>Continual Learning</li>
                             </ul>
                         </div>
-                        <div class="trend-card">
+
+                        <div class="research-category">
                             <h4>Embodied AI</h4>
                             <ul>
                                 <li>Sim-to-Real Transfer Learning</li>
@@ -116,7 +240,8 @@
                                 <li>Physical Intelligence</li>
                             </ul>
                         </div>
-                        <div class="trend-card">
+
+                        <div class="research-category">
                             <h4>Safety and Robustness</h4>
                             <ul>
                                 <li>Safe Reinforcement Learning</li>
@@ -128,10 +253,12 @@
                     </div>
                 </div>
 
-                <div class="industry-trends" id="industry-trend">
-                    <h3>Industry Trends</h3>
+                <!-- 산업 동향 -->
+                <div class="trend-section">
+                    <h2 class="section-title">산업 동향</h2>
+                    
                     <div class="industry-grid">
-                        <div class="industry-card">
+                        <div class="industry-category">
                             <h4>Smart Manufacturing</h4>
                             <ul>
                                 <li>Industry 4.0 & 스마트 팩토리</li>
@@ -140,7 +267,8 @@
                                 <li>Flexible Automation</li>
                             </ul>
                         </div>
-                        <div class="industry-card">
+
+                        <div class="industry-category">
                             <h4>Autonomous Systems</h4>
                             <ul>
                                 <li>Level 4/5 자율주행 기술</li>
@@ -149,7 +277,8 @@
                                 <li>Fleet Management</li>
                             </ul>
                         </div>
-                        <div class="industry-card">
+
+                        <div class="industry-category">
                             <h4>Service Robotics</h4>
                             <ul>
                                 <li>배송 및 물류 로봇</li>
@@ -158,7 +287,8 @@
                                 <li>개인 맞춤 서비스</li>
                             </ul>
                         </div>
-                        <div class="industry-card">
+
+                        <div class="industry-category">
                             <h4>Healthcare Robotics</h4>
                             <ul>
                                 <li>원격 수술 로봇</li>
@@ -169,356 +299,774 @@
                         </div>
                     </div>
                 </div>
-                </div>
-                <!-- HW subsection under Trend -->
-                <div class="hardware-trends" id="hw">
-                    <h3>HW</h3>
-                    <div class="hw-grid">
-                <div class="hw-category">
-                    <h3>Robot Platforms</h3>
-                    <div class="hw-list">
-                        <div class="hw-item">
-                            <strong>Manipulation:</strong> Franka Emika Panda, UR5/UR10, KUKA iiwa
-                        </div>
-                        <div class="hw-item">
-                            <strong>Mobile:</strong> Boston Dynamics Spot, Agility Digit, TurtleBot4
-                        </div>
-                        <div class="hw-item">
-                            <strong>Humanoid:</strong> Atlas, ASIMO, Optimus
-                        </div>
-                        <div class="hw-item">
-                            <strong>Research:</strong> PR2, Fetch, HSR
-                        </div>
-                    </div>
-                </div>
-                <div class="hw-category">
-                    <h3>Sensor Technology</h3>
-                    <div class="hw-list">
-                        <div class="hw-item">
-                            <strong>LiDAR:</strong> Velodyne VLP-16, Ouster OS1/OS2, Livox Mid-360
-                        </div>
-                        <div class="hw-item">
-                            <strong>Camera:</strong> Intel RealSense, Azure Kinect, ZED 2i
-                        </div>
-                        <div class="hw-item">
-                            <strong>Tactile:</strong> GelSight, OptoForce, SynTouch BioTac
-                        </div>
-                        <div class="hw-item">
-                            <strong>IMU:</strong> Xsens, VectorNav, Bosch BMI088
-                        </div>
-                    </div>
-                </div>
-                <div class="hw-category">
-                    <h3>Computing Hardware</h3>
-                    <div class="hw-list">
-                        <div class="hw-item">
-                            <strong>Edge AI:</strong> NVIDIA Jetson Orin, Intel NUC, Google Coral
-                        </div>
-                        <div class="hw-item">
-                            <strong>GPU:</strong> RTX 4090, A100, H100
-                        </div>
-                        <div class="hw-item">
-                            <strong>Embedded:</strong> Raspberry Pi 4, Jetson Nano, Arduino
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="conferences tab-pane" id="confs" role="tabpanel" aria-labelledby="tab-confs">
-            <div class="conference-container">
-                <div class="domestic-conferences">
-                    <h3>Domestic</h3>
-                    <div class="conf-section">
-                        <h4>Top-Tier Conference</h4>
-                        <ul>
-                            <li>제어·로봇·시스템학회 (ICROS)</li>
-                            <li>한국로봇학회 (KROS)</li>
-                            <li>한국자동제어학회</li>
-                            <li>한국지능로봇경진대회 및 워크숍</li>
-                        </ul>
-                    </div>
-                    <div class="conf-section">
-                        <h4>Journal</h4>
-                        <ul>
-                            <li>한국로봇학회 논문지 (Journal of Korea Robotics Society)</li>
-                            <li>제어·로봇·시스템학회 논문지</li>
-                            <li>한국자동제어학회지</li>
-                            <li>한국정보과학회 논문지 (AI/로봇 관련 일부 포함)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="international-conferences">
-                    <h3>International</h3>
-                    <div class="conf-section">
-                        <h4>Top-Tier Conference</h4>
-                        <ul>
-                            <li><strong>ICRA</strong> (IEEE Int. Conf. on Robotics and Automation)</li>
-                            <li><strong>IROS</strong> (IEEE/RSJ Int. Conf. on Intelligent Robots and Systems)</li>
-                            <li><strong>RSS</strong> (Robotics: Science and Systems)</li>
-                            <li><strong>CoRL</strong> (Conference on Robot Learning)</li>
-                            <li>HRI (Human-Robot Interaction)</li>
-                            <li>Humanoids (Humanoid Robotics Conference)</li>
-                            <li>NeurIPS, ICML, ICLR (AI/ML 관련)</li>
-                            <li>CVPR, ICCV, ECCV (Computer Vision 관련)</li>
-                        </ul>
-                    </div>
-                    <div class="conf-section">
-                        <h4>Journal</h4>
-                        <ul>
-                            <li><strong>IJRR</strong> (International Journal of Robotics Research)</li>
-                            <li><strong>IEEE T-RO</strong> (Transactions on Robotics)</li>
-                            <li><strong>IEEE RA-L</strong> (Robotics and Automation Letters)</li>
-                            <li>Autonomous Robots</li>
-                            <li>IEEE T-PAMI (Pattern Analysis and Machine Intelligence)</li>
-                            <li>JMLR (Journal of Machine Learning Research)</li>
-                            <li><strong>IEEE T-AC</strong> (Transactions on Automatic Control)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <!-- HW -->
+                <div class="trend-section">
+                    <h2 class="section-title">HW</h2>
+                    
+                    <div class="hardware-grid">
+                        <div class="hw-category">
+                            <h4>Robot Platforms</h4>
+                            <ul>
+                                <li>Manipulation: Franka Emika Panda, UR5/UR10, KUKA iiwa</li>
+                                <li>Mobile: Boston Dynamics Spot, Agility Digit, TurtleBot4</li>
+                                <li>Humanoid: Atlas, ASIMO, Optimus</li>
+                                <li>Research: PR2, Fetch, HSR</li>
+                            </ul>
+                        </div>
 
-        <section class="learning tab-pane" id="learning" role="tabpanel" aria-labelledby="tab-learning">
-            <div class="learning-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="theory">Theory</button>
-                    <button class="tab-btn" data-tab="practice">Practice</button>
-                    <button class="tab-btn" data-tab="books">Books</button>
-                    <button class="tab-btn" data-tab="lectures">Lectures</button>
-                </div>
+                        <div class="hw-category">
+                            <h4>Sensor Technology</h4>
+                            <ul>
+                                <li>LiDAR: Velodyne VLP-16, Ouster OS1/OS2, Livox Mid-360</li>
+                                <li>Camera: Intel RealSense, Azure Kinect, ZED 2i</li>
+                                <li>Tactile: GelSight, OptoForce, SynTouch BioTac</li>
+                                <li>IMU: Xsens, VectorNav, Bosch BMI088</li>
+                            </ul>
+                        </div>
 
-                <div class="tab-content active" id="theory">
-                    <div class="theory-grid">
-                        <div class="theory-section">
-                            <h4>Mathematics</h4>
+                        <div class="hw-category">
+                            <h4>Computing Hardware</h4>
                             <ul>
-                                <li>선형대수학</li>
-                                <li>확률론 및 통계학</li>
-                                <li>최적화 (Convex Optimization)</li>
-                            </ul>
-                        </div>
-                        <div class="theory-section">
-                            <h4>Control Theory</h4>
-                            <ul>
-                                <li>PID 제어</li>
-                                <li>상태공간 모델</li>
-                                <li>LQR (최적 제어)</li>
-                                <li>비선형 제어</li>
-                            </ul>
-                        </div>
-                        <div class="theory-section">
-                            <h4>Robotics Theory</h4>
-                            <ul>
-                                <li>운동학 (Kinematics)</li>
-                                <li>동역학 (Dynamics)</li>
-                                <li>자코비안</li>
-                                <li>SLAM 이론</li>
-                                <li>모션플래닝 알고리즘</li>
-                            </ul>
-                        </div>
-                        <div class="theory-section">
-                            <h4>Computer Vision</h4>
-                            <ul>
-                                <li>카메라 모델링</li>
-                                <li>3D 인식</li>
-                                <li>객체 탐지</li>
-                            </ul>
-                        </div>
-                        <div class="theory-section">
-                            <h4>Machine Learning Theory</h4>
-                            <ul>
-                                <li>지도학습 / 비지도학습</li>
-                                <li>강화학습</li>
-                                <li>딥러닝</li>
-                                <li>Bayesian Methods</li>
-                            </ul>
-                        </div>
-                        <div class="theory-section">
-                            <h4>Systems Theory</h4>
-                            <ul>
-                                <li>신호처리 및 필터링</li>
-                                <li>상태추정 (Kalman, Particle Filter)</li>
-                                <li>시스템 식별 (System Identification)</li>
-                                <li>강인 제어 (Robust Control)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-content" id="practice">
-                    <div class="practice-grid">
-                        <div class="practice-section">
-                            <h4>Programming</h4>
-                            <ul>
-                                <li>Python (NumPy, SciPy, PyTorch/TensorFlow, OpenCV)</li>
-                                <li>C++ (실시간 시스템, ROS 개발)</li>
-                                <li>MATLAB/Simulink</li>
-                            </ul>
-                        </div>
-                        <div class="practice-section">
-                            <h4>Robot Platform Practice</h4>
-                            <ul>
-                                <li>ROS/ROS2: 노드, 토픽, 서비스, 액션, 런치 파일</li>
-                                <li>RViz, Gazebo 시뮬레이션</li>
-                                <li>Docker 환경 구축</li>
-                            </ul>
-                        </div>
-                        <div class="practice-section">
-                            <h4>Simulation</h4>
-                            <ul>
-                                <li>Gazebo (범용)</li>
-                                <li>MuJoCo (접촉-rich 조작)</li>
-                                <li>PyBullet (경량, 빠른 프로토타이핑)</li>
-                                <li>NVIDIA Isaac Sim (GPU 가속, 대규모 병렬 DRL 훈련)</li>
-                            </ul>
-                        </div>
-                        <div class="practice-section">
-                            <h4>Embedded Systems</h4>
-                            <ul>
-                                <li>Arduino</li>
-                                <li>Raspberry Pi</li>
-                                <li>NVIDIA Jetson</li>
-                            </ul>
-                        </div>
-                        <div class="practice-section">
-                            <h4>Data Processing</h4>
-                            <ul>
-                                <li>OpenCV, PCL</li>
-                                <li>센서 데이터 처리 및 Fusion</li>
-                                <li>Dataset 생성 및 어노테이션</li>
-                            </ul>
-                        </div>
-                        <div class="practice-section">
-                            <h4>Project Management</h4>
-                            <ul>
-                                <li>Git 버전 관리</li>
-                                <li>Docker / 컨테이너</li>
-                                <li>CI/CD 파이프라인</li>
-                                <li>Agile 개발 방법론</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-content" id="books">
-                    <div class="books-grid">
-                        <div class="book-category">
-                            <h4>Mathematics & Optimization</h4>
-                            <ul>
-                                <li>선형대수학과 그 응용 – Gilbert Strang (번역본, 사이텍미디어)</li>
-                                <li>확률 및 통계 – Morris H. DeGroot (번역본, 피어슨)</li>
-                                <li>최적화 모델링 – Stephen Boyd (일부 번역 교재, 국내 대학 강의용 배포)</li>
-                            </ul>
-                        </div>
-                        <div class="book-category">
-                            <h4>Control Theory</h4>
-                            <ul>
-                                <li>현대 제어공학 – Katsuhiko Ogata (번역본, 피어슨)</li>
-                                <li>제어공학 – 김덕현, 한형석 (국내 저자)</li>
-                            </ul>
-                        </div>
-                        <div class="book-category">
-                            <h4>Robotics Theory</h4>
-                            <ul>
-                                <li>모던 로보틱스: 기구학, 동역학, 제어 – Kevin Lynch, Frank Park (번역본, 청람)</li>
-                                <li>로봇공학 – John J. Craig (번역본, 시그마프레스)</li>
-                                <li>로봇공학 기초 – 김종욱 외 (국내 저자)</li>
-                            </ul>
-                        </div>
-                        <div class="book-category">
-                            <h4>Computer Vision</h4>
-                            <ul>
-                                <li>컴퓨터 비전: 알고리즘과 응용 – Richard Szeliski (번역본, 에이콘출판사)</li>
-                                <li>멀티플 뷰 기하학 – Hartley & Zisserman (번역본, 한티미디어)</li>
-                            </ul>
-                        </div>
-                        <div class="book-category">
-                            <h4>Machine Learning & Deep Learning</h4>
-                            <ul>
-                                <li>패턴인식과 머신러닝 – Christopher Bishop (번역본, 한티미디어)</li>
-                                <li>딥러닝 – Ian Goodfellow, Yoshua Bengio, Aaron Courville (번역본, 한빛미디어)</li>
-                                <li>머신러닝 교과서 – 박해선 (국내 저자, 길벗)</li>
-                            </ul>
-                        </div>
-                        <div class="book-category">
-                            <h4>Reinforcement Learning</h4>
-                            <ul>
-                                <li>강화학습: 이론과 알고리즘 – Sutton & Barto (번역본, 에이콘출판사)</li>
-                                <li>파이썬과 케라스로 배우는 강화학습 – 한정헌 (국내 저자, 위키북스)</li>
-                            </ul>
-                        </div>
-                        <div class="book-category">
-                            <h4>ROS & Simulation</h4>
-                            <ul>
-                                <li>ROS 로봇 프로그래밍 – 김동근 외 (국내 저자, 루비페이퍼)</li>
-                                <li>ROS2 로봇 프로그래밍 – 김동근 외 (국내 저자, 루비페이퍼)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-content" id="lectures">
-                    <div class="lectures-grid">
-                        <div class="lecture-category">
-                            <h4>Mathematics & Optimization</h4>
-                            <ul>
-                                <li>K-MOOC: 선형대수학 (연세대 이영무 교수)</li>
-                                <li>K-MOOC: 확률 및 통계 (서울대, KAIST 강좌 다수)</li>
-                            </ul>
-                        </div>
-                        <div class="lecture-category">
-                            <h4>Control Theory</h4>
-                            <ul>
-                                <li>K-MOOC: 제어공학 (포항공대, 부산대 제공)</li>
-                                <li>EBS 강의: 제어시스템 기초</li>
-                            </ul>
-                        </div>
-                        <div class="lecture-category">
-                            <h4>Robotics Theory</h4>
-                            <ul>
-                                <li>K-MOOC: 로봇공학 (서울대, KAIST, 한양대 제공)</li>
-                                <li>유튜브: 한국로봇학회(KROS) 공개 강연 및 튜토리얼</li>
-                            </ul>
-                        </div>
-                        <div class="lecture-category">
-                            <h4>Computer Vision</h4>
-                            <ul>
-                                <li>K-MOOC: 컴퓨터 비전 (KAIST, 고려대 제공)</li>
-                                <li>모두의연구소: 딥러닝/비전 스터디 강좌</li>
-                            </ul>
-                        </div>
-                        <div class="lecture-category">
-                            <h4>Machine Learning & Deep Learning</h4>
-                            <ul>
-                                <li>K-MOOC: 머신러닝 (서울대, 연세대)</li>
-                                <li>K-MOOC: 딥러닝 (KAIST)</li>
-                                <li>Fast Campus/인프런: 파이토치/텐서플로 딥러닝 강좌 (한국어)</li>
-                            </ul>
-                        </div>
-                        <div class="lecture-category">
-                            <h4>Reinforcement Learning</h4>
-                            <ul>
-                                <li>모두의연구소: RL 스터디/강의</li>
-                                <li>K-MOOC: 강화학습 개론 (KAIST, 진행 중)</li>
-                            </ul>
-                        </div>
-                        <div class="lecture-category">
-                            <h4>ROS & Simulation</h4>
-                            <ul>
-                                <li>K-MOOC: ROS와 로봇 프로그래밍 (한양대, 충북대 제공)</li>
-                                <li>유튜브: ROS Korea 사용자 그룹 세미나</li>
+                                <li>Edge AI: NVIDIA Jetson Orin, Intel NUC, Google Coral</li>
+                                <li>GPU: RTX 4090, A100, H100</li>
+                                <li>Embedded: Raspberry Pi 4, Jetson Nano, Arduino</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        </div>
+
+        <!-- Conferences Section -->
+        <section class="tab-pane" id="confs" role="tabpanel">
+            <div class="section-container">
+                <div class="section-header">
+                </div>
+
+                <div class="conferences-layout">
+                    <!-- International Conferences -->
+                    <div class="conference-category international">
+                        <div class="category-header">
+                            <div class="category-icon">🌍</div>
+                            <div class="category-info">
+                                <h3>International Conferences</h3>
+                                <p>세계적으로 인정받는 최고 수준의 학회</p>
+                            </div>
+                        </div>
+
+                        <div class="conference-grid">
+                            <div class="conference-card tier-1">
+                                <div class="conf-badge">Tier 1</div>
+                                <div class="conf-info">
+                                    <h4>ICRA</h4>
+                                    <p>IEEE International Conference on Robotics and Automation</p>
+                                    <div class="conf-stats">
+                                        <span class="stat">Accept Rate: ~45%</span>
+                                        <span class="stat">H-Index: 180+</span>
+                                    </div>
+                                    <div class="conf-topics">
+                                        <span class="topic">Manipulation</span>
+                                        <span class="topic">Autonomy</span>
+                                        <span class="topic">Perception</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-card tier-1">
+                                <div class="conf-badge">Tier 1</div>
+                                <div class="conf-info">
+                                    <h4>IROS</h4>
+                                    <p>IEEE/RSJ International Conference on Intelligent Robots and Systems</p>
+                                    <div class="conf-stats">
+                                        <span class="stat">Accept Rate: ~48%</span>
+                                        <span class="stat">H-Index: 150+</span>
+                                    </div>
+                                    <div class="conf-topics">
+                                        <span class="topic">AI Robotics</span>
+                                        <span class="topic">SLAM</span>
+                                        <span class="topic">Control</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-card tier-1">
+                                <div class="conf-badge">Tier 1</div>
+                                <div class="conf-info">
+                                    <h4>RSS</h4>
+                                    <p>Robotics: Science and Systems</p>
+                                    <div class="conf-stats">
+                                        <span class="stat">Accept Rate: ~25%</span>
+                                        <span class="stat">H-Index: 120+</span>
+                                    </div>
+                                    <div class="conf-topics">
+                                        <span class="topic">Theory</span>
+                                        <span class="topic">Systems</span>
+                                        <span class="topic">Learning</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-card tier-2">
+                                <div class="conf-badge">Tier 2</div>
+                                <div class="conf-info">
+                                    <h4>CoRL</h4>
+                                    <p>Conference on Robot Learning</p>
+                                    <div class="conf-stats">
+                                        <span class="stat">Accept Rate: ~32%</span>
+                                        <span class="stat">H-Index: 85+</span>
+                                    </div>
+                                    <div class="conf-topics">
+                                        <span class="topic">Deep RL</span>
+                                        <span class="topic">Imitation</span>
+                                        <span class="topic">Foundation Models</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-card tier-2">
+                                <div class="conf-badge">Related</div>
+                                <div class="conf-info">
+                                    <h4>NeurIPS</h4>
+                                    <p>Neural Information Processing Systems</p>
+                                    <div class="conf-stats">
+                                        <span class="stat">Accept Rate: ~20%</span>
+                                        <span class="stat">H-Index: 200+</span>
+                                    </div>
+                                    <div class="conf-topics">
+                                        <span class="topic">ML Theory</span>
+                                        <span class="topic">RL</span>
+                                        <span class="topic">AI Safety</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-card tier-2">
+                                <div class="conf-badge">Related</div>
+                                <div class="conf-info">
+                                    <h4>CVPR</h4>
+                                    <p>Computer Vision and Pattern Recognition</p>
+                                    <div class="conf-stats">
+                                        <span class="stat">Accept Rate: ~25%</span>
+                                        <span class="stat">H-Index: 220+</span>
+                                    </div>
+                                    <div class="conf-topics">
+                                        <span class="topic">3D Vision</span>
+                                        <span class="topic">Scene Understanding</span>
+                                        <span class="topic">Visual Navigation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="journal-section">
+                            <h4 class="journal-title">📖 Top Journals</h4>
+                            <div class="journal-list">
+                                <div class="journal-item">
+                                    <div class="journal-info">
+                                        <strong>IJRR</strong>
+                                        <span>International Journal of Robotics Research</span>
+                                    </div>
+                                    <div class="journal-metrics">
+                                        <span class="impact">IF: 8.5</span>
+                                        <span class="quartile">Q1</span>
+                                    </div>
+                                </div>
+                                <div class="journal-item">
+                                    <div class="journal-info">
+                                        <strong>IEEE T-RO</strong>
+                                        <span>IEEE Transactions on Robotics</span>
+                                    </div>
+                                    <div class="journal-metrics">
+                                        <span class="impact">IF: 7.2</span>
+                                        <span class="quartile">Q1</span>
+                                    </div>
+                                </div>
+                                <div class="journal-item">
+                                    <div class="journal-info">
+                                        <strong>IEEE RA-L</strong>
+                                        <span>Robotics and Automation Letters</span>
+                                    </div>
+                                    <div class="journal-metrics">
+                                        <span class="impact">IF: 5.2</span>
+                                        <span class="quartile">Q1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domestic Conferences -->
+                    <div class="conference-category domestic">
+                        <div class="category-header">
+                            <div class="category-icon">🇰🇷</div>
+                            <div class="category-info">
+                                <h3>Domestic Conferences</h3>
+                                <p>국내 로봇공학 연구의 중심지</p>
+                            </div>
+                        </div>
+
+                        <div class="domestic-conferences-grid">
+                            <div class="domestic-card">
+                                <div class="domestic-header">
+                                    <h4>한국로봇학회 (KROS)</h4>
+                                    <div class="domestic-badge">학회</div>
+                                </div>
+                                <div class="domestic-content">
+                                    <p>국내 최대 로봇공학 학회로 연 2회 학술대회 개최</p>
+                                    <div class="domestic-topics">
+                                        <span class="topic">지능로봇</span>
+                                        <span class="topic">산업로봇</span>
+                                        <span class="topic">서비스로봇</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domestic-card">
+                                <div class="domestic-header">
+                                    <h4>제어로봇시스템학회 (ICROS)</h4>
+                                    <div class="domestic-badge">학회</div>
+                                </div>
+                                <div class="domestic-content">
+                                    <p>제어 이론과 로봇 시스템의 융합 연구</p>
+                                    <div class="domestic-topics">
+                                        <span class="topic">제어이론</span>
+                                        <span class="topic">시스템공학</span>
+                                        <span class="topic">자동화</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domestic-card">
+                                <div class="domestic-header">
+                                    <h4>한국지능로봇경진대회</h4>
+                                    <div class="domestic-badge">대회</div>
+                                </div>
+                                <div class="domestic-content">
+                                    <p>학생 및 연구자를 위한 실전 로봇 경진대회</p>
+                                    <div class="domestic-topics">
+                                        <span class="topic">자율주행</span>
+                                        <span class="topic">휴머노이드</span>
+                                        <span class="topic">드론</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="journal-section">
+                            <h4 class="journal-title">📖 국내 저널</h4>
+                            <div class="journal-list">
+                                <div class="journal-item">
+                                    <div class="journal-info">
+                                        <strong>로봇학회 논문지</strong>
+                                        <span>Journal of Korea Robotics Society</span>
+                                    </div>
+                                    <div class="journal-metrics">
+                                        <span class="impact">KCI</span>
+                                        <span class="quartile">국내우수</span>
+                                    </div>
+                                </div>
+                                <div class="journal-item">
+                                    <div class="journal-info">
+                                        <strong>제어로봇시스템학회 논문지</strong>
+                                        <span>Journal of ICROS</span>
+                                    </div>
+                                    <div class="journal-metrics">
+                                        <span class="impact">KCI</span>
+                                        <span class="quartile">국내우수</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Guide Section -->
+        <section class="tab-pane" id="learning" role="tabpanel">
+            <div class="section-container">
+                <div class="section-header">
+                </div>
+
+                <div class="learning-path">
+                    <div class="path-navigation">
+                        <button class="path-tab active" data-path="roadmap">🗺️ Learning Roadmap</button>
+                        <button class="path-tab" data-path="theory">📐 Theory</button>
+                        <button class="path-tab" data-path="practice">💻 Practice</button>
+                        <button class="path-tab" data-path="resources">📚 Resources</button>
+                    </div>
+
+                    <!-- Learning Roadmap -->
+                    <div class="path-content active" id="roadmap">
+                        <div class="roadmap-timeline">
+                            <div class="roadmap-phase" data-phase="foundation">
+                                <div class="phase-marker">1</div>
+                                <div class="phase-content">
+                                    <h3>Foundation Phase (1-2년)</h3>
+                                    <p>기초 수학 및 프로그래밍 역량 구축</p>
+                                    <div class="phase-skills">
+                                        <div class="skill-category">
+                                            <h4>수학 기초</h4>
+                                            <ul>
+                                                <li>선형대수학 (고유값, 특이값 분해)</li>
+                                                <li>확률론 및 통계학</li>
+                                                <li>미적분학 (다변수, 벡터)</li>
+                                                <li>최적화 이론</li>
+                                            </ul>
+                                        </div>
+                                        <div class="skill-category">
+                                            <h4>프로그래밍</h4>
+                                            <ul>
+                                                <li>Python (NumPy, SciPy, Matplotlib)</li>
+                                                <li>C++ 기초 (STL, OOP)</li>
+                                                <li>MATLAB/Simulink</li>
+                                                <li>Git 버전 관리</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="phase-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 100%"></div>
+                                        </div>
+                                        <span class="progress-label">기초 완료</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="roadmap-phase" data-phase="intermediate">
+                                <div class="phase-marker">2</div>
+                                <div class="phase-content">
+                                    <h3>Intermediate Phase (2-3년)</h3>
+                                    <p>로봇공학 핵심 이론 및 실습</p>
+                                    <div class="phase-skills">
+                                        <div class="skill-category">
+                                            <h4>로봇공학 이론</h4>
+                                            <ul>
+                                                <li>운동학 (Kinematics)</li>
+                                                <li>동역학 (Dynamics)</li>
+                                                <li>제어 이론 (PID, LQR)</li>
+                                                <li>SLAM 기초</li>
+                                            </ul>
+                                        </div>
+                                        <div class="skill-category">
+                                            <h4>시스템 구현</h4>
+                                            <ul>
+                                                <li>ROS/ROS2 프레임워크</li>
+                                                <li>OpenCV 컴퓨터 비전</li>
+                                                <li>PCL 포인트클라우드</li>
+                                                <li>Gazebo 시뮬레이션</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="phase-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 75%"></div>
+                                        </div>
+                                        <span class="progress-label">진행 중</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="roadmap-phase" data-phase="advanced">
+                                <div class="phase-marker">3</div>
+                                <div class="phase-content">
+                                    <h3>Advanced Phase (3-4년)</h3>
+                                    <p>AI 및 딥러닝 기반 지능형 로봇</p>
+                                    <div class="phase-skills">
+                                        <div class="skill-category">
+                                            <h4>AI/ML</h4>
+                                            <ul>
+                                                <li>딥러닝 (CNN, RNN, Transformer)</li>
+                                                <li>강화학습 (Q-learning, Policy Gradient)</li>
+                                                <li>컴퓨터 비전 (Object Detection, SLAM)</li>
+                                                <li>자연어 처리 (LLM Integration)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="skill-category">
+                                            <h4>전문 분야</h4>
+                                            <ul>
+                                                <li>모션 플래닝 고급 기법</li>
+                                                <li>다중 로봇 시스템</li>
+                                                <li>Human-Robot Interaction</li>
+                                                <li>실시간 시스템 최적화</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="phase-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 45%"></div>
+                                        </div>
+                                        <span class="progress-label">계획 중</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="roadmap-phase" data-phase="expert">
+                                <div class="phase-marker">4</div>
+                                <div class="phase-content">
+                                    <h3>Expert Phase (4+년)</h3>
+                                    <p>연구 및 혁신 주도</p>
+                                    <div class="phase-skills">
+                                        <div class="skill-category">
+                                            <h4>연구 역량</h4>
+                                            <ul>
+                                                <li>논문 작성 및 발표</li>
+                                                <li>연구 방법론</li>
+                                                <li>프로젝트 관리</li>
+                                                <li>학제간 협업</li>
+                                            </ul>
+                                        </div>
+                                        <div class="skill-category">
+                                            <h4>혁신 기술</h4>
+                                            <ul>
+                                                <li>Foundation Models for Robotics</li>
+                                                <li>Neuromorphic Computing</li>
+                                                <li>Quantum Robotics</li>
+                                                <li>Bio-inspired Systems</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="phase-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 20%"></div>
+                                        </div>
+                                        <span class="progress-label">목표</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Theory Section -->
+                    <div class="path-content" id="theory">
+                        <div class="theory-modules">
+                            <div class="theory-module">
+                                <div class="module-header">
+                                    <div class="module-icon">🔢</div>
+                                    <h3>Mathematics Foundations</h3>
+                                </div>
+                                <div class="module-content">
+                                    <div class="topic-list">
+                                        <div class="topic-item">
+                                            <h4>Linear Algebra</h4>
+                                            <p>행렬 연산, 고유값, SVD, 좌표 변환</p>
+                                            <div class="difficulty">★★☆</div>
+                                        </div>
+                                        <div class="topic-item">
+                                            <h4>Probability & Statistics</h4>
+                                            <p>확률 분포, 베이즈 정리, 추정 이론</p>
+                                            <div class="difficulty">★★☆</div>
+                                        </div>
+                                        <div class="topic-item">
+                                            <h4>Optimization</h4>
+                                            <p>선형/비선형 최적화, 제약 조건 최적화</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="theory-module">
+                                <div class="module-header">
+                                    <div class="module-icon">🤖</div>
+                                    <h3>Robotics Theory</h3>
+                                </div>
+                                <div class="module-content">
+                                    <div class="topic-list">
+                                        <div class="topic-item">
+                                            <h4>Kinematics</h4>
+                                            <p>순/역운동학, 자코비안, 특이점 해석</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                        <div class="topic-item">
+                                            <h4>Dynamics</h4>
+                                            <p>뉴턴-오일러, 라그랑주 역학</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                        <div class="topic-item">
+                                            <h4>Control Theory</h4>
+                                            <p>PID, 상태공간, LQR, 비선형 제어</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="theory-module">
+                                <div class="module-header">
+                                    <div class="module-icon">🧠</div>
+                                    <h3>AI & Machine Learning</h3>
+                                </div>
+                                <div class="module-content">
+                                    <div class="topic-list">
+                                        <div class="topic-item">
+                                            <h4>Deep Learning</h4>
+                                            <p>CNN, RNN, Transformer 아키텍처</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                        <div class="topic-item">
+                                            <h4>Reinforcement Learning</h4>
+                                            <p>Q-learning, Policy Gradient, Actor-Critic</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                        <div class="topic-item">
+                                            <h4>Computer Vision</h4>
+                                            <p>Feature Detection, SLAM, 3D Vision</p>
+                                            <div class="difficulty">★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Practice Section -->
+                    <div class="path-content" id="practice">
+                        <div class="practice-projects">
+                            <div class="project-level beginner">
+                                <div class="level-header">
+                                    <div class="level-badge">초급</div>
+                                    <h3>Beginner Projects</h3>
+                                </div>
+                                <div class="project-grid">
+                                    <div class="project-card">
+                                        <div class="project-icon">🚗</div>
+                                        <h4>Line Following Robot</h4>
+                                        <p>카메라를 이용한 기본적인 라인 추적 로봇</p>
+                                        <div class="project-skills">
+                                            <span class="skill">OpenCV</span>
+                                            <span class="skill">PID Control</span>
+                                            <span class="skill">Arduino</span>
+                                        </div>
+                                        <div class="project-duration">⏱️ 2-3주</div>
+                                    </div>
+                                    <div class="project-card">
+                                        <div class="project-icon">🦾</div>
+                                        <h4>Robotic Arm Control</h4>
+                                        <p>순/역운동학 기반 3DOF 로봇팔 제어</p>
+                                        <div class="project-skills">
+                                            <span class="skill">Kinematics</span>
+                                            <span class="skill">ROS</span>
+                                            <span class="skill">Servo Control</span>
+                                        </div>
+                                        <div class="project-duration">⏱️ 3-4주</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-level intermediate">
+                                <div class="level-header">
+                                    <div class="level-badge">중급</div>
+                                    <h3>Intermediate Projects</h3>
+                                </div>
+                                <div class="project-grid">
+                                    <div class="project-card">
+                                        <div class="project-icon">🗺️</div>
+                                        <h4>Visual SLAM</h4>
+                                        <p>ORB-SLAM을 이용한 실시간 위치추정 및 지도작성</p>
+                                        <div class="project-skills">
+                                            <span class="skill">SLAM</span>
+                                            <span class="skill">Feature Matching</span>
+                                            <span class="skill">3D Reconstruction</span>
+                                        </div>
+                                        <div class="project-duration">⏱️ 6-8주</div>
+                                    </div>
+                                    <div class="project-card">
+                                        <div class="project-icon">🎯</div>
+                                        <h4>Path Planning</h4>
+                                        <p>A* 및 RRT 알고리즘을 이용한 경로 계획</p>
+                                        <div class="project-skills">
+                                            <span class="skill">Motion Planning</span>
+                                            <span class="skill">Obstacle Avoidance</span>
+                                            <span class="skill">Gazebo</span>
+                                        </div>
+                                        <div class="project-duration">⏱️ 4-6주</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-level advanced">
+                                <div class="level-header">
+                                    <div class="level-badge">고급</div>
+                                    <h3>Advanced Projects</h3>
+                                </div>
+                                <div class="project-grid">
+                                    <div class="project-card">
+                                        <div class="project-icon">🏠</div>
+                                        <h4>Autonomous Navigation</h4>
+                                        <p>딥러닝 기반 실내 자율주행 로봇 시스템</p>
+                                        <div class="project-skills">
+                                            <span class="skill">Deep RL</span>
+                                            <span class="skill">Sensor Fusion</span>
+                                            <span class="skill">Real-time Planning</span>
+                                        </div>
+                                        <div class="project-duration">⏱️ 10-12주</div>
+                                    </div>
+                                    <div class="project-card">
+                                        <div class="project-icon">🤏</div>
+                                        <h4>Dexterous Manipulation</h4>
+                                        <p>강화학습을 이용한 정교한 물체 조작</p>
+                                        <div class="project-skills">
+                                            <span class="skill">Reinforcement Learning</span>
+                                            <span class="skill">Tactile Sensing</span>
+                                            <span class="skill">Force Control</span>
+                                        </div>
+                                        <div class="project-duration">⏱️ 12-16주</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources Section -->
+                    <div class="path-content" id="resources">
+                        <div class="resource-categories">
+                            <div class="resource-category">
+                                <div class="category-header">
+                                    <div class="category-icon">📚</div>
+                                    <h3>Essential Books</h3>
+                                </div>
+                                <div class="resource-list">
+                                    <div class="resource-item">
+                                        <div class="resource-info">
+                                            <h4>Modern Robotics</h4>
+                                            <p>Kevin Lynch, Frank Park</p>
+                                            <div class="resource-tags">
+                                                <span class="tag">Kinematics</span>
+                                                <span class="tag">Dynamics</span>
+                                                <span class="tag">Control</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-rating">★★★★★</div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-info">
+                                            <h4>Probabilistic Robotics</h4>
+                                            <p>Sebastian Thrun, Wolfram Burgard</p>
+                                            <div class="resource-tags">
+                                                <span class="tag">SLAM</span>
+                                                <span class="tag">Localization</span>
+                                                <span class="tag">Perception</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-rating">★★★★★</div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-info">
+                                            <h4>Reinforcement Learning: An Introduction</h4>
+                                            <p>Sutton & Barto</p>
+                                            <div class="resource-tags">
+                                                <span class="tag">RL Theory</span>
+                                                <span class="tag">Policy Learning</span>
+                                                <span class="tag">Value Functions</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="resource-category">
+                                <div class="category-header">
+                                    <div class="category-icon">🎥</div>
+                                    <h3>Online Courses</h3>
+                                </div>
+                                <div class="resource-list">
+                                    <div class="resource-item">
+                                        <div class="resource-info">
+                                            <h4>CS287: Advanced Robotics</h4>
+                                            <p>UC Berkeley - Pieter Abbeel</p>
+                                            <div class="resource-tags">
+                                                <span class="tag">Graduate Level</span>
+                                                <span class="tag">Advanced Topics</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-type">🎓 University</div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-info">
+                                            <h4>Robotics Specialization</h4>
+                                            <p>University of Pennsylvania (Coursera)</p>
+                                            <div class="resource-tags">
+                                                <span class="tag">Beginner Friendly</span>
+                                                <span class="tag">Certificate</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-type">💻 MOOC</div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-info">
+                                            <h4>Deep RL Bootcamp</h4>
+                                            <p>Berkeley Deep RL</p>
+                                            <div class="resource-tags">
+                                                <span class="tag">Hands-on</span>
+                                                <span class="tag">Code Examples</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-type">🔧 Practical</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="resource-category">
+                                <div class="category-header">
+                                    <div class="category-icon">💻</div>
+                                    <h3>Tools & Frameworks</h3>
+                                </div>
+                                <div class="tool-grid">
+                                    <div class="tool-card">
+                                        <div class="tool-icon">🤖</div>
+                                        <h4>ROS 2</h4>
+                                        <p>로봇 소프트웨어 개발 프레임워크</p>
+                                        <div class="tool-link">ros.org</div>
+                                    </div>
+                                    <div class="tool-card">
+                                        <div class="tool-icon">🎮</div>
+                                        <h4>Gazebo</h4>
+                                        <p>3D 로봇 시뮬레이션 환경</p>
+                                        <div class="tool-link">gazebosim.org</div>
+                                    </div>
+                                    <div class="tool-card">
+                                        <div class="tool-icon">🔥</div>
+                                        <h4>PyTorch</h4>
+                                        <p>딥러닝 프레임워크</p>
+                                        <div class="tool-link">pytorch.org</div>
+                                    </div>
+                                    <div class="tool-card">
+                                        <div class="tool-icon">👁️</div>
+                                        <h4>OpenCV</h4>
+                                        <p>컴퓨터 비전 라이브러리</p>
+                                        <div class="tool-link">opencv.org</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="scripts/navbar.js"></script>
     <script src="scripts/graduate.js"></script>
+    <script>
+        // Floating animation for hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingCards = document.querySelectorAll('.floating-card');
+            
+            floatingCards.forEach(card => {
+                const speed = parseFloat(card.dataset.speed) || 0.5;
+                let y = 0;
+                
+                function animate() {
+                    y += speed;
+                    card.style.transform = `translateY(${Math.sin(y * 0.01) * 10}px)`;
+                    requestAnimationFrame(animate);
+                }
+                animate();
+            });
+        });
+    </script>
 </body>
 </html>
