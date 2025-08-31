@@ -319,180 +319,163 @@
                         <div class="trend-section hardware">
                             <h3><i class="fas fa-microchip"></i> 최신 하드웨어 트렌드</h3>
                             
-                            <div class="hardware-subsection">
-                                <h4><i class="fas fa-robot"></i> 최신 로봇 플랫폼</h4>
-                                
-                                <div class="platform-grid">
-                                    <div class="platform-card">
-                                        <div class="platform-type manipulation">
-                                            <i class="fas fa-hand-paper"></i>
-                                            <h5>조작 로봇</h5>
+                            <div class="hardware-interactive">
+                                <div class="robot-diagram">
+                                    <div class="robot-container">
+                                        <div class="robot-svg-container">
+                                            <svg class="interactive-robot" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- Robot Arms (Both) - Actuators -->
+                                                <g class="robot-part actuators" data-category="actuators">
+                                                    <!-- Left Arm -->
+                                                    <rect x="79.733" y="174.756" transform="matrix(-0.704 -0.7102 0.7102 -0.704 -0.8879 464.9204)" fill="#ECECED" width="33.417" height="115.779"/>
+                                                    <path fill="#D7D7D7" d="M45.224,328.709l-5.13-33.022c0.903-0.14,2.228-0.555,3.405-1.732c2.41-2.41,2.412-6.335,0-8.745s-6.335-2.412-8.746,0c-1.177,1.177-1.592,2.502-1.732,3.405L0,283.487c1.298-8.351,5.144-15.925,11.123-21.905c15.44-15.44,40.564-15.441,56.005,0s15.44,40.565,0,56.005C61.148,323.566,53.573,327.412,45.224,328.709z"/>
+                                                    <!-- Right Arm -->
+                                                    <rect x="398.851" y="174.74" transform="matrix(0.704 -0.7102 0.7102 0.704 -42.2075 363.9888)" fill="#D7D7D7" width="33.417" height="115.779"/>
+                                                    <path fill="#B0B0B0" d="M466.776,328.709l5.13-33.022c-0.903-0.14-2.228-0.555-3.405-1.732c-2.41-2.41-2.412-6.335,0-8.745c2.412-2.41,6.335-2.412,8.746,0c1.177,1.177,1.592,2.502,1.732,3.405L512,283.487c-1.298-8.351-5.144-15.925-11.123-21.905c-15.44-15.44-40.564-15.441-56.005,0s-15.44,40.565,0,56.005C450.852,323.566,458.426,327.412,466.776,328.709z"/>
+                                                </g>
+                                                
+                                                <!-- Robot Head - Computing -->
+                                                <g class="robot-part computing" data-category="computing">
+                                                    <path fill="#92E5EA" d="M360.457,182.403H151.542v-61.667c0-57.594,46.86-104.451,104.457-104.451s104.457,46.856,104.457,104.451L360.457,182.403L360.457,182.403z"/>
+                                                    <path fill="#79BBBC" d="M360.457,182.403H255.999c0,0,0-143.614,0-166.119c57.598,0,104.457,46.856,104.457,104.451V182.403z"/>
+                                                </g>
+                                                
+                                                <!-- Robot Body - Platforms -->
+                                                <g class="robot-part platforms" data-category="platforms">
+                                                    <rect x="120.836" y="165.694" fill="#D7D7D7" width="270.333" height="253.625"/>
+                                                    <rect x="255.997" y="165.694" fill="#B0B0B0" width="135.161" height="253.625"/>
+                                                    <path fill="#C8F9FA" d="M334.663,309.217H177.337V218.35h157.327L334.663,309.217L334.663,309.217z"/>
+                                                    <path fill="#92E5EA" d="M334.663,309.217h-78.664V218.35h78.664V309.217z"/>
+                                                </g>
+                                                
+                                                <!-- Robot Eyes/Sensors -->
+                                                <g class="robot-part sensors" data-category="sensors">
+                                                    <circle cx="210" cy="99" r="18" fill="#4a90e2"/>
+                                                    <circle cx="302" cy="99" r="18" fill="#4a90e2"/>
+                                                    <rect x="200" y="140" width="112" height="8" rx="4" fill="#ff6b6b"/>
+                                                </g>
+                                                
+                                                <!-- Robot Legs -->
+                                                <g class="robot-legs">
+                                                    <path fill="#8B8B8B" d="M189.799,495.715H85.288V322.484h104.511L189.799,495.715L189.799,495.715z"/>
+                                                    <rect x="85.292" y="358.065" fill="#6F6F6F" width="104.506" height="33.417"/>
+                                                    <rect x="85.292" y="426.781" fill="#6F6F6F" width="104.506" height="33.417"/>
+                                                    <path fill="#6F6F6F" d="M322.2,322.484h104.511v173.231H322.2V322.484z"/>
+                                                    <rect x="322.197" y="358.065" fill="#444444" width="104.506" height="33.417"/>
+                                                    <rect x="322.197" y="426.781" fill="#444444" width="104.506" height="33.417"/>
+                                                </g>
+                                                
+                                            </svg>
                                         </div>
-                                        <div class="platform-list">
-                                            <div class="platform-item popular">
-                                                <strong>Franka Emika Panda</strong>
-                                                <span class="tag">Hot</span>
-                                            </div>
-                                            <div class="platform-item">Universal Robots (UR3e/UR5e)</div>
-                                            <div class="platform-item">KUKA LBR iiwa</div>
-                                            <div class="platform-item">ABB YuMi</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="platform-card">
-                                        <div class="platform-type mobile">
-                                            <i class="fas fa-walking"></i>
-                                            <h5>이동 로봇</h5>
-                                        </div>
-                                        <div class="platform-list">
-                                            <div class="platform-item popular">
-                                                <strong>Boston Dynamics Spot</strong>
-                                                <span class="tag">Popular</span>
-                                            </div>
-                                            <div class="platform-item">ANYbotics ANYmal</div>
-                                            <div class="platform-item">Ghost Robotics Vision 60</div>
-                                            <div class="platform-item">TurtleBot4</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="platform-card">
-                                        <div class="platform-type humanoid">
-                                            <i class="fas fa-user"></i>
-                                            <h5>휴머노이드 로봇</h5>
-                                        </div>
-                                        <div class="platform-list">
-                                            <div class="platform-item popular">
-                                                <strong>Tesla Optimus</strong>
-                                                <span class="tag">2024 Hot</span>
-                                            </div>
-                                            <div class="platform-item">Boston Dynamics Atlas</div>
-                                            <div class="platform-item">Agility Robotics Digit</div>
-                                            <div class="platform-item">Toyota HSR</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="platform-card">
-                                        <div class="platform-type research">
-                                            <i class="fas fa-drone"></i>
-                                            <h5>드론 & UAV</h5>
-                                        </div>
-                                        <div class="platform-list">
-                                            <div class="platform-item">DJI Matrice 300/350</div>
-                                            <div class="platform-item">Autel EVO II Pro</div>
-                                            <div class="platform-item">Custom Racing Drones</div>
-                                            <div class="platform-item">Swarm Robotics Platforms</div>
+                                        
+                                        <div class="interaction-hint">
+                                            <i class="fas fa-hand-pointer"></i>
+                                            <span>로봇 부위를 클릭하세요</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="hardware-subsection">
-                                <h4><i class="fas fa-satellite-dish"></i> 차세대 센서 기술</h4>
                                 
-                                <div class="sensor-grid">
-                                    <div class="sensor-card lidar">
-                                        <div class="sensor-icon">
-                                            <i class="fas fa-radar-alt"></i>
-                                        </div>
-                                        <h5>LiDAR 발전</h5>
-                                        <ul>
-                                            <li>Solid-State LiDAR (Livox Mid-360)</li>
-                                            <li>4D Imaging Radar</li>
-                                            <li>Automotive LiDAR (Waymo, Velodyne)</li>
-                                            <li>Miniaturized LiDAR Arrays</li>
-                                        </ul>
+                                <div class="hardware-panel">
+                                    <div class="panel-header">
+                                        <h4 id="panel-title">차세대 로봇 플랫폼</h4>
+                                        <span class="panel-badge" id="panel-badge">2024 HOT</span>
                                     </div>
-
-                                    <div class="sensor-card camera">
-                                        <div class="sensor-icon">
-                                            <i class="fas fa-camera"></i>
-                                        </div>
-                                        <h5>고성능 비전 시스템</h5>
-                                        <ul>
-                                            <li>Event-based Cameras (Prophesee)</li>
-                                            <li>Multi-spectral Imaging</li>
-                                            <li>Intel RealSense D455</li>
-                                            <li>Apple LiDAR Scanner</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="sensor-card tactile">
-                                        <div class="sensor-icon">
-                                            <i class="fas fa-hand-paper"></i>
-                                        </div>
-                                        <h5>촉각 센서 혁신</h5>
-                                        <ul>
-                                            <li>Meta Digit 360</li>
-                                            <li>SynTouch BioTac</li>
-                                            <li>Flexible Tactile Arrays</li>
-                                            <li>AI-enhanced Force Sensors</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="sensor-card imu">
-                                        <div class="sensor-icon">
-                                            <i class="fas fa-compass"></i>
-                                        </div>
-                                        <h5>정밀 측위 기술</h5>
-                                        <ul>
-                                            <li>RTK-GPS (cm-level accuracy)</li>
-                                            <li>Visual-Inertial Odometry</li>
-                                            <li>Ultra-Wideband (UWB)</li>
-                                            <li>SLAM-based Localization</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="hardware-subsection">
-                                <h4><i class="fas fa-server"></i> 차세대 컴퓨팅 하드웨어</h4>
-                                
-                                <div class="computing-grid">
-                                    <div class="computing-card edge-ai">
-                                        <div class="computing-icon">
-                                            <i class="fas fa-microchip"></i>
-                                        </div>
-                                        <h5>AI 전용 칩</h5>
-                                        <div class="spec-list">
-                                            <div class="spec-item recommended">
-                                                <strong>NVIDIA Jetson Orin Nano</strong>
-                                                <span class="spec-tag">2024</span>
+                                    
+                                    <div class="hardware-content">
+                                        <!-- Platforms Content (Default) -->
+                                        <div class="hardware-category-content active" data-category="platforms">
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">Tesla Bot Gen-2</span>
+                                                <span class="item-spec">Optimus 휴머노이드</span>
                                             </div>
-                                            <div class="spec-item">Google Coral TPU</div>
-                                            <div class="spec-item">Intel Neural Compute Stick</div>
-                                            <div class="spec-item">Apple M3 Neural Engine</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="computing-card gpu">
-                                        <div class="computing-icon">
-                                            <i class="fas fa-desktop"></i>
-                                        </div>
-                                        <h5>GPU 혁신</h5>
-                                        <div class="spec-list">
-                                            <div class="spec-item high-end">
-                                                <strong>NVIDIA RTX 4090</strong>
-                                                <span class="spec-tag">Gaming</span>
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">Figure 01</span>
+                                                <span class="item-spec">OpenAI 협력 로봇</span>
                                             </div>
-                                            <div class="spec-item enterprise">NVIDIA H100</div>
-                                            <div class="spec-item enterprise">AMD MI300X</div>
-                                            <div class="spec-item">Custom AI Accelerators</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="computing-card embedded">
-                                        <div class="computing-icon">
-                                            <i class="fas fa-cpu"></i>
-                                        </div>
-                                        <h5>임베디드 시스템</h5>
-                                        <div class="spec-list">
-                                            <div class="spec-item popular">
-                                                <strong>Raspberry Pi 5</strong>
-                                                <span class="spec-tag">2024</span>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Boston Dynamics Atlas</span>
+                                                <span class="item-spec">전기 구동 버전</span>
                                             </div>
-                                            <div class="spec-item">NVIDIA Jetson Xavier NX</div>
-                                            <div class="spec-item">Intel NUC 13</div>
-                                            <div class="spec-item">ARM-based SoCs</div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Agility Digit v6</span>
+                                                <span class="item-spec">물류 자동화</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">1X NEO Beta</span>
+                                                <span class="item-spec">가정용 로봇</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Computing Content -->
+                                        <div class="hardware-category-content" data-category="computing">
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">NVIDIA Jetson Thor</span>
+                                                <span class="item-spec">2000 TOPS AI 성능</span>
+                                            </div>
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">Apple M4 Ultra</span>
+                                                <span class="item-spec">Neural Engine 38 TOPS</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Qualcomm RB5</span>
+                                                <span class="item-spec">로봇 전용 플랫폼</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Intel Loihi 2</span>
+                                                <span class="item-spec">뉴로모픽 칩</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Google Coral TPU</span>
+                                                <span class="item-spec">엣지 AI 추론</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Sensors Content -->
+                                        <div class="hardware-category-content" data-category="sensors">
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">4D Imaging Radar</span>
+                                                <span class="item-spec">Arbe Robotics</span>
+                                            </div>
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">Event Camera</span>
+                                                <span class="item-spec">Prophesee DVS</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Solid-State LiDAR</span>
+                                                <span class="item-spec">Luminar Iris</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Tactile Sensor Array</span>
+                                                <span class="item-spec">SynTouch BioTac</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Multi-modal Fusion</span>
+                                                <span class="item-spec">Camera+Radar+LiDAR</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Actuators Content -->
+                                        <div class="hardware-category-content" data-category="actuators">
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">Series Elastic Actuator</span>
+                                                <span class="item-spec">안전한 힘 제어</span>
+                                            </div>
+                                            <div class="hardware-item featured">
+                                                <span class="item-name">Soft Robotics Actuator</span>
+                                                <span class="item-spec">공압 구동</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Direct Drive Motor</span>
+                                                <span class="item-spec">고토크 밀도</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Shape Memory Alloy</span>
+                                                <span class="item-spec">바이오 미메틱</span>
+                                            </div>
+                                            <div class="hardware-item">
+                                                <span class="item-name">Magnetic Gear</span>
+                                                <span class="item-spec">비접촉 전동</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

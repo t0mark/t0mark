@@ -375,6 +375,88 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ===== HARDWARE INTERACTIVE ROBOT =====
+    const robotParts = document.querySelectorAll('.robot-part');
+    const hardwareCategoryContents = document.querySelectorAll('.hardware-category-content');
+    const panelTitle = document.getElementById('panel-title');
+    const panelBadge = document.getElementById('panel-badge');
+    
+    const categoryData = {
+        'platforms': {
+            title: '차세대 로봇 플랫폼',
+            badge: '2024 HOT',
+            badgeColor: 'linear-gradient(135deg, #ff6b6b, #ee5a24)'
+        },
+        'computing': {
+            title: 'AI 컴퓨팅 하드웨어', 
+            badge: 'EDGE AI',
+            badgeColor: 'var(--accent-hardware)'
+        },
+        'sensors': {
+            title: '차세대 센서 기술',
+            badge: 'SENSING',
+            badgeColor: 'var(--accent-industry)'
+        },
+        'actuators': {
+            title: '스마트 액추에이터',
+            badge: 'MOTION',
+            badgeColor: 'var(--primary)'
+        }
+    };
+    
+    function switchHardwareCategory(category) {
+        // Remove active class from all robot parts and contents
+        robotParts.forEach(part => part.classList.remove('active'));
+        hardwareCategoryContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to selected category
+        const selectedPart = document.querySelector(`.robot-part[data-category="${category}"]`);
+        const selectedContent = document.querySelector(`.hardware-category-content[data-category="${category}"]`);
+        
+        if (selectedPart) selectedPart.classList.add('active');
+        if (selectedContent) selectedContent.classList.add('active');
+        
+        // Update panel header
+        if (categoryData[category] && panelTitle && panelBadge) {
+            panelTitle.textContent = categoryData[category].title;
+            panelBadge.textContent = categoryData[category].badge;
+            panelBadge.style.background = categoryData[category].badgeColor;
+        }
+    }
+    
+    // Add click event listeners to robot parts
+    robotParts.forEach(part => {
+        part.addEventListener('click', () => {
+            const category = part.getAttribute('data-category');
+            if (category) {
+                switchHardwareCategory(category);
+                
+                // Track interaction if analytics available
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'hardware_part_click', {
+                        'category': category
+                    });
+                }
+            }
+        });
+        
+        // Add hover effects
+        part.addEventListener('mouseenter', () => {
+            part.style.opacity = '0.8';
+        });
+        
+        part.addEventListener('mouseleave', () => {
+            if (!part.classList.contains('active')) {
+                part.style.opacity = '1';
+            }
+        });
+    });
+    
+    // Initialize with platforms category active
+    if (robotParts.length > 0) {
+        switchHardwareCategory('platforms');
+    }
+
     // Log successful initialization
     console.log('🎓 AIR Labs 대학원 과정 가이드가 성공적으로 초기화되었습니다!');
 });
