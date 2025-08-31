@@ -1,0 +1,471 @@
+/* Graduate Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+}
+
+/* Navigation styles moved to styles/common.css */
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 40px;
+}
+
+/* Main Header */
+.main-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #2c3e50;
+    padding: 2rem 0;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+/* Section Styles */
+section {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: #2c3e50;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Field Grid */
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.field-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.field-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #2c3e50;
+}
+
+.field-card.perception { border-left-color: #ff6b6b; }
+.field-card.localization { border-left-color: #4ecdc4; }
+.field-card.planning { border-left-color: #45b7d1; }
+.field-card.control { border-left-color: #96ceb4; }
+.field-card.manipulation { border-left-color: #ffeaa7; }
+.field-card.learning { border-left-color: #dda0dd; }
+
+.field-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.field-card ul {
+    list-style: none;
+}
+
+.field-card li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.field-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+/* Trends Section */
+.trend-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.trend-cards, .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.trend-card, .industry-card {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.trend-card:hover, .industry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #2c3e50;
+}
+
+.trend-card h4, .industry-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.trend-card ul, .industry-card ul {
+    list-style: none;
+}
+
+.trend-card li, .industry-card li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    opacity: 0.9;
+}
+
+.trend-card li::before, .industry-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.research-trends h3, .industry-trends h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Hardware Section */
+.hw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.hw-category {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.hw-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #2c3e50;
+}
+
+.hw-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2d3436;
+}
+
+.hw-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #2c3e50;
+}
+
+.hw-item strong {
+    color: #2d3436;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Conferences Section */
+.conference-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.domestic-conferences, .international-conferences {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.domestic-conferences h3, .international-conferences h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.conf-section {
+    margin-bottom: 2rem;
+}
+
+.conf-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.conf-section ul {
+    list-style: none;
+}
+
+.conf-section li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.conf-section li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+}
+
+.conf-section strong {
+    color: #fff;
+}
+
+/* Learning Section */
+.learning-tabs {
+    margin-top: 2rem;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: #fff;
+    color: #6c757d;
+    border: 2px solid #e9ecef;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #f8f9fa;
+    border-color: #2c3e50;
+    color: #2c3e50;
+}
+
+.tab-btn.active {
+    background: #2c3e50;
+    color: #fff;
+    border-color: #2c3e50;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.theory-grid, .practice-grid, .books-grid, .lectures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.theory-section, .practice-section, .book-category, .lecture-category {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.theory-section:hover, .practice-section:hover, 
+.book-category:hover, .lecture-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #2c3e50;
+}
+
+.theory-section h4, .practice-section h4, 
+.book-category h4, .lecture-category h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.theory-section ul, .practice-section ul, 
+.book-category ul, .lecture-category ul {
+    list-style: none;
+}
+
+.theory-section li, .practice-section li, 
+.book-category li, .lecture-category li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #2d3436;
+    line-height: 1.5;
+}
+
+.theory-section li::before, .practice-section li::before, 
+.book-category li::before, .lecture-category li::before {
+    content: '📚';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .main-header h1 {
+        font-size: 2rem;
+    }
+
+    .field-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conference-container {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-btn {
+        width: 200px;
+    }
+
+    section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.field-card, .trend-card, .industry-card, 
+.hw-category, .theory-section, .practice-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}

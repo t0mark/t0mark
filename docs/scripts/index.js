@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const header = document.querySelector('.top-nav');
   const graphContainer = document.querySelector('.graph-container');
 
   function setGraphHeight() {
-    const headerHeight = header.offsetHeight;
-    graphContainer.style.height = `calc(100vh - ${headerHeight}px)`;
+    const header = document.querySelector('.top-nav');
+    const headerHeight = header ? header.offsetHeight : 88;
+    if (graphContainer) {
+      graphContainer.style.height = `calc(100vh - ${headerHeight}px)`;
+    }
   }
 
   setGraphHeight();
   window.addEventListener('resize', setGraphHeight);
+  document.addEventListener('navbar:ready', setGraphHeight);
 
   const container = document.getElementById('network');
   const baseNodes = [

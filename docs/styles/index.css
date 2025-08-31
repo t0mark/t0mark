@@ -12,67 +12,40 @@ body {
 }
 
 .top-nav {
-  background: #fff;
-  border-bottom: 1px solid #e9ecef;
-  padding: 1.2rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* moved to common.css */
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* moved to common.css */
 }
 
 .nav-links {
-  display: flex;
-  gap: 2rem;
+  /* moved to common.css */
 }
 
 .nav-link {
-  color: #6c757d;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  padding: 0.6rem 0;
+  /* moved to common.css */
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #2c3e50;
-  border-bottom: 2px solid #2c3e50;
+  /* moved to common.css */
 }
 
 .social-nav {
-  display: flex;
-  gap: 1rem;
+  /* moved to common.css */
 }
 
 .social-nav-link {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  /* moved to common.css */
 }
 
 .social-nav-link img {
-  width: 20px;
-  height: 20px;
+  /* moved to common.css */
 }
 
 .social-nav-link:hover {
-  background: #2c3e50;
-  color: #fff;
+  /* moved to common.css */
 }
 
 .container {
@@ -84,7 +57,8 @@ body {
 
 .graph-container {
   width: 100%;
-  height: calc(100vh - 5.5rem);
+  /* fallback height; JS will refine using actual navbar height */
+  height: calc(100vh - 64px);
 }
 
 .graph-title {
