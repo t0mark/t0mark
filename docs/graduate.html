@@ -14,12 +14,18 @@
     <main>
         <div class="container">
             <header class="main-header">
-                <h1>Robotics Graduate Study Guide</h1>
-                <p class="subtitle">로봇공학 대학원 진학 가이드</p>
+                <p class="subtitle">AI Robotics Lab</p>
             </header>
 
-        <section class="tech-fields">
-            <h2>세부 분야 (기술 중심 분류)</h2>
+        <!-- Main Tabs -->
+        <nav class="main-tabs" role="tablist" aria-label="주요 섹션">
+            <button class="main-tab active" role="tab" aria-selected="true" aria-controls="fields" data-target="fields">Technical Fields</button>
+            <button class="main-tab" role="tab" aria-selected="false" aria-controls="trend" data-target="trend">Trend</button>
+            <button class="main-tab" role="tab" aria-selected="false" aria-controls="confs" data-target="confs">Conferences & Journals</button>
+            <button class="main-tab" role="tab" aria-selected="false" aria-controls="learning" data-target="learning">Learning Guide</button>
+        </nav>
+
+        <section class="tech-fields tab-pane active" id="fields" role="tabpanel" aria-labelledby="tab-fields">
             <div class="field-grid">
                 <div class="field-card perception">
                     <h3>Perception</h3>
@@ -78,11 +84,10 @@
             </div>
         </section>
 
-        <section class="trends">
-            <h2>Trends</h2>
+        <section class="trends tab-pane" id="trend" role="tabpanel" aria-labelledby="tab-trend">
             <div class="trend-container">
-                <div class="research-trends">
-                    <h3>연구 동향</h3>
+                <div class="research-trends" id="research-trend">
+                    <h3>Research Trends</h3>
                     <div class="trend-cards">
                         <div class="trend-card">
                             <h4>Foundation Models for Robotics</h4>
@@ -123,8 +128,8 @@
                     </div>
                 </div>
 
-                <div class="industry-trends">
-                    <h3>산업 동향</h3>
+                <div class="industry-trends" id="industry-trend">
+                    <h3>Industry Trends</h3>
                     <div class="industry-grid">
                         <div class="industry-card">
                             <h4>Smart Manufacturing</h4>
@@ -164,12 +169,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="hardware">
-            <h2>Hardware</h2>
-            <div class="hw-grid">
+                </div>
+                <!-- HW subsection under Trend -->
+                <div class="hardware-trends" id="hw">
+                    <h3>HW</h3>
+                    <div class="hw-grid">
                 <div class="hw-category">
                     <h3>Robot Platforms</h3>
                     <div class="hw-list">
@@ -217,15 +221,15 @@
                             <strong>Embedded:</strong> Raspberry Pi 4, Jetson Nano, Arduino
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="conferences">
-            <h2>주요 학회 & 저널</h2>
+        <section class="conferences tab-pane" id="confs" role="tabpanel" aria-labelledby="tab-confs">
             <div class="conference-container">
                 <div class="domestic-conferences">
-                    <h3>국내</h3>
+                    <h3>Domestic</h3>
                     <div class="conf-section">
                         <h4>Top-Tier Conference</h4>
                         <ul>
@@ -241,12 +245,12 @@
                             <li>한국로봇학회 논문지 (Journal of Korea Robotics Society)</li>
                             <li>제어·로봇·시스템학회 논문지</li>
                             <li>한국자동제어학회지</li>
-                            <li>한국정보과학회 논문지 (AI/로봇 관련)</li>
+                            <li>한국정보과학회 논문지 (AI/로봇 관련 일부 포함)</li>
                         </ul>
                     </div>
                 </div>
                 <div class="international-conferences">
-                    <h3>해외</h3>
+                    <h3>International</h3>
                     <div class="conf-section">
                         <h4>Top-Tier Conference</h4>
                         <ul>
@@ -269,26 +273,26 @@
                             <li>Autonomous Robots</li>
                             <li>IEEE T-PAMI (Pattern Analysis and Machine Intelligence)</li>
                             <li>JMLR (Journal of Machine Learning Research)</li>
+                            <li><strong>IEEE T-AC</strong> (Transactions on Automatic Control)</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="learning">
-            <h2>학습</h2>
+        <section class="learning tab-pane" id="learning" role="tabpanel" aria-labelledby="tab-learning">
             <div class="learning-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="theory">이론 중심</button>
-                    <button class="tab-btn" data-tab="practice">실무 중심</button>
-                    <button class="tab-btn" data-tab="books">도서</button>
-                    <button class="tab-btn" data-tab="lectures">강의</button>
+                    <button class="tab-btn active" data-tab="theory">Theory</button>
+                    <button class="tab-btn" data-tab="practice">Practice</button>
+                    <button class="tab-btn" data-tab="books">Books</button>
+                    <button class="tab-btn" data-tab="lectures">Lectures</button>
                 </div>
 
                 <div class="tab-content active" id="theory">
                     <div class="theory-grid">
                         <div class="theory-section">
-                            <h4>수학</h4>
+                            <h4>Mathematics</h4>
                             <ul>
                                 <li>선형대수학</li>
                                 <li>확률론 및 통계학</li>
@@ -296,7 +300,7 @@
                             </ul>
                         </div>
                         <div class="theory-section">
-                            <h4>제어 이론</h4>
+                            <h4>Control Theory</h4>
                             <ul>
                                 <li>PID 제어</li>
                                 <li>상태공간 모델</li>
@@ -305,7 +309,7 @@
                             </ul>
                         </div>
                         <div class="theory-section">
-                            <h4>로봇공학 이론</h4>
+                            <h4>Robotics Theory</h4>
                             <ul>
                                 <li>운동학 (Kinematics)</li>
                                 <li>동역학 (Dynamics)</li>
@@ -315,7 +319,7 @@
                             </ul>
                         </div>
                         <div class="theory-section">
-                            <h4>컴퓨터 비전</h4>
+                            <h4>Computer Vision</h4>
                             <ul>
                                 <li>카메라 모델링</li>
                                 <li>3D 인식</li>
@@ -323,7 +327,7 @@
                             </ul>
                         </div>
                         <div class="theory-section">
-                            <h4>머신러닝 이론</h4>
+                            <h4>Machine Learning Theory</h4>
                             <ul>
                                 <li>지도학습 / 비지도학습</li>
                                 <li>강화학습</li>
@@ -332,7 +336,7 @@
                             </ul>
                         </div>
                         <div class="theory-section">
-                            <h4>시스템 이론</h4>
+                            <h4>Systems Theory</h4>
                             <ul>
                                 <li>신호처리 및 필터링</li>
                                 <li>상태추정 (Kalman, Particle Filter)</li>
@@ -346,7 +350,7 @@
                 <div class="tab-content" id="practice">
                     <div class="practice-grid">
                         <div class="practice-section">
-                            <h4>프로그래밍</h4>
+                            <h4>Programming</h4>
                             <ul>
                                 <li>Python (NumPy, SciPy, PyTorch/TensorFlow, OpenCV)</li>
                                 <li>C++ (실시간 시스템, ROS 개발)</li>
@@ -354,7 +358,7 @@
                             </ul>
                         </div>
                         <div class="practice-section">
-                            <h4>로봇 플랫폼 실습</h4>
+                            <h4>Robot Platform Practice</h4>
                             <ul>
                                 <li>ROS/ROS2: 노드, 토픽, 서비스, 액션, 런치 파일</li>
                                 <li>RViz, Gazebo 시뮬레이션</li>
@@ -362,7 +366,7 @@
                             </ul>
                         </div>
                         <div class="practice-section">
-                            <h4>시뮬레이션</h4>
+                            <h4>Simulation</h4>
                             <ul>
                                 <li>Gazebo (범용)</li>
                                 <li>MuJoCo (접촉-rich 조작)</li>
@@ -371,7 +375,7 @@
                             </ul>
                         </div>
                         <div class="practice-section">
-                            <h4>임베디드 시스템</h4>
+                            <h4>Embedded Systems</h4>
                             <ul>
                                 <li>Arduino</li>
                                 <li>Raspberry Pi</li>
@@ -379,7 +383,7 @@
                             </ul>
                         </div>
                         <div class="practice-section">
-                            <h4>데이터 처리</h4>
+                            <h4>Data Processing</h4>
                             <ul>
                                 <li>OpenCV, PCL</li>
                                 <li>센서 데이터 처리 및 Fusion</li>
@@ -387,7 +391,7 @@
                             </ul>
                         </div>
                         <div class="practice-section">
-                            <h4>프로젝트 관리</h4>
+                            <h4>Project Management</h4>
                             <ul>
                                 <li>Git 버전 관리</li>
                                 <li>Docker / 컨테이너</li>
@@ -401,22 +405,22 @@
                 <div class="tab-content" id="books">
                     <div class="books-grid">
                         <div class="book-category">
-                            <h4>수학 & 최적화</h4>
+                            <h4>Mathematics & Optimization</h4>
                             <ul>
                                 <li>선형대수학과 그 응용 – Gilbert Strang (번역본, 사이텍미디어)</li>
                                 <li>확률 및 통계 – Morris H. DeGroot (번역본, 피어슨)</li>
-                                <li>최적화 모델링 – Stephen Boyd (일부 번역 교재)</li>
+                                <li>최적화 모델링 – Stephen Boyd (일부 번역 교재, 국내 대학 강의용 배포)</li>
                             </ul>
                         </div>
                         <div class="book-category">
-                            <h4>제어 이론</h4>
+                            <h4>Control Theory</h4>
                             <ul>
                                 <li>현대 제어공학 – Katsuhiko Ogata (번역본, 피어슨)</li>
                                 <li>제어공학 – 김덕현, 한형석 (국내 저자)</li>
                             </ul>
                         </div>
                         <div class="book-category">
-                            <h4>로봇공학 이론</h4>
+                            <h4>Robotics Theory</h4>
                             <ul>
                                 <li>모던 로보틱스: 기구학, 동역학, 제어 – Kevin Lynch, Frank Park (번역본, 청람)</li>
                                 <li>로봇공학 – John J. Craig (번역본, 시그마프레스)</li>
@@ -424,14 +428,14 @@
                             </ul>
                         </div>
                         <div class="book-category">
-                            <h4>컴퓨터 비전</h4>
+                            <h4>Computer Vision</h4>
                             <ul>
                                 <li>컴퓨터 비전: 알고리즘과 응용 – Richard Szeliski (번역본, 에이콘출판사)</li>
                                 <li>멀티플 뷰 기하학 – Hartley & Zisserman (번역본, 한티미디어)</li>
                             </ul>
                         </div>
                         <div class="book-category">
-                            <h4>머신러닝 & 딥러닝</h4>
+                            <h4>Machine Learning & Deep Learning</h4>
                             <ul>
                                 <li>패턴인식과 머신러닝 – Christopher Bishop (번역본, 한티미디어)</li>
                                 <li>딥러닝 – Ian Goodfellow, Yoshua Bengio, Aaron Courville (번역본, 한빛미디어)</li>
@@ -439,14 +443,14 @@
                             </ul>
                         </div>
                         <div class="book-category">
-                            <h4>강화학습</h4>
+                            <h4>Reinforcement Learning</h4>
                             <ul>
                                 <li>강화학습: 이론과 알고리즘 – Sutton & Barto (번역본, 에이콘출판사)</li>
                                 <li>파이썬과 케라스로 배우는 강화학습 – 한정헌 (국내 저자, 위키북스)</li>
                             </ul>
                         </div>
                         <div class="book-category">
-                            <h4>ROS & 시뮬레이션</h4>
+                            <h4>ROS & Simulation</h4>
                             <ul>
                                 <li>ROS 로봇 프로그래밍 – 김동근 외 (국내 저자, 루비페이퍼)</li>
                                 <li>ROS2 로봇 프로그래밍 – 김동근 외 (국내 저자, 루비페이퍼)</li>
@@ -458,35 +462,35 @@
                 <div class="tab-content" id="lectures">
                     <div class="lectures-grid">
                         <div class="lecture-category">
-                            <h4>수학 & 최적화</h4>
+                            <h4>Mathematics & Optimization</h4>
                             <ul>
                                 <li>K-MOOC: 선형대수학 (연세대 이영무 교수)</li>
                                 <li>K-MOOC: 확률 및 통계 (서울대, KAIST 강좌 다수)</li>
                             </ul>
                         </div>
                         <div class="lecture-category">
-                            <h4>제어 이론</h4>
+                            <h4>Control Theory</h4>
                             <ul>
                                 <li>K-MOOC: 제어공학 (포항공대, 부산대 제공)</li>
                                 <li>EBS 강의: 제어시스템 기초</li>
                             </ul>
                         </div>
                         <div class="lecture-category">
-                            <h4>로봇공학 이론</h4>
+                            <h4>Robotics Theory</h4>
                             <ul>
                                 <li>K-MOOC: 로봇공학 (서울대, KAIST, 한양대 제공)</li>
                                 <li>유튜브: 한국로봇학회(KROS) 공개 강연 및 튜토리얼</li>
                             </ul>
                         </div>
                         <div class="lecture-category">
-                            <h4>컴퓨터 비전</h4>
+                            <h4>Computer Vision</h4>
                             <ul>
                                 <li>K-MOOC: 컴퓨터 비전 (KAIST, 고려대 제공)</li>
                                 <li>모두의연구소: 딥러닝/비전 스터디 강좌</li>
                             </ul>
                         </div>
                         <div class="lecture-category">
-                            <h4>머신러닝 & 딥러닝</h4>
+                            <h4>Machine Learning & Deep Learning</h4>
                             <ul>
                                 <li>K-MOOC: 머신러닝 (서울대, 연세대)</li>
                                 <li>K-MOOC: 딥러닝 (KAIST)</li>
@@ -494,14 +498,14 @@
                             </ul>
                         </div>
                         <div class="lecture-category">
-                            <h4>강화학습</h4>
+                            <h4>Reinforcement Learning</h4>
                             <ul>
                                 <li>모두의연구소: RL 스터디/강의</li>
                                 <li>K-MOOC: 강화학습 개론 (KAIST, 진행 중)</li>
                             </ul>
                         </div>
                         <div class="lecture-category">
-                            <h4>ROS & 시뮬레이션</h4>
+                            <h4>ROS & Simulation</h4>
                             <ul>
                                 <li>K-MOOC: ROS와 로봇 프로그래밍 (한양대, 충북대 제공)</li>
                                 <li>유튜브: ROS Korea 사용자 그룹 세미나</li>
