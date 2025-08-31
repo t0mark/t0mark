@@ -185,17 +185,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe cards for animation
+    // Observe elements for unified animation timing (headings + cards)
     const animatedElements = document.querySelectorAll(`
-        .field-card, .trend-card, .industry-card, .venue-card, 
-        .platform-card, .sensor-card, .computing-card, 
-        .subject-card, .practical-card, .book-category, .course-item
+        /* cards */
+        .field-card, .trend-card, .industry-card, .venue-card,
+        .platform-card, .sensor-card, .computing-card,
+        .subject-card, .practical-card, .book-category, .course-item,
+        /* section titles */
+        .trend-section h3, .hardware-subsection h4, .venue-category h4,
+        .publication-strategy h3, .publication-tips h4, .learning-section h3,
+        .conference-section h3
     `);
-    
-    animatedElements.forEach((el, index) => {
+
+    animatedElements.forEach((el) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.05}s, transform 0.6s ease ${index * 0.05}s`;
+        // Use a consistent duration with no stagger to keep text/cards in sync
+        el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
         observer.observe(el);
     });
 
