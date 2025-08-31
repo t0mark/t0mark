@@ -694,13 +694,13 @@ body {
 }
 
 .venue-category {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
 }
 
 .venue-category h4, .venue-category h5 {
     font-size: var(--text-xl);
     color: var(--text);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -899,7 +899,7 @@ body {
     border-radius: var(--border-radius);
     padding: var(--space-sm) var(--space-md);
     display: grid;
-    grid-template-columns: 140px 90px 1fr 200px;
+    grid-template-columns: 200px 90px 1fr 200px;
     align-items: center;
     gap: var(--space-md);
     transition: var(--transition);
@@ -1072,7 +1072,7 @@ body {
 /* ===== JOURNAL STYLING ===== */
 .journal-list {
     display: grid;
-    gap: var(--space-lg);
+    gap: var(--space-md);
 }
 
 .journal-item {
