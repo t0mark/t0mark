@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/graduate.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation (loaded via partial) -->
+    <div id="navbar"></div>
+
+    <!-- Sticky Sidebar -->
+    <div class="sticky-sidebar" id="stickySidebar">
+        <div class="sidebar-nav">
+            <div class="sidebar-nav-item" data-tab="fields" data-label="연구 분야"></div>
+            <div class="sidebar-nav-item" data-tab="trends" data-label="연구 동향"></div>
+            <div class="sidebar-nav-item" data-tab="conferences" data-label="학회 & 저널"></div>
+            <div class="sidebar-nav-item" data-tab="learning" data-label="학습 가이드"></div>
+        </div>
+    </div>
+
+    <main>
+        <header class="page-header">
+            <div class="container">
+                <h1><i class="fas fa-graduation-cap"></i> Robotics Graduate Guide</h1>
+                <p>로봇공학 연구와 대학원 프로그램</p>
+            </div>
+        </header>
+
+        <nav class="tab-navigation">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="fields">
+                        <i class="fas fa-cogs"></i>
+                        연구 분야
+                    </button>
+                    <button class="tab-btn" data-tab="trends">
+                        <i class="fas fa-chart-line"></i>
+                        연구 동향
+                    </button>
+                    <button class="tab-btn" data-tab="conferences">
+                        <i class="fas fa-university"></i>
+                        학회 & 저널
+                    </button>
+                    <button class="tab-btn" data-tab="learning">
+                        <i class="fas fa-book"></i>
+                        학습 가이드
+                    </button>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="tab-content-wrapper">
+            <div class="container">
+                <!-- 연구 분야 -->
+                <section id="fields" class="tab-content active">
+                    <div class="section-header">
+                        <h2><i class="fas fa-cogs"></i> Robotics 주요 연구 분야</h2>
+                        <p>Robotics 분야의 핵심 연구 영역</p>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-card">
+                            <div class="field-icon perception">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Perception</h3>
+                            <ul>
+                                <li><span class="tech">Computer Vision</span></li>
+                                <li><span class="tech">3D Vision</span></li>
+                                <li><span class="tech">Sensor Fusion</span></li>
+                                <li><span class="tech">Object Detection and Tracking</span></li>
+                            </ul>
+                            <div class="research-note">
+                                <p><i class="fas fa-lightbulb"></i> <strong>연구 기회</strong><br>
+                                실시간 비전 시스템, SLAM, 다중 모달 인식 등</p>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <div class="field-icon localization">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Localization & Mapping</h3>
+                            <ul>
+                                <li><span class="tech">SLAM</span></li>
+                                <li><span class="tech">Localization</span></li>
+                                <li><span class="tech">Mapping</span></li>
+                                <li><span class="tech">State Estimation</span></li>
+                            </ul>
+                            <div class="research-note">
+                                <p><i class="fas fa-lightbulb"></i> <strong>연구 기회</strong><br>
+                                Visual SLAM, 대규모 환경 매핑, 협업 SLAM</p>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <div class="field-icon planning">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>Planning & Decision Making</h3>
+                            <ul>
+                                <li><span class="tech">Motion Planning</span></li>
+                                <li><span class="tech">Task Planning</span></li>
+                                <li><span class="tech">Multi-Robot Coordination</span></li>
+                                <li><span class="tech">Real-time Planning</span></li>
+                            </ul>
+                            <div class="research-note">
+                                <p><i class="fas fa-lightbulb"></i> <strong>연구 기회</strong><br>
+                                최적화 기반 경로 계획, 불확실성 하에서의 의사결정</p>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <div class="field-icon control">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>Control</h3>
+                            <ul>
+                                <li><span class="tech">Robot Kinematics and Dynamics</span></li>
+                                <li><span class="tech">Control Theory</span></li>
+                                <li><span class="tech">Force Control</span></li>
+                                <li><span class="tech">Real-time Control</span></li>
+                            </ul>
+                            <div class="research-note">
+                                <p><i class="fas fa-lightbulb"></i> <strong>연구 기회</strong><br>
+                                적응 제어, 강건 제어, 비선형 시스템 제어</p>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <div class="field-icon manipulation">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <h3>Manipulation</h3>
+                            <ul>
+                                <li><span class="tech">Grasping</span></li>
+                                <li><span class="tech">Dexterous Manipulation</span></li>
+                                <li><span class="tech">Tactile Sensing</span></li>
+                                <li><span class="tech">Manipulation Planning</span></li>
+                            </ul>
+                            <div class="research-note">
+                                <p><i class="fas fa-lightbulb"></i> <strong>연구 기회</strong><br>
+                                학습 기반 파지, 접촉-rich 조작, 이중팔 협업</p>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <div class="field-icon intelligence">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Learning & Intelligence</h3>
+                            <ul>
+                                <li><span class="tech">Reinforcement Learning</span></li>
+                                <li><span class="tech">Imitation Learning</span></li>
+                                <li><span class="tech">Deep Learning</span></li>
+                                <li><span class="tech">Foundation Models</span></li>
+                            </ul>
+                            <div class="research-note">
+                                <p><i class="fas fa-lightbulb"></i> <strong>연구 기회</strong><br>
+                                Robot Foundation Models, LLM 기반 로봇 제어</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 연구 동향 -->
+                <section id="trends" class="tab-content">
+                    <div class="section-header">
+                        <h2><i class="fas fa-chart-line"></i> 최신 연구 동향</h2>
+                        <p>AIR Labs에서 주목하고 있는 로봇공학 분야의 최신 연구 트렌드입니다.</p>
+                    </div>
+
+                    <div class="trend-container">
+                        <div class="trend-section research">
+                            <h3><i class="fas fa-flask"></i> 주요 연구 트렌드</h3>
+                            
+                            <div class="trend-card">
+                                <div class="trend-card-content">
+                                    <h4><i class="fas fa-robot"></i> Foundation Models for Robotics</h4>
+                                    <div class="tech-list">
+                                        <span class="tech-tag hot">Large Language Models (LLMs) 기반 로봇 제어</span>
+                                        <span class="tech-tag hot">Vision-Language-Action (VLA) 모델</span>
+                                        <span class="tech-tag">Multimodal Foundation Models</span>
+                                        <span class="tech-tag">웹 스케일 지식 전이</span>
+                                    </div>
+                                </div>
+                                <div class="trend-card-image">
+                                    <img src="https://moonlight-paper-snapshot.s3.ap-northeast-2.amazonaws.com/arxiv/vlas-vision-language-action-model-with-speech-instructions-for-customized-robot-manipulation-1.png" alt="AI Robot Foundation Models">
+                                </div>
+                            </div>
+
+                            <div class="trend-card">
+                                <div class="trend-card-content">
+                                    <h4><i class="fas fa-graduation-cap"></i> Learning Paradigms</h4>
+                                    <div class="tech-list">
+                                        <span class="tech-tag">Few-shot and Zero-shot Robot Learning</span>
+                                        <span class="tech-tag">Meta-learning for Rapid Adaptation</span>
+                                        <span class="tech-tag">Self-supervised Learning</span>
+                                        <span class="tech-tag">Continual Learning</span>
+                                    </div>
+                                </div>
+                                <div class="trend-card-image">
+                                    <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Robot Learning">
+                                </div>
+                            </div>
+
+                            <div class="trend-card">
+                                <div class="trend-card-content">
+                                    <h4><i class="fas fa-brain"></i> Embodied AI</h4>
+                                    <div class="tech-list">
+                                        <span class="tech-tag hot">Sim-to-Real Transfer Learning</span>
+                                        <span class="tech-tag">World Models for Robotics</span>
+                                        <span class="tech-tag">Emergent Behaviors</span>
+                                        <span class="tech-tag">Physical Intelligence</span>
+                                    </div>
+                                </div>
+                                <div class="trend-card-image">
+                                    <img src="https://figures.semanticscholar.org/0af8cdb71ce9e5bf37ad2a11f05af293cfe62172/4-Figure2-1.png" alt="Embodied AI Robot">
+                                </div>
+                            </div>
+
+                            <div class="trend-card">
+                                <div class="trend-card-content">
+                                    <h4><i class="fas fa-shield-alt"></i> Safety and Robustness</h4>
+                                    <div class="tech-list">
+                                        <span class="tech-tag">Safe Reinforcement Learning</span>
+                                        <span class="tech-tag">Uncertainty Quantification</span>
+                                        <span class="tech-tag">Adversarial Robustness</span>
+                                        <span class="tech-tag">Formal Verification</span>
+                                    </div>
+                                </div>
+                                <div class="trend-card-image">
+                                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Robot Safety Systems">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trend-section industry">
+                            <h3><i class="fas fa-industry"></i> 산업 응용 분야</h3>
+                            
+                            <div class="industry-grid">
+                                <div class="industry-card manufacturing">
+                                    <div class="industry-icon">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <h4>Smart Manufacturing</h4>
+                                    <ul>
+                                        <li>Industry 4.0 & 스마트 팩토리</li>
+                                        <li>Collaborative Manufacturing</li>
+                                        <li>Quality Control and Inspection</li>
+                                        <li>Flexible Automation</li>
+                                    </ul>
+                                    <div class="industry-opportunity">
+                                        <p><i class="fas fa-briefcase"></i> <strong>진로 기회</strong> 제조업 자동화 엔지니어, 스마트 팩토리 연구원</p>
+                                    </div>
+                                </div>
+
+                                <div class="industry-card autonomous">
+                                    <div class="industry-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <h4>Autonomous Systems</h4>
+                                    <ul>
+                                        <li>Level 4/5 자율주행 기술</li>
+                                        <li>V2X (Vehicle-to-Everything)</li>
+                                        <li>UAM (Urban Air Mobility)</li>
+                                        <li>Fleet Management</li>
+                                    </ul>
+                                    <div class="industry-opportunity">
+                                        <p><i class="fas fa-briefcase"></i> <strong>진로 기회</strong> 자율주행 개발자, 드론/UAM 시스템 엔지니어</p>
+                                    </div>
+                                </div>
+
+                                <div class="industry-card service">
+                                    <div class="industry-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <h4>Service Robotics</h4>
+                                    <ul>
+                                        <li>배송 및 물류 로봇</li>
+                                        <li>청소 및 보안 로봇</li>
+                                        <li>호텔·레스토랑 서비스</li>
+                                        <li>개인 맞춤 서비스</li>
+                                    </ul>
+                                    <div class="industry-opportunity">
+                                        <p><i class="fas fa-briefcase"></i> <strong>진로 기회</strong> 서비스 로봇 개발자, HRI 연구원</p>
+                                    </div>
+                                </div>
+
+                                <div class="industry-card healthcare">
+                                    <div class="industry-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <h4>Healthcare Robotics</h4>
+                                    <ul>
+                                        <li>원격 수술 로봇</li>
+                                        <li>재활 치료 로봇</li>
+                                        <li>케어 로봇</li>
+                                        <li>의료 보조 시스템</li>
+                                    </ul>
+                                    <div class="industry-opportunity">
+                                        <p><i class="fas fa-briefcase"></i> <strong>진로 기회</strong> 의료 로봇 연구원, 헬스케어 AI 개발자</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trend-section hardware">
+                            <h3><i class="fas fa-microchip"></i> 최신 하드웨어 트렌드</h3>
+                            
+                            <div class="hardware-subsection">
+                                <h4><i class="fas fa-robot"></i> 최신 로봇 플랫폼</h4>
+                                
+                                <div class="platform-grid">
+                                    <div class="platform-card">
+                                        <div class="platform-type manipulation">
+                                            <i class="fas fa-hand-paper"></i>
+                                            <h5>조작 로봇</h5>
+                                        </div>
+                                        <div class="platform-list">
+                                            <div class="platform-item popular">
+                                                <strong>Franka Emika Panda</strong>
+                                                <span class="tag">Hot</span>
+                                            </div>
+                                            <div class="platform-item">Universal Robots (UR3e/UR5e)</div>
+                                            <div class="platform-item">KUKA LBR iiwa</div>
+                                            <div class="platform-item">ABB YuMi</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="platform-card">
+                                        <div class="platform-type mobile">
+                                            <i class="fas fa-walking"></i>
+                                            <h5>이동 로봇</h5>
+                                        </div>
+                                        <div class="platform-list">
+                                            <div class="platform-item popular">
+                                                <strong>Boston Dynamics Spot</strong>
+                                                <span class="tag">Popular</span>
+                                            </div>
+                                            <div class="platform-item">ANYbotics ANYmal</div>
+                                            <div class="platform-item">Ghost Robotics Vision 60</div>
+                                            <div class="platform-item">TurtleBot4</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="platform-card">
+                                        <div class="platform-type humanoid">
+                                            <i class="fas fa-user"></i>
+                                            <h5>휴머노이드 로봇</h5>
+                                        </div>
+                                        <div class="platform-list">
+                                            <div class="platform-item popular">
+                                                <strong>Tesla Optimus</strong>
+                                                <span class="tag">2024 Hot</span>
+                                            </div>
+                                            <div class="platform-item">Boston Dynamics Atlas</div>
+                                            <div class="platform-item">Agility Robotics Digit</div>
+                                            <div class="platform-item">Toyota HSR</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="platform-card">
+                                        <div class="platform-type research">
+                                            <i class="fas fa-drone"></i>
+                                            <h5>드론 & UAV</h5>
+                                        </div>
+                                        <div class="platform-list">
+                                            <div class="platform-item">DJI Matrice 300/350</div>
+                                            <div class="platform-item">Autel EVO II Pro</div>
+                                            <div class="platform-item">Custom Racing Drones</div>
+                                            <div class="platform-item">Swarm Robotics Platforms</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hardware-subsection">
+                                <h4><i class="fas fa-satellite-dish"></i> 차세대 센서 기술</h4>
+                                
+                                <div class="sensor-grid">
+                                    <div class="sensor-card lidar">
+                                        <div class="sensor-icon">
+                                            <i class="fas fa-radar-alt"></i>
+                                        </div>
+                                        <h5>LiDAR 발전</h5>
+                                        <ul>
+                                            <li>Solid-State LiDAR (Livox Mid-360)</li>
+                                            <li>4D Imaging Radar</li>
+                                            <li>Automotive LiDAR (Waymo, Velodyne)</li>
+                                            <li>Miniaturized LiDAR Arrays</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sensor-card camera">
+                                        <div class="sensor-icon">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <h5>고성능 비전 시스템</h5>
+                                        <ul>
+                                            <li>Event-based Cameras (Prophesee)</li>
+                                            <li>Multi-spectral Imaging</li>
+                                            <li>Intel RealSense D455</li>
+                                            <li>Apple LiDAR Scanner</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sensor-card tactile">
+                                        <div class="sensor-icon">
+                                            <i class="fas fa-hand-paper"></i>
+                                        </div>
+                                        <h5>촉각 센서 혁신</h5>
+                                        <ul>
+                                            <li>Meta Digit 360</li>
+                                            <li>SynTouch BioTac</li>
+                                            <li>Flexible Tactile Arrays</li>
+                                            <li>AI-enhanced Force Sensors</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sensor-card imu">
+                                        <div class="sensor-icon">
+                                            <i class="fas fa-compass"></i>
+                                        </div>
+                                        <h5>정밀 측위 기술</h5>
+                                        <ul>
+                                            <li>RTK-GPS (cm-level accuracy)</li>
+                                            <li>Visual-Inertial Odometry</li>
+                                            <li>Ultra-Wideband (UWB)</li>
+                                            <li>SLAM-based Localization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hardware-subsection">
+                                <h4><i class="fas fa-server"></i> 차세대 컴퓨팅 하드웨어</h4>
+                                
+                                <div class="computing-grid">
+                                    <div class="computing-card edge-ai">
+                                        <div class="computing-icon">
+                                            <i class="fas fa-microchip"></i>
+                                        </div>
+                                        <h5>AI 전용 칩</h5>
+                                        <div class="spec-list">
+                                            <div class="spec-item recommended">
+                                                <strong>NVIDIA Jetson Orin Nano</strong>
+                                                <span class="spec-tag">2024</span>
+                                            </div>
+                                            <div class="spec-item">Google Coral TPU</div>
+                                            <div class="spec-item">Intel Neural Compute Stick</div>
+                                            <div class="spec-item">Apple M3 Neural Engine</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="computing-card gpu">
+                                        <div class="computing-icon">
+                                            <i class="fas fa-desktop"></i>
+                                        </div>
+                                        <h5>GPU 혁신</h5>
+                                        <div class="spec-list">
+                                            <div class="spec-item high-end">
+                                                <strong>NVIDIA RTX 4090</strong>
+                                                <span class="spec-tag">Gaming</span>
+                                            </div>
+                                            <div class="spec-item enterprise">NVIDIA H100</div>
+                                            <div class="spec-item enterprise">AMD MI300X</div>
+                                            <div class="spec-item">Custom AI Accelerators</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="computing-card embedded">
+                                        <div class="computing-icon">
+                                            <i class="fas fa-cpu"></i>
+                                        </div>
+                                        <h5>임베디드 시스템</h5>
+                                        <div class="spec-list">
+                                            <div class="spec-item popular">
+                                                <strong>Raspberry Pi 5</strong>
+                                                <span class="spec-tag">2024</span>
+                                            </div>
+                                            <div class="spec-item">NVIDIA Jetson Xavier NX</div>
+                                            <div class="spec-item">Intel NUC 13</div>
+                                            <div class="spec-item">ARM-based SoCs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 학회 & 저널 -->
+                <section id="conferences" class="tab-content">
+                    <div class="section-header">
+                        <h2><i class="fas fa-university"></i> 주요 학회 & 저널</h2>
+                        <p>로봇공학 대학원생이 알아야 할 주요 학회와 저널 정보입니다.</p>
+                    </div>
+
+                    <div class="conferences-container">
+                        <div class="conference-section domestic">
+                            <h3><i class="fas fa-flag"></i> 국내 학회</h3>
+                            
+                            <div class="venue-category">
+                                <h4><i class="fas fa-calendar-alt"></i> 주요 학회</h4>
+                                <div class="conference-list">
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">제어·로봇·시스템학회 (ICROS)</span>
+                                        <span class="conf-badge domestic">국내 최고</span>
+                                        <span class="conf-full">한국의 대표적인 제어 및 로봇공학 학회</span>
+                                        <span class="conf-info">연 2회 개최 · 춘계/추계 발표</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">한국로봇학회 (KROS)</span>
+                                        <span class="conf-badge robotics">국내 권위</span>
+                                        <span class="conf-full">로봇공학 전문 학회 (국내 대표)</span>
+                                        <span class="conf-info">연 2회 개최 · 로봇공학 핵심</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">한국자동제어학회 (KACC)</span>
+                                        <span class="conf-badge control">전문 분야</span>
+                                        <span class="conf-full">자동제어 분야 전문 학회</span>
+                                        <span class="conf-info">연 1회 개최 · 제어이론 중심</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">한국지능로봇경진대회 (FIRA)</span>
+                                        <span class="conf-badge competition">경진대회</span>
+                                        <span class="conf-full">실무 중심의 로봇 기술 경진대회</span>
+                                        <span class="conf-info">연 1회 개최 · 실전 경험 중심</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="venue-category">
+                                <h4><i class="fas fa-book"></i> 국내 저널</h4>
+                                <div class="journal-list">
+                                    <div class="journal-item domestic">
+                                        <div class="journal-header">
+                                            <h5>한국로봇학회 논문지</h5>
+                                            <span class="journal-badge domestic">KCI 등재</span>
+                                        </div>
+                                        <p class="journal-desc">Journal of Korea Robotics Society</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-robot"></i> 로봇공학 전문</span>
+                                            <span class="meta-item"><i class="fas fa-language"></i> 한국어/영어</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="journal-item domestic">
+                                        <div class="journal-header">
+                                            <h5>제어·로봇·시스템학회 논문지</h5>
+                                            <span class="journal-badge domestic">KCI 등재</span>
+                                        </div>
+                                        <p class="journal-desc">제어 및 시스템 이론 중심</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-sliders-h"></i> 제어 이론</span>
+                                            <span class="meta-item"><i class="fas fa-chart-line"></i> 시스템 분석</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="journal-item domestic">
+                                        <div class="journal-header">
+                                            <h5>한국자동제어학회지</h5>
+                                            <span class="journal-badge domestic">KCI 등재</span>
+                                        </div>
+                                        <p class="journal-desc">자동제어 분야 전문</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-cogs"></i> 자동제어</span>
+                                            <span class="meta-item"><i class="fas fa-industry"></i> 산업 적용</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conference-section international">
+                            <h3><i class="fas fa-globe"></i> 국제 학회 & 저널</h3>
+                            
+                            <div class="venue-category">
+                                <h4><i class="fas fa-star"></i> 최상위 국제 학회</h4>
+                                <div class="conference-list">
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">ICRA</span>
+                                        <span class="conf-badge tier-1">Tier 1</span>
+                                        <span class="conf-full">IEEE International Conference on Robotics and Automation</span>
+                                        <span class="conf-info">연 1회 개최 · 로봇공학 최고 권위</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">IROS</span>
+                                        <span class="conf-badge tier-1">Tier 1</span>
+                                        <span class="conf-full">IEEE/RSJ International Conference on Intelligent Robots and Systems</span>
+                                        <span class="conf-info">연 1회 개최 · 지능로봇 전문</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">RSS</span>
+                                        <span class="conf-badge tier-1">Tier 1</span>
+                                        <span class="conf-full">Robotics: Science and Systems</span>
+                                        <span class="conf-info">연 1회 개최 · 이론 중심 연구</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">CoRL</span>
+                                        <span class="conf-badge hot">Hot Venue</span>
+                                        <span class="conf-full">Conference on Robot Learning</span>
+                                        <span class="conf-info">연 1회 개최 · 로봇학습 전문</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">NeurIPS</span>
+                                        <span class="conf-badge ai-ml">AI/ML</span>
+                                        <span class="conf-full">Neural Information Processing Systems</span>
+                                        <span class="conf-info">연 1회 개최 · 맨신러닝 최고 권위</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">ICML</span>
+                                        <span class="conf-badge ai-ml">AI/ML</span>
+                                        <span class="conf-full">International Conference on Machine Learning</span>
+                                        <span class="conf-info">연 1회 개최 · 머신러닝 전문</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">ICLR</span>
+                                        <span class="conf-badge ai-ml">AI/ML</span>
+                                        <span class="conf-full">International Conference on Learning Representations</span>
+                                        <span class="conf-info">연 1회 개최 · 표현학습 전문</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">CVPR</span>
+                                        <span class="conf-badge cv">CV</span>
+                                        <span class="conf-full">IEEE Conference on Computer Vision and Pattern Recognition</span>
+                                        <span class="conf-info">연 1회 개최 · 컴퓨터비전 최고</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">ICCV</span>
+                                        <span class="conf-badge cv">CV</span>
+                                        <span class="conf-full">IEEE International Conference on Computer Vision</span>
+                                        <span class="conf-info">2년마다 개최 · 컴퓨터비전 전문</span>
+                                    </div>
+                                    
+                                    <div class="conference-item-compact">
+                                        <span class="conf-name">ECCV</span>
+                                        <span class="conf-badge cv">CV</span>
+                                        <span class="conf-full">European Conference on Computer Vision</span>
+                                        <span class="conf-info">2년마다 개최 · 유럽 컴퓨터비전</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="journal-section">
+                            <h3><i class="fas fa-journal-whills"></i> 주요 저널</h3>
+                            
+                            <div class="venue-category">
+                                <h4><i class="fas fa-star"></i> 최상위 국제 저널</h4>
+                                <div class="journal-list">
+                                    <div class="journal-item tier-1">
+                                        <div class="journal-header">
+                                            <h5>IJRR</h5>
+                                            <span class="journal-badge tier-1">IF: 8.5</span>
+                                        </div>
+                                        <p class="journal-desc">International Journal of Robotics Research</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-crown"></i> 로봇공학 최고 저널</span>
+                                            <span class="meta-item"><i class="fas fa-clock"></i> 장기 심사</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="journal-item tier-1">
+                                        <div class="journal-header">
+                                            <h5>IEEE T-RO</h5>
+                                            <span class="journal-badge tier-1">IF: 7.8</span>
+                                        </div>
+                                        <p class="journal-desc">IEEE Transactions on Robotics</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-medal"></i> IEEE 최고 저널</span>
+                                            <span class="meta-item"><i class="fas fa-star"></i> 엄격한 심사</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="journal-item tier-2">
+                                        <div class="journal-header">
+                                            <h5>IEEE RA-L</h5>
+                                            <span class="journal-badge tier-2">IF: 5.2</span>
+                                        </div>
+                                        <p class="journal-desc">IEEE Robotics and Automation Letters</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-rocket"></i> 빠른 게재</span>
+                                            <span class="meta-item"><i class="fas fa-handshake"></i> ICRA 연계</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="journal-item tier-2">
+                                        <div class="journal-header">
+                                            <h5>Autonomous Robots</h5>
+                                            <span class="journal-badge tier-2">IF: 4.3</span>
+                                        </div>
+                                        <p class="journal-desc">자율 로봇 전문 저널</p>
+                                        <div class="journal-meta">
+                                            <span class="meta-item"><i class="fas fa-car"></i> 자율주행 중심</span>
+                                            <span class="meta-item"><i class="fas fa-industry"></i> 산업 응용</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-strategy">
+                        <h3><i class="fas fa-chart-line"></i> 대학원생 논문 발표 가이드</h3>
+                        <div class="strategy-grid">
+                            <div class="strategy-card">
+                                <h4><i class="fas fa-bullseye"></i> 석사 과정 일반적 목표</h4>
+                                <ul>
+                                    <li>국내 학회 발표: 2-3회 (경험 쌓기)</li>
+                                    <li>국제 학회 발표: 1회 이상 (ICRA/IROS 도전)</li>
+                                    <li>저널 논문: IEEE RA-L 또는 동급 1편</li>
+                                    <li>졸업 요구사항 충족</li>
+                                </ul>
+                            </div>
+                            <div class="strategy-card">
+                                <h4><i class="fas fa-graduation-cap"></i> 박사 과정 일반적 목표</h4>
+                                <ul>
+                                    <li>최상위 학회: ICRA/IROS/RSS 2-3편</li>
+                                    <li>최상위 저널: IJRR/IEEE T-RO 2편 이상</li>
+                                    <li>AI/ML 학회: 1편 (융합 연구)</li>
+                                    <li>국제적 연구 경쟁력 확보</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-tips">
+                            <h4><i class="fas fa-lightbulb"></i> 논문 발표 팁</h4>
+                            <div class="tips-grid">
+                                <div class="tip-card">
+                                    <h5>📝 논문 작성</h5>
+                                    <p>명확한 기여점, 충분한 실험, 관련 연구 비교가 핵심</p>
+                                </div>
+                                <div class="tip-card">
+                                    <h5>🎯 학회 선택</h5>
+                                    <p>연구 분야와 맞는 학회 선택, 마감일정 미리 확인</p>
+                                </div>
+                                <div class="tip-card">
+                                    <h5>📊 리뷰 대응</h5>
+                                    <p>리뷰어 의견을 성실히 반영, 명확한 답변 제시</p>
+                                </div>
+                                <div class="tip-card">
+                                    <h5>🌐 네트워킹</h5>
+                                    <p>학회 참석으로 연구자들과 네트워크 형성</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 학습 가이드 -->
+                <section id="learning" class="tab-content">
+                    <div class="section-header">
+                        <h2><i class="fas fa-book"></i> AIR Labs 대학원 학습 가이드</h2>
+                        <p>AIR Labs 대학원 과정에서 성공하기 위한 체계적인 학습 로드맵을 제시합니다.</p>
+                    </div>
+
+                    <div class="learning-container">
+                        <div class="learning-section theory">
+                            <h3><i class="fas fa-book"></i> 기초 이론 (입학 전 준비)</h3>
+                            
+                            <div class="subject-grid">
+                                <div class="subject-card math">
+                                    <div class="subject-icon">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <h4>수학 기초</h4>
+                                    <ul>
+                                        <li>선형대수학 ⭐⭐⭐</li>
+                                        <li>확률론 및 통계학 ⭐⭐⭐</li>
+                                        <li>최적화 (Convex Optimization) ⭐⭐</li>
+                                    </ul>
+                                    <div class="study-note">
+                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 2-3개월</p>
+                                    </div>
+                                </div>
+
+                                <div class="subject-card control">
+                                    <div class="subject-icon">
+                                        <i class="fas fa-sliders-h"></i>
+                                    </div>
+                                    <h4>제어 이론</h4>
+                                    <ul>
+                                        <li>PID 제어 ⭐⭐</li>
+                                        <li>상태공간 모델 ⭐⭐⭐</li>
+                                        <li>LQR (최적 제어) ⭐⭐</li>
+                                        <li>비선형 제어 ⭐</li>
+                                    </ul>
+                                    <div class="study-note">
+                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 2개월</p>
+                                    </div>
+                                </div>
+
+                                <div class="subject-card robotics">
+                                    <div class="subject-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h4>로봇공학 기초</h4>
+                                    <ul>
+                                        <li>운동학 (Kinematics) ⭐⭐⭐</li>
+                                        <li>동역학 (Dynamics) ⭐⭐</li>
+                                        <li>자코비안 ⭐⭐⭐</li>
+                                        <li>SLAM 개념 ⭐⭐</li>
+                                    </ul>
+                                    <div class="study-note">
+                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 3개월</p>
+                                    </div>
+                                </div>
+
+                                <div class="subject-card ml">
+                                    <div class="subject-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h4>머신러닝 기초</h4>
+                                    <ul>
+                                        <li>지도/비지도학습 ⭐⭐⭐</li>
+                                        <li>딥러닝 기초 ⭐⭐⭐</li>
+                                        <li>강화학습 개념 ⭐⭐</li>
+                                        <li>PyTorch/TensorFlow ⭐⭐⭐</li>
+                                    </ul>
+                                    <div class="study-note">
+                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 3-4개월</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-section practical">
+                            <h3><i class="fas fa-tools"></i> 실무 기술 (입학 후 학습)</h3>
+                            
+                            <div class="practical-grid">
+                                <div class="practical-card programming">
+                                    <div class="practical-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h4>프로그래밍 스킬</h4>
+                                    <div class="tech-stack">
+                                        <span class="lang python">Python ⭐⭐⭐</span>
+                                        <span class="lang cpp">C++ ⭐⭐</span>
+                                        <span class="lang matlab">MATLAB ⭐</span>
+                                    </div>
+                                    <p><strong>필수:</strong> NumPy, SciPy, PyTorch, OpenCV</p>
+                                    <div class="mastery-timeline">
+                                        <p><i class="fas fa-calendar-alt"></i> <strong>마스터 기간:</strong> 6개월</p>
+                                    </div>
+                                </div>
+
+                                <div class="practical-card ros">
+                                    <div class="practical-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h4>ROS/ROS2 개발</h4>
+                                    <ul>
+                                        <li><strong>ROS2 Humble:</strong> 노드, 토픽, 서비스</li>
+                                        <li><strong>시뮬레이션:</strong> Gazebo, RViz2</li>
+                                        <li><strong>Navigation2:</strong> SLAM, 경로계획</li>
+                                        <li><strong>MoveIt2:</strong> 매니퓰레이터 제어</li>
+                                    </ul>
+                                    <div class="mastery-timeline">
+                                        <p><i class="fas fa-calendar-alt"></i> <strong>마스터 기간:</strong> 4개월</p>
+                                    </div>
+                                </div>
+
+                                <div class="practical-card simulation">
+                                    <div class="practical-icon">
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                    <h4>시뮬레이션 환경</h4>
+                                    <div class="sim-tools">
+                                        <div class="sim-item">
+                                            <strong>Gazebo</strong> - ROS 통합 ⭐⭐⭐
+                                        </div>
+                                        <div class="sim-item popular">
+                                            <strong>MuJoCo</strong> - 강화학습 ⭐⭐⭐
+                                            <span class="tag">중점</span>
+                                        </div>
+                                        <div class="sim-item">
+                                            <strong>Isaac Sim</strong> - GPU 가속 ⭐⭐
+                                        </div>
+                                        <div class="sim-item enterprise">
+                                            <strong>Unity ML-Agents</strong> - 대규모 학습 ⭐⭐
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="practical-card research">
+                                    <div class="practical-icon">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <h4>연구 방법론</h4>
+                                    <ul>
+                                        <li>실험 설계 및 데이터 분석</li>
+                                        <li>논문 작성 및 LaTeX</li>
+                                        <li>Git/GitHub 협업</li>
+                                        <li>Docker 기반 개발환경</li>
+                                    </ul>
+                                    <div class="mastery-timeline">
+                                        <p><i class="fas fa-calendar-alt"></i> <strong>마스터 기간:</strong> 지속적</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-section timeline">
+                            <h3><i class="fas fa-timeline"></i> 학습 타임라인</h3>
+                            
+                            <div class="timeline-container">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker pre-admission">입학 전</div>
+                                    <div class="timeline-content">
+                                        <h4>기초 준비 (6개월)</h4>
+                                        <ul>
+                                            <li>수학 기초 및 프로그래밍</li>
+                                            <li>로봇공학 개론 학습</li>
+                                            <li>머신러닝 기초</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker semester-1">1학기</div>
+                                    <div class="timeline-content">
+                                        <h4>연구실 적응 & 기초 연구</h4>
+                                        <ul>
+                                            <li>ROS2 마스터 및 로봇 플랫폼 학습</li>
+                                            <li>관련 논문 서베이 (주 3편)</li>
+                                            <li>첫 연구 주제 탐색</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker semester-2">2학기</div>
+                                    <div class="timeline-content">
+                                        <h4>본격적인 연구 시작</h4>
+                                        <ul>
+                                            <li>연구 주제 확정 및 실험 설계</li>
+                                            <li>국내 학회 발표 (1회)</li>
+                                            <li>국제 학회 논문 작성 시작</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker year-2">2년차</div>
+                                    <div class="timeline-content">
+                                        <h4>연구 성과 창출</h4>
+                                        <ul>
+                                            <li>국제 학회 발표 (ICRA/IROS 목표)</li>
+                                            <li>저널 논문 투고 (IEEE RA-L)</li>
+                                            <li>석사 논문 작성 준비</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-section resources">
+                            <h3><i class="fas fa-book-open"></i> 추천 학습 자료</h3>
+                            
+                            <div class="resource-tabs">
+                                <button class="resource-tab-btn active" data-resource="books">
+                                    <i class="fas fa-book"></i> 필독서
+                                </button>
+                                <button class="resource-tab-btn" data-resource="courses">
+                                    <i class="fas fa-play-circle"></i> 온라인 강의
+                                </button>
+                            </div>
+
+                            <div id="books" class="resource-content active">
+                                <div class="book-categories">
+                                    <div class="book-category robotics">
+                                        <h4><i class="fas fa-robot"></i> 로봇공학 필독서</h4>
+                                        <div class="book-list">
+                                            <div class="book-item essential">
+                                                <strong>모던 로보틱스: 기구학, 동역학, 제어</strong>
+                                                <span class="author">Kevin Lynch, Frank Park</span>
+                                                <span class="tag">필수</span>
+                                                <div class="reading-note">
+                                                    <p><i class="fas fa-info-circle"></i> AIR Labs 세미나에서 다룸 (1학기)</p>
+                                                </div>
+                                            </div>
+                                            <div class="book-item recommended">
+                                                <strong>Probabilistic Robotics</strong>
+                                                <span class="author">Sebastian Thrun 외</span>
+                                                <span class="tag">강추</span>
+                                                <div class="reading-note">
+                                                    <p><i class="fas fa-info-circle"></i> SLAM 및 확률적 로봇공학의 바이블</p>
+                                                </div>
+                                            </div>
+                                            <div class="book-item">
+                                                <strong>Planning Algorithms</strong>
+                                                <span class="author">Steven LaValle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="book-category ml">
+                                        <h4><i class="fas fa-brain"></i> 머신러닝 & 강화학습</h4>
+                                        <div class="book-list">
+                                            <div class="book-item essential">
+                                                <strong>Reinforcement Learning: An Introduction</strong>
+                                                <span class="author">Sutton & Barto</span>
+                                                <span class="tag">필수</span>
+                                                <div class="reading-note">
+                                                    <p><i class="fas fa-info-circle"></i> 강화학습 연구자 필수 교재</p>
+                                                </div>
+                                            </div>
+                                            <div class="book-item recommended">
+                                                <strong>Deep Learning</strong>
+                                                <span class="author">Ian Goodfellow 외</span>
+                                                <span class="tag">추천</span>
+                                            </div>
+                                            <div class="book-item">
+                                                <strong>Pattern Recognition and Machine Learning</strong>
+                                                <span class="author">Christopher Bishop</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="book-category math">
+                                        <h4><i class="fas fa-calculator"></i> 수학 & 최적화</h4>
+                                        <div class="book-list">
+                                            <div class="book-item recommended">
+                                                <strong>Convex Optimization</strong>
+                                                <span class="author">Stephen Boyd</span>
+                                                <span class="tag">중요</span>
+                                            </div>
+                                            <div class="book-item">
+                                                <strong>선형대수학</strong>
+                                                <span class="author">Gilbert Strang</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="courses" class="resource-content">
+                                <div class="course-platforms">
+                                    <div class="course-platform">
+                                        <h4><i class="fas fa-graduation-cap"></i> 추천 온라인 강의</h4>
+                                        <div class="course-grid">
+                                            <div class="course-item essential">
+                                                <div class="course-title">CS287 Advanced Robotics</div>
+                                                <div class="course-instructor">UC Berkeley (Pieter Abbeel)</div>
+                                                <span class="course-tag robotics">로봇공학</span>
+                                                <div class="course-note">
+                                                    <p><i class="fas fa-star"></i> 최신 로봇공학 트렌드 포함</p>
+                                                </div>
+                                            </div>
+                                            <div class="course-item essential">
+                                                <div class="course-title">CS285 Deep RL</div>
+                                                <div class="course-instructor">UC Berkeley (Sergey Levine)</div>
+                                                <span class="course-tag ai">강화학습</span>
+                                                <div class="course-note">
+                                                    <p><i class="fas fa-star"></i> 로봇 강화학습의 최고 강의</p>
+                                                </div>
+                                            </div>
+                                            <div class="course-item recommended">
+                                                <div class="course-title">로봇공학</div>
+                                                <div class="course-instructor">K-MOOC (서울대, KAIST)</div>
+                                                <span class="course-tag robotics">기초</span>
+                                            </div>
+                                            <div class="course-item">
+                                                <div class="course-title">ROS 개발자 과정</div>
+                                                <div class="course-instructor">The Construct</div>
+                                                <span class="course-tag programming">개발</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="course-platform">
+                                        <h4><i class="fas fa-users"></i> AIR Labs 내부 교육</h4>
+                                        <div class="internal-courses">
+                                            <div class="internal-course">
+                                                <h5><i class="fas fa-chalkboard-teacher"></i> 주간 세미나</h5>
+                                                <p>매주 수요일 오후 2시, 최신 논문 리뷰 및 연구 진행상황 공유</p>
+                                            </div>
+                                            <div class="internal-course">
+                                                <h5><i class="fas fa-code"></i> 코딩 스터디</h5>
+                                                <p>격주 금요일, ROS2/PyTorch 기반 실습 및 코드 리뷰</p>
+                                            </div>
+                                            <div class="internal-course">
+                                                <h5><i class="fas fa-book"></i> 도서 스터디</h5>
+                                                <p>학기당 1권, 필독서를 함께 읽고 토론</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admission-info">
+                        <h3><i class="fas fa-door-open"></i> AIR Labs 입학 안내</h3>
+                        <div class="admission-grid">
+                            <div class="admission-card">
+                                <div class="admission-icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h4>지원 자격</h4>
+                                <ul>
+                                    <li>학부: 컴퓨터공학, 전자공학, 기계공학 관련 전공</li>
+                                    <li>기본 프로그래밍 능력 (Python/C++)</li>
+                                    <li>수학 기초 (선형대수, 확률통계)</li>
+                                    <li>로봇공학/AI에 대한 열정</li>
+                                </ul>
+                            </div>
+
+                            <div class="admission-card">
+                                <div class="admission-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <h4>전형 과정</h4>
+                                <ul>
+                                    <li>서류 심사 (성적, 포트폴리오)</li>
+                                    <li>기술 면접 (기초 지식 확인)</li>
+                                    <li>연구 계획서 발표</li>
+                                    <li>최종 면접 (연구 적합성 평가)</li>
+                                </ul>
+                            </div>
+
+                            <div class="admission-card">
+                                <div class="admission-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h4>모집 일정</h4>
+                                <ul>
+                                    <li><strong>봄 입학:</strong> 전년 10월 지원</li>
+                                    <li><strong>가을 입학:</strong> 4월 지원</li>
+                                    <li>연중 인턴십 프로그램 운영</li>
+                                    <li>조기 졸업생 특별 전형</li>
+                                </ul>
+                            </div>
+
+                            <div class="admission-card contact">
+                                <div class="admission-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h4>문의 사항</h4>
+                                <div class="contact-info">
+                                    <p><i class="fas fa-email"></i> air.labs@university.ac.kr</p>
+                                    <p><i class="fas fa-phone"></i> 02-123-4567</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> 공학관 123호</p>
+                                    <p><i class="fas fa-globe"></i> www.airlabs.ac.kr</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- 스크롤 진행바 -->
+        <div class="scroll-progress">
+            <div class="scroll-progress-bar"></div>
+        </div>
+    </main>
+
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/graduate.js"></script>
+</body>
+</html>
