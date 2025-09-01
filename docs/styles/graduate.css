@@ -1165,7 +1165,7 @@ body {
     border-radius: var(--border-radius);
     padding: var(--space-sm) var(--space-md);
     display: grid;
-    grid-template-columns: 200px 60px 1fr 200px;
+    grid-template-columns: 200px 65px 1fr 200px;
     align-items: center;
     gap: var(--space-md);
     transition: var(--transition);
@@ -2071,12 +2071,25 @@ body {
 .campus-map {
     position: relative;
     width: 100%;
-    height: 600px;
+    min-height: 750px;
     background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
     border-radius: var(--border-radius-lg);
-    overflow: hidden;
+    overflow: visible;
     box-shadow: var(--shadow-hover);
     border: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3x3 Grid Layout */
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    max-width: 800px;
+    height: 700px;
 }
 
 .campus-ground {
@@ -2105,11 +2118,24 @@ body {
 
 /* 3D Isometric Buildings */
 .campus-building {
-    position: absolute;
+    position: relative;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
     transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.building-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
 }
 
 .campus-building:hover {
@@ -2129,150 +2155,97 @@ body {
     height: 100px;
 }
 
-.building-roof {
-    position: absolute;
+/* Building Icon (replacing roof) */
+.building-icon {
+    position: relative;
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #8BC34A, #689F38);
-    border-radius: 8px;
-    transform: 
-        rotateX(60deg) 
-        rotateY(45deg) 
-        translateZ(40px);
-    box-shadow: 
-        0 0 20px rgba(139, 195, 74, 0.3),
-        inset -5px -5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-building .building-roof {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, #FF9800, #F57C00);
-}
-
-.building-body {
-    position: absolute;
-    width: 80px;
-    height: 60px;
-    background: linear-gradient(135deg, #FFF, #F5F5F5);
-    border: 2px solid var(--border);
-    border-radius: 4px;
+    min-width: 80px;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: 
-        rotateX(90deg) 
-        rotateY(45deg) 
-        translateZ(-20px);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
     box-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.2),
-        inset -3px -3px 6px rgba(0, 0, 0, 0.1);
+        0 10px 20px rgba(74, 144, 226, 0.3),
+        0 0 20px rgba(74, 144, 226, 0.3),
+        inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--bg);
+    aspect-ratio: 1 / 1;
 }
 
-.main-building .building-body {
-    width: 100px;
-    height: 80px;
-}
-
-.building-body i {
+.building-icon i {
     font-size: 2rem;
-    color: var(--primary);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transform: rotateY(-45deg) rotateX(-90deg);
+    color: var(--bg);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.main-building .building-body i {
+.main-icon {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    aspect-ratio: 1 / 1;
+}
+
+.main-icon i {
     font-size: 2.5rem;
 }
 
+/* Individual Building Icon Colors */
+.math-building .building-icon {
+    background: linear-gradient(135deg, #9C27B0, #673AB7);
+}
+
+.engineering-building .building-icon {
+    background: linear-gradient(135deg, #FF5722, #E64A19);
+}
+
+.vision-building .building-icon {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.ai-building .building-icon {
+    background: linear-gradient(135deg, #4CAF50, #388E3C);
+}
+
+.workshop-building .building-icon {
+    background: linear-gradient(135deg, #607D8B, #455A64);
+}
+
+.library-building .building-icon {
+    background: linear-gradient(135deg, #795548, #5D4037);
+}
+
+.lecture-building .building-icon {
+    background: linear-gradient(135deg, #FFC107, #F57F17);
+}
+
+
 .building-label {
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     background: rgba(255, 255, 255, 0.95);
     color: var(--text);
     padding: 6px 12px;
     border-radius: var(--border-radius-full);
     font-size: var(--text-sm);
     font-weight: 600;
+    z-index: 1000;
     white-space: nowrap;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
 }
 
 .main-building .building-label {
-    top: 110px;
     font-size: var(--text-base);
-    background: linear-gradient(135deg, #FF9800, #F57C00);
-    color: white;
-    box-shadow: var(--shadow-card);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
 }
 
-/* Building-specific colors */
-.math-building .building-body {
-    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-}
-
-.math-building .building-body i {
-    color: #2196F3;
-}
-
-.engineering-building .building-body {
-    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
-}
-
-.engineering-building .building-body i {
-    color: #FF9800;
-}
-
-.robotics-building .building-body {
-    background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
-}
-
-.robotics-building .building-body i {
-    color: #F44336;
-}
-
-.vision-building .building-body {
-    background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
-}
-
-.vision-building .building-body i {
-    color: #9C27B0;
-}
-
-.ai-building .building-body {
-    background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
-}
-
-.ai-building .building-body i {
-    color: #4CAF50;
-}
-
-.workshop-building .building-body {
-    background: linear-gradient(135deg, #FFF8E1, #FFECB3);
-}
-
-.workshop-building .building-body i {
-    color: #FFC107;
-}
-
-.library-building .building-body {
-    background: linear-gradient(135deg, #E0F2F1, #B2DFDB);
-}
-
-.library-building .building-body i {
-    color: #009688;
-}
-
-.lecture-building .building-body {
-    background: linear-gradient(135deg, #EDE7F6, #D1C4E9);
-}
-
-.lecture-building .building-body i {
-    color: #673AB7;
-}
 
 /* Campus Trees */
 .campus-tree {
@@ -2304,6 +2277,29 @@ body {
         transform: translateY(-12px) scale(1.08); 
         filter: brightness(1.2);
     }
+}
+
+/* Empty Space Decoration */
+.campus-empty-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.campus-decoration {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    justify-content: center;
+}
+
+.campus-decoration i {
+    color: #4CAF50;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: treeSwing 4s ease-in-out infinite;
 }
 
 /* Building Modal Styles */
@@ -2423,33 +2419,30 @@ body {
         height: 80px;
     }
     
-    .building-roof {
+    .building-icon {
         width: 60px;
         height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+        aspect-ratio: 1 / 1;
     }
     
-    .main-building .building-roof {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .building-body {
-        width: 60px;
-        height: 45px;
-    }
-    
-    .main-building .building-body {
-        width: 80px;
-        height: 60px;
-    }
-    
-    .building-body i {
+    .building-icon i {
         font-size: 1.5rem;
     }
     
-    .main-building .building-body i {
+    .main-icon {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .main-icon i {
         font-size: 2rem;
     }
+    
     
     .building-label {
         font-size: var(--text-xs);
