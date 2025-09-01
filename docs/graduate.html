@@ -773,394 +773,125 @@
 
                 <!-- 학습 가이드 -->
                 <section id="learning" class="tab-content">
-                    <div class="learning-container">
-                        <div class="learning-section theory">
-                            <h3><i class="fas fa-book"></i> 기초 이론 (입학 전 준비)</h3>
+                    <div class="campus-container">
+                        <div class="trend-section research">
+                            <h3><i class="fas fa-university"></i> 로보틱스 캠퍼스 맵</h3>
+                        </div>
+                        
+                        <div class="campus-map">
+                            <!-- Campus Background -->
+                            <div class="campus-ground"></div>
                             
-                            <div class="subject-grid">
-                                <div class="subject-card math">
-                                    <div class="subject-icon">
+                            <!-- Pathways -->
+                            <svg class="campus-paths" viewBox="0 0 800 600">
+                                <!-- Main horizontal path -->
+                                <path d="M50 300 L750 300" stroke="#ddd" stroke-width="4" fill="none" />
+                                <!-- Vertical connections -->
+                                <path d="M200 150 L200 450" stroke="#ddd" stroke-width="3" fill="none" />
+                                <path d="M400 100 L400 500" stroke="#ddd" stroke-width="3" fill="none" />
+                                <path d="M600 150 L600 450" stroke="#ddd" stroke-width="3" fill="none" />
+                            </svg>
+                            
+                            <!-- Campus Buildings -->
+                            <div class="campus-building math-building" data-building="math" style="left: 120px; top: 80px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
                                         <i class="fas fa-calculator"></i>
                                     </div>
-                                    <h4>수학 기초</h4>
-                                    <ul>
-                                        <li>선형대수학 ⭐⭐⭐</li>
-                                        <li>확률론 및 통계학 ⭐⭐⭐</li>
-                                        <li>최적화 (Convex Optimization) ⭐⭐</li>
-                                    </ul>
-                                    <div class="study-note">
-                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 2-3개월</p>
+                                </div>
+                                <div class="building-label">수학관</div>
+                            </div>
+                            
+                            <div class="campus-building engineering-building" data-building="engineering" style="left: 320px; top: 50px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
+                                        <i class="fas fa-cogs"></i>
                                     </div>
                                 </div>
-
-                                <div class="subject-card control">
-                                    <div class="subject-icon">
-                                        <i class="fas fa-sliders-h"></i>
-                                    </div>
-                                    <h4>제어 이론</h4>
-                                    <ul>
-                                        <li>PID 제어 ⭐⭐</li>
-                                        <li>상태공간 모델 ⭐⭐⭐</li>
-                                        <li>LQR (최적 제어) ⭐⭐</li>
-                                        <li>비선형 제어 ⭐</li>
-                                    </ul>
-                                    <div class="study-note">
-                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 2개월</p>
-                                    </div>
-                                </div>
-
-                                <div class="subject-card robotics">
-                                    <div class="subject-icon">
+                                <div class="building-label">공학관</div>
+                            </div>
+                            
+                            <div class="campus-building robotics-building" data-building="robotics" style="left: 350px; top: 250px;">
+                                <div class="building-structure main-building">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
                                         <i class="fas fa-robot"></i>
                                     </div>
-                                    <h4>로봇공학 기초</h4>
-                                    <ul>
-                                        <li>운동학 (Kinematics) ⭐⭐⭐</li>
-                                        <li>동역학 (Dynamics) ⭐⭐</li>
-                                        <li>자코비안 ⭐⭐⭐</li>
-                                        <li>SLAM 개념 ⭐⭐</li>
-                                    </ul>
-                                    <div class="study-note">
-                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 3개월</p>
+                                </div>
+                                <div class="building-label">로봇공학관</div>
+                            </div>
+                            
+                            <div class="campus-building vision-building" data-building="vision" style="left: 520px; top: 80px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
+                                        <i class="fas fa-eye"></i>
                                     </div>
                                 </div>
-
-                                <div class="subject-card ml">
-                                    <div class="subject-icon">
+                                <div class="building-label">비전연구소</div>
+                            </div>
+                            
+                            <div class="campus-building ai-building" data-building="ai" style="left: 550px; top: 250px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
                                         <i class="fas fa-brain"></i>
                                     </div>
-                                    <h4>머신러닝 기초</h4>
-                                    <ul>
-                                        <li>지도/비지도학습 ⭐⭐⭐</li>
-                                        <li>딥러닝 기초 ⭐⭐⭐</li>
-                                        <li>강화학습 개념 ⭐⭐</li>
-                                        <li>PyTorch/TensorFlow ⭐⭐⭐</li>
-                                    </ul>
-                                    <div class="study-note">
-                                        <p><i class="fas fa-clock"></i> <strong>학습 기간:</strong> 3-4개월</p>
-                                    </div>
                                 </div>
+                                <div class="building-label">AI연구원</div>
                             </div>
-                        </div>
-
-                        <div class="learning-section practical">
-                            <h3><i class="fas fa-tools"></i> 실무 기술 (입학 후 학습)</h3>
                             
-                            <div class="practical-grid">
-                                <div class="practical-card programming">
-                                    <div class="practical-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h4>프로그래밍 스킬</h4>
-                                    <div class="tech-stack">
-                                        <span class="lang python">Python ⭐⭐⭐</span>
-                                        <span class="lang cpp">C++ ⭐⭐</span>
-                                        <span class="lang matlab">MATLAB ⭐</span>
-                                    </div>
-                                    <p><strong>필수:</strong> NumPy, SciPy, PyTorch, OpenCV</p>
-                                    <div class="mastery-timeline">
-                                        <p><i class="fas fa-calendar-alt"></i> <strong>마스터 기간:</strong> 6개월</p>
+                            <div class="campus-building workshop-building" data-building="workshop" style="left: 320px; top: 420px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
+                                        <i class="fas fa-tools"></i>
                                     </div>
                                 </div>
-
-                                <div class="practical-card ros">
-                                    <div class="practical-icon">
-                                        <i class="fas fa-robot"></i>
-                                    </div>
-                                    <h4>ROS/ROS2 개발</h4>
-                                    <ul>
-                                        <li><strong>ROS2 Humble:</strong> 노드, 토픽, 서비스</li>
-                                        <li><strong>시뮬레이션:</strong> Gazebo, RViz2</li>
-                                        <li><strong>Navigation2:</strong> SLAM, 경로계획</li>
-                                        <li><strong>MoveIt2:</strong> 매니퓰레이터 제어</li>
-                                    </ul>
-                                    <div class="mastery-timeline">
-                                        <p><i class="fas fa-calendar-alt"></i> <strong>마스터 기간:</strong> 4개월</p>
-                                    </div>
-                                </div>
-
-                                <div class="practical-card simulation">
-                                    <div class="practical-icon">
-                                        <i class="fas fa-cube"></i>
-                                    </div>
-                                    <h4>시뮬레이션 환경</h4>
-                                    <div class="sim-tools">
-                                        <div class="sim-item">
-                                            <strong>Gazebo</strong> - ROS 통합 ⭐⭐⭐
-                                        </div>
-                                        <div class="sim-item popular">
-                                            <strong>MuJoCo</strong> - 강화학습 ⭐⭐⭐
-                                            <span class="tag">중점</span>
-                                        </div>
-                                        <div class="sim-item">
-                                            <strong>Isaac Sim</strong> - GPU 가속 ⭐⭐
-                                        </div>
-                                        <div class="sim-item enterprise">
-                                            <strong>Unity ML-Agents</strong> - 대규모 학습 ⭐⭐
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="practical-card research">
-                                    <div class="practical-icon">
-                                        <i class="fas fa-flask"></i>
-                                    </div>
-                                    <h4>연구 방법론</h4>
-                                    <ul>
-                                        <li>실험 설계 및 데이터 분석</li>
-                                        <li>논문 작성 및 LaTeX</li>
-                                        <li>Git/GitHub 협업</li>
-                                        <li>Docker 기반 개발환경</li>
-                                    </ul>
-                                    <div class="mastery-timeline">
-                                        <p><i class="fas fa-calendar-alt"></i> <strong>마스터 기간:</strong> 지속적</p>
-                                    </div>
-                                </div>
+                                <div class="building-label">실습동</div>
                             </div>
-                        </div>
-
-                        <div class="learning-section timeline">
-                            <h3><i class="fas fa-timeline"></i> 학습 타임라인</h3>
                             
-                            <div class="timeline-container">
-                                <div class="timeline-item">
-                                    <div class="timeline-marker pre-admission">입학 전</div>
-                                    <div class="timeline-content">
-                                        <h4>기초 준비 (6개월)</h4>
-                                        <ul>
-                                            <li>수학 기초 및 프로그래밍</li>
-                                            <li>로봇공학 개론 학습</li>
-                                            <li>머신러닝 기초</li>
-                                        </ul>
+                            <div class="campus-building library-building" data-building="library" style="left: 120px; top: 380px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
+                                        <i class="fas fa-book"></i>
                                     </div>
                                 </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker semester-1">1학기</div>
-                                    <div class="timeline-content">
-                                        <h4>연구실 적응 & 기초 연구</h4>
-                                        <ul>
-                                            <li>ROS2 마스터 및 로봇 플랫폼 학습</li>
-                                            <li>관련 논문 서베이 (주 3편)</li>
-                                            <li>첫 연구 주제 탐색</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker semester-2">2학기</div>
-                                    <div class="timeline-content">
-                                        <h4>본격적인 연구 시작</h4>
-                                        <ul>
-                                            <li>연구 주제 확정 및 실험 설계</li>
-                                            <li>국내 학회 발표 (1회)</li>
-                                            <li>국제 학회 논문 작성 시작</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker year-2">2년차</div>
-                                    <div class="timeline-content">
-                                        <h4>연구 성과 창출</h4>
-                                        <ul>
-                                            <li>국제 학회 발표 (ICRA/IROS 목표)</li>
-                                            <li>저널 논문 투고 (IEEE RA-L)</li>
-                                            <li>석사 논문 작성 준비</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <div class="building-label">중앙도서관</div>
                             </div>
-                        </div>
-
-                        <div class="learning-section resources">
-                            <h3><i class="fas fa-book-open"></i> 추천 학습 자료</h3>
                             
-                            <div class="resource-tabs">
-                                <button class="resource-tab-btn active" data-resource="books">
-                                    <i class="fas fa-book"></i> 필독서
-                                </button>
-                                <button class="resource-tab-btn" data-resource="courses">
-                                    <i class="fas fa-play-circle"></i> 온라인 강의
-                                </button>
-                            </div>
-
-                            <div id="books" class="resource-content active">
-                                <div class="book-categories">
-                                    <div class="book-category robotics">
-                                        <h4><i class="fas fa-robot"></i> 로봇공학 필독서</h4>
-                                        <div class="book-list">
-                                            <div class="book-item essential">
-                                                <strong>모던 로보틱스: 기구학, 동역학, 제어</strong>
-                                                <span class="author">Kevin Lynch, Frank Park</span>
-                                                <span class="tag">필수</span>
-                                                <div class="reading-note">
-                                                    <p><i class="fas fa-info-circle"></i> AIR Labs 세미나에서 다룸 (1학기)</p>
-                                                </div>
-                                            </div>
-                                            <div class="book-item recommended">
-                                                <strong>Probabilistic Robotics</strong>
-                                                <span class="author">Sebastian Thrun 외</span>
-                                                <span class="tag">강추</span>
-                                                <div class="reading-note">
-                                                    <p><i class="fas fa-info-circle"></i> SLAM 및 확률적 로봇공학의 바이블</p>
-                                                </div>
-                                            </div>
-                                            <div class="book-item">
-                                                <strong>Planning Algorithms</strong>
-                                                <span class="author">Steven LaValle</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="book-category ml">
-                                        <h4><i class="fas fa-brain"></i> 머신러닝 & 강화학습</h4>
-                                        <div class="book-list">
-                                            <div class="book-item essential">
-                                                <strong>Reinforcement Learning: An Introduction</strong>
-                                                <span class="author">Sutton & Barto</span>
-                                                <span class="tag">필수</span>
-                                                <div class="reading-note">
-                                                    <p><i class="fas fa-info-circle"></i> 강화학습 연구자 필수 교재</p>
-                                                </div>
-                                            </div>
-                                            <div class="book-item recommended">
-                                                <strong>Deep Learning</strong>
-                                                <span class="author">Ian Goodfellow 외</span>
-                                                <span class="tag">추천</span>
-                                            </div>
-                                            <div class="book-item">
-                                                <strong>Pattern Recognition and Machine Learning</strong>
-                                                <span class="author">Christopher Bishop</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="book-category math">
-                                        <h4><i class="fas fa-calculator"></i> 수학 & 최적화</h4>
-                                        <div class="book-list">
-                                            <div class="book-item recommended">
-                                                <strong>Convex Optimization</strong>
-                                                <span class="author">Stephen Boyd</span>
-                                                <span class="tag">중요</span>
-                                            </div>
-                                            <div class="book-item">
-                                                <strong>선형대수학</strong>
-                                                <span class="author">Gilbert Strang</span>
-                                            </div>
-                                        </div>
+                            <div class="campus-building lecture-building" data-building="lecture" style="left: 520px; top: 380px;">
+                                <div class="building-structure">
+                                    <div class="building-roof"></div>
+                                    <div class="building-body">
+                                        <i class="fas fa-chalkboard-teacher"></i>
                                     </div>
                                 </div>
+                                <div class="building-label">강의동</div>
                             </div>
-
-                            <div id="courses" class="resource-content">
-                                <div class="course-platforms">
-                                    <div class="course-platform">
-                                        <h4><i class="fas fa-graduation-cap"></i> 추천 온라인 강의</h4>
-                                        <div class="course-grid">
-                                            <div class="course-item essential">
-                                                <div class="course-title">CS287 Advanced Robotics</div>
-                                                <div class="course-instructor">UC Berkeley (Pieter Abbeel)</div>
-                                                <span class="course-tag robotics">로봇공학</span>
-                                                <div class="course-note">
-                                                    <p><i class="fas fa-star"></i> 최신 로봇공학 트렌드 포함</p>
-                                                </div>
-                                            </div>
-                                            <div class="course-item essential">
-                                                <div class="course-title">CS285 Deep RL</div>
-                                                <div class="course-instructor">UC Berkeley (Sergey Levine)</div>
-                                                <span class="course-tag ai">강화학습</span>
-                                                <div class="course-note">
-                                                    <p><i class="fas fa-star"></i> 로봇 강화학습의 최고 강의</p>
-                                                </div>
-                                            </div>
-                                            <div class="course-item recommended">
-                                                <div class="course-title">로봇공학</div>
-                                                <div class="course-instructor">K-MOOC (서울대, KAIST)</div>
-                                                <span class="course-tag robotics">기초</span>
-                                            </div>
-                                            <div class="course-item">
-                                                <div class="course-title">ROS 개발자 과정</div>
-                                                <div class="course-instructor">The Construct</div>
-                                                <span class="course-tag programming">개발</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="course-platform">
-                                        <h4><i class="fas fa-users"></i> AIR Labs 내부 교육</h4>
-                                        <div class="internal-courses">
-                                            <div class="internal-course">
-                                                <h5><i class="fas fa-chalkboard-teacher"></i> 주간 세미나</h5>
-                                                <p>매주 수요일 오후 2시, 최신 논문 리뷰 및 연구 진행상황 공유</p>
-                                            </div>
-                                            <div class="internal-course">
-                                                <h5><i class="fas fa-code"></i> 코딩 스터디</h5>
-                                                <p>격주 금요일, ROS2/PyTorch 기반 실습 및 코드 리뷰</p>
-                                            </div>
-                                            <div class="internal-course">
-                                                <h5><i class="fas fa-book"></i> 도서 스터디</h5>
-                                                <p>학기당 1권, 필독서를 함께 읽고 토론</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            <!-- Campus Trees and Decorations -->
+                            <div class="campus-tree" style="left: 80px; top: 200px;"><i class="fas fa-tree"></i></div>
+                            <div class="campus-tree" style="left: 280px; top: 150px;"><i class="fas fa-tree"></i></div>
+                            <div class="campus-tree" style="left: 480px; top: 320px;"><i class="fas fa-tree"></i></div>
+                            <div class="campus-tree" style="left: 680px; top: 180px;"><i class="fas fa-tree"></i></div>
                         </div>
                     </div>
-
-                    <div class="admission-info">
-                        <h3><i class="fas fa-door-open"></i> AIR Labs 입학 안내</h3>
-                        <div class="admission-grid">
-                            <div class="admission-card">
-                                <div class="admission-icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                </div>
-                                <h4>지원 자격</h4>
-                                <ul>
-                                    <li>학부: 컴퓨터공학, 전자공학, 기계공학 관련 전공</li>
-                                    <li>기본 프로그래밍 능력 (Python/C++)</li>
-                                    <li>수학 기초 (선형대수, 확률통계)</li>
-                                    <li>로봇공학/AI에 대한 열정</li>
-                                </ul>
+                    
+                    <!-- Building Detail Modal -->
+                    <div id="buildingModal" class="building-modal">
+                        <div class="modal-overlay"></div>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="buildingTitle">건물 정보</h3>
+                                <button class="modal-close">&times;</button>
                             </div>
-
-                            <div class="admission-card">
-                                <div class="admission-icon">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <h4>전형 과정</h4>
-                                <ul>
-                                    <li>서류 심사 (성적, 포트폴리오)</li>
-                                    <li>기술 면접 (기초 지식 확인)</li>
-                                    <li>연구 계획서 발표</li>
-                                    <li>최종 면접 (연구 적합성 평가)</li>
-                                </ul>
-                            </div>
-
-                            <div class="admission-card">
-                                <div class="admission-icon">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
-                                <h4>모집 일정</h4>
-                                <ul>
-                                    <li><strong>봄 입학:</strong> 전년 10월 지원</li>
-                                    <li><strong>가을 입학:</strong> 4월 지원</li>
-                                    <li>연중 인턴십 프로그램 운영</li>
-                                    <li>조기 졸업생 특별 전형</li>
-                                </ul>
-                            </div>
-
-                            <div class="admission-card contact">
-                                <div class="admission-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <h4>문의 사항</h4>
-                                <div class="contact-info">
-                                    <p><i class="fas fa-email"></i> air.labs@university.ac.kr</p>
-                                    <p><i class="fas fa-phone"></i> 02-123-4567</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> 공학관 123호</p>
-                                    <p><i class="fas fa-globe"></i> www.airlabs.ac.kr</p>
+                            <div class="modal-body">
+                                <div id="buildingContent">
+                                    <!-- Content will be loaded dynamically -->
                                 </div>
                             </div>
                         </div>
@@ -1174,6 +905,9 @@
             <div class="scroll-progress-bar"></div>
         </div>
     </main>
+    
+    <!-- Campus Map JavaScript -->
+    <script src="scripts/campus.js"></script>
 
     <script src="scripts/navbar.js"></script>
     <script src="scripts/graduate.js"></script>
