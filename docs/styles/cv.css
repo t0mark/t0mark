@@ -89,7 +89,7 @@ html, body {
   border-radius: 50%;
   border: var(--profile-photo-border) solid var(--cv-border);
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 25%;
   display: block;
   transition: var(--transition);
   box-shadow: var(--shadow-card);
