@@ -39,17 +39,19 @@
   --transition: all 0.3s ease;
 }
 
-/* Shared navigation styles */
+/* 공유 네비게이션 스타일 */
+/* 상단 네비게이션 바 */
 .top-nav {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-  padding: var(--space-sm) 0; /* reduced height */
+  padding: var(--space-sm) 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* 네비게이션 컨테이너 */
 .nav-container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -59,31 +61,36 @@
   align-items: center;
 }
 
+/* 네비게이션 링크 그룹 */
 .nav-links {
   display: flex;
   gap: var(--space-lg);
 }
 
+/* 네비게이션 링크 스타일 */
 .nav-link {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   font-size: var(--text-base);
   transition: var(--transition);
-  padding: var(--space-xs) 0; /* slightly tighter */
+  padding: var(--space-xs) 0;
 }
 
+/* 네비게이션 링크 호버 및 활성 상태 */
 .nav-link:hover,
 .nav-link.active {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
 }
 
+/* 소셜 네비게이션 그룹 */
 .social-nav {
   display: flex;
   gap: var(--space-md);
 }
 
+/* 소셜 링크 스타일 */
 .social-nav-link {
   width: 24px;
   height: 24px;
@@ -94,11 +101,13 @@
   transition: var(--transition);
 }
 
+/* 소셜 링크 아이콘 크기 */
 .social-nav-link img {
-  width: 18px; /* slightly smaller icons */
+  width: 18px;
   height: 18px;
 }
 
+/* 소셜 링크 호버 상태 */
 .social-nav-link:hover {
   background: var(--primary);
   color: var(--bg);

@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- 문서 인코딩 및 기본 설정 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="styles/variables.css">
+    
+    <!-- CSS 스타일시트 로드 -->
+    <link rel="stylesheet" href="styles/variables.css">    
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/index.css">
+    <!-- vis-network 라이브러리 CSS -->
     <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Navigation (loaded via partial) -->
+    <!-- 헤더 네비게이션 (부분 로드) -->
     <div id="navbar"></div>
 
+    <!-- 메인 컨텐츠 영역 -->
     <main>
         <section class="graph-section">
             <div class="graph-container">
-                <h2 class="graph-title">학문 분야 구조도</h2>
+                <!-- 네트워크 그래프 컨테이너 -->
                 <div id="network"></div>
             </div>
         </section>
-        
     </main>
 
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- JS 스크립트 로드 -->
     <script src="scripts/navbar.js"></script>
     <script src="scripts/index.js"></script>
+    <!-- vis-network 라이브러리 JS -->
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 </body>
 </html>

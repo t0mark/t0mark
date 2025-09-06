@@ -1,5 +1,6 @@
-// Load shared navbar and set active link
+// 공유 네비게이션 바를 로드하고 현재 페이지에 맞는 활성 링크를 설정
 (function () {
+  // 현재 페이지에 해당하는 네비게이션 링크에 active 클래스를 추가
   function setActiveLink(root) {
     try {
       var path = window.location.pathname.split('/').pop();
@@ -10,6 +11,7 @@
     } catch (_) {}
   }
 
+  // 네비게이션 바 HTML을 DOM에 삽입하고 활성 링크 설정
   function inject(html) {
     var container = document.getElementById('navbar');
     if (!container) return;
@@ -20,13 +22,13 @@
     } catch (_) {}
   }
 
-  // Prefer fetch when running on a server; fall back to inline template if needed
+  // 서버에서 실행될 때는 fetch를 우선 사용하고, 실패하면 인라인 템플릿으로 대체
   var partialUrl = 'partials/navbar.html';
   fetch(partialUrl)
     .then(function (res) { return res.text(); })
     .then(inject)
     .catch(function () {
-      // If fetch fails (e.g., file://), embed a minimal fallback
+      // fetch가 실패하면 (예: file:// 프로토콜) 최소한의 대체 네비게이션 바 사용
       var fallback = '<header class="top-nav">\n'
         + '  <nav class="nav-container">\n'
         + '    <div class="nav-links">\n'

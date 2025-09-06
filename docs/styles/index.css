@@ -1,9 +1,11 @@
+/* 기본 설정 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 바디 */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -11,43 +13,7 @@ body {
   background: var(--bg-light);
 }
 
-.top-nav {
-  /* moved to common.css */
-}
-
-.nav-container {
-  /* moved to common.css */
-}
-
-.nav-links {
-  /* moved to common.css */
-}
-
-.nav-link {
-  /* moved to common.css */
-}
-
-.nav-link:hover,
-.nav-link.active {
-  /* moved to common.css */
-}
-
-.social-nav {
-  /* moved to common.css */
-}
-
-.social-nav-link {
-  /* moved to common.css */
-}
-
-.social-nav-link img {
-  /* moved to common.css */
-}
-
-.social-nav-link:hover {
-  /* moved to common.css */
-}
-
+/* 기본 컨테이너 */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -55,16 +21,13 @@ body {
   padding: var(--space-lg) 40px;
 }
 
+/* 그래프 컨테이너 */
 .graph-container {
   width: 100%;
-  /* fallback height; JS will refine using actual navbar height */
   height: calc(100vh - var(--nav-height));
 }
 
-.graph-title {
-  display: none;
-}
-
+/* 네트워크 그래프 컨테이너 */
 #network {
   width: 100%;
   height: 100%;
