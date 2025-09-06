@@ -400,6 +400,8 @@ html, body {
   font-size: var(--text-sm);
   flex-shrink: 0;
   min-width: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .award-title,
