@@ -1,80 +1,78 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const graphContainer = document.querySelector('.graph-container');
-
-  // 높이 조정 함수
-  function setGraphHeight() {
-    const header = document.querySelector('.top-nav');
-    const headerHeight = header ? header.offsetHeight : 88;
-    if (graphContainer) {
-      graphContainer.style.height = `calc(100vh - ${headerHeight}px)`;
-    }
-  }
-
-  // 초기 설정
-  setGraphHeight();
-  window.addEventListener('resize', setGraphHeight);
-  document.addEventListener('navbar:ready', setGraphHeight);
-
-  // vis-network 그래프 요소
-  // 컨테이너
+  
+  // ==========================================
+  // 데이터 정의
+  // ==========================================
+  
+  // DOM 요소
   const container = document.getElementById('network');
-  // 노드
+  
+  // 네트워크 노드 데이터
   const baseNodes = [
-    // 앵커 노드
-    { id: 'computer', label: 'Computer', group: 'level2', title: 'Computer', x: -800, y: -150, physics: false, image: 'images/icons/computer.png' },
-    { id: 'ee', label: 'Electrical Engineering', group: 'level1', title: 'Electrical Engineering', x: -400, y: -150, physics: false, image: 'images/icons/ee.png' },
-    { id: 'me', label: 'Mechanical Engineering', group: 'level1', title: 'Mechanical Engineering', x: 0, y: -150, physics: false, image: 'images/icons/me.png' },
+    // 앵커 노드 (주요 분야)
+    { id: 'ee', label: 'Electrical Engineering', group: 'level1', title: 'Electrical Engineering', x: 0, y: 0,  image: 'images/icons/ee.png' },
+    { id: 'me', label: 'Mechanical Engineering', group: 'level1', title: 'Mechanical Engineering', x: 500, y: 0, image: 'images/icons/me.png' },
+    { id: 'computer', label: 'Computer', group: 'level2', title: 'Computer', x: -500, y: 0, image: 'images/icons/computer.png' },
+    { id: 'mathematics', label: 'Mathematics', group: 'level1', title: 'Mathematics', x: 0, y: 350, image: 'images/icons/mathematics.png' },
 
     // 세부 노드
     // 전자공학
-    { id: 'signal', label: 'Signal & Comm.', group: 'level2', x: -500, y: -200, image: 'images/icons/signal.png' },
-    { id: 'control', label: 'Control', group: 'level2', x: -350, y: -40, image: 'images/icons/control.png' },
+    { id: 'signal', label: 'Signal & Comm.', group: 'level2', y: -100, image: 'images/icons/signal.png' },
+    { id: 'control', label: 'Control', group: 'level2', y: -100, image: 'images/icons/control.png' },
 
     // 기계공학
-    { id: 'robotics', label: 'Robotics', group: 'level2', x: 380, y: -230, image: 'images/icons/robotics.png' },
-    { id: 'kinematics', label: 'Kinematics & Dynamics', group: 'level3', x: 440, y: -300, image: 'images/icons/kinematics.png' },
+    { id: 'robotics', label: 'Robotics', group: 'level2', x: 500, y: 200, image: 'images/icons/robotics.png' },
+    { id: 'kinematics', label: 'Kinematics & Dynamics', group: 'level3', x: 600, y: 150, image: 'images/icons/kinematics.png' },
 
     // 전자 - 기계
-    { id: 'mechatronics', label: 'Mechatronics', group: 'inter', title: 'Interdisciplinary', x: 200, y: -40, image: 'images/icons/mechatronics.png' },
+    { id: 'mechatronics', label: 'Mechatronics', group: 'inter', title: 'Interdisciplinary', x: 150, y: 150, image: 'images/icons/mechatronics.png' },
 
-    // 컴퓨터
-    { id: 'cs', label: 'CS', group: 'level3', x: -520, y: -230, image: 'images/icons/cs.png' },
-    { id: 'ca', label: 'CA', group: 'level3', x: -470, y: -170, image: 'images/icons/ca.png' },
-    { id: 'se', label: 'SE', group: 'level3', x: -360, y: -70, image: 'images/icons/se.png' },
-    { id: 'net', label: 'Net & Sec', group: 'level3', x: -560, y: 10, image: 'images/icons/netsec.png' },
-    { id: 'ai', label: 'AI & Data', group: 'level3', x: -460, y: 70, image: 'images/icons/ai.png' },
-    { id: 'hci', label: 'HCI', group: 'level3', x: -360, y: 10, image: 'images/icons/hci.png' },
+    // 컴퓨터 과학
+    { id: 'cs', label: 'CS', group: 'level3', image: 'images/icons/cs.png' },
+    { id: 'ca', label: 'CA', group: 'level3', image: 'images/icons/ca.png' },
+    { id: 'se', label: 'SE', group: 'level3', image: 'images/icons/se.png' },
+    { id: 'net', label: 'Net & Sec', group: 'level3', image: 'images/icons/netsec.png' },
+    { id: 'ai', label: 'AI & Data', group: 'level3', image: 'images/icons/ai.png' },
+    { id: 'hci', label: 'HCI', group: 'level3', image: 'images/icons/hci.png' },
 
-    // 수학
-    { id: 'mathematics', label: 'Mathematics', group: 'level1', title: 'Mathematics', x: -200, y: 200, physics: false, image: 'images/icons/mathematics.png' },
-    { id: 'statistics', label: 'Statistics', group: 'level2', x: -120, y: 280, image: 'images/icons/statistics.png' },
-    { id: 'engineering_math', label: 'Engineering Math', group: 'level2', x: -200, y: 320, image: 'images/icons/engineering_math.png' },
-    { id: 'linear_algebra', label: 'Linear Algebra', group: 'level2', x: -280, y: 280, image: 'images/icons/linear_algebra.png' }
+    // 수학 분야
+    { id: 'statistics', label: 'Statistics', group: 'level2', y: 400, image: 'images/icons/statistics.png' },
+    { id: 'engineering_math', label: 'Engineering Math', group: 'level2', y: 400, image: 'images/icons/engineering_math.png' },
+    { id: 'linear_algebra', label: 'Linear Algebra', group: 'level2', y: 400, image: 'images/icons/linear_algebra.png' }
   ];
 
-  // 엣지
+  // 네트워크 연결 데이터
   const edgesData = [
+    // 전자공학 연결
     { from: 'ee', to: 'signal', length: 170 },
     { from: 'ee', to: 'control', length: 170 },
-    { from: 'ee', to: 'computer' },
+    { from: 'ee', to: 'computer', length: 400 },
+
+    // 기계공학 연결
+    { from: 'me', to: 'robotics', length: 170 },
+    { from: 'robotics', to: 'kinematics', length: 150 },
+    
+    // 융복합 연결
+    { from: 'ee', to: 'mechatronics', length: 240 },
+    { from: 'me', to: 'mechatronics', length: 240 },
+    
+    // 컴퓨터 과학 연결
     { from: 'computer', to: 'cs', length: 150 },
     { from: 'computer', to: 'ca', length: 150 },
     { from: 'computer', to: 'se', length: 150 },
     { from: 'computer', to: 'net', length: 150 },
     { from: 'computer', to: 'ai', length: 150 },
     { from: 'computer', to: 'hci', length: 150 },
-    { from: 'me', to: 'robotics', length: 170 },
-    { from: 'robotics', to: 'kinematics', length: 150 },
-    { from: 'ee', to: 'mechatronics' },
-    { from: 'me', to: 'mechatronics' },
+    
+    // 수학 연결
     { from: 'mathematics', to: 'statistics', length: 150 },
     { from: 'mathematics', to: 'engineering_math', length: 150 },
     { from: 'mathematics', to: 'linear_algebra', length: 150 }
   ];
 
-  // 그래프 옵션
+  // vis.js 네트워크 옵션 설정
   const options = {
-    // 노드 스타일 설정
+    // 노드 기본 스타일
     nodes: {
       shape: 'circularImage',
       shapeProperties: { useBorderWithImage: true },
@@ -83,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
       borderWidth: 3
     },
 
-    // 노드 그룹별 스타일 설정
+    // 노드 그룹별 색상 및 크기
     groups: {
       level1: { color: { border: '#FF7272', background: 'rgba(255, 138, 138, 0.9)' }, size: 62 },
       level2: { color: { border: '#61AFFF', background: 'rgba(138, 198, 255, 0.9)' }, size: 50 },
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
       inter: { color: { border: '#FFD35A', background: 'rgba(255, 217, 120, 0.9)' }, size: 50 }
     },
 
-    // 엣지 스타일 설정
+    // 엣지 스타일
     edges: {
       width: 2,
       color: { color: '#cccccc', highlight: '#a8a8a8', hover: '#a8a8a8' },
@@ -106,13 +104,11 @@ document.addEventListener('DOMContentLoaded', function() {
       enabled: true,
       solver: 'repulsion',
       repulsion: {
-        centralGravity: 0.18,
-        springLength: 180,
+        centralGravity: 0,
         springConstant: 0.035,
-        nodeDistance: 160,
+        nodeDistance: 100,
         damping: 0.12
-      },
-      stabilization: { iterations: 900 }
+      }
     },
 
     // 사용자 상호작용 설정
@@ -125,13 +121,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // 아이콘 이미지 조정 함수
+  // ==========================================
+  // 유틸리티 함수들
+  // ==========================================
+
+  // 디바운스 함수 - 연속 호출 방지
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // 이미지 패딩 처리 함수
   function padImageToRatio(url, ratio) {
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.crossOrigin = 'anonymous';
       img.onload = () => {
-        
         // 캔버스 크기 계산
         const maxSide = Math.max(img.width, img.height) || 256;
         const canvas = document.createElement('canvas');
@@ -155,10 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 모든 노드의 이미지를 패딩 처리하여 최종 노드 데이터 생성
-  async function buildPaddedNodes(base) {
-    // 이미지 URL 수집
-    const imageUrls = base.filter(n => n.image).map(n => n.image);
+  // 노드 이미지 전처리 함수
+  async function buildPaddedNodes(baseNodes) {
+    const imageUrls = baseNodes.filter(n => n.image).map(n => n.image);
     const urlToData = new Map();
     
     // 모든 이미지를 병렬로 처리
@@ -166,25 +177,62 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         const dataUrl = await padImageToRatio(url, 0.6);
         urlToData.set(url, dataUrl);
-      } catch (e) {
+      } catch (error) {
         urlToData.set(url, url);
       }
     }));
     
-    // 노드에 처리된 이미지 URL 적용
-    return base.map(n => n.image ? { ...n, image: urlToData.get(n.image) || n.image } : { ...n });
+    // 처리된 이미지 URL을 노드에 적용
+    return baseNodes.map(node => 
+      node.image ? { ...node, image: urlToData.get(node.image) || node.image } : { ...node }
+    );
   }
 
-  // 그래프 초기화
-  (async () => {
-    // 노드 데이터 생성
-    const paddedNodes = await buildPaddedNodes(baseNodes);
-    
-    // vis.js DataSet 객체 생성 (노드, 엣지)
-    const nodes = new vis.DataSet(paddedNodes);
-    const edges = new vis.DataSet(edgesData);
-    
-    // 네트워크 그래프 생성
-    const network = new vis.Network(container, { nodes, edges }, options);
-  })();
+  // 리사이즈 핸들러
+  function handleResize() {
+    if (network) {
+      network.redraw();
+    }
+  }
+
+  // ==========================================
+  // 초기화 및 이벤트 설정
+  // ==========================================
+
+  // 네트워크 객체
+  let network;
+
+  // 그래프 초기화 및 생성
+  async function initializeNetwork() {
+    try {
+      // 이미지 전처리된 노드 데이터 생성
+      const paddedNodes = await buildPaddedNodes(baseNodes);
+      
+      // vis.js DataSet 객체 생성
+      const nodes = new vis.DataSet(paddedNodes);
+      const edges = new vis.DataSet(edgesData);
+      
+      // 네트워크 그래프 생성
+      network = new vis.Network(container, { nodes, edges }, options);
+    } catch (error) {
+      console.error('Network initialization failed:', error);
+    }
+  }
+
+  // 이벤트 리스너 설정
+  function setupEventListeners() {
+    // 창 크기 변경 시 그래프 다시 그리기
+    window.addEventListener('resize', debounce(handleResize, 150));
+  }
+
+  // ==========================================
+  // 실행 부분
+  // ==========================================
+
+  // 네트워크 초기화 실행
+  initializeNetwork();
+  
+  // 이벤트 리스너 설정
+  setupEventListeners();
+
 });
