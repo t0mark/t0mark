@@ -3,77 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV</title>
+  <title>CV - Hyeonung Yang</title>
   <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" href="styles/variables.css" />
   <link rel="stylesheet" href="styles/cv.css" />
 </head>
 <body>
   <a class="back-home" href="index.html" aria-label="Back to Home">Home</a>
-  <main class="page">
-    <aside class="sidebar">
+  
+  <div class="cv-container">
+    <aside class="cv-sidebar">
       <div class="profile">
-        <div class="profile-photo"></div>
-        <h1 class="name">Hyeonung Yang</h1>
-        <p class="role">AI Robotics Engineer</p>
+        <img src="images/profile.jpg" alt="Hyeonung Yang" class="profile-photo" />
+        <h1 class="profile-name">Hyeonung Yang</h1>
+        <p class="profile-role">AI Robotics Engineer</p>
       </div>
 
-      <section class="contact">
-        <h2 class="section-title"><span class="emoji" aria-hidden="true">📇</span>Contact</h2>
-        <ul class="list">
-          <li><span class="emoji" aria-hidden="true">📞</span><a href="tel:+821096536009">+82 10-9653-6009</a></li>
-          <li><span class="emoji" aria-hidden="true">✉️</span><a href="mailto:iwagoho@gmail.com">iwagoho@gmail.com</a></li>
-          <li><span class="emoji" aria-hidden="true">📍</span><span>Jeonbuk National University</span></li>
+      <section>
+        <h2 class="section-title">
+          <span class="section-icon">📇</span>
+          Contact
+        </h2>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:+821096536009" class="contact-link">+82 10-9653-6009</a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:iwagoho@gmail.com" class="contact-link">iwagoho@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span class="contact-text">Jeonbuk National University</span>
+          </li>
         </ul>
       </section>
 
-      <section class="links">
-        <h2 class="section-title"><span class="emoji" aria-hidden="true">🔗</span>Links</h2>
-        <ul class="list">
-          <li><span class="emoji" aria-hidden="true">💼</span><a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" rel="noreferrer">linkedin.com/in/hyeonung-yang</a></li>
-          <li><span class="emoji" aria-hidden="true">💻</span><a href="https://github.com/t0mark" target="_blank" rel="noreferrer">github.com/t0mark</a></li>
-          <li><span class="emoji" aria-hidden="true">🎯</span><a href="https://solved.ac/profile/gusdnd5297" target="_blank" rel="noreferrer">solved.ac/profile/gusdnd5297</a></li>
+      <section>
+        <h2 class="section-title">
+          <span class="section-icon">🔗</span>
+          Links
+        </h2>
+        <ul class="links-list">
+          <li class="link-item">
+            <span class="link-icon">💼</span>
+            <a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" rel="noreferrer" class="external-link">linkedin.com/in/hyeonung-yang</a>
+          </li>
+          <li class="link-item">
+            <span class="link-icon">💻</span>
+            <a href="https://github.com/t0mark" target="_blank" rel="noreferrer" class="external-link">github.com/t0mark</a>
+          </li>
+          <li class="link-item">
+            <span class="link-icon">🎯</span>
+            <a href="https://solved.ac/profile/gusdnd5297" target="_blank" rel="noreferrer" class="external-link">solved.ac/profile/gusdnd5297</a>
+          </li>
         </ul>
       </section>
 
-      <section class="skills">
-        <h2 class="section-title"><span class="emoji" aria-hidden="true">🛠️</span>Skills</h2>
-        <ul class="tags">
-          <li>Python</li>
-          <li>C/C++</li>
-          <li>Embedded</li>
-          <li>Robotics</li>
-          <li>Computer Vision</li>
-          <li>Digital Logic</li>
-          <li>Web/App</li>
+      <section>
+        <h2 class="section-title">
+          <span class="section-icon">🛠️</span>
+          Skills
+        </h2>
+        <ul class="skills-list">
+          <li class="skill-tag">Python</li>
+          <li class="skill-tag">C/C++</li>
+          <li class="skill-tag">Embedded</li>
+          <li class="skill-tag">Robotics</li>
+          <li class="skill-tag">Computer Vision</li>
+          <li class="skill-tag">Digital Logic</li>
+          <li class="skill-tag">Web/App</li>
         </ul>
       </section>
     </aside>
 
-    <section class="content">
+    <main class="cv-content">
       <section>
-        <h2 class="section-title">Education</h2>
-
-        <div class="item">
-          <div class="item-head">
-            <div>
-              <h3>Jeonbuk National University</h3>
+        <h2 class="content-section-title">Education</h2>
+        
+        <div class="education-item">
+          <div class="item-header">
+            <div class="item-info">
+              <h3 class="institution">Jeonbuk National University</h3>
+              <p class="degree">Master of Electronics and Information Engineering</p>
             </div>
-            <div class="meta">Mar. 2026 – Present</div>
+            <span class="duration">Mar. 2026 – Present</span>
           </div>
-          <p class="desc">Master of Electronics and Information Engineering</p>
         </div>
 
-        <div class="item">
-          <div class="item-head">
-            <div>
-              <h3>Jeonbuk National University</h3>
+        <div class="education-item">
+          <div class="item-header">
+            <div class="item-info">
+              <h3 class="institution">Jeonbuk National University</h3>
+              <p class="degree">Department of Electronic Engineering</p>
+              <p class="degree">Department of Computer Engineering</p>
             </div>
-            <div class="meta">Mar. 2020 – Feb. 2026</div>
+            <span class="duration">Mar. 2020 – Feb. 2026</span>
           </div>
-          <p class="desc">Department of Electronic Engineering</p>
-          <p class="desc">Department of Computer Engineering</p>
-          <ul class="bullets">
+          <ul class="achievement-list">
             <li>Total GPA of 4.12/4.5</li>
             <li>Major GPA of 4.12/4.5</li>
             <li>credits taken (5/37)</li>
@@ -82,136 +110,206 @@
       </section>
 
       <section>
-        <h2 class="section-title">Internships / Research</h2>
-        <div class="item">
-          <div class="item-head">
-            <div>
-              <h3>AI Robotics Lab (Advisor: Hyungi Jo)</h3>
-              <p class="sub">Undergraduate Researcher</p>
+        <h2 class="content-section-title">Internships / Research</h2>
+        <div class="internship-item">
+          <div class="item-header">
+            <div class="item-info">
+              <h3 class="organization">AI Robotics Lab (Advisor: Hyungi Jo)</h3>
+              <p class="position">Undergraduate Researcher</p>
             </div>
-            <div class="meta">Aug. 2024 – Present</div>
+            <span class="duration">Aug. 2024 – Present</span>
           </div>
-          <p class="desc">Researching robotics perception &amp; autonomy.</p>
-        </div>
-      </section>
-
-      <section class="projects">
-        <h2 class="section-title">Projects</h2>
-
-        <h3 class="subheading master">Master</h3>
-        <div class="projects-master"></div>
-
-        <h3 class="subheading undergrad">Undergraduate</h3>
-        <div class="projects-undergrad">
-          <div class="item">
-            <div class="item-head">
-              <h3>LiDAR &amp; GPS‑Based Map‑less Outdoor Self‑Driving</h3>
-              <div class="meta">Robotics · In Progress</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Computer Vision Model Accelerator Design</h3>
-              <div class="meta">Computer Vision</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>VLA Robotic Arm Control</h3>
-              <div class="meta">Robotics</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Kickboard Problem Improvement Kit</h3>
-              <div class="meta">Team Member · 2025.02 – 2025.08</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>MCU‑Controlled Function Generator</h3>
-              <div class="meta">Team Leader · 2024.05 – 2024.06</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Floating Point Calculator</h3>
-              <div class="meta">Team Leader · 2024.09 – 2024.12</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Heart Rate Monitor Circuit</h3>
-              <div class="meta">Team Leader · 2024.05 – 2024.06</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Gate Circuit &amp; Filter‑based Function Generator</h3>
-              <div class="meta">Team Leader · 2023.11 – 2023.12</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>University Assistance App</h3>
-              <div class="meta">Team Leader · 2024.09 – 2024.12</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Cookie Run PVE Game</h3>
-              <div class="meta">Team Leader · 2024.03 – 2024.06</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-head">
-              <h3>Electronics Engineering Community Web</h3>
-              <div class="meta">Individual · 2023.11 – 2023.12</div>
-            </div>
-          </div>
+          <p class="description">Researching robotics perception &amp; autonomy.</p>
         </div>
       </section>
 
       <section>
-        <h2 class="section-title">Awards</h2>
-        <ul class="timeline">
-          <li><span class="time">2025.07</span> Grand Prize · JST Shared University Data Analysis Competition</li>
-          <li><span class="time">2024.02</span> President's Award (Academic Excellence) · Jeonbuk National University</li>
-          <li><span class="time">2024.02</span> Encouragement Award · Semiconductor Convergence University Career Design Competition</li>
-          <li><span class="time">2023.06</span> Excellence Award · Jeonju ICT Innovation AI Coding Competition</li>
+        <h2 class="content-section-title">Projects</h2>
+
+        <h3 class="project-category master">Master</h3>
+        <div class="master-projects">
+          <div class="no-projects">No projects yet</div>
+        </div>
+
+        <h3 class="project-category undergrad">Undergraduate</h3>
+        <div class="undergraduate-projects">
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">LiDAR &amp; GPS‑Based Map‑less Outdoor Self‑Driving</h3>
+              </div>
+              <span class="project-meta">Robotics · In Progress</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Computer Vision Model Accelerator Design</h3>
+              </div>
+              <span class="project-meta">Computer Vision</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">VLA Robotic Arm Control</h3>
+              </div>
+              <span class="project-meta">Robotics</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Kickboard Problem Improvement Kit</h3>
+              </div>
+              <span class="project-meta">Team Member · 2025.02 – 2025.08</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">MCU‑Controlled Function Generator</h3>
+              </div>
+              <span class="project-meta">Team Leader · 2024.05 – 2024.06</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Floating Point Calculator</h3>
+              </div>
+              <span class="project-meta">Team Leader · 2024.09 – 2024.12</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Heart Rate Monitor Circuit</h3>
+              </div>
+              <span class="project-meta">Team Leader · 2024.05 – 2024.06</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Gate Circuit &amp; Filter‑based Function Generator</h3>
+              </div>
+              <span class="project-meta">Team Leader · 2023.11 – 2023.12</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">University Assistance App</h3>
+              </div>
+              <span class="project-meta">Team Leader · 2024.09 – 2024.12</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Cookie Run PVE Game</h3>
+              </div>
+              <span class="project-meta">Team Leader · 2024.03 – 2024.06</span>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-info">
+                <h3 class="project-title">Electronics Engineering Community Web</h3>
+              </div>
+              <span class="project-meta">Individual · 2023.11 – 2023.12</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="content-section-title">Awards</h2>
+        <ul class="awards-list">
+          <li class="award-item">
+            <span class="award-date">2025.07</span>
+            <span class="award-title">Grand Prize · JST Shared University Data Analysis Competition</span>
+          </li>
+          <li class="award-item">
+            <span class="award-date">2024.02</span>
+            <span class="award-title">President's Award (Academic Excellence) · Jeonbuk National University</span>
+          </li>
+          <li class="award-item">
+            <span class="award-date">2024.02</span>
+            <span class="award-title">Encouragement Award · Semiconductor Convergence University Career Design Competition</span>
+          </li>
+          <li class="award-item">
+            <span class="award-date">2023.06</span>
+            <span class="award-title">Excellence Award · Jeonju ICT Innovation AI Coding Competition</span>
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2 class="section-title">Scholarships / Honors</h2>
-        <ul class="timeline">
-          <li><span class="time">2024.03</span> Jangheung Talent Scholarship · Jangheung Scholarship Foundation</li>
-          <li><span class="time">2024.03</span> KOSCA Hope Scholarship · Korea Specialty Contractors Association (Jeonnam Chapter)</li>
-          <li><span class="time">2024.02</span> Cheongwan Scholarship · Cheongwan Cultural Scholarship Foundation</li>
-          <li><span class="time">2023.09</span> Cheongwan Nonghyup Member's Child Scholarship · Cheongwan Agricultural Cooperative</li>
+        <h2 class="content-section-title">Scholarships / Honors</h2>
+        <ul class="scholarships-list">
+          <li class="scholarship-item">
+            <span class="scholarship-date">2024.03</span>
+            <span class="scholarship-title">Jangheung Talent Scholarship · Jangheung Scholarship Foundation</span>
+          </li>
+          <li class="scholarship-item">
+            <span class="scholarship-date">2024.03</span>
+            <span class="scholarship-title">KOSCA Hope Scholarship · Korea Specialty Contractors Association (Jeonnam Chapter)</span>
+          </li>
+          <li class="scholarship-item">
+            <span class="scholarship-date">2024.02</span>
+            <span class="scholarship-title">Cheongwan Scholarship · Cheongwan Cultural Scholarship Foundation</span>
+          </li>
+          <li class="scholarship-item">
+            <span class="scholarship-date">2023.09</span>
+            <span class="scholarship-title">Cheongwan Nonghyup Member's Child Scholarship · Cheongwan Agricultural Cooperative</span>
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2 class="section-title">Certifications</h2>
-        <ul class="timeline">
-          <li><span class="time">2023.05</span> Class 1 Ordinary Driver's License</li>
-          <li><span class="time">2024.06</span> ADsP (Data Analysis Semi-Professional)</li>
-          <li><span class="time">2024.11</span> Engineer Information Processing</li>
-          <li><span class="time">2024.08</span> TOEIC 265/990</li>
+        <h2 class="content-section-title">Certifications</h2>
+        <ul class="certifications-list">
+          <li class="certification-item">
+            <span class="certification-date">2023.05</span>
+            <span class="certification-title">Class 1 Ordinary Driver's License</span>
+          </li>
+          <li class="certification-item">
+            <span class="certification-date">2024.06</span>
+            <span class="certification-title">ADsP (Data Analysis Semi-Professional)</span>
+          </li>
+          <li class="certification-item">
+            <span class="certification-date">2024.11</span>
+            <span class="certification-title">Engineer Information Processing</span>
+          </li>
+          <li class="certification-item">
+            <span class="certification-date">2024.08</span>
+            <span class="certification-title">TOEIC 265/990</span>
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2 class="section-title">Extracurricular</h2>
-        <ul class="timeline">
-          <li>CPU Mentoring (Python)</li>
-          <li>Department Mentoring (F1TENTH)</li>
-          <li>Department Mentoring (FCA)</li>
+        <h2 class="content-section-title">Extracurricular</h2>
+        <ul class="activities-list">
+          <li class="activity-item">CPU Mentoring (Python)</li>
+          <li class="activity-item">Department Mentoring (F1TENTH)</li>
+          <li class="activity-item">Department Mentoring (FCA)</li>
         </ul>
       </section>
-    </section>
-  </main>
+    </main>
+  </div>
 
   <footer class="print-note">
     <p>Updated CV. Contact and links verified.</p>

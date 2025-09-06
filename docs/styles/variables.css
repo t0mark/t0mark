@@ -62,6 +62,11 @@
   --container-max: 1200px;
   --nav-height: 64px;
   
+  /* ===== BREAKPOINTS ===== */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  
   /* ===== BORDER RADIUS ===== */
   --border-radius: 8px;
   --border-radius-lg: 16px;

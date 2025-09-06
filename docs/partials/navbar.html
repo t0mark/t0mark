@@ -1,29 +1,43 @@
 <!-- 상단 네비게이션 바 -->
 <header class="top-nav">
+  
   <!-- 네비게이션 컨테이너 -->
-  <nav class="nav-container">
-    <!-- 페이지 링크 영역 -->
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="#" class="nav-link">Post</a>
-      <a href="#" class="nav-link">Project</a>
-      <a href="graduate.html" class="nav-link">Graduate</a>
-      <a href="cv.html" class="nav-link">CV</a>
-    </div>
-    <!-- 소셜 링크 영역 -->
-    <div class="social-nav">
-      <a href="https://solved.ac/profile/gusdnd5297#" class="social-nav-link">
-        <img src="images/boj-icon.png" alt="백준">
-      </a>
-      <a href="https://github.com/t0mark" class="social-nav-link">
-        <img src="images/github_icon.png" alt="GitHub">
-      </a>
-      <a href="mailto:iwagoho@gmail.com" class="social-nav-link">
-        <img src="images/Gmail_icon.svg" alt="Gmail">
-      </a>
-      <a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" class="social-nav-link">
-        <img src="images/LinkedIn_icon.svg" alt="LinkedIn">
-      </a>
+  <nav class="nav-container" role="navigation" aria-label="메인 네비게이션">
+    
+    <!-- 모바일 -->
+    <button class="mobile-menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <!-- 네비게이션 메뉴 -->
+    <div class="nav-menu">
+
+      <!-- 페이지 링크 영역 -->
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="posts.html" class="nav-link">Post</a>
+        <a href="projects.html" class="nav-link">Project</a>
+        <a href="graduate.html" class="nav-link">Graduate</a>
+        <a href="cv.html" class="nav-link">CV</a>
+      </div>
+      
+      <!-- 소셜 링크 영역 -->
+      <div class="social-nav" role="list" aria-label="소셜 링크">
+        <a href="https://solved.ac/profile/gusdnd5297#" class="social-nav-link" aria-label="백준 프로필">
+          <img src="images/boj-icon.png" alt="백준">
+        </a>
+        <a href="https://github.com/t0mark" class="social-nav-link" aria-label="GitHub 프로필">
+          <img src="images/github_icon.png" alt="GitHub">
+        </a>
+        <a href="mailto:iwagoho@gmail.com" class="social-nav-link" aria-label="이메일 보내기">
+          <img src="images/Gmail_icon.svg" alt="Gmail">
+        </a>
+        <a href="https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/" target="_blank" class="social-nav-link" aria-label="LinkedIn 프로필">
+          <img src="images/LinkedIn_icon.svg" alt="LinkedIn">
+        </a>
+      </div>
     </div>
   </nav>
 </header>

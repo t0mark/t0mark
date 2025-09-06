@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 리사이즈 핸들러
   function handleResize() {
     if (network) {
+      network.fit();
       network.redraw();
     }
   }
