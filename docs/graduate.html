@@ -133,11 +133,28 @@
         </div>
     </main>
     
-    <!-- 캠퍼스 맵 관련 자바스크립트 파일을 로드합니다. -->
-    <script src="scripts/campus.js"></script>
-
-    <!-- 네비게이션 바와 이 페이지의 메인 로직을 담은 자바스크립트 파일을 로드합니다. -->
+    <!-- 캠퍼스 건물 상세 정보 모달 창 -->
+    <div id="buildingModal" class="building-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="buildingTitle">Building Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="buildingContent"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 네비게이션 바 자바스크립트 파일을 로드합니다. -->
     <script src="scripts/navbar.js"></script>
-    <script src="scripts/graduate.js"></script>
+    
+    <!-- 모듈화된 Graduate 자바스크립트 파일들을 로드합니다. -->
+    <script src="scripts/graduate/graduate-data.js"></script>
+    <script src="scripts/graduate/graduate-utils.js"></script>
+    <script src="scripts/graduate/graduate-hardware.js"></script>
+    <script  src="scripts/graduate/graduate-campus.js"></script>
+    <script src="scripts/graduate/graduate-core.js"></script>
 </body>
 </html>

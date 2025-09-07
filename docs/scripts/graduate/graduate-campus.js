@@ -690,9 +690,27 @@ class CampusMap {
     }
 }
 
+// Export for other modules
+window.campusMap = {
+    CampusMap,
+    reinitializeCampusMap: function() {
+        const campusBuildings = document.querySelectorAll('.campus-building');
+        
+        campusBuildings.forEach(building => {
+            building.addEventListener('click', function() {
+                const buildingType = this.getAttribute('data-building');
+                if (buildingType && window.campusMap.instance) {
+                    window.campusMap.instance.openBuildingModal(buildingType);
+                }
+            });
+        });
+    }
+};
+
 // Initialize campus map when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new CampusMap();
+    const campusMapInstance = new CampusMap();
+    window.campusMap.instance = campusMapInstance;
     
     // Add campus entrance animation
     setTimeout(() => {
@@ -709,4 +727,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, index * 150);
         });
     }, 500);
+    
+    console.log('🏫 Graduate Campus 모듈이 초기화되었습니다.');
 });
