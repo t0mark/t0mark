@@ -1,22 +1,36 @@
+<!-- HTML 문서 유형을 정의합니다. -->
 <!DOCTYPE html>
+<!-- 웹 페이지의 언어를 한국어로 설정합니다. -->
 <html lang="ko">
+<!-- 문서의 메타데이터를 담는 head 섹션입니다. -->
 <head>
+    <!-- 문자 인코딩을 UTF-8로 설정합니다. -->
     <meta charset="UTF-8">
+    <!-- 뷰포트 설정을 통해 반응형 디자인을 지원합니다. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 페이지 제목을 'Graduate'로 설정합니다. -->
     <title>Graduate</title>
+    <!-- 파비콘(favicon)을 설정합니다. -->
     <link rel="icon" href="images/favicon.ico">
+    <!-- CSS 변수를 정의한 스타일시트를 연결합니다. -->
     <link rel="stylesheet" href="styles/variables.css">
+    <!-- 공통 스타일을 정의한 스타일시트를 연결합니다. -->
     <link rel="stylesheet" href="styles/common.css">
+    <!-- 이 페이지에만 적용되는 스타일시트를 연결합니다. -->
     <link rel="stylesheet" href="styles/graduate.css">
+    <!-- Font Awesome 아이콘을 사용하기 위한 외부 스타일시트를 연결합니다. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+<!-- 웹 페이지의 실제 콘텐츠를 담는 body 섹션입니다. -->
 <body>
-    <!-- Header Navigation (loaded via partial) -->
+    <!-- 헤더 네비게이션 바가 동적으로 로드될 컨테이너입니다. -->
     <div id="navbar"></div>
 
-    <!-- Sticky Sidebar -->
+    <!-- 화면 스크롤 시 따라오는 스티키 사이드바입니다. -->
     <div class="sticky-sidebar" id="stickySidebar">
+        <!-- 사이드바 네비게이션 메뉴입니다. -->
         <div class="sidebar-nav">
+            <!-- 각 탭으로 이동하는 네비게이션 아이템입니다. -->
             <div class="sidebar-nav-item" data-tab="fields" data-label="연구 분야"></div>
             <div class="sidebar-nav-item" data-tab="trends" data-label="연구 동향"></div>
             <div class="sidebar-nav-item" data-tab="conferences" data-label="학회 & 저널"></div>
@@ -24,45 +38,59 @@
         </div>
     </div>
 
+    <!-- 메인 콘텐츠 영역입니다. -->
     <main>
+        <!-- 페이지 상단의 헤더 섹션입니다. -->
         <header class="page-header">
             <div class="container">
+                <!-- 페이지 제목과 아이콘입니다. -->
                 <h1><i class="fas fa-graduation-cap"></i> Robotics Graduate Guide</h1>
+                <!-- 페이지 부제목입니다. -->
                 <p>로봇공학 연구와 대학원 프로그램</p>
             </div>
         </header>
 
+        <!-- 탭 네비게이션 메뉴입니다. -->
         <nav class="tab-navigation">
             <div class="container">
+                <!-- 탭 버튼들을 담는 컨테이너입니다. -->
                 <div class="tabs">
+                    <!-- '연구 분야' 탭 버튼입니다. -->
                     <button class="tab-btn active" data-tab="fields">
                         <i class="fas fa-cogs"></i>
                         연구 분야
                     </button>
+                    <!-- '연구 동향' 탭 버튼입니다. -->
                     <button class="tab-btn" data-tab="trends">
                         <i class="fas fa-chart-line"></i>
                         연구 동향
                     </button>
+                    <!-- '학회 & 저널' 탭 버튼입니다. -->
                     <button class="tab-btn" data-tab="conferences">
                         <i class="fas fa-university"></i>
                         학회 & 저널
                     </button>
+                    <!-- '학습 가이드' 탭 버튼입니다. -->
                     <button class="tab-btn" data-tab="learning">
                         <i class="fas fa-book"></i>
                         학습 가이드
                     </button>
                 </div>
+                <!-- 모바일 환경에서 보여질 탭 메뉴 버튼입니다. -->
                 <button class="tab-mobile-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </nav>
 
+        <!-- 탭 콘텐츠를 감싸는 래퍼입니다. -->
         <div class="tab-content-wrapper">
             <div class="container">
-                <!-- 연구 분야 -->
+                <!-- '연구 분야' 탭 콘텐츠 섹션입니다. -->
                 <section id="fields" class="tab-content active">
+                    <!-- 연구 분야를 그리드 형태로 보여주는 컨테이너입니다. -->
                     <div class="field-grid">
+                        <!-- 'Perception' 연구 분야 카드입니다. -->
                         <div class="field-card">
                             <div class="field-icon perception">
                                 <i class="fas fa-eye"></i>
@@ -80,6 +108,7 @@
                             </div>
                         </div>
 
+                        <!-- 'Localization & Mapping' 연구 분야 카드입니다. -->
                         <div class="field-card">
                             <div class="field-icon localization">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -97,6 +126,7 @@
                             </div>
                         </div>
 
+                        <!-- 'Planning & Decision Making' 연구 분야 카드입니다. -->
                         <div class="field-card">
                             <div class="field-icon planning">
                                 <i class="fas fa-route"></i>
@@ -114,6 +144,7 @@
                             </div>
                         </div>
 
+                        <!-- 'Control' 연구 분야 카드입니다. -->
                         <div class="field-card">
                             <div class="field-icon control">
                                 <i class="fas fa-sliders-h"></i>
@@ -131,6 +162,7 @@
                             </div>
                         </div>
 
+                        <!-- 'Manipulation' 연구 분야 카드입니다. -->
                         <div class="field-card">
                             <div class="field-icon manipulation">
                                 <i class="fas fa-hand-paper"></i>
@@ -148,6 +180,7 @@
                             </div>
                         </div>
 
+                        <!-- 'Learning & Intelligence' 연구 분야 카드입니다. -->
                         <div class="field-card">
                             <div class="field-icon intelligence">
                                 <i class="fas fa-brain"></i>
@@ -167,12 +200,14 @@
                     </div>
                 </section>
 
-                <!-- 연구 동향 -->
+                <!-- '연구 동향' 탭 콘텐츠 섹션입니다. -->
                 <section id="trends" class="tab-content">
                     <div class="trend-container">
+                        <!-- 주요 연구 트렌드 섹션입니다. -->
                         <div class="trend-section research">
                             <h3><i class="fas fa-flask"></i> 주요 연구 트렌드</h3>
                             
+                            <!-- 'Foundation Models for Robotics' 트렌드 카드입니다. -->
                             <div class="trend-card">
                                 <div class="trend-card-content">
                                     <h4><i class="fas fa-robot"></i> Foundation Models for Robotics</h4>
@@ -189,6 +224,7 @@
                                 </div>
                             </div>
 
+                            <!-- 'Learning Paradigms' 트렌드 카드입니다. -->
                             <div class="trend-card">
                                 <div class="trend-card-content">
                                     <h4><i class="fas fa-graduation-cap"></i> Learning Paradigms</h4>
@@ -205,6 +241,7 @@
                                 </div>
                             </div>
 
+                            <!-- 'Embodied AI' 트렌드 카드입니다. -->
                             <div class="trend-card">
                                 <div class="trend-card-content">
                                     <h4><i class="fas fa-brain"></i> Embodied AI</h4>
@@ -221,6 +258,7 @@
                                 </div>
                             </div>
 
+                            <!-- 'Safety and Robustness' 트렌드 카드입니다. -->
                             <div class="trend-card">
                                 <div class="trend-card-content">
                                     <h4><i class="fas fa-shield-alt"></i> Safety and Robustness</h4>
@@ -238,10 +276,13 @@
                             </div>
                         </div>
 
+                        <!-- 산업 응용 분야 섹션입니다. -->
                         <div class="trend-section industry">
                             <h3><i class="fas fa-industry"></i> 산업 응용 분야</h3>
                             
+                            <!-- 산업 응용 분야를 그리드 형태로 보여주는 컨테이너입니다. -->
                             <div class="industry-grid">
+                                <!-- 'Smart Manufacturing' 산업 카드입니다. -->
                                 <div class="industry-card manufacturing">
                                     <h4>
                                         <div class="industry-icon">
@@ -260,6 +301,7 @@
                                     </div>
                                 </div>
 
+                                <!-- 'Autonomous Systems' 산업 카드입니다. -->
                                 <div class="industry-card autonomous">
                                     <h4>
                                         <div class="industry-icon">
@@ -278,6 +320,7 @@
                                     </div>
                                 </div>
 
+                                <!-- 'Service Robotics' 산업 카드입니다. -->
                                 <div class="industry-card service">
                                     <h4>
                                         <div class="industry-icon">
@@ -296,6 +339,7 @@
                                     </div>
                                 </div>
 
+                                <!-- 'Healthcare Robotics' 산업 카드입니다. -->
                                 <div class="industry-card healthcare">
                                     <h4>
                                         <div class="industry-icon">
@@ -316,31 +360,35 @@
                             </div>
                         </div>
 
+                        <!-- 최신 하드웨어 트렌드 섹션입니다. -->
                         <div class="trend-section hardware">
                             <h3><i class="fas fa-microchip"></i> 최신 하드웨어 트렌드</h3>
                             
+                            <!-- 인터랙티브 하드웨어 정보 섹션입니다. -->
                             <div class="hardware-interactive">
+                                <!-- 로봇 다이어그램 컨테이너입니다. -->
                                 <div class="robot-diagram">
                                     <div class="robot-container">
                                         <div class="robot-svg-container">
+                                            <!-- 인터랙티브 로봇 SVG 이미지입니다. -->
                                             <svg class="interactive-robot" viewBox="-50 -50 612 612" xmlns="http://www.w3.org/2000/svg">
-                                                <!-- Robot Arms (Both) - Actuators -->
+                                                <!-- 로봇 팔 (Actuators) 그룹입니다. -->
                                                 <g class="robot-part actuators" data-category="actuators">
-                                                    <!-- Left Arm -->
+                                                    <!-- 왼쪽 팔 -->
                                                     <rect x="79.733" y="174.756" transform="matrix(-0.704 -0.7102 0.7102 -0.704 -0.8879 464.9204)" fill="#ECECED" width="33.417" height="115.779"/>
                                                     <path fill="#D7D7D7" d="M45.224,328.709l-5.13-33.022c0.903-0.14,2.228-0.555,3.405-1.732c2.41-2.41,2.412-6.335,0-8.745s-6.335-2.412-8.746,0c-1.177,1.177-1.592,2.502-1.732,3.405L0,283.487c1.298-8.351,5.144-15.925,11.123-21.905c15.44-15.44,40.564-15.441,56.005,0s15.44,40.565,0,56.005C61.148,323.566,53.573,327.412,45.224,328.709z"/>
-                                                    <!-- Right Arm -->
+                                                    <!-- 오른쪽 팔 -->
                                                     <rect x="398.851" y="174.74" transform="matrix(0.704 -0.7102 0.7102 0.704 -42.2075 363.9888)" fill="#D7D7D7" width="33.417" height="115.779"/>
                                                     <path fill="#B0B0B0" d="M466.776,328.709l5.13-33.022c-0.903-0.14-2.228-0.555-3.405-1.732c-2.41-2.41-2.412-6.335,0-8.745c2.412-2.41,6.335-2.412,8.746,0c1.177,1.177,1.592,2.502,1.732,3.405L512,283.487c-1.298-8.351-5.144-15.925-11.123-21.905c-15.44-15.44-40.564-15.441-56.005,0s-15.44,40.565,0,56.005C450.852,323.566,458.426,327.412,466.776,328.709z"/>
                                                 </g>
                                                 
-                                                <!-- Robot Head - Computing -->
+                                                <!-- 로봇 머리 (Computing) 그룹입니다. -->
                                                 <g class="robot-part computing" data-category="computing">
                                                     <path fill="#92E5EA" d="M360.457,182.403H151.542v-61.667c0-57.594,46.86-104.451,104.457-104.451s104.457,46.856,104.457,104.451L360.457,182.403L360.457,182.403z"/>
                                                     <path fill="#79BBBC" d="M360.457,182.403H255.999c0,0,0-143.614,0-166.119c57.598,0,104.457,46.856,104.457,104.451V182.403z"/>
                                                 </g>
                                                 
-                                                <!-- Robot Body - Platforms -->
+                                                <!-- 로봇 몸통 (Platforms) 그룹입니다. -->
                                                 <g class="robot-part platforms" data-category="platforms">
                                                     <rect x="120.836" y="165.694" fill="#D7D7D7" width="270.333" height="253.625"/>
                                                     <rect x="255.997" y="165.694" fill="#B0B0B0" width="135.161" height="253.625"/>
@@ -348,14 +396,14 @@
                                                     <path fill="#92E5EA" d="M334.663,309.217h-78.664V218.35h78.664V309.217z"/>
                                                 </g>
                                                 
-                                                <!-- Robot Eyes/Sensors -->
+                                                <!-- 로봇 눈/센서 (Sensors) 그룹입니다. -->
                                                 <g class="robot-part sensors" data-category="sensors">
                                                     <circle cx="210" cy="99" r="18" fill="#4a90e2"/>
                                                     <circle cx="302" cy="99" r="18" fill="#4a90e2"/>
                                                     <rect x="200" y="140" width="112" height="8" rx="4" fill="#ff6b6b"/>
                                                 </g>
                                                 
-                                                <!-- Robot Legs -->
+                                                <!-- 로봇 다리 그룹입니다. -->
                                                 <g class="robot-legs">
                                                     <path fill="#8B8B8B" d="M189.799,495.715H85.288V322.484h104.511L189.799,495.715L189.799,495.715z"/>
                                                     <rect x="85.292" y="358.065" fill="#6F6F6F" width="104.506" height="33.417"/>
@@ -368,6 +416,7 @@
                                             </svg>
                                         </div>
                                         
+                                        <!-- 사용자 상호작용을 유도하는 힌트입니다. -->
                                         <div class="interaction-hint">
                                             <i class="fas fa-hand-pointer"></i>
                                             <span>로봇 부위를 클릭하세요</span>
@@ -375,14 +424,16 @@
                                     </div>
                                 </div>
                                 
+                                <!-- 하드웨어 정보 패널입니다. -->
                                 <div class="hardware-panel">
                                     <div class="panel-header">
                                         <h4 id="panel-title">차세대 로봇 플랫폼</h4>
                                         <span class="panel-badge" id="panel-badge">2024 HOT</span>
                                     </div>
                                     
+                                    <!-- 하드웨어 카테고리별 콘텐츠입니다. -->
                                     <div class="hardware-content">
-                                        <!-- Platforms Content (Default) -->
+                                        <!-- 'Platforms' 콘텐츠 (기본값) -->
                                         <div class="hardware-category-content active" data-category="platforms">
                                             <div class="hardware-item featured">
                                                 <span class="item-name">Tesla Bot Gen-2</span>
@@ -406,7 +457,7 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Computing Content -->
+                                        <!-- 'Computing' 콘텐츠 -->
                                         <div class="hardware-category-content" data-category="computing">
                                             <div class="hardware-item featured">
                                                 <span class="item-name">NVIDIA Jetson Thor</span>
@@ -430,7 +481,7 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Sensors Content -->
+                                        <!-- 'Sensors' 콘텐츠 -->
                                         <div class="hardware-category-content" data-category="sensors">
                                             <div class="hardware-item featured">
                                                 <span class="item-name">4D Imaging Radar</span>
@@ -454,7 +505,7 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Actuators Content -->
+                                        <!-- 'Actuators' 콘텐츠 -->
                                         <div class="hardware-category-content" data-category="actuators">
                                             <div class="hardware-item featured">
                                                 <span class="item-name">Series Elastic Actuator</span>
@@ -484,7 +535,7 @@
                     </div>
                 </section>
                 
-                <!-- Hardware Detail Modal -->
+                <!-- 하드웨어 상세 정보 모달 창입니다. -->
                 <div id="hardwareModal" class="hardware-modal">
                     <div class="modal-overlay"></div>
                     <div class="modal-content">
@@ -508,15 +559,18 @@
                     </div>
                 </div>
 
-                <!-- 학회 & 저널 -->
+                <!-- '학회 & 저널' 탭 콘텐츠 섹션입니다. -->
                 <section id="conferences" class="tab-content">
                     <div class="conferences-container">
+                        <!-- 주요 학회 섹션입니다. -->
                         <div class="conference-section domestic">
                             <h3><i class="fas fa-university"></i> 주요 학회</h3>
                             
+                            <!-- 국내 학회 카테고리입니다. -->
                             <div class="venue-category">
                                 <h4><i class="fas fa-flag"></i> 국내 학회</h4>
                                 <div class="conference-list">
+                                    <!-- '제어·로봇·시스템학회 (ICROS)' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">제어·로봇·시스템학회 (ICROS)</span>
                                         <span class="conf-badge robotics">로봇공학</span>
@@ -524,6 +578,7 @@
                                         <span class="conf-info">연 2회 개최 | 5월/11월</span>
                                     </div>
                                     
+                                    <!-- '한국로봇학회 (KROS)' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">한국로봇학회 (KROS)</span>
                                         <span class="conf-badge robotics">로봇공학</span>
@@ -531,6 +586,7 @@
                                         <span class="conf-info">연 2회 개최 | 4월/10월</span>
                                     </div>
                                     
+                                    <!-- '한국자동제어학회 (KACC)' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">한국자동제어학회 (KACC)</span>
                                         <span class="conf-badge control">제어시스템</span>
@@ -538,6 +594,7 @@
                                         <span class="conf-info">연 1회 개최 | 8월</span>
                                     </div>
                                     
+                                    <!-- '한국지능로봇경진대회 (FIRA)' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">한국지능로봇경진대회 (FIRA)</span>
                                         <span class="conf-badge competition">로봇경진</span>
@@ -547,11 +604,14 @@
                                 </div>
                             </div>
 
+                            <!-- 국제 학회 섹션입니다. -->
                             <div class="conference-section international">
                             
+                            <!-- 최상위 국제 학회 카테고리입니다. -->
                             <div class="venue-category">
                                 <h4><i class="fas fa-globe"></i> 최상위 국제 학회</h4>
                                 <div class="conference-list">
+                                    <!-- 'ICRA' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">ICRA</span>
                                         <span class="conf-badge robotics">로봇공학</span>
@@ -559,6 +619,7 @@
                                         <span class="conf-info">연 1회 개최 | 5월</span>
                                     </div>
                                     
+                                    <!-- 'IROS' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">IROS</span>
                                         <span class="conf-badge robotics">로봇공학</span>
@@ -566,6 +627,7 @@
                                         <span class="conf-info">연 1회 개최 | 9~10월</span>
                                     </div>
                                     
+                                    <!-- 'RSS' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">RSS</span>
                                         <span class="conf-badge robotics">로봇공학</span>
@@ -573,6 +635,7 @@
                                         <span class="conf-info">연 1회 개최 | 6~7월</span>
                                     </div>
                                     
+                                    <!-- 'CoRL' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">CoRL</span>
                                         <span class="conf-badge robotics">로봇공학</span>
@@ -580,6 +643,7 @@
                                         <span class="conf-info">연 1회 개최 | 10~11월</span>
                                     </div>
                                     
+                                    <!-- 'NeurIPS' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">NeurIPS</span>
                                         <span class="conf-badge ai-ml">ML</span>
@@ -587,6 +651,7 @@
                                         <span class="conf-info">연 1회 개최 | 12월</span>
                                     </div>
                                     
+                                    <!-- 'ICML' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">ICML</span>
                                         <span class="conf-badge ai-ml">ML</span>
@@ -594,6 +659,7 @@
                                         <span class="conf-info">연 1회 개최 | 7월</span>
                                     </div>
                                     
+                                    <!-- 'ICLR' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">ICLR</span>
                                         <span class="conf-badge ai-ml">DL</span>
@@ -601,6 +667,7 @@
                                         <span class="conf-info">연 1회 개최 | 4~5월</span>
                                     </div>
                                     
+                                    <!-- 'CVPR' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">CVPR</span>
                                         <span class="conf-badge cv">CV</span>
@@ -608,6 +675,7 @@
                                         <span class="conf-info">연 1회 개최 | 6월</span>
                                     </div>
                                     
+                                    <!-- 'ICCV' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">ICCV</span>
                                         <span class="conf-badge cv">CV</span>
@@ -615,6 +683,7 @@
                                         <span class="conf-info">2년마다 1회 | 10월</span>
                                     </div>
                                     
+                                    <!-- 'ECCV' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">ECCV</span>
                                         <span class="conf-badge cv">CV</span>
@@ -622,6 +691,7 @@
                                         <span class="conf-info">2년마다 1회 | 8~9월</span>
                                     </div>
                                     
+                                    <!-- 'ICCAS' 정보입니다. -->
                                     <div class="conference-item-compact">
                                         <span class="conf-name">ICCAS</span>
                                         <span class="conf-badge control">제어시스템</span>
@@ -631,11 +701,14 @@
                                 </div>
                             </div>
 
+                            <!-- 주요 저널 섹션입니다. -->
                             <div class="journal-section domestic">
                                 <h3><i class="fas fa-book"></i> 주요 저널</h3>
+                                <!-- 국내 저널 카테고리입니다. -->
                                 <div class="venue-category">
                                     <h4><i class="fas fa-flag"></i> 국내 저널</h4>
                                     <div class="journal-list">
+                                    <!-- '한국로봇학회 논문지' 정보입니다. -->
                                     <div class="journal-item domestic">
                                         <div class="journal-header">
                                             <h5>한국로봇학회 논문지</h5>
@@ -648,6 +721,7 @@
                                         </div>
                                     </div>
                                     
+                                    <!-- '제어·로봇·시스템학회 논문지' 정보입니다. -->
                                     <div class="journal-item domestic">
                                         <div class="journal-header">
                                             <h5>제어·로봇·시스템학회 논문지</h5>
@@ -660,6 +734,7 @@
                                         </div>
                                     </div>
                                     
+                                    <!-- '한국자동제어학회지' 정보입니다. -->
                                     <div class="journal-item domestic">
                                         <div class="journal-header">
                                             <h5>한국자동제어학회지</h5>
@@ -674,10 +749,13 @@
                                 </div>
                             </div>
 
+                            <!-- 국제 저널 섹션입니다. -->
                             <div class="journal-section international">
+                                <!-- 최상위 국제 저널 카테고리입니다. -->
                                 <div class="venue-category">
                                     <h4><i class="fas fa-globe"></i> 최상위 국제 저널</h4>
                                     <div class="journal-list">
+                                        <!-- 'IJRR' 저널 정보입니다. -->
                                         <div class="journal-item tier-1">
                                             <div class="journal-header">
                                                 <h5>IJRR</h5>
@@ -690,6 +768,7 @@
                                             </div>
                                         </div>
                                         
+                                        <!-- 'IEEE T-RO' 저널 정보입니다. -->
                                         <div class="journal-item tier-1">
                                             <div class="journal-header">
                                                 <h5>IEEE T-RO</h5>
@@ -702,6 +781,7 @@
                                             </div>
                                         </div>
                                         
+                                        <!-- 'IEEE RA-L' 저널 정보입니다. -->
                                         <div class="journal-item tier-2">
                                             <div class="journal-header">
                                                 <h5>IEEE RA-L</h5>
@@ -714,6 +794,7 @@
                                             </div>
                                         </div>
                                         
+                                        <!-- 'Autonomous Robots' 저널 정보입니다. -->
                                         <div class="journal-item tier-2">
                                             <div class="journal-header">
                                                 <h5>Autonomous Robots</h5>
@@ -731,9 +812,11 @@
                         </div>
                     </div>
 
+                    <!-- 대학원생 논문 발표 가이드 섹션입니다. -->
                     <div class="publication-strategy">
                         <h3><i class="fas fa-chart-line"></i> 대학원생 논문 발표 가이드</h3>
                         <div class="strategy-grid">
+                            <!-- 석사 과정 목표 카드입니다. -->
                             <div class="strategy-card">
                                 <h4><i class="fas fa-bullseye"></i> 석사 과정 일반적 목표</h4>
                                 <ul>
@@ -743,6 +826,7 @@
                                     <li>졸업 요구사항 충족</li>
                                 </ul>
                             </div>
+                            <!-- 박사 과정 목표 카드입니다. -->
                             <div class="strategy-card">
                                 <h4><i class="fas fa-graduation-cap"></i> 박사 과정 일반적 목표</h4>
                                 <ul>
@@ -754,6 +838,7 @@
                             </div>
                         </div>
                         
+                        <!-- 논문 발표 팁 섹션입니다. -->
                         <div class="publication-tips">
                             <h4><i class="fas fa-lightbulb"></i> 논문 발표 팁</h4>
                             <div class="tips-grid">
@@ -778,92 +863,82 @@
                     </div>
                 </section>
 
-                <!-- 학습 가이드 -->
+                <!-- '학습 가이드' 탭 콘텐츠 섹션입니다. -->
                 <section id="learning" class="tab-content">
                     <div class="campus-container">
+                        <!-- 로보틱스 캠퍼스 맵 섹션 제목입니다. -->
                         <div class="trend-section research">
                             <h3><i class="fas fa-university"></i> 로보틱스 캠퍼스 맵</h3>
                         </div>
                         
+                        <!-- 캠퍼스 맵 그리드 레이아웃입니다. -->
                         <div class="campus-map">
-                            <!-- 3x3 Grid Layout -->
                             <div class="campus-grid">
-                                <!-- Row 1 -->
+                                <!-- 수학관 건물입니다. -->
                                 <div class="campus-building math-building" data-building="math">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-infinity"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-infinity"></i></div>
                                         <div class="building-label">수학관</div>
                                     </div>
                                 </div>
                                 
+                                <!-- 공학관 건물입니다. -->
                                 <div class="campus-building engineering-building" data-building="engineering">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-cogs"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-cogs"></i></div>
                                         <div class="building-label">공학관</div>
                                     </div>
                                 </div>
                                 
+                                <!-- 비전연구소 건물입니다. -->
                                 <div class="campus-building vision-building" data-building="vision">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-eye"></i></div>
                                         <div class="building-label">비전연구소</div>
                                     </div>
                                 </div>
                                 
-                                <!-- Row 2 -->
+                                <!-- 중앙도서관 건물입니다. -->
                                 <div class="campus-building library-building" data-building="library">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-graduation-cap"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-graduation-cap"></i></div>
                                         <div class="building-label">중앙도서관</div>
                                     </div>
                                 </div>
                                 
+                                <!-- 로봇공학관 (메인) 건물입니다. -->
                                 <div class="campus-building robotics-building" data-building="robotics">
                                     <div class="building-structure main-building">
-                                        <div class="building-icon main-icon">
-                                            <i class="fas fa-microchip"></i>
-                                        </div>
+                                        <div class="building-icon main-icon"><i class="fas fa-microchip"></i></div>
                                         <div class="building-label">로봇공학관</div>
                                     </div>
                                 </div>
                                 
+                                <!-- AI연구원 건물입니다. -->
                                 <div class="campus-building ai-building" data-building="ai">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-network-wired"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-network-wired"></i></div>
                                         <div class="building-label">AI연구원</div>
                                     </div>
                                 </div>
                                 
-                                <!-- Row 3 -->
+                                <!-- 실습동 건물입니다. -->
                                 <div class="campus-building workshop-building" data-building="workshop">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-tools"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-tools"></i></div>
                                         <div class="building-label">실습동</div>
                                     </div>
                                 </div>
                                 
+                                <!-- 강의동 건물입니다. -->
                                 <div class="campus-building lecture-building" data-building="lecture">
                                     <div class="building-structure">
-                                        <div class="building-icon">
-                                            <i class="fas fa-users"></i>
-                                        </div>
+                                        <div class="building-icon"><i class="fas fa-users"></i></div>
                                         <div class="building-label">강의동</div>
                                     </div>
                                 </div>
                                 
-                                <!-- Empty space for 3x3 grid completion -->
+                                <!-- 그리드 장식용 빈 공간입니다. -->
                                 <div class="campus-empty-space">
                                     <div class="campus-decoration">
                                         <i class="fas fa-tree"></i>
@@ -874,7 +949,7 @@
                         </div>
                     </div>
                     
-                    <!-- Building Detail Modal -->
+                    <!-- 건물 상세 정보 모달 창입니다. -->
                     <div id="buildingModal" class="building-modal">
                         <div class="modal-overlay"></div>
                         <div class="modal-content">
@@ -884,7 +959,7 @@
                             </div>
                             <div class="modal-body">
                                 <div id="buildingContent">
-                                    <!-- Content will be loaded dynamically -->
+                                    <!-- 콘텐츠가 동적으로 로드됩니다. -->
                                 </div>
                             </div>
                         </div>
@@ -893,15 +968,16 @@
             </div>
         </div>
 
-        <!-- 스크롤 진행바 -->
+        <!-- 스크롤 진행 상태를 보여주는 프로그레스 바입니다. -->
         <div class="scroll-progress">
             <div class="scroll-progress-bar"></div>
         </div>
     </main>
     
-    <!-- Campus Map JavaScript -->
+    <!-- 캠퍼스 맵 관련 자바스크립트 파일을 로드합니다. -->
     <script src="scripts/campus.js"></script>
 
+    <!-- 네비게이션 바와 이 페이지의 메인 로직을 담은 자바스크립트 파일을 로드합니다. -->
     <script src="scripts/navbar.js"></script>
     <script src="scripts/graduate.js"></script>
 </body>
