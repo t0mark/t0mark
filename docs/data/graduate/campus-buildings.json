@@ -1,0 +1,125 @@
+{
+  "math": {
+    "title": "📐 수학관",
+    "sections": [
+      { "type": "subjects", "title": "기초 수학 과목", "items": [
+        { "name": "선형대수학", "importance": "high" },
+        { "name": "확률론 및 통계학", "importance": "high" },
+        { "name": "최적화 (Convex Optimization)", "importance": "medium" }
+      ]},
+      { "type": "books", "title": "추천 도서", "items": [
+        { "title": "선형대수학과 그 응용", "author": "Gilbert Strang", "image": "images/linear-algebra-strang.jpg" },
+        { "title": "최적화 모델링", "author": "Stephen Boyd", "image": "images/optimization-modeling-boyd.jpg" }
+      ]}
+    ]
+  },
+  "engineering": {
+    "title": "⚙️ 공학관",
+    "sections": [
+      { "type": "subjects", "title": "제어 이론", "items": [
+        { "name": "PID 제어", "importance": "medium" },
+        { "name": "상태공간 모델", "importance": "high" },
+        { "name": "LQR (최적 제어)", "importance": "medium" },
+        { "name": "비선형 제어", "importance": "low" }
+      ]},
+      { "type": "subjects", "title": "시스템 이론", "items": [
+        { "name": "신호처리 및 필터링", "importance": "medium" },
+        { "name": "상태추정 (Kalman, Particle Filter)", "importance": "medium" }
+      ]}
+    ]
+  },
+  "robotics": {
+    "title": "🤖 로봇공학관 (메인)",
+    "sections": [
+      { "type": "subjects", "title": "로봇공학 이론", "items": [
+        { "name": "운동학 (Kinematics)", "importance": "high" },
+        { "name": "동역학 (Dynamics)", "importance": "medium" },
+        { "name": "자코비안", "importance": "high" },
+        { "name": "SLAM 이론", "importance": "medium" },
+        { "name": "모션플래닝 알고리즘", "importance": "medium" }
+      ]},
+      { "type": "books", "title": "필수 도서", "items": [
+        { "title": "모던 로보틱스: 기구학, 동역학, 제어", "author": "Kevin Lynch, Frank Park", "image": "images/modern-robotics-lynch.jpg", "badge": "필수", "featured": true }
+      ]}
+    ]
+  },
+  "vision": {
+    "title": "👁️ 비전연구소",
+    "sections": [
+      { "type": "subjects", "title": "컴퓨터 비전", "items": [
+        { "name": "카메라 모델링", "importance": "medium" },
+        { "name": "3D 인식", "importance": "medium" },
+        { "name": "객체 탐지", "importance": "medium" }
+      ]},
+      { "type": "courses", "title": "추천 강의", "items": [
+        { "source": "K-MOOC", "title": "컴퓨터 비전", "instructor": "KAIST, 고려대" }
+      ]}
+    ]
+  },
+  "ai": {
+    "title": "🧠 AI연구원",
+    "sections": [
+      { "type": "subjects", "title": "머신러닝 이론", "items": [
+        { "name": "지도학습 / 비지도학습", "importance": "high" },
+        { "name": "강화학습", "importance": "medium" },
+        { "name": "딥러닝", "importance": "high" },
+        { "name": "Bayesian Methods", "importance": "low" }
+      ]},
+      { "type": "books", "title": "핵심 도서", "items": [
+        { "title": "강화학습: 이론과 알고리즘", "author": "Sutton & Barto", "image": "images/reinforcement-learning-sutton.jpg", "badge": "필수", "featured": true },
+        { "title": "딥러닝", "author": "Ian Goodfellow 외", "image": "images/deep-learning-goodfellow.jpg" }
+      ]}
+    ]
+  },
+  "workshop": {
+    "title": "🔧 실습동",
+    "sections": [
+      { "type": "skills", "title": "프로그래밍 실무", "items": [
+        { "name": "Python", "detail": "NumPy, SciPy, PyTorch/TensorFlow, OpenCV", "importance": "high" },
+        { "name": "C++", "detail": "실시간 시스템, ROS 개발", "importance": "medium" }
+      ]},
+      { "type": "platforms", "title": "로봇 플랫폼", "items": [
+        { "name": "ROS/ROS2", "desc": "노드, 토픽, 서비스, 액션", "featured": true },
+        { "name": "Gazebo", "desc": "시뮬레이션 환경" }
+      ]},
+      { "type": "sims", "title": "시뮬레이션 도구", "items": [
+        { "name": "Gazebo (범용)" },
+        { "name": "MuJoCo (접촉-rich 조작)", "popular": true },
+        { "name": "PyBullet (경량)" },
+        { "name": "NVIDIA Isaac Sim (GPU 가속)" }
+      ]}
+    ]
+  },
+  "library": {
+    "title": "📚 중앙도서관",
+    "sections": [
+      { "type": "books", "title": "📐 수학 & 최적화", "items": [
+        { "title": "선형대수학과 그 응용", "author": "Gilbert Strang", "image": "images/linear-algebra-strang.jpg" }
+      ]},
+      { "type": "books", "title": "🤖 로봇공학", "items": [
+        { "title": "모던 로보틱스", "author": "Kevin Lynch, Frank Park", "image": "images/modern-robotics-lynch.jpg", "badge": "필수", "featured": true }
+      ]},
+      { "type": "books", "title": "🧠 AI & 머신러닝", "items": [
+        { "title": "딥러닝", "author": "Ian Goodfellow 외", "image": "images/deep-learning-goodfellow.jpg" }
+      ]},
+      { "type": "notice", "text": "모든 도서는 온라인으로도 접근 가능합니다" }
+    ]
+  },
+  "lecture": {
+    "title": "🎓 강의동",
+    "sections": [
+      { "type": "courses", "title": "📐 수학 & 최적화", "items": [
+        { "source": "K-MOOC", "title": "선형대수학", "instructor": "연세대 이영무 교수" }
+      ]},
+      { "type": "courses", "title": "🤖 로봇공학", "items": [
+        { "source": "K-MOOC", "title": "로봇공학", "instructor": "서울대, KAIST, 한양대", "badge": "추천", "featured": true }
+      ]},
+      { "type": "courses", "title": "🧠 AI & 머신러닝", "items": [
+        { "source": "인프런", "title": "파이토치/텐서플로 딥러닝", "instructor": "Fast Campus/인프런" }
+      ]},
+      { "type": "courses", "title": "⚙️ ROS & 실습", "items": [
+        { "source": "K-MOOC", "title": "ROS와 로봇 프로그래밍", "instructor": "한양대, 충북대", "badge": "필수", "featured": true }
+      ]}
+    ]
+  }
+}

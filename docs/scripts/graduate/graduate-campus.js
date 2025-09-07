@@ -1,361 +1,19 @@
-// 캠퍼스 건물 데이터
-// 각 건물 클릭 시 모달에 표시될 상세 정보
-const buildingData = {
-    math: {
-        title: "📐 수학관",
-        content: `
-            <div class="building-detail-content">
-                <h4>기초 수학 과목</h4>
-                <div class="subject-list">
-                    <div class="subject-item">
-                        <span class="subject-name">선형대수학</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">확률론 및 통계학</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">최적화 (Convex Optimization)</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                </div>
-                
-                <h4>추천 도서</h4>
-                <div class="book-list">
-                    <div class="book-mini-card">
-                        <img src="images/linear-algebra-strang.jpg" alt="선형대수학과 그 응용">
-                        <div>
-                            <div class="book-title">선형대수학과 그 응용</div>
-                            <div class="book-author">Gilbert Strang</div>
-                        </div>
-                    </div>
-                    <div class="book-mini-card">
-                        <img src="images/optimization-modeling-boyd.jpg" alt="최적화 모델링">
-                        <div>
-                            <div class="book-title">최적화 모델링</div>
-                            <div class="book-author">Stephen Boyd</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    },
-    engineering: {
-        title: "⚙️ 공학관",
-        content: `
-            <div class="building-detail-content">
-                <h4>제어 이론</h4>
-                <div class="subject-list">
-                    <div class="subject-item">
-                        <span class="subject-name">PID 제어</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">상태공간 모델</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">LQR (최적 제어)</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">비선형 제어</span>
-                        <span class="importance-badge low">⭐</span>
-                    </div>
-                </div>
-                
-                <h4>시스템 이론</h4>
-                <div class="subject-list">
-                    <div class="subject-item">
-                        <span class="subject-name">신호처리 및 필터링</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">상태추정 (Kalman, Particle Filter)</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                </div>
-            </div>
-        `
-    },
-    robotics: {
-        title: "🤖 로봇공학관 (메인)",
-        content: `
-            <div class="building-detail-content">
-                <h4>로봇공학 이론</h4>
-                <div class="subject-list">
-                    <div class="subject-item">
-                        <span class="subject-name">운동학 (Kinematics)</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">동역학 (Dynamics)</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">자코비안</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">SLAM 이론</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">모션플래닝 알고리즘</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                </div>
-                
-                <h4>필수 도서</h4>
-                <div class="book-list">
-                    <div class="book-mini-card featured">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/71u3wL%2BGjEL.jpg" alt="모던 로보틱스">
-                        <div>
-                            <div class="book-title">모던 로보틱스: 기구학, 동역학, 제어</div>
-                            <div class="book-author">Kevin Lynch, Frank Park</div>
-                            <div class="book-badge">필수</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    },
-    vision: {
-        title: "👁️ 비전연구소",
-        content: `
-            <div class="building-detail-content">
-                <h4>컴퓨터 비전</h4>
-                <div class="subject-list">
-                    <div class="subject-item">
-                        <span class="subject-name">카메라 모델링</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">3D 인식</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">객체 탐지</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                </div>
-                
-                <h4>추천 강의</h4>
-                <div class="course-list">
-                    <div class="course-mini-card">
-                        <div class="course-thumbnail">K-MOOC</div>
-                        <div>
-                            <div class="course-title">컴퓨터 비전</div>
-                            <div class="course-instructor">KAIST, 고려대</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    },
-    ai: {
-        title: "🧠 AI연구원",
-        content: `
-            <div class="building-detail-content">
-                <h4>머신러닝 이론</h4>
-                <div class="subject-list">
-                    <div class="subject-item">
-                        <span class="subject-name">지도학습 / 비지도학습</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">강화학습</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">딥러닝</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="subject-item">
-                        <span class="subject-name">Bayesian Methods</span>
-                        <span class="importance-badge low">⭐</span>
-                    </div>
-                </div>
-                
-                <h4>핵심 도서</h4>
-                <div class="book-list">
-                    <div class="book-mini-card featured">
-                        <img src="images/reinforcement-learning-sutton.jpg" alt="강화학습">
-                        <div>
-                            <div class="book-title">강화학습: 이론과 알고리즘</div>
-                            <div class="book-author">Sutton & Barto</div>
-                            <div class="book-badge">필수</div>
-                        </div>
-                    </div>
-                    <div class="book-mini-card">
-                        <img src="images/deep-learning-goodfellow.jpg" alt="딥러닝">
-                        <div>
-                            <div class="book-title">딥러닝</div>
-                            <div class="book-author">Ian Goodfellow 외</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    },
-    workshop: {
-        title: "🔧 실습동",
-        content: `
-            <div class="building-detail-content">
-                <h4>프로그래밍 실무</h4>
-                <div class="skill-list">
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
-                        <span class="skill-detail">NumPy, SciPy, PyTorch/TensorFlow, OpenCV</span>
-                        <span class="importance-badge high">⭐⭐⭐</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C++</span>
-                        <span class="skill-detail">실시간 시스템, ROS 개발</span>
-                        <span class="importance-badge medium">⭐⭐</span>
-                    </div>
-                </div>
-                
-                <h4>로봇 플랫폼</h4>
-                <div class="platform-list">
-                    <div class="platform-item featured">
-                        <span class="platform-name">ROS/ROS2</span>
-                        <span class="platform-desc">노드, 토픽, 서비스, 액션</span>
-                    </div>
-                    <div class="platform-item">
-                        <span class="platform-name">Gazebo</span>
-                        <span class="platform-desc">시뮬레이션 환경</span>
-                    </div>
-                </div>
-                
-                <h4>시뮬레이션 도구</h4>
-                <div class="sim-list">
-                    <div class="sim-item">Gazebo (범용)</div>
-                    <div class="sim-item popular">MuJoCo (접촉-rich 조작)</div>
-                    <div class="sim-item">PyBullet (경량)</div>
-                    <div class="sim-item">NVIDIA Isaac Sim (GPU 가속)</div>
-                </div>
-            </div>
-        `
-    },
-    library: {
-        title: "📚 중앙도서관",
-        content: `
-            <div class="building-detail-content">
-                <h4>주요 도서 컬렉션</h4>
-                
-                <div class="library-section">
-                    <h5>📐 수학 & 최적화</h5>
-                    <div class="book-collection">
-                        <div class="book-mini-card">
-                            <img src="images/linear-algebra-strang.jpg" alt="선형대수학">
-                            <div>
-                                <div class="book-title">선형대수학과 그 응용</div>
-                                <div class="book-author">Gilbert Strang</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="library-section">
-                    <h5>🤖 로봇공학</h5>
-                    <div class="book-collection">
-                        <div class="book-mini-card featured">
-                            <img src="images/modern-robotics-lynch.jpg" alt="모던 로보틱스">
-                            <div>
-                                <div class="book-title">모던 로보틱스</div>
-                                <div class="book-author">Kevin Lynch, Frank Park</div>
-                                <div class="book-badge">필수</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="library-section">
-                    <h5>🧠 AI & 머신러닝</h5>
-                    <div class="book-collection">
-                        <div class="book-mini-card">
-                            <img src="images/deep-learning-goodfellow.jpg" alt="딥러닝">
-                            <div>
-                                <div class="book-title">딥러닝</div>
-                                <div class="book-author">Ian Goodfellow 외</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="library-info">
-                    <p><i class="fas fa-info-circle"></i> 모든 도서는 온라인으로도 접근 가능합니다</p>
-                </div>
-            </div>
-        `
-    },
-    lecture: {
-        title: "🎓 강의동",
-        content: `
-            <div class="building-detail-content">
-                <h4>온라인 강의 목록</h4>
-                
-                <div class="lecture-section">
-                    <h5>📐 수학 & 최적화</h5>
-                    <div class="course-collection">
-                        <div class="course-mini-card">
-                            <div class="course-thumbnail">K-MOOC</div>
-                            <div>
-                                <div class="course-title">선형대수학</div>
-                                <div class="course-instructor">연세대 이영무 교수</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lecture-section">
-                    <h5>🤖 로봇공학</h5>
-                    <div class="course-collection">
-                        <div class="course-mini-card featured">
-                            <div class="course-thumbnail">K-MOOC</div>
-                            <div>
-                                <div class="course-title">로봇공학</div>
-                                <div class="course-instructor">서울대, KAIST, 한양대</div>
-                                <div class="course-badge">추천</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lecture-section">
-                    <h5>🧠 AI & 머신러닝</h5>
-                    <div class="course-collection">
-                        <div class="course-mini-card">
-                            <div class="course-thumbnail">인프런</div>
-                            <div>
-                                <div class="course-title">파이토치/텐서플로 딥러닝</div>
-                                <div class="course-instructor">Fast Campus/인프런</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lecture-section">
-                    <h5>⚙️ ROS & 실습</h5>
-                    <div class="course-collection">
-                        <div class="course-mini-card featured">
-                            <div class="course-thumbnail">K-MOOC</div>
-                            <div>
-                                <div class="course-title">ROS와 로봇 프로그래밍</div>
-                                <div class="course-instructor">한양대, 충북대</div>
-                                <div class="course-badge">필수</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    }
-};
+// 캠퍼스 건물 데이터 (외부 JSON 로드)
+// 각 건물 클릭 시 모달에 표시될 상세 정보는 JSON에서 로드됨
+let buildingData = {};
 
-// 캠퍼스 맵 인터랙션 및 모달 관리 클래스
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('data/graduate/campus-buildings.json')
+        .then(res => res.json())
+        .then(data => {
+            buildingData = data;
+            document.dispatchEvent(new CustomEvent('campusBuildingsLoaded'));
+        })
+        .catch(err => {
+            console.error('campus-buildings.json 로드 실패:', err);
+        });
+});
+
 class CampusMap {
     constructor() {
         // 모달 관련 DOM 요소들 참조
@@ -421,17 +79,131 @@ class CampusMap {
     openBuildingModal(buildingType) {
         const data = buildingData[buildingType];
         if (!data) return;
-        
-        // 모달 제목과 콘텐츠 설정
-        this.modalTitle.textContent = data.title;
-        this.modalContent.innerHTML = data.content;
-        
+
+        // 모달 제목
+        this.modalTitle.textContent = data.title || '';
+
+        // 콘텐츠 렌더링: 구조 데이터 우선, 없으면 기존 HTML(Fallback)
+        if (data.sections && Array.isArray(data.sections)) {
+            this.modalContent.innerHTML = data.sections.map(this.renderSection).join('');
+        } else if (data.content) {
+            this.modalContent.innerHTML = data.content;
+        } else {
+            this.modalContent.innerHTML = '';
+        }
+
         // 모달 표시 및 배경 스크롤 비활성화
         this.modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        
+
         // 모달 콘텐츠에 스타일 적용
         this.styleModalContent();
+    }
+
+    // 섹션 타입별 렌더러
+    renderSection(section) {
+        const esc = (s) => String(s ?? '').replace(/&/g, '&amp;')
+                                           .replace(/</g, '&lt;')
+                                           .replace(/>/g, '&gt;');
+        const title = section.title ? `<h4>${esc(section.title)}</h4>` : '';
+        const t = section.type;
+        if (t === 'subjects' && Array.isArray(section.items)) {
+            return `
+            <div class="building-detail-content">
+                ${title}
+                <div class="subject-list">
+                    ${section.items.map(it => `
+                        <div class="subject-item">
+                            <span class="subject-name">${esc(it.name)}</span>
+                            <span class="importance-badge ${esc(it.importance || 'medium')}">${it.importance === 'high' ? '⭐⭐⭐' : it.importance === 'medium' ? '⭐⭐' : '⭐'}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+        if (t === 'skills' && Array.isArray(section.items)) {
+            return `
+            <div class="building-detail-content">
+                ${title}
+                <div class="skill-list">
+                    ${section.items.map(it => `
+                        <div class="skill-item">
+                            <span class="skill-name">${esc(it.name)}</span>
+                            ${it.detail ? `<span class="skill-detail">${esc(it.detail)}</span>` : ''}
+                            <span class="importance-badge ${esc(it.importance || 'medium')}">${it.importance === 'high' ? '⭐⭐⭐' : it.importance === 'medium' ? '⭐⭐' : '⭐'}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+        if (t === 'books' && Array.isArray(section.items)) {
+            return `
+            <div class="building-detail-content">
+                ${title}
+                <div class="book-list">
+                    ${section.items.map(it => `
+                        <div class="book-mini-card ${it.featured ? 'featured' : ''}">
+                            ${it.image ? `<img src="${esc(it.image)}" alt="${esc(it.title)}">` : ''}
+                            <div>
+                                <div class="book-title">${esc(it.title)}</div>
+                                ${it.author ? `<div class="book-author">${esc(it.author)}</div>` : ''}
+                            </div>
+                            ${it.badge ? `<div class="book-badge">${esc(it.badge)}</div>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+        if (t === 'courses' && Array.isArray(section.items)) {
+            return `
+            <div class="building-detail-content">
+                ${title}
+                <div class="course-collection">
+                    ${section.items.map(it => `
+                        <div class="course-mini-card ${it.featured ? 'featured' : ''}">
+                            <div class="course-thumbnail">${esc(it.source || 'COURSE')}</div>
+                            <div>
+                                <div class="course-title">${esc(it.title)}</div>
+                                ${it.instructor ? `<div class="course-instructor">${esc(it.instructor)}</div>` : ''}
+                            </div>
+                            ${it.badge ? `<div class="course-badge">${esc(it.badge)}</div>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+        if (t === 'platforms' && Array.isArray(section.items)) {
+            return `
+            <div class="building-detail-content">
+                ${title}
+                <div class="platform-list">
+                    ${section.items.map(it => `
+                        <div class="platform-item ${it.featured ? 'featured' : ''}">
+                            <span class="platform-name">${esc(it.name)}</span>
+                            ${it.desc ? `<span class="platform-desc">${esc(it.desc)}</span>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+        if (t === 'sims' && Array.isArray(section.items)) {
+            return `
+            <div class="building-detail-content">
+                ${title}
+                <div class="sim-list">
+                    ${section.items.map(it => `
+                        <div class="sim-item ${it.popular ? 'popular' : ''}">${esc(it.name)}</div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+        if (t === 'notice' && section.text) {
+            return `
+            <div class="building-detail-content">
+                <div class="library-info">${esc(section.text)}</div>
+            </div>`;
+        }
+        return '';
     }
     
     // 건물 상세 정보 모달 닫기
