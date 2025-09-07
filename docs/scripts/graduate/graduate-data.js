@@ -1,8 +1,5 @@
-/**
- * Graduate Data Module  
- * 하드웨어 데이터와 카테고리 정보 관리
- */
-
+// 하드웨어 카테고리 정보 데이터
+// 로봇 파트별 제목, 배지, 색상 정보를 관리
 const categoryData = {
     'platforms': {
         title: '차세대 로봇 플랫폼',
@@ -26,6 +23,8 @@ const categoryData = {
     }
 };
 
+// 하드웨어 제품별 상세 정보 데이터
+// 모달에 표시될 이름, 카테고리, 이미지, 설명, 특징, 사양 정보
 const hardwareData = {
     'Tesla Bot Gen-2': {
         name: 'Tesla Bot Gen-2',
@@ -131,7 +130,6 @@ const hardwareData = {
             '재료': '실리콘 고무'
         }
     },
-    // Additional hardware items (non-featured)
     'Boston Dynamics Atlas': {
         name: 'Boston Dynamics Atlas',
         category: '차세대 로봇 플랫폼',
@@ -290,7 +288,7 @@ const hardwareData = {
     }
 };
 
-// Export after all variables are defined
+// 다른 모듈에서 사용할 수 있도록 전역 객체에 데이터 등록
 window.GraduateData = {
     hardwareData,
     categoryData

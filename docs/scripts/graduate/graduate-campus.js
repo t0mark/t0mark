@@ -1,9 +1,5 @@
-/**
- * Campus Map Interactive Features
- * 캠퍼스 맵 인터랙티브 기능 구현
- */
-
-// Building data configuration
+// 캠퍼스 건물 데이터
+// 각 건물 클릭 시 모달에 표시될 상세 정보
 const buildingData = {
     math: {
         title: "📐 수학관",
@@ -359,9 +355,10 @@ const buildingData = {
     }
 };
 
-// Campus Map Interactive Features
+// 캠퍼스 맵 인터랙션 및 모달 관리 클래스
 class CampusMap {
     constructor() {
+        // 모달 관련 DOM 요소들 참조
         this.modal = document.getElementById('buildingModal');
         this.modalTitle = document.getElementById('buildingTitle');
         this.modalContent = document.getElementById('buildingContent');
@@ -370,13 +367,15 @@ class CampusMap {
         this.init();
     }
     
+    // 캠퍼스 맵 기능 초기화
     init() {
         this.bindEvents();
         this.addHoverEffects();
     }
     
+    // 캠퍼스 건물과 모달의 이벤트 리스너 바인딩
     bindEvents() {
-        // Building click events
+        // 각 건물에 클릭 이벤트 추가
         document.querySelectorAll('.campus-building').forEach(building => {
             building.addEventListener('click', (e) => {
                 const buildingType = building.dataset.building;
@@ -385,14 +384,15 @@ class CampusMap {
             });
         });
         
-        // Modal close events
+        // 모달 닫기 버튼과 배경 오버레이 선택
         const closeBtn = this.modal.querySelector('.modal-close');
         const overlay = this.modal.querySelector('.modal-overlay');
         
+        // 닫기 버튼 및 배경 클릭 이벤트
         closeBtn?.addEventListener('click', () => this.closeBuildingModal());
         overlay?.addEventListener('click', () => this.closeBuildingModal());
         
-        // Keyboard events
+        // ESC 키로 모달 닫기
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.modal.classList.contains('active')) {
                 this.closeBuildingModal();
@@ -400,12 +400,15 @@ class CampusMap {
         });
     }
     
+    // 건물에 마우스 호버 시 비주얼 효과 추가
     addHoverEffects() {
         document.querySelectorAll('.campus-building').forEach(building => {
+            // 마우스 진입 시 밝기와 그림자 효과
             building.addEventListener('mouseenter', () => {
                 building.style.filter = 'brightness(1.1) drop-shadow(0 8px 16px rgba(0,0,0,0.3))';
             });
             
+            // 마우스 벗어날 때 효과 제거 (활성 상태가 아닌 경우)
             building.addEventListener('mouseleave', () => {
                 if (!building.classList.contains('active')) {
                     building.style.filter = '';
@@ -414,25 +417,30 @@ class CampusMap {
         });
     }
     
+    // 선택된 건물의 상세 정보 모달 열기
     openBuildingModal(buildingType) {
         const data = buildingData[buildingType];
         if (!data) return;
         
+        // 모달 제목과 콘텐츠 설정
         this.modalTitle.textContent = data.title;
         this.modalContent.innerHTML = data.content;
         
+        // 모달 표시 및 배경 스크롤 비활성화
         this.modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         
-        // Add modal content styles
+        // 모달 콘텐츠에 스타일 적용
         this.styleModalContent();
     }
     
+    // 건물 상세 정보 모달 닫기
     closeBuildingModal() {
+        // 모달 숨김 및 배경 스크롤 활성화
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
         
-        // Remove active state from buildings
+        // 모든 건물에서 활성화 상태 및 비주얼 효과 제거
         document.querySelectorAll('.campus-building.active').forEach(building => {
             building.classList.remove('active');
             building.style.filter = '';
@@ -441,20 +449,22 @@ class CampusMap {
         this.activeBuilding = null;
     }
     
+    // 클릭된 건물을 활성 상태로 설정
     setActiveBuilding(building) {
-        // Remove active state from other buildings
+        // 다른 모든 건물의 활성 상태 제거
         document.querySelectorAll('.campus-building.active').forEach(b => {
             b.classList.remove('active');
             b.style.filter = '';
         });
         
-        // Set active state for clicked building
+        // 클릭한 건물에 활성 상태 설정
         building.classList.add('active');
         this.activeBuilding = building;
     }
     
+    // 모달 콘텐츠에 동적 스타일 적용
     styleModalContent() {
-        // Add styles to modal content elements
+        // 모달 콘텐츠 요소들에 CSS 스타일 추가
         const style = `
             <style>
                 .building-detail-content h4, .building-detail-content h5 {
@@ -681,6 +691,7 @@ class CampusMap {
             </style>
         `;
         
+        // 이미 스타일이 적용되었는지 확인 후 추가
         if (!document.getElementById('modal-dynamic-styles')) {
             const styleElement = document.createElement('div');
             styleElement.id = 'modal-dynamic-styles';
@@ -690,12 +701,14 @@ class CampusMap {
     }
 }
 
-// Export for other modules
+// 다른 모듈에서 사용할 캠퍼스 맵 관련 함수들을 전역 객체로 제공
 window.campusMap = {
     CampusMap,
+    // 동적으로 로드된 콘텐츠의 캠퍼스 맵 기능 재초기화
     reinitializeCampusMap: function() {
         const campusBuildings = document.querySelectorAll('.campus-building');
         
+        // 새로 로드된 건물들에 클릭 이벤트 추가
         campusBuildings.forEach(building => {
             building.addEventListener('click', function() {
                 const buildingType = this.getAttribute('data-building');
@@ -707,19 +720,22 @@ window.campusMap = {
     }
 };
 
-// Initialize campus map when DOM is loaded
+// DOM 로드 완료 시 캠퍼스 맵 초기화
 document.addEventListener('DOMContentLoaded', () => {
+    // 캠퍼스 맵 인스턴스 생성 및 전역 참조 저장
     const campusMapInstance = new CampusMap();
     window.campusMap.instance = campusMapInstance;
     
-    // Add campus entrance animation
+    // 캠퍼스 입장 애니메이션 효과
     setTimeout(() => {
         document.querySelectorAll('.campus-building').forEach((building, index) => {
             setTimeout(() => {
+                // 각 건물에 초기 상태 설정
                 building.style.opacity = '0';
                 building.style.transform = 'translateY(50px) scale(0.8)';
                 building.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
                 
+                // 짧은 딜레이 후 나타나는 효과
                 setTimeout(() => {
                     building.style.opacity = '1';
                     building.style.transform = '';
