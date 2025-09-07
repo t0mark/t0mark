@@ -763,6 +763,12 @@ body {
     z-index: 1;
     box-shadow: var(--shadow-modal);
     animation: modalSlideIn 0.3s ease;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
 
 @keyframes modalSlideIn {
