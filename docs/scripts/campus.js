@@ -28,14 +28,14 @@ const buildingData = {
                 <h4>추천 도서</h4>
                 <div class="book-list">
                     <div class="book-mini-card">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nxL.jpg" alt="선형대수학과 그 응용">
+                        <img src="images/linear-algebra-strang.jpg" alt="선형대수학과 그 응용">
                         <div>
                             <div class="book-title">선형대수학과 그 응용</div>
                             <div class="book-author">Gilbert Strang</div>
                         </div>
                     </div>
                     <div class="book-mini-card">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/61GMhHg7MML.jpg" alt="최적화 모델링">
+                        <img src="images/optimization-modeling-boyd.jpg" alt="최적화 모델링">
                         <div>
                             <div class="book-title">최적화 모델링</div>
                             <div class="book-author">Stephen Boyd</div>
@@ -185,7 +185,7 @@ const buildingData = {
                 <h4>핵심 도서</h4>
                 <div class="book-list">
                     <div class="book-mini-card featured">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/91qbJQXxNvL.jpg" alt="강화학습">
+                        <img src="images/reinforcement-learning-sutton.jpg" alt="강화학습">
                         <div>
                             <div class="book-title">강화학습: 이론과 알고리즘</div>
                             <div class="book-author">Sutton & Barto</div>
@@ -193,7 +193,7 @@ const buildingData = {
                         </div>
                     </div>
                     <div class="book-mini-card">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/71m7QGPBMYL.jpg" alt="딥러닝">
+                        <img src="images/deep-learning-goodfellow.jpg" alt="딥러닝">
                         <div>
                             <div class="book-title">딥러닝</div>
                             <div class="book-author">Ian Goodfellow 외</div>
@@ -253,7 +253,7 @@ const buildingData = {
                     <h5>📐 수학 & 최적화</h5>
                     <div class="book-collection">
                         <div class="book-mini-card">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nxL.jpg" alt="선형대수학">
+                            <img src="images/linear-algebra-strang.jpg" alt="선형대수학">
                             <div>
                                 <div class="book-title">선형대수학과 그 응용</div>
                                 <div class="book-author">Gilbert Strang</div>
@@ -266,7 +266,7 @@ const buildingData = {
                     <h5>🤖 로봇공학</h5>
                     <div class="book-collection">
                         <div class="book-mini-card featured">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/71u3wL%2BGjEL.jpg" alt="모던 로보틱스">
+                            <img src="images/modern-robotics-lynch.jpg" alt="모던 로보틱스">
                             <div>
                                 <div class="book-title">모던 로보틱스</div>
                                 <div class="book-author">Kevin Lynch, Frank Park</div>
@@ -280,7 +280,7 @@ const buildingData = {
                     <h5>🧠 AI & 머신러닝</h5>
                     <div class="book-collection">
                         <div class="book-mini-card">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/71m7QGPBMYL.jpg" alt="딥러닝">
+                            <img src="images/deep-learning-goodfellow.jpg" alt="딥러닝">
                             <div>
                                 <div class="book-title">딥러닝</div>
                                 <div class="book-author">Ian Goodfellow 외</div>
