@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== TAB FUNCTIONALITY =====
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenuBtn = document.querySelector('.tab-mobile-btn');
     const tabs = document.querySelector('.tabs');
     
     // ===== STICKY SIDEBAR =====

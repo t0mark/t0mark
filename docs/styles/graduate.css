@@ -188,7 +188,7 @@ body {
     font-size: 1rem;
 }
 
-.mobile-menu-btn {
+.tab-mobile-btn {
     display: none;
     background: var(--primary);
     color: var(--bg);
@@ -3116,7 +3116,7 @@ body {
         display: flex;
     }
     
-    .mobile-menu-btn {
+    .tab-mobile-btn {
         display: block;
     }
     
