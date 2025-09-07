@@ -40,6 +40,155 @@ document.addEventListener('DOMContentLoaded', function() {
         if (targetButton) targetButton.classList.add('active');
         if (targetContent) targetContent.classList.add('active');
         if (matchingSidebarItem) matchingSidebarItem.classList.add('active');
+        
+        // Load content dynamically if not already loaded
+        if (targetContent) {
+            loadTabContent(targetTab, targetContent);
+        }
+    }
+
+    // Cache for loaded content
+    const contentCache = {};
+    
+    async function loadTabContent(tabName, targetElement) {
+        // Skip if already loaded (no loading placeholder)
+        const loadingPlaceholder = targetElement.querySelector('.loading-placeholder');
+        if (!loadingPlaceholder) {
+            return; // Content already loaded
+        }
+        
+        // Check cache first
+        if (contentCache[tabName]) {
+            targetElement.innerHTML = contentCache[tabName];
+            reinitializeInteractivity(tabName);
+            return;
+        }
+        
+        try {
+            const response = await fetch(`partials/graduate/${tabName}.html`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const html = await response.text();
+            
+            // Cache the content
+            contentCache[tabName] = html;
+            
+            // Replace loading placeholder with actual content
+            targetElement.innerHTML = html;
+            
+            // Reinitialize any interactive elements in the loaded content
+            reinitializeInteractivity(tabName);
+            
+            console.log(`✅ ${tabName} 콘텐츠가 성공적으로 로드되었습니다.`);
+            
+        } catch (error) {
+            console.error(`❌ ${tabName} 콘텐츠 로드 실패:`, error);
+            
+            // Show error message
+            targetElement.innerHTML = `
+                <div class="error-placeholder">
+                    <div class="error-icon">⚠️</div>
+                    <h3>콘텐츠를 불러올 수 없습니다</h3>
+                    <p>네트워크 연결을 확인하고 페이지를 새로고침해 주세요.</p>
+                    <button class="retry-btn" onclick="location.reload()">새로고침</button>
+                </div>
+            `;
+        }
+    }
+    
+    function reinitializeInteractivity(tabName) {
+        // Reinitialize animations for newly loaded content
+        const newElements = document.querySelectorAll(`#${tabName} .field-card, #${tabName} .trend-card, #${tabName} .industry-card, #${tabName} .venue-card, #${tabName} .conference-item-compact, #${tabName} .journal-item, #${tabName} .campus-building`);
+        
+        newElements.forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            observer.observe(el);
+        });
+        
+        // Reinitialize specific tab functionality
+        if (tabName === 'trends') {
+            reinitializeHardwareInteractivity();
+        }
+        
+        if (tabName === 'learning') {
+            reinitializeCampusMap();
+        }
+        
+        // Add hover effects to newly loaded cards
+        const hoverCards = document.querySelectorAll(`#${tabName} .field-card, #${tabName} .industry-card, #${tabName} .venue-card, #${tabName} .conference-item-compact, #${tabName} .journal-item, #${tabName} .campus-building`);
+        
+        hoverCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    }
+    
+    function reinitializeHardwareInteractivity() {
+        // Reinitialize hardware robot interactions
+        const newRobotParts = document.querySelectorAll('.robot-part');
+        const newHardwareCategoryContents = document.querySelectorAll('.hardware-category-content');
+        const newPanelTitle = document.getElementById('panel-title');
+        const newPanelBadge = document.getElementById('panel-badge');
+        
+        if (newRobotParts.length > 0) {
+            newRobotParts.forEach(part => {
+                part.addEventListener('click', () => {
+                    const category = part.getAttribute('data-category');
+                    if (category) {
+                        switchHardwareCategory(category);
+                    }
+                });
+                
+                part.addEventListener('mouseenter', () => {
+                    part.style.opacity = '0.8';
+                });
+                
+                part.addEventListener('mouseleave', () => {
+                    if (!part.classList.contains('active')) {
+                        part.style.opacity = '1';
+                    }
+                });
+            });
+            
+            // Initialize with platforms category active
+            switchHardwareCategory('platforms');
+        }
+        
+        // Reinitialize hardware modal
+        const newHardwareItems = document.querySelectorAll('.hardware-item');
+        newHardwareItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const nameElement = item.querySelector('.item-name');
+                if (nameElement) {
+                    const hardwareName = nameElement.textContent.trim();
+                    openModal(hardwareName);
+                }
+            });
+            item.style.cursor = 'pointer';
+        });
+    }
+    
+    function reinitializeCampusMap() {
+        // Reinitialize campus building interactions
+        const campusBuildings = document.querySelectorAll('.campus-building');
+        
+        campusBuildings.forEach(building => {
+            building.addEventListener('click', function() {
+                const buildingType = this.getAttribute('data-building');
+                if (buildingType) {
+                    showBuildingModal(buildingType);
+                }
+            });
+        });
     }
 
     // Initialize tab based on URL parameter
