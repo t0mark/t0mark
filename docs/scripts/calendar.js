@@ -83,10 +83,42 @@ function renderDDayCards() {
 
         const card = document.createElement('div');
         card.className = 'dday-card';
+        
+        // D-day 값에 따른 색상 클래스 결정
+        let colorClass = 'distant'; // 기본값
+        if (diffDays <= 7) {
+            colorClass = 'urgent';      // 7일 이하: 빨간색
+        } else if (diffDays <= 14) {
+            colorClass = 'warning';     // 14일 이하: 주황색
+        } else if (diffDays <= 30) {
+            colorClass = 'caution';     // 30일 이하: 노란색
+        } else if (diffDays <= 60) {
+            colorClass = 'normal';      // 60일 이하: 파란색
+        }
+        // 60일 초과: distant (회색)
+        
+        card.classList.add(colorClass);
+        
         card.innerHTML = htmlTemplates['dday-card']
-            .replace('{{diffDays}}', diffDays)
+            .replace(/{{diffDays}}/g, diffDays)
             .replace('{{key}}', key);
+        
         currentRow.appendChild(card);
+        
+        // 진행률 계산 (예: 1년 기준으로 계산)
+        const yearStart = new Date(today.getFullYear(), 0, 1);
+        const yearEnd = new Date(today.getFullYear() + 1, 0, 1);
+        const totalDays = Math.ceil((yearEnd - yearStart) / (1000 * 60 * 60 * 24));
+        const progress = Math.max(0, Math.min(100, (diffDays / totalDays) * 100));
+        const progressOffset = 283 - (283 * progress / 100);
+        
+        // 진행률 원형바 업데이트
+        setTimeout(() => {
+            const progressCircle = card.querySelector('.progress-circle-fill');
+            if (progressCircle) {
+                progressCircle.style.strokeDashoffset = progressOffset;
+            }
+        }, 100);
         
         cardsInCurrentRow++;
         if (cardsInCurrentRow >= 2) {
