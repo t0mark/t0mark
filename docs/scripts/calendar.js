@@ -331,25 +331,20 @@ function renderCalendar() {
         dayElement.innerHTML = htmlTemplates['calendar-day']
             .replace('{{day}}', day);
         
-        // Google Calendar 이벤트 추가 (단일 날짜 이벤트만)
-        const dayEvents = getEventsForDay(currentDay).filter(event => {
-            return getEventPosition(event, currentDay) === 'single';
-        });
-        
-        dayEvents.forEach(event => {
-            const eventElement = document.createElement('div');
-            eventElement.className = 'calendar-event';
-            eventElement.textContent = event.summary || '(제목 없음)';
-            eventElement.title = `${event.summary}\n${formatEventTime(event)}`;
-            dayElement.appendChild(eventElement);
-        });
+        // 기존 방식의 이벤트 표시는 제거 (Grid Span으로 통합)
 
         gridElement.appendChild(dayElement);
     }
     
-    // 연속 이벤트 렌더링
-    renderMultiDayEvents();
-
+    // 이벤트 레이어 추가
+    const eventsLayer = document.createElement('div');
+    eventsLayer.className = 'calendar-events-layer';
+    eventsLayer.id = 'calendarEventsLayer';
+    gridElement.appendChild(eventsLayer);
+    
+    // Grid Span 이벤트 렌더링
+    renderGridEvents();
+    
     // 다음 달의 첫 날들
     const totalCells = gridElement.children.length;
     const remainingCells = 42 - totalCells + 7; // 7은 헤더 행
@@ -459,17 +454,30 @@ function formatEventTime(event) {
     return '';
 }
 
-// 연속 이벤트 렌더링
-function renderMultiDayEvents() {
-    const calendarGrid = document.getElementById('calendarGrid');
+// Grid Span 이벤트 렌더링
+function renderGridEvents() {
+    const eventsLayer = document.getElementById('calendarEventsLayer');
+    if (!eventsLayer) return;
     
-    // 기존 연속 이벤트 바 제거
-    const existingBars = calendarGrid.querySelectorAll('.multi-day-event-bar');
-    existingBars.forEach(bar => bar.remove());
+    // 기존 이벤트 제거
+    eventsLayer.innerHTML = '';
     
-    // 연속 이벤트만 처리
-    const multiDayEvents = googleCalendarEvents.filter(event => {
+    // 모든 이벤트를 처리해서 그리드 위치 계산
+    const eventPlacements = calculateEventPlacements();
+    
+    eventPlacements.forEach(placement => {
+        createGridEvent(placement);
+    });
+}
+
+// 이벤트의 그리드 위치 계산
+function calculateEventPlacements() {
+    const placements = [];
+    const eventsByPosition = {}; // 위치별 이벤트 그룹핑
+    
+    googleCalendarEvents.forEach(event => {
         let startDate, endDate;
+        
         if (event.start?.date && event.end?.date) {
             startDate = new Date(event.start.date + 'T00:00:00');
             endDate = new Date(event.end.date + 'T00:00:00');
@@ -478,83 +486,83 @@ function renderMultiDayEvents() {
             startDate = new Date(event.start.dateTime);
             endDate = new Date(event.end.dateTime);
         } else {
-            return false;
+            return;
         }
         
-        const eventStartDay = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
-        const eventEndDay = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
-        return eventStartDay.getTime() !== eventEndDay.getTime();
+        // 현재 월에 포함되는 부분만 계산
+        const monthStart = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const monthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+        
+        const displayStartDate = new Date(Math.max(startDate.getTime(), monthStart.getTime()));
+        const displayEndDate = new Date(Math.min(endDate.getTime(), monthEnd.getTime()));
+        
+        // 그리드 위치 계산
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const firstDayOfWeek = firstDayOfMonth.getDay();
+        
+        const startDay = displayStartDate.getDate();
+        const endDay = displayEndDate.getDate();
+        
+        const startGridPos = firstDayOfWeek + startDay - 1;
+        const endGridPos = firstDayOfWeek + endDay - 1;
+        
+        const startRow = Math.floor(startGridPos / 7) + 1; // +1 for header row
+        const startCol = (startGridPos % 7) + 1;
+        const span = endGridPos - startGridPos + 1;
+        
+        // 주 경계를 넘어가는 경우 분할
+        const maxSpanInRow = 7 - startCol + 1;
+        const actualSpan = Math.min(span, maxSpanInRow);
+        
+        const isMultiDay = startDate.getTime() !== endDate.getTime();
+        
+        // 위치 키 생성 (row + col + span 조합)
+        const positionKey = `${startRow}-${startCol}-${actualSpan}`;
+        
+        if (!eventsByPosition[positionKey]) {
+            eventsByPosition[positionKey] = [];
+        }
+        
+        eventsByPosition[positionKey].push({
+            event: event,
+            row: startRow,
+            col: startCol,
+            span: actualSpan,
+            isMultiDay: isMultiDay
+        });
     });
     
-    multiDayEvents.forEach(event => {
-        createEventBar(event);
+    // 같은 위치의 이벤트들을 층별로 배치
+    Object.values(eventsByPosition).forEach(positionEvents => {
+        positionEvents.forEach((placement, index) => {
+            placement.layer = index; // 층 번호 추가
+            placements.push(placement);
+        });
     });
+    
+    return placements;
 }
 
-// 이벤트 바 생성 (단일/연속 통합)
-function createEventBar(event) {
-    const calendarGrid = document.getElementById('calendarGrid');
-    const calendarRect = calendarGrid.getBoundingClientRect();
+// Grid Event 생성
+function createGridEvent(placement) {
+    const eventsLayer = document.getElementById('calendarEventsLayer');
+    if (!eventsLayer) return;
     
-    let startDate, endDate;
-    if (event.start?.date && event.end?.date) {
-        startDate = new Date(event.start.date + 'T00:00:00');
-        endDate = new Date(event.end.date + 'T00:00:00');
-        endDate.setDate(endDate.getDate() - 1);
-    } else if (event.start?.dateTime && event.end?.dateTime) {
-        startDate = new Date(event.start.dateTime);
-        endDate = new Date(event.end.dateTime);
-    } else {
-        return;
+    const eventElement = document.createElement('div');
+    eventElement.className = `grid-event${placement.isMultiDay ? ' multi-day' : ''}`;
+    eventElement.textContent = placement.event.summary || '(제목 없음)';
+    eventElement.title = `${placement.event.summary}\n${formatEventTime(placement.event)}`;
+    
+    // Grid 위치 설정
+    eventElement.style.gridRow = placement.row;
+    eventElement.style.gridColumn = `${placement.col} / span ${placement.span}`;
+    
+    // 층별 배치 (Y축 오프셋)
+    if (placement.layer > 0) {
+        eventElement.style.marginTop = `${22 + (placement.layer * 18)}px`;
     }
     
-    // 현재 월에 포함되는 부분만 표시
-    const monthStart = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-    const monthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-    
-    const displayStartDate = new Date(Math.max(startDate.getTime(), monthStart.getTime()));
-    const displayEndDate = new Date(Math.min(endDate.getTime(), monthEnd.getTime()));
-    
-    // 시작 날짜와 끝 날짜의 그리드 위치 찾기
-    const startDay = displayStartDate.getDate();
-    const endDay = displayEndDate.getDate();
-    
-    const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-    const firstDayOfWeek = firstDayOfMonth.getDay();
-    
-    const startGridIndex = firstDayOfWeek + startDay - 1 + 7; // +7은 헤더 행
-    const endGridIndex = firstDayOfWeek + endDay - 1 + 7;
-    
-    const startCell = calendarGrid.children[startGridIndex];
-    const endCell = calendarGrid.children[endGridIndex];
-    
-    if (!startCell || !endCell) return;
-    
-    const startRect = startCell.getBoundingClientRect();
-    const endRect = endCell.getBoundingClientRect();
-    
-    // 이벤트 바 생성
-    const eventBar = document.createElement('div');
-    eventBar.className = 'multi-day-event-bar';
-    eventBar.textContent = event.summary || '(제목 없음)';
-    eventBar.title = `${event.summary}\n${formatEventTime(event)}`;
-    
-    const left = startRect.left - calendarRect.left + 2;
-    const width = endRect.right - startRect.left - 4;
-    const top = startRect.top - calendarRect.top + 22; // 날짜 숫자 아래
-    
-    // 연속 이벤트는 보라색
-    eventBar.style.background = '#9c27b0';
-    
-    eventBar.style.position = 'absolute';
-    eventBar.style.left = left + 'px';
-    eventBar.style.width = width + 'px';
-    eventBar.style.top = top + 'px';
-    eventBar.style.height = '14px';
-    eventBar.style.zIndex = '10';
-    
-    calendarGrid.style.position = 'relative';
-    calendarGrid.appendChild(eventBar);
+    eventsLayer.appendChild(eventElement);
 }
 
 // 페이지 스크롤 진행률 바 초기화
