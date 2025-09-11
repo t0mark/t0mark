@@ -559,7 +559,7 @@ function createGridEvent(placement) {
     
     // 층별 배치 (Y축 오프셋)
     if (placement.layer > 0) {
-        eventElement.style.marginTop = `${22 + (placement.layer * 18)}px`;
+        eventElement.style.marginTop = `${8 + (placement.layer * 18)}px`;
     }
     
     eventsLayer.appendChild(eventElement);

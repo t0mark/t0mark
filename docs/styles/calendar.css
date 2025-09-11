@@ -213,6 +213,12 @@ body {
     gap: 8px;
     font-size: 14px;
     color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.calendar-icon:hover {
+    color: #4285f4;
 }
 
 .calendar-nav {
@@ -337,7 +343,7 @@ body {
     cursor: pointer;
     height: 16px;
     line-height: 12px;
-    margin-top: 22px;
+    margin-top: 8px;
     margin-left: 2px;
     margin-right: 2px;
     pointer-events: all;
