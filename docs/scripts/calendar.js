@@ -5,7 +5,7 @@ let htmlTemplates = {};
 
 // Google Calendar API 설정
 const GOOGLE_API_KEY = 'AIzaSyCucfjhj-WTaApAEE3kRrNvnsCaS_VgZdg';
-const CALENDAR_ID = 'primary'; // 기본 캘린더 사용, 또는 특정 캘린더 ID
+const CALENDAR_ID = 'a96536009@gmail.com'; // 공개 캘린더 ID
 let googleCalendarEvents = [];
 
 // 월 이름 배열
@@ -158,9 +158,8 @@ function renderProgressBars() {
 // Google Calendar 이벤트 로드
 async function loadGoogleCalendarEvents() {
     try {
-        const now = new Date();
-        const timeMin = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
-        const timeMax = new Date(now.getFullYear(), now.getMonth() + 1, 0).toISOString();
+        const timeMin = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).toISOString();
+        const timeMax = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).toISOString();
         
         const response = await fetch(
             `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?` +
@@ -332,8 +331,10 @@ function renderCalendar() {
         dayElement.innerHTML = htmlTemplates['calendar-day']
             .replace('{{day}}', day);
         
-        // Google Calendar 이벤트 추가
-        const dayEvents = getEventsForDay(currentDay);
+        // Google Calendar 이벤트 추가 (단일 날짜 이벤트만)
+        const dayEvents = getEventsForDay(currentDay).filter(event => {
+            return getEventPosition(event, currentDay) === 'single';
+        });
         
         dayEvents.forEach(event => {
             const eventElement = document.createElement('div');
@@ -345,6 +346,9 @@ function renderCalendar() {
 
         gridElement.appendChild(dayElement);
     }
+    
+    // 연속 이벤트 렌더링
+    renderMultiDayEvents();
 
     // 다음 달의 첫 날들
     const totalCells = gridElement.children.length;
@@ -361,8 +365,7 @@ function renderCalendar() {
 // 특정 날짜의 이벤트 가져오기
 function getEventsForDay(date) {
     return googleCalendarEvents.filter(event => {
-        const eventDate = getEventDate(event);
-        return eventDate && isSameDay(eventDate, date);
+        return isEventOnDate(event, date);
     });
 }
 
@@ -385,6 +388,62 @@ function isSameDay(date1, date2) {
            date1.getDate() === date2.getDate();
 }
 
+// 이벤트가 특정 날짜에 해당하는지 확인
+function isEventOnDate(event, targetDate) {
+    let startDate, endDate;
+    
+    if (event.start?.date && event.end?.date) {
+        // 종일 이벤트
+        startDate = new Date(event.start.date + 'T00:00:00');
+        endDate = new Date(event.end.date + 'T00:00:00');
+        // Google Calendar의 종일 이벤트 endDate는 다음날 00:00이므로 1일 빼기
+        endDate.setDate(endDate.getDate() - 1);
+    } else if (event.start?.dateTime && event.end?.dateTime) {
+        // 시간 지정 이벤트
+        startDate = new Date(event.start.dateTime);
+        endDate = new Date(event.end.dateTime);
+    } else {
+        return false;
+    }
+    
+    // targetDate가 startDate와 endDate 사이에 있는지 확인
+    const targetDay = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+    const eventStartDay = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+    const eventEndDay = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+    
+    return targetDay >= eventStartDay && targetDay <= eventEndDay;
+}
+
+// 이벤트의 위치 확인 (시작/중간/끝/단일)
+function getEventPosition(event, targetDate) {
+    let startDate, endDate;
+    
+    if (event.start?.date && event.end?.date) {
+        startDate = new Date(event.start.date + 'T00:00:00');
+        endDate = new Date(event.end.date + 'T00:00:00');
+        endDate.setDate(endDate.getDate() - 1);
+    } else if (event.start?.dateTime && event.end?.dateTime) {
+        startDate = new Date(event.start.dateTime);
+        endDate = new Date(event.end.dateTime);
+    } else {
+        return 'single';
+    }
+    
+    const targetDay = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+    const eventStartDay = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+    const eventEndDay = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+    
+    if (eventStartDay.getTime() === eventEndDay.getTime()) {
+        return 'single';
+    } else if (targetDay.getTime() === eventStartDay.getTime()) {
+        return 'start';
+    } else if (targetDay.getTime() === eventEndDay.getTime()) {
+        return 'end';
+    } else {
+        return 'middle';
+    }
+}
+
 // 이벤트 시간 포맷팅
 function formatEventTime(event) {
     if (event.start?.date) {
@@ -398,6 +457,104 @@ function formatEventTime(event) {
         });
     }
     return '';
+}
+
+// 연속 이벤트 렌더링
+function renderMultiDayEvents() {
+    const calendarGrid = document.getElementById('calendarGrid');
+    
+    // 기존 연속 이벤트 바 제거
+    const existingBars = calendarGrid.querySelectorAll('.multi-day-event-bar');
+    existingBars.forEach(bar => bar.remove());
+    
+    // 연속 이벤트만 처리
+    const multiDayEvents = googleCalendarEvents.filter(event => {
+        let startDate, endDate;
+        if (event.start?.date && event.end?.date) {
+            startDate = new Date(event.start.date + 'T00:00:00');
+            endDate = new Date(event.end.date + 'T00:00:00');
+            endDate.setDate(endDate.getDate() - 1);
+        } else if (event.start?.dateTime && event.end?.dateTime) {
+            startDate = new Date(event.start.dateTime);
+            endDate = new Date(event.end.dateTime);
+        } else {
+            return false;
+        }
+        
+        const eventStartDay = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+        const eventEndDay = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+        return eventStartDay.getTime() !== eventEndDay.getTime();
+    });
+    
+    multiDayEvents.forEach(event => {
+        createEventBar(event);
+    });
+}
+
+// 이벤트 바 생성 (단일/연속 통합)
+function createEventBar(event) {
+    const calendarGrid = document.getElementById('calendarGrid');
+    const calendarRect = calendarGrid.getBoundingClientRect();
+    
+    let startDate, endDate;
+    if (event.start?.date && event.end?.date) {
+        startDate = new Date(event.start.date + 'T00:00:00');
+        endDate = new Date(event.end.date + 'T00:00:00');
+        endDate.setDate(endDate.getDate() - 1);
+    } else if (event.start?.dateTime && event.end?.dateTime) {
+        startDate = new Date(event.start.dateTime);
+        endDate = new Date(event.end.dateTime);
+    } else {
+        return;
+    }
+    
+    // 현재 월에 포함되는 부분만 표시
+    const monthStart = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const monthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+    
+    const displayStartDate = new Date(Math.max(startDate.getTime(), monthStart.getTime()));
+    const displayEndDate = new Date(Math.min(endDate.getTime(), monthEnd.getTime()));
+    
+    // 시작 날짜와 끝 날짜의 그리드 위치 찾기
+    const startDay = displayStartDate.getDate();
+    const endDay = displayEndDate.getDate();
+    
+    const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const firstDayOfWeek = firstDayOfMonth.getDay();
+    
+    const startGridIndex = firstDayOfWeek + startDay - 1 + 7; // +7은 헤더 행
+    const endGridIndex = firstDayOfWeek + endDay - 1 + 7;
+    
+    const startCell = calendarGrid.children[startGridIndex];
+    const endCell = calendarGrid.children[endGridIndex];
+    
+    if (!startCell || !endCell) return;
+    
+    const startRect = startCell.getBoundingClientRect();
+    const endRect = endCell.getBoundingClientRect();
+    
+    // 이벤트 바 생성
+    const eventBar = document.createElement('div');
+    eventBar.className = 'multi-day-event-bar';
+    eventBar.textContent = event.summary || '(제목 없음)';
+    eventBar.title = `${event.summary}\n${formatEventTime(event)}`;
+    
+    const left = startRect.left - calendarRect.left + 2;
+    const width = endRect.right - startRect.left - 4;
+    const top = startRect.top - calendarRect.top + 22; // 날짜 숫자 아래
+    
+    // 연속 이벤트는 보라색
+    eventBar.style.background = '#9c27b0';
+    
+    eventBar.style.position = 'absolute';
+    eventBar.style.left = left + 'px';
+    eventBar.style.width = width + 'px';
+    eventBar.style.top = top + 'px';
+    eventBar.style.height = '14px';
+    eventBar.style.zIndex = '10';
+    
+    calendarGrid.style.position = 'relative';
+    calendarGrid.appendChild(eventBar);
 }
 
 // 페이지 스크롤 진행률 바 초기화
