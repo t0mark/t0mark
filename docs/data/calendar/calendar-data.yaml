@@ -30,10 +30,3 @@ todos:
   "논문":
     items:
       - "E2E SLAM 알아보기"
-  "프로젝트":
-    items:
-      - "GPS + LiDAR 퓨전"
-      - "F1TENTH 강화학습 환경 구성"
-      - "축구 게임 강화학습 환경 구성"
-      - "Unity ML-Agent"
-      - "E2E SLAM → 과제 나오면 알아보기"
