@@ -3,6 +3,11 @@ let currentDate = new Date();
 let calendarData = null;
 let htmlTemplates = {};
 
+// Google Calendar API 설정
+const GOOGLE_API_KEY = 'AIzaSyCucfjhj-WTaApAEE3kRrNvnsCaS_VgZdg';
+const CALENDAR_ID = 'primary'; // 기본 캘린더 사용, 또는 특정 캘린더 ID
+let googleCalendarEvents = [];
+
 // 월 이름 배열
 const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -15,6 +20,7 @@ const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 document.addEventListener('DOMContentLoaded', async function() {
     await loadHtmlTemplates();
     await loadCalendarData();
+    await loadGoogleCalendarEvents();
     initializeCalendar();
     setupEventListeners();
     initializeScrollProgress();
@@ -149,6 +155,35 @@ function renderProgressBars() {
     });
 }
 
+// Google Calendar 이벤트 로드
+async function loadGoogleCalendarEvents() {
+    try {
+        const now = new Date();
+        const timeMin = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+        const timeMax = new Date(now.getFullYear(), now.getMonth() + 1, 0).toISOString();
+        
+        const response = await fetch(
+            `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?` +
+            `key=${GOOGLE_API_KEY}&` +
+            `timeMin=${timeMin}&` +
+            `timeMax=${timeMax}&` +
+            `singleEvents=true&` +
+            `orderBy=startTime`
+        );
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        googleCalendarEvents = data.items || [];
+        console.log('Google Calendar events loaded:', googleCalendarEvents.length);
+    } catch (error) {
+        console.error('Error loading Google Calendar events:', error);
+        googleCalendarEvents = [];
+    }
+}
+
 // 시간 진행률 계산 함수
 function calculateTimeProgress(now) {
     // 연도 진행률
@@ -227,18 +262,21 @@ function setupEventListeners() {
     const nextBtn = document.getElementById('nextBtn');
     const todayBtn = document.getElementById('todayBtn');
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', async () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
+        await loadGoogleCalendarEvents();
         renderCalendar();
     });
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', async () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
+        await loadGoogleCalendarEvents();
         renderCalendar();
     });
 
-    todayBtn.addEventListener('click', () => {
+    todayBtn.addEventListener('click', async () => {
         currentDate = new Date();
+        await loadGoogleCalendarEvents();
         renderCalendar();
     });
 }
@@ -294,31 +332,16 @@ function renderCalendar() {
         dayElement.innerHTML = htmlTemplates['calendar-day']
             .replace('{{day}}', day);
         
-        // 샘플 이벤트 추가 (실제로는 Google Calendar API에서 가져와야 함)
-        if (day === 11) {
-            const event = document.createElement('div');
-            event.className = 'calendar-event';
-            event.textContent = '정처기 필기 설명회';
-            dayElement.appendChild(event);
-        }
-        if (day === 15) {
-            const event = document.createElement('div');
-            event.className = 'calendar-event';
-            event.textContent = '연구실 과제 시작';
-            dayElement.appendChild(event);
-        }
-        if (day === 18) {
-            const event = document.createElement('div');
-            event.className = 'calendar-event';
-            event.textContent = '14회 TOPCIT';
-            dayElement.appendChild(event);
-        }
-        if (day === 21) {
-            const event = document.createElement('div');
-            event.className = 'calendar-event';
-            event.textContent = '1차 정처기 시험';
-            dayElement.appendChild(event);
-        }
+        // Google Calendar 이벤트 추가
+        const dayEvents = getEventsForDay(currentDay);
+        
+        dayEvents.forEach(event => {
+            const eventElement = document.createElement('div');
+            eventElement.className = 'calendar-event';
+            eventElement.textContent = event.summary || '(제목 없음)';
+            eventElement.title = `${event.summary}\n${formatEventTime(event)}`;
+            dayElement.appendChild(eventElement);
+        });
 
         gridElement.appendChild(dayElement);
     }
@@ -333,6 +356,48 @@ function renderCalendar() {
             .replace('{{day}}', day);
         gridElement.appendChild(dayElement);
     }
+}
+
+// 특정 날짜의 이벤트 가져오기
+function getEventsForDay(date) {
+    return googleCalendarEvents.filter(event => {
+        const eventDate = getEventDate(event);
+        return eventDate && isSameDay(eventDate, date);
+    });
+}
+
+// 이벤트 날짜 추출
+function getEventDate(event) {
+    if (event.start?.date) {
+        // 종일 이벤트
+        return new Date(event.start.date + 'T00:00:00');
+    } else if (event.start?.dateTime) {
+        // 시간 지정 이벤트
+        return new Date(event.start.dateTime);
+    }
+    return null;
+}
+
+// 같은 날인지 확인
+function isSameDay(date1, date2) {
+    return date1.getFullYear() === date2.getFullYear() &&
+           date1.getMonth() === date2.getMonth() &&
+           date1.getDate() === date2.getDate();
+}
+
+// 이벤트 시간 포맷팅
+function formatEventTime(event) {
+    if (event.start?.date) {
+        return '종일';
+    } else if (event.start?.dateTime) {
+        const startTime = new Date(event.start.dateTime);
+        return startTime.toLocaleTimeString('ko-KR', { 
+            hour: '2-digit', 
+            minute: '2-digit',
+            hour12: false
+        });
+    }
+    return '';
 }
 
 // 페이지 스크롤 진행률 바 초기화
