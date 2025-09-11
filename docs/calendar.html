@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="icon" href="images/favicon.ico">
+    
+    <link rel="stylesheet" href="styles/variables.css">    
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <main class="calendar-main">
+        <div class="calendar-container">
+            <!-- 왼쪽 사이드바 -->
+            <aside class="left-sidebar">
+                <!-- D-DAY 섹션 -->
+                <div class="dday-section">
+                    <h2 class="section-title dday">D-DAY</h2>
+                    <div class="dday-cards" id="ddayCards">
+                        <!-- JSON에서 동적으로 로드 -->
+                    </div>
+                </div>
+
+                <!-- 작업 목록 섹션 -->
+                <div class="tasks-section">
+                    <h2 class="section-title tasks">Tasks</h2>
+                    <div class="tasks-list" id="tasksList">
+                        <!-- JSON에서 동적으로 로드 -->
+                    </div>
+                </div>
+
+                <!-- 진행률 섹션 -->
+                <div class="progress-section">
+                    <div class="progress-bars" id="progressBars">
+                        <!-- JSON에서 동적으로 로드 -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 가운데 캘린더 -->
+            <div class="center-calendar">
+                <div class="calendar-header">
+                    <div class="calendar-icon">📅 Google Calendar</div>
+                    <div class="calendar-nav">
+                        <button class="nav-btn" id="prevBtn">‹</button>
+                        <div class="current-date">
+                            <span id="currentMonth">September</span>
+                            <span id="currentYear">2025</span>
+                        </div>
+                        <button class="nav-btn" id="nextBtn">›</button>
+                    </div>
+                    <button class="today-btn" id="todayBtn">Today</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- 캘린더 그리드가 여기에 생성됩니다 -->
+                </div>
+            </div>
+
+            <!-- 오른쪽 TO DO -->
+            <aside class="right-sidebar">
+                <div class="todo-section">
+                    <h2 class="section-title todo">TO DO</h2>
+                    <div class="todo-list" id="todoList">
+                        <!-- JSON에서 동적으로 로드 -->
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 스크롤 진행 상태를 보여주는 프로그레스 바 -->
+        <div class="scroll-progress">
+            <div class="scroll-progress-bar"></div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/calendar.js"></script>
+</body>
+</html>

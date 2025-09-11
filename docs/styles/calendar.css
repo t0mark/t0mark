@@ -1,0 +1,382 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg-light);
+}
+
+/* 캘린더 페이지 메인 컨테이너 */
+.calendar-main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 왼쪽 사이드바 */
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    padding: 12px 16px;
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+
+.section-title.dday {
+    background-color: #e74c3c;
+}
+
+.section-title.tasks {
+    background-color: #3498db;
+}
+
+.section-title.todo {
+    background-color: #27ae60;
+}
+
+/* D-DAY 카드 */
+.dday-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.dday-row {
+    display: flex;
+    gap: 12px;
+}
+
+.dday-card {
+    flex: 1;
+    text-align: center;
+    padding: 16px 12px;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #e0e0e0;
+}
+
+.dday-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    background: #333;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    min-width: 60px;
+}
+
+.dday-description {
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.to-go {
+    background: #666;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+}
+
+/* 작업 목록 */
+.tasks-list {
+    margin-bottom: 20px;
+}
+
+.task-category {
+    margin-bottom: 16px;
+}
+
+.task-category-title,
+.todo-category-title,
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.task-category-icon,
+.todo-category-icon,
+.category-icon {
+    font-size: 14px;
+}
+
+.task-item,
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 12px;
+    color: #666;
+    margin-left: 16px;
+}
+
+.task-bullet,
+.todo-bullet,
+.item-bullet {
+    width: 4px;
+    height: 4px;
+    background-color: #666;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* 진행률 바 */
+.progress-section {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    margin-bottom: 12px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.progress-label {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+}
+
+/* 가운데 캘린더 */
+.center-calendar {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fafafa;
+}
+
+.calendar-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.current-date {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.today-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.today-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #e0e0e0;
+    padding: 1px;
+}
+
+.calendar-day {
+    background: white;
+    min-height: 80px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.day-header {
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    padding: 8px;
+    background: #f8f8f8;
+    font-weight: 600;
+}
+
+.day-number {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.other-month {
+    color: #ccc;
+}
+
+.today {
+    background-color: #fff3cd;
+}
+
+.calendar-event {
+    background: #4285f4;
+    color: white;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 오른쪽 사이드바 */
+.right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-category {
+    margin-bottom: 16px;
+}
+
+
+.todo-icon {
+    margin-top: 1px;
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .calendar-container {
+        grid-template-columns: 250px 1fr 250px;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 20px;
+        height: auto;
+    }
+    
+    .left-sidebar, .right-sidebar {
+        order: 2;
+    }
+    
+    .center-calendar {
+        order: 1;
+        min-height: 500px;
+    }
+    
+    .dday-cards {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
