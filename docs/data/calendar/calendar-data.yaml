@@ -1,6 +1,6 @@
 dDay:
   F1TENTH:
-      targetDate: "2025-11-03"
+    targetDate: "2025-11-03"
   정처기 시험:
     targetDate: "2025-11-21"
   종강:
@@ -27,6 +27,8 @@ todos:
       - "유튜브 - 강화학습 강의"
       - "YBM - TOEIC 강의"
       - "IT Lets Go - 정처기 강의"
-  "논문":
+  "대학원":
+    icon: "🦾"
     items:
       - "E2E SLAM 알아보기"
+      - "연구 계획서 작성"
