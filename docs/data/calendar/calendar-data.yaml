@@ -35,6 +35,7 @@ todos:
   "F1TENTH":
     icon: "🏁"
     items:
+      - "SLAM 모듈 제작"
       - "F1TENTH Gym 기반 강화학습 환경 구성"
   "졸업작품":
     icon: "📌"
