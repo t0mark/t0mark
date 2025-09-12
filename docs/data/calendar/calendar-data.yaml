@@ -32,3 +32,11 @@ todos:
     items:
       - "E2E SLAM 알아보기"
       - "연구 계획서 작성"
+  "F1TENTH":
+    icon: "🏁"
+    items:
+      - "F1TENTH Gym ROS 강화학습 가능한지"
+  "종합설계":
+    icon: "📌"
+    items:
+      - "Main GPS 전환, Faster-LIO 보정 방법"
