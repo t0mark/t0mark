@@ -35,8 +35,9 @@ todos:
   "F1TENTH":
     icon: "🏁"
     items:
-      - "F1TENTH Gym ROS 강화학습 가능한지"
-  "종합설계":
+      - "F1TENTH Gym 기반 강화학습 환경 구성"
+  "졸업작품":
     icon: "📌"
     items:
+      - "캡스톤디자인 필요한 물품 목록 작성"
       - "Main GPS 전환, Faster-LIO 보정 방법"
