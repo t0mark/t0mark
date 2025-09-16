@@ -4,13 +4,11 @@
  */
 
 /* ===== GRADUATE PAGE LAYOUT ===== */
-.main-container:has(.graduate-header) {
+.main-container:has(.graduate-tabs) {
     flex-direction: column;
 }
 
-.graduate-header,
-.graduate-tabs,
-.graduate-tab-content {
+.graduate-tabs {
     width: 100%;
     max-width: 1200px;
 }
@@ -212,13 +210,20 @@
 
 /* ===== GRADUATE TAB CONTENT ===== */
 .graduate-tab-content {
+    width: 100%;
+    max-width: 1200px;
     background: var(--bg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-card);
     padding: var(--space-lg);
-    min-height: 400px;
-    max-height: 60vh;
+    height: calc(100vh - var(--nav-height) - 120px);
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.graduate-tab-content::-webkit-scrollbar {
+    display: none;
 }
 
 .grad-content-section {
