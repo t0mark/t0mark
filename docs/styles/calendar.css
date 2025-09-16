@@ -2,6 +2,9 @@
 .left-sidebar {
     display: flex;
     flex-direction: column;
+    flex: 0 0 25%;
+    min-width: 280px;
+    max-width: 350px;
 }
 
 .section-title {
@@ -263,8 +266,8 @@
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
-    height: 100%;
-    
+    height: 90%;
+    flex: 1;
 }
 
 .calendar-embed {
@@ -435,6 +438,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex: 0 0 25%;
+    min-width: 280px;
+    max-width: 350px;
 }
 
 .todo-list {
