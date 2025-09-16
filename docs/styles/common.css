@@ -1,15 +1,46 @@
-/* CSS 변수는 variables.css에서 관리됩니다 */
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg-light);
+}
+
+/* 공용 메인 컨테이너 */
+.main-container {
+    margin: 0 auto;
+    max-width: 1800px;
+    height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+}
 
 /* 공유 네비게이션 스타일 */
 /* 상단 네비게이션 바 */
 .top-nav {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  height: var(--nav-height);
   padding: var(--space-sm) 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 
 /* 네비게이션 컨테이너 */
@@ -18,9 +49,9 @@
   margin: 0 auto;
   padding: 0 var(--space-lg);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 /* 네비게이션 링크 그룹 */

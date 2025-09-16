@@ -24,24 +24,24 @@ function updateUrl(tab) {
 
 // 지정된 탭을 활성화하고 관련 콘텐츠 로드
 function activateTab(targetTab) {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const tabButtons = document.querySelectorAll('.grad-tab-btn');
+    const tabContents = document.querySelectorAll('.grad-content-section');
     const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
-    
+
     // 모든 탭과 콘텐츠에서 활성화 클래스 제거
     tabButtons.forEach(btn => btn.classList.remove('active'));
     tabContents.forEach(content => content.classList.remove('active'));
     sidebarNavItems.forEach(item => item.classList.remove('active'));
-    
+
     // 대상 탭과 콘텐츠에 활성화 클래스 추가
-    const targetButton = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+    const targetButton = document.querySelector(`.grad-tab-btn[data-tab="${targetTab}"]`);
     const targetContent = document.getElementById(targetTab);
     const matchingSidebarItem = document.querySelector(`.sidebar-nav-item[data-tab="${targetTab}"]`);
-    
+
     if (targetButton) targetButton.classList.add('active');
     if (targetContent) targetContent.classList.add('active');
     if (matchingSidebarItem) matchingSidebarItem.classList.add('active');
-    
+
     // 아직 로드되지 않은 콘텐츠를 동적으로 로드
     if (targetContent) {
         loadTabContent(targetTab, targetContent);
@@ -129,7 +129,7 @@ function reinitializeInteractivity(tabName) {
 
 // 탭 시스템 초기화 (클릭 이벤트, URL 처리, 모바일 메뉴)
 function initializeTabSystem() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabButtons = document.querySelectorAll('.grad-tab-btn');
     const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
     const mobileMenuBtn = document.querySelector('.tab-mobile-btn');
     const tabs = document.querySelector('.tabs');
@@ -262,7 +262,7 @@ function initializeResourceTabs() {
 
 // 스크린 리더 접근성 및 ARIA 라벨 초기화
 function initializeAccessibility() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabButtons = document.querySelectorAll('.grad-tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     
     // 탭 버튼에 접근성 라벨 추가

@@ -13,59 +13,57 @@
 <body>
     <div id="navbar"></div>
 
-    <main class="calendar-main">
-        <div class="calendar-container">
-            <!-- 왼쪽 사이드바 -->
-            <aside class="left-sidebar">
-                <!-- D-DAY 섹션 -->
-                <div class="dday-section">
-                    <h2 class="section-title dday">D-DAY</h2>
-                    <div class="dday-cards" id="ddayCards">
-                        <!-- JSON에서 동적으로 로드 -->
-                    </div>
-                </div>
-
-                <!-- 작업 목록 섹션 -->
-                <div class="tasks-section">
-                    <h2 class="section-title tasks">Tasks</h2>
-                    <div class="tasks-list" id="tasksList">
-                        <!-- JSON에서 동적으로 로드 -->
-                    </div>
-                </div>
-
-                <!-- 진행률 섹션 -->
-                <div class="progress-section">
-                    <div class="progress-bars" id="progressBars">
-                        <!-- JSON에서 동적으로 로드 -->
-                    </div>
-                </div>
-            </aside>
-
-            <!-- 가운데 캘린더 -->
-            <div class="center-calendar">
-                <div class="calendar-header">
-                    <a href="https://calendar.google.com/" target="_blank" class="calendar-icon">📅 Google Calendar</a>
-                </div>
-                <div class="calendar-embed">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=a96536009%40gmail.com&ctz=Asia%2FSeoul" 
-                            style="border: 0; height: 100%;" 
-                            width="100%" 
-                            frameborder="0" 
-                            scrolling="no">
-                    </iframe>
+    <main class="main-container">
+        <!-- 왼쪽 사이드바 -->
+        <aside class="left-sidebar">
+            <!-- D-DAY 섹션 -->
+            <div class="dday-section">
+                <h2 class="section-title dday">D-DAY</h2>
+                <div class="dday-cards" id="ddayCards">
+                    <!-- JSON에서 동적으로 로드 -->
                 </div>
             </div>
 
-            <!-- 오른쪽 TO DO -->
-            <aside class="right-sidebar">
-                <div class="todo-section">
-                    <h2 class="section-title todo">TO DO</h2>
-                    <div class="todo-list" id="todoList">
-                        <!-- JSON에서 동적으로 로드 -->
-                    </div>
+            <!-- 작업 목록 섹션 -->
+            <div class="tasks-section">
+                <h2 class="section-title tasks">Tasks</h2>
+                <div class="tasks-list" id="tasksList">
+                    <!-- JSON에서 동적으로 로드 -->
                 </div>
-            </aside>
+            </div>
+
+            <!-- 진행률 섹션 -->
+            <div class="progress-section">
+                <div class="progress-bars" id="progressBars">
+                    <!-- JSON에서 동적으로 로드 -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- 가운데 캘린더 -->
+        <div class="center-calendar">
+            <div class="calendar-header">
+                <a href="https://calendar.google.com/" target="_blank" class="calendar-icon">📅 Google Calendar</a>
+            </div>
+            <div class="calendar-embed">
+                <iframe src="https://calendar.google.com/calendar/embed?src=a96536009%40gmail.com&ctz=Asia%2FSeoul"
+                        style="border: 0; height: 100%;"
+                        width="100%"
+                        frameborder="0"
+                        scrolling="no">
+                </iframe>
+            </div>
         </div>
+
+        <!-- 오른쪽 TO DO -->
+        <aside class="right-sidebar">
+            <div class="todo-section">
+                <h2 class="section-title todo">TO DO</h2>
+                <div class="todo-list" id="todoList">
+                    <!-- JSON에서 동적으로 로드 -->
+                </div>
+            </div>
+        </aside>
 
         <!-- 스크롤 진행 상태를 보여주는 프로그레스 바 -->
         <div class="scroll-progress">

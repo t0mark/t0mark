@@ -29,107 +29,66 @@
     </div>
 
     <!-- 메인 콘텐츠 영역 -->
-    <main>
-        <!-- 페이지 상단의 헤더 섹션 -->
-        <header class="page-header">
-            <div class="container">
-                <h1><i class="fas fa-graduation-cap"></i> Robotics Graduate Guide</h1>
-                <p>로봇공학 연구</p>
-            </div>
+    <main class="main-container">
+        <!-- 페이지 헤더 -->
+        <header class="graduate-header">
+            <h1><i class="fas fa-graduation-cap"></i> Robotics Graduate Guide</h1>
+            <p>로봇공학 연구</p>
         </header>
 
-        <!-- 탭 네비게이션 메뉴 -->
-        <nav class="tab-navigation">
-            <div class="container">
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="fields">
-                        <i class="fas fa-cogs"></i>
-                        연구 분야
-                    </button>
-                    <button class="tab-btn" data-tab="trends">
-                        <i class="fas fa-chart-line"></i>
-                        연구 동향
-                    </button>
-                    <button class="tab-btn" data-tab="conferences">
-                        <i class="fas fa-university"></i>
-                        학회 & 저널
-                    </button>
-                    <button class="tab-btn" data-tab="learning">
-                        <i class="fas fa-book"></i>
-                        학습 가이드
-                    </button>
-                </div>
-                <!-- 모바일 환경 탭 메뉴 버튼 -->
-                <button class="tab-mobile-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+        <!-- 탭 네비게이션 -->
+        <nav class="graduate-tabs">
+            <button class="grad-tab-btn active" data-tab="fields">
+                <i class="fas fa-cogs"></i>
+                연구 분야
+            </button>
+            <button class="grad-tab-btn" data-tab="trends">
+                <i class="fas fa-chart-line"></i>
+                연구 동향
+            </button>
+            <button class="grad-tab-btn" data-tab="conferences">
+                <i class="fas fa-university"></i>
+                학회 & 저널
+            </button>
+            <button class="grad-tab-btn" data-tab="learning">
+                <i class="fas fa-book"></i>
+                학습 가이드
+            </button>
         </nav>
 
-        <!-- 탭 콘텐츠를 감싸는 래퍼 -->
-        <div class="tab-content-wrapper">
-            <div class="container">
-                <!-- '연구 분야' 탭 콘텐츠 섹션 -->
-                <section id="fields" class="tab-content active">
-                    <div class="loading-placeholder">
-                        <div class="loading-spinner"></div>
-                        <p>연구 분야 정보를 불러오는 중...</p>
-                    </div>
-                </section>
-
-                <!-- '연구 동향' 탭 콘텐츠 섹션 -->
-                <section id="trends" class="tab-content">
-                    <div class="loading-placeholder">
-                        <div class="loading-spinner"></div>
-                        <p>연구 동향 정보를 불러오는 중...</p>
-                    </div>
-                </section>
-                
-                <!-- 하드웨어 상세 정보 모달 창 -->
-                <div id="hardwareModal" class="hardware-modal">
-                    <div class="modal-overlay"></div>
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 id="modalTitle">Hardware Details</h3>
-                            <button class="modal-close">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="hardware-detail">
-                                <div class="detail-image">
-                                    <img id="modalImage" src="" alt="">
-                                </div>
-                                <div class="detail-info">
-                                    <h4 id="modalName"></h4>
-                                    <p class="detail-spec" id="modalSpec"></p>
-                                    <div class="detail-description" id="modalDescription"></div>
-                                    <div class="detail-features" id="modalFeatures"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- 탭 콘텐츠 -->
+        <div class="graduate-tab-content">
+            <!-- '연구 분야' 탭 -->
+            <section id="fields" class="grad-content-section active">
+                <div class="loading-placeholder">
+                    <div class="loading-spinner"></div>
+                    <p>연구 분야 정보를 불러오는 중...</p>
                 </div>
+            </section>
 
-                <!-- '학회 & 저널' 탭 콘텐츠 섹션 -->
-                <section id="conferences" class="tab-content">
-                    <div class="loading-placeholder">
-                        <div class="loading-spinner"></div>
-                        <p>학회 & 저널 정보를 불러오는 중...</p>
-                    </div>
-                </section>
+            <!-- '연구 동향' 탭 -->
+            <section id="trends" class="grad-content-section">
+                <div class="loading-placeholder">
+                    <div class="loading-spinner"></div>
+                    <p>연구 동향 정보를 불러오는 중...</p>
+                </div>
+            </section>
 
-                <!-- '학습 가이드' 탭 콘텐츠 섹션 -->
-                <section id="learning" class="tab-content">
-                    <div class="loading-placeholder">
-                        <div class="loading-spinner"></div>
-                        <p>학습 가이드 정보를 불러오는 중...</p>
-                    </div>
-                </section>
-            </div>
-        </div>
+            <!-- '학회 & 저널' 탭 -->
+            <section id="conferences" class="grad-content-section">
+                <div class="loading-placeholder">
+                    <div class="loading-spinner"></div>
+                    <p>학회 & 저널 정보를 불러오는 중...</p>
+                </div>
+            </section>
 
-        <!-- 스크롤 진행 상태를 보여주는 프로그레스 바 -->
-        <div class="scroll-progress">
-            <div class="scroll-progress-bar"></div>
+            <!-- '학습 가이드' 탭 -->
+            <section id="learning" class="grad-content-section">
+                <div class="loading-placeholder">
+                    <div class="loading-spinner"></div>
+                <p>학습 가이드 정보를 불러오는 중...</p>
+                </div>
+            </section>
         </div>
     </main>
     
