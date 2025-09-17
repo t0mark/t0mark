@@ -30,7 +30,7 @@ todos:
   "대학원":
     icon: "🦾"
     items:
-      - "E2E SLAM 알아보기"
+      - "E2E Nav 알아보기"
       - "연구 계획서 작성"
   "F1TENTH":
     icon: "🏁"
