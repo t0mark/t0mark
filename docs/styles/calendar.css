@@ -273,7 +273,6 @@
 .calendar-embed {
     flex: 1;
     display: flex;
-    flex-direction: column;
 }
 
 .calendar-header {
@@ -474,4 +473,43 @@
     background: var(--primary-gradient);
     width: 0%;
     transition: width 0.3s ease;
+}
+
+/* ===== 반응형 디자인 ===== */
+@media (max-width: 1300px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+        overflow-y: auto;
+    }
+
+    .center-calendar {
+        order: 1;
+        width: 100%;
+        height: 80vh;
+        min-height: 600px;
+    }
+
+    .right-sidebar {
+        order: 2;
+        width: 100%;
+        max-width: none;
+    }
+
+    .left-sidebar {
+        order: 3;
+        width: 100%;
+        max-width: none;
+    }
+
+    .dday-cards {
+        align-items: center;
+    }
+
+    .dday-row {
+        flex-direction: column;
+        width: 75%;
+    }
 }
