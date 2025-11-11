@@ -1,8 +1,8 @@
 dDay:
   F1TENTH:
-    targetDate: "2025-11-03"
-  정처기 시험:
-    targetDate: "2025-11-21"
+    targetDate: "2025-11-24"
+  TOEIC SPEAKING:
+    targetDate: "2025-11-16"
   종강:
     targetDate: "2025-12-05"
 
@@ -10,23 +10,21 @@ tasks:
   "AIR Labs":
     icon: "🔬"
     items:
-      - "GPS + LiDAR 자율주행"
-      - "End-to-End SLAM"
-      - "F1TENTH"
+      - "Robovertical 과제"
+      - "종설 포스터"
+      - "F1TENTH 논문"
   Graduate:
     icon: "🎓"
     items:
       - "강화학습 축구 게임"
-      - "기사 자격증"
-      - "TOEIC"
+      - "TOEIC SPEAKING"
 
 todos:
   "강의":
     icon: "📺"
     items:
       - "유튜브 - 강화학습 강의"
-      - "YBM - TOEIC 강의"
-      - "IT Lets Go - 정처기 강의"
+      - "YBM - TOEIC SPEAKING 강의"
   "대학원":
     icon: "🦾"
     items:
@@ -35,10 +33,6 @@ todos:
   "F1TENTH":
     icon: "🏁"
     items:
-      - "SLAM 모듈 제작"
-      - "F1TENTH Gym 기반 강화학습 환경 구성"
-  "졸업작품":
-    icon: "📌"
-    items:
-      - "캡스톤디자인 필요한 물품 목록 작성"
-      - "Main GPS 전환, Faster-LIO 보정 방법"
+      - "Github 리포지토리 정리"
+      - "성능 개선"
+      - "F1TENTH 논문 작성"
