@@ -1,18 +1,12 @@
 dDay:
-  F1TENTH:
-    targetDate: "2025-11-24"
   TOEIC SPEAKING:
     targetDate: "2025-11-16"
+  F1TENTH:
+    targetDate: "2025-11-24"
   종강:
     targetDate: "2025-12-05"
 
 tasks:
-  "AIR Labs":
-    icon: "🔬"
-    items:
-      - "Robovertical 과제"
-      - "종설 포스터"
-      - "F1TENTH 논문"
   Graduate:
     icon: "🎓"
     items:
@@ -20,19 +14,31 @@ tasks:
       - "TOEIC SPEAKING"
 
 todos:
-  "강의":
-    icon: "📺"
+  "졸업":
+    icon: "🎓"
     items:
-      - "유튜브 - 강화학습 강의"
-      - "YBM - TOEIC SPEAKING 강의"
+      - "Toeic Speaking"
+      - "RV 과제"
+      - "경영학 과제"
+      - "산학실전 캡스톤"
+      - "종합설계 발표 자료 작성"
+  "연구실":
+    icon: "🔬"
+    items:
+      - "KROS 논문 Revision (종합설계)"
+      - "JANT-WEEK 포스터 작성"
+      - "ICROS 논문 (F1TENTH)"
+      - "Robovertical 과제"
   "대학원":
-    icon: "🦾"
+    icon: "🏫"
     items:
-      - "E2E Nav 알아보기"
-      - "연구 계획서 작성"
-  "F1TENTH":
-    icon: "🏁"
+      - "대학원 연구계획서 작성"
+      - "IROS 논문 정리"
+  "개인 공부":
+    icon: "👨‍💻"
     items:
-      - "Github 리포지토리 정리"
-      - "성능 개선"
-      - "F1TENTH 논문 작성"
+      - "전봇대 내년 활동 계획 및 Base Line 코드 작성"
+      - "Issac Sim Web Server 구축"
+      - "3D 프린터 공부"
+      - "Github 정리"
+      - "Raspberry Pi Web Server 구축"
