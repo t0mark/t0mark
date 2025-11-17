@@ -11,13 +11,15 @@ tasks:
     icon: "🎓"
     items:
       - "강화학습 축구 게임"
-      - "TOEIC SPEAKING"
+  Labs:
+    icon: "🔬"
+    items:
+      - "Robovertical 로봇 청소기"
 
 todos:
   "졸업":
     icon: "🎓"
     items:
-      - "Toeic Speaking"
       - "RV 과제"
       - "경영학 과제"
       - "산학실전 캡스톤"
