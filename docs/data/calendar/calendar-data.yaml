@@ -1,10 +1,11 @@
 dDay:
-  TOEIC SPEAKING:
-    targetDate: "2025-11-16"
-  F1TENTH:
+  ICROS 논문:
     targetDate: "2025-11-24"
+  Capstone:
+    targetDate: "2025-11-28"
   종강:
     targetDate: "2025-12-05"
+  
 
 tasks:
   Graduate:
