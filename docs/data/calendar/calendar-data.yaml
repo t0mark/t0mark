@@ -1,19 +1,11 @@
 dDay:
-  Capstone:
-    targetDate: "2025-11-28"
-  ICROS-KROS 발표:
-    targetDate: "2025-12-04"
-  종강:
-    targetDate: "2025-12-05"
   KROC 리비전:
     targetDate: "2025-12-13"
+  종강:
+    targetDate: "2025-12-16"
   
 
 tasks:
-  Graduate:
-    icon: "🎓"
-    items:
-      - "강화학습 축구 게임"
   Labs:
     icon: "🔬"
     items:
@@ -25,25 +17,23 @@ todos:
     icon: "🎓"
     items:
       - "RV 과제"
-      - "경영학 과제"
-      - "산학실전 캡스톤"
       - "종합설계 발표 자료 작성"
   "연구실":
     icon: "🔬"
     items:
-      - "KROS 논문 Revision (종합설계)"
-      - "ICROS-KROS 포스터"
+      - "KROS 논문 Revision"
       - "Robovertical 과제"
+      - "Unitree 사용법 익히기"
+      - "Issac Sim Web Server 구축"
+      - "Le robot manipulator 출력하기"
   "대학원":
     icon: "🏫"
     items:
       - "대학원 연구계획서 작성"
-      - "IROS 논문 정리"
   "개인 공부":
     icon: "👨‍💻"
     items:
       - "전봇대 내년 활동 계획 및 Base Line 코드 작성"
-      - "Issac Sim Web Server 구축"
       - "3D 프린터 공부"
       - "Github 정리"
       - "Raspberry Pi Web Server 구축"
