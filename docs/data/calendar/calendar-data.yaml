@@ -1,15 +1,12 @@
 dDay:
-  KROC 리비전:
-    targetDate: "2025-12-13"
-  종강:
-    targetDate: "2025-12-16"
-  
+  Robot Demo:
+    targetDate: "2026-01-20"
 
 tasks:
   Labs:
     icon: "🔬"
     items:
-      - "Robovertical 로봇 청소기"
+      - "Unitree G1 Demo"
       - "하창완 선배님 연구 주제 인수인계"
 
 todos:
@@ -17,23 +14,21 @@ todos:
     icon: "🎓"
     items:
       - "RV 과제"
-      - "종합설계 발표 자료 작성"
   "연구실":
     icon: "🔬"
     items:
-      - "KROS 논문 Revision"
-      - "Robovertical 과제"
-      - "Unitree 사용법 익히기"
+      - "Unitree G1, Go2, Spot 사용법"
       - "Issac Sim Web Server 구축"
-      - "Le robot manipulator 출력하기"
+      - "Le robot manipulator 조립"
+      - "동아리 로봇 사용 매뉴얼"
   "대학원":
     icon: "🏫"
     items:
-      - "대학원 연구계획서 작성"
+      - "연구 주제 탐색"
   "개인 공부":
     icon: "👨‍💻"
     items:
       - "전봇대 내년 활동 계획 및 Base Line 코드 작성"
       - "3D 프린터 공부"
-      - "Github 정리"
+      - "Github README.md 작성"
       - "Raspberry Pi Web Server 구축"
