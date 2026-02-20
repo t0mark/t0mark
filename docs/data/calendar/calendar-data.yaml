@@ -1,6 +1,8 @@
 dDay:
   IFAC:
     targetDate: "2026-02-28"
+  이공분야 학술지원:
+    targetDate: "2026-04-13"
   ICROS:
     targetDate: "2026-04-26"
   ICCAS:
