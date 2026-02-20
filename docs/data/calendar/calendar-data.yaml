@@ -1,34 +1,28 @@
 dDay:
-  수강 신청:
-    targetDate: "2026-02-09"
-  졸업식:
-    targetDate: "2026-02-23"
+  IFAC:
+    targetDate: "2026-02-28"
+  ICROS:
+    targetDate: "2026-04-26"
+  ICCAS:
+    targetDate: "2026-05-31"
 
 tasks:
   Labs:
     icon: "🔬"
     items:
-      - "하창완 선배님 연구 주제 인수인계"
-      - "RB-Y1 VLA 관련 자료 / 연구 주제 조사"
-      - "대학병원 자율 실험실"
+      - "RB-Y1 범용 VLA"
 
 todos:
-
   "연구실":
     icon: "🔬"
     items:
-      - "Unitree G1, Go2, Spot 사용법"
-      - "Issac Sim Web Server 구축"
-      - "Le robot manipulator 조립"
+      - "RB-Y1 SDK"
+      - "Na-VILA 환경 구축"
+      - "OSS-VLA 환경 구축"
       - "동아리 로봇 사용 매뉴얼"
-  "대학원":
-    icon: "🏫"
-    items:
-      - "연구 주제 탐색"
   "개인 공부":
     icon: "👨‍💻"
     items:
-      - "전봇대 내년 활동 계획 및 Base Line 코드 작성"
       - "3D 프린터 공부"
       - "Github README.md 작성"
       - "Raspberry Pi Web Server 구축"
