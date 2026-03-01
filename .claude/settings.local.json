@@ -1,9 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/tomark/Pictures/Screenshots/**)"
-    ],
-    "deny": [],
-    "ask": []
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(npm install)",
+      "Bash(npm run build)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(curl -s \"http://localhost:3000/api/calendar\")",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s \"http://localhost:3000/api/graduate/hardware\")",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(tasklist /FI \"PID eq 27784\")",
+      "Bash(tasklist /FI \"PID eq 11048\")"
+    ]
   }
 }

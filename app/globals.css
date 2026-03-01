@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== CSS 변수 시스템 유지 (vis-network 등 외부 라이브러리 호환성) ===== */
+:root {
+  --primary: #2c3e50;
+  --primary-light: #34495e;
+  --secondary: #6c757d;
+  --text: #333;
+  --text-light: #6c757d;
+  --text-muted: #495057;
+  --bg: #fff;
+  --bg-light: #f8f9fa;
+  --bg-gray: #f1f3f4;
+  --border: #e9ecef;
+  --border-light: #dee2e6;
+  --border-dark: #ced4da;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.07);
+  --shadow-lg: rgba(0, 0, 0, 0.12);
+  --accent-research: #7c3aed;
+  --accent-industry: #0ea5e9;
+  --accent-hardware: #10b981;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --container-max: 1200px;
+  --nav-height: 64px;
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 20px;
+  --border-radius-full: 50px;
+  --transition: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+  --shadow-card: 0 4px 6px var(--shadow-md);
+  --shadow-hover: 0 10px 15px var(--shadow-lg);
+  --z-modal: 1040;
+  --z-tooltip: 1050;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100vh;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg-light);
+  }
+}
+
+/* ===== 공통 유틸리티 ===== */
+@layer utilities {
+  .transition-default {
+    transition: var(--transition);
+  }
+
+  .shadow-card-custom {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover-custom {
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* ===== vis-network 캔버스 기본 스타일 ===== */
+#network {
+  width: 100%;
+  height: calc(100vh - var(--nav-height) - 3rem);
+  border: none;
+}
+
+/* ===== 스크롤 진행률 바 ===== */
+.scroll-progress {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 999;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent-research));
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* ===== 모달 애니메이션 ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal);
+}
+
+.modal-panel {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal) + 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ===== 로딩 스피너 ===== */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+/* ===== 인터랙티브 로봇 SVG ===== */
+.robot-part {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.robot-part:hover {
+  opacity: 0.75;
+}
+
+.robot-part.active {
+  filter: drop-shadow(0 0 8px rgba(44, 62, 80, 0.6));
+}
+
+/* ===== 캠퍼스 건물 호버 ===== */
+.campus-building {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campus-building:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}

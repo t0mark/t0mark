@@ -1,0 +1,40 @@
+dDay:
+  이공분야 학술지원:
+    targetDate: '2026-04-13'
+  ICROS:
+    targetDate: '2026-04-26'
+  ICCAS:
+    targetDate: '2026-05-31'
+tasks:
+  Labs:
+    icon: 🔬
+    items:
+      - RB-Y1 범용 VLA
+todos:
+  학습 (논문 / 이론):
+    icon: 🔬
+    items:
+      - Formal Specification of AI 정리
+      - VLA 가이드라인 맞춰서
+  기술 구현:
+    icon: 🧑🏻‍💻
+    items:
+      - NaVILA 출력 → cmd_vel 파싱 방법 수정
+      - NaVILA 호출 방식 변경
+      - RB-Y1 SDK 작성 (cmd_vel 및 Teleop)
+      - 시뮬레이션 환경 구축 (RB-Y1, Go2)
+  주간 통합 & 계획:
+    icon: 🗓️
+    items:
+      - 영어 공부 계획
+      - 정처기 실기 계획
+  과제:
+    icon: 📚
+    items:
+      - Isaac Sim 사용 및 자료 준비
+      - 4월 이공 학술 지원 준비
+  개인 공부:
+    icon: 👨‍💻
+    items:
+      - 3D Printer
+      - Web / Network
