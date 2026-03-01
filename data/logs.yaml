@@ -1,0 +1,84 @@
+logs:
+  - week: 26. 03. 02 ~ 26. 03. 07
+    rows:
+      - day: 월
+        category: ''
+        items: []
+  - week: 26. 02. 23 ~ 26. 02. 28
+    rows:
+      - day: 월
+        category: 기술 구현
+        items:
+          - NaVILA ROS 래핑
+      - day: 화
+        category: 기술 구현
+        items:
+          - NaVILA ROS 래핑
+          - 프롬프트, 이미지 연결
+      - day: 수
+        category: 기술 구현
+        items:
+          - cmd_vel 정규식 파싱
+          - NaVILA 하드웨어 테스트
+      - day: 수
+        category: 과제
+        items:
+          - 랩 미팅 자료 제작
+          - Physical AI Demo 코드 구현
+      - day: 목
+        category: 과제
+        items:
+          - Physical AI Demo 코드 구현
+          - Demo 준비
+      - day: 금
+        category: 과제
+        items:
+          - Physical AI 세미나 자료 준비
+      - day: 토
+        category: 과제
+        items:
+          - Physical AI 세미나 자료 준비
+  - week: 26. 02. 16 ~ 26. 02. 21
+    rows:
+      - day: 월
+        category: 학습 (논문 / 이론)
+        items:
+          - Formal Specification of AI 정리
+      - day: 수
+        category: 주간 통합 & 계획
+        items:
+          - 랩미팅 자료 준비
+      - day: 목
+        category: 주간 통합 & 계획
+        items:
+          - 랩미팅 자료 준비
+          - 연구 주제 선정
+      - day: 금
+        category: 학습 (논문 / 이론)
+        items:
+          - UniVLA → 다시 읽어야 할듯..
+  - week: 26. 02. 09 ~ 26. 02. 14
+    rows:
+      - day: 월
+        category: ''
+        items:
+          - 학회 일정 정리
+          - 동아리 운영 계획
+      - day: 화
+        category: ''
+        items:
+          - 이공분야 학술연구지원사업 작성 준비 → 연구 어떻게 진행할지
+      - day: 수
+        category: 기술 구현
+        items:
+          - NaVILA 환경 세팅
+          - 랩미팅 자료
+      - day: 목
+        category: 학습 (논문 / 이론)
+        items:
+          - NaVILA 논문 공부
+          - 논문 세미나 자료
+      - day: 금
+        category: 기술 구현
+        items:
+          - NaVILA Low level 환경 세팅

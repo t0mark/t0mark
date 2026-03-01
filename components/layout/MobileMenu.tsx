@@ -14,6 +14,7 @@ const navLinks = [
 ]
 
 const socialLinks = [
+  { href: 'https://www.notion.so/184923d83eb5806bb153fca443c1d153?source=copy_link', src: '/images/notion_icon.svg', alt: 'Notion' },
   { href: 'https://solved.ac/profile/gusdnd5297', src: '/images/boj-icon.png', alt: '백준' },
   { href: 'https://github.com/t0mark', src: '/images/github_icon.png', alt: 'GitHub' },
   { href: 'mailto:iwagoho@gmail.com', src: '/images/Gmail_icon.svg', alt: 'Gmail' },

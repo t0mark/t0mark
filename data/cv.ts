@@ -16,14 +16,15 @@ export const cvData = {
     {
       institution: 'Jeonbuk National University',
       degree: 'Master of Electronics and Information Engineering',
-      duration: 'Mar. 2026 – Present',
+      lab: 'AI Robotics Lab (Advisor: Hyungi Jo)',
+      duration: 'Mar. 2026 – Feb. 2028',
       achievements: [],
     },
     {
       institution: 'Jeonbuk National University',
       degrees: ['Department of Electronic Engineering', 'Department of Computer Engineering'],
       duration: 'Mar. 2020 – Feb. 2026',
-      achievements: ['Total GPA of 4.12/4.5', 'Major GPA of 4.12/4.5'],
+      achievements: ['Total GPA of 4.08/4.5', 'Major GPA of 4.10/4.5'],
     },
   ],
   internships: [
@@ -37,7 +38,6 @@ export const cvData = {
   projects: {
     master: [] as { title: string; period: string }[],
     undergraduate: [
-      { title: 'VLA Robotic Arm Control', period: '2025.11 – 2025.12' },
       { title: 'F1TENTH', period: '2025.07 – 2025.11' },
       { title: 'Kickboard Problem Improvement Kit', period: '2025.02 – 2025.08' },
       { title: 'LiDAR & GPS‑Based Map‑less Outdoor Self‑Driving', period: '2024.12 – 2025.11' },
@@ -63,10 +63,10 @@ export const cvData = {
     { date: '2023.09', title: 'Cheongwan Nonghyup Member\'s Child Scholarship · Cheongwan Agricultural Cooperative' },
   ],
   certifications: [
-    { date: '2024.11', title: 'Engineer Information Processing' },
+    { date: '2026.04', title: 'Engineer Information Processing' },
+    { date: '2025.09', title: 'ADsP (Data Analysis Semi-Professional)' },
     { date: '2024.08', title: 'TOEIC 265/990' },
-    { date: '2024.06', title: 'ADsP (Data Analysis Semi-Professional)' },
     { date: '2023.05', title: 'Driver\'s License' },
   ],
-  extracurricular: ['Python Study', 'F1TENTH Contest', 'FCA Project'],
+  extracurricular: ['Python Study', 'F1TENTH Contest'],
 }

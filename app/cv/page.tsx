@@ -75,7 +75,12 @@ export default function CVPage() {
                   <div>
                     <h3 className="font-semibold text-primary text-sm">{edu.institution}</h3>
                     {'degree' in edu ? (
-                      <p className="text-xs text-text-light mt-0.5">{edu.degree}</p>
+                      <>
+                        <p className="text-xs text-text-light mt-0.5">{edu.degree}</p>
+                        {'lab' in edu && edu.lab && (
+                          <p className="text-xs text-text-muted mt-0.5">{edu.lab}</p>
+                        )}
+                      </>
                     ) : (
                       edu.degrees?.map((d) => <p key={d} className="text-xs text-text-light mt-0.5">{d}</p>)
                     )}

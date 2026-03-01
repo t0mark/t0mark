@@ -9,13 +9,13 @@ import ConferencesTab from './tabs/ConferencesTab'
 type Tab = 'fields' | 'trends' | 'conferences'
 
 const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
-  { id: 'fields', label: '연구 분야', icon: Settings2 },
   { id: 'trends', label: '연구 동향', icon: TrendingUp },
   { id: 'conferences', label: '학회 & 저널', icon: Building2 },
+  { id: 'fields', label: '연구 분야', icon: Settings2 },
 ]
 
 export default function GraduateClient() {
-  const [activeTab, setActiveTab] = useState<Tab>('fields')
+  const [activeTab, setActiveTab] = useState<Tab>('trends')
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">

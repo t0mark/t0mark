@@ -1,5 +1,6 @@
 import WeeklyPlanner from '@/components/home/WeeklyPlanner'
 import HomeTodo from '@/components/home/HomeTodo'
+import HomeLog from '@/components/home/HomeLog'
 
 export default function HomePage() {
   return (
@@ -16,7 +17,11 @@ export default function HomePage() {
         <HomeTodo />
       </section>
 
-      {/* ── 정오표 (추후 구현) ── */}
+      {/* ── 기록 로그 ── */}
+      <section>
+        <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">LOG</h2>
+        <HomeLog />
+      </section>
 
     </main>
   )
