@@ -2,8 +2,14 @@ logs:
   - week: 26. 03. 02 ~ 26. 03. 07
     rows:
       - day: 월
-        category: ''
-        items: []
+        category: 개인 공부
+        items:
+          - 웹 서버 구축
+          - 전봇대 홍보 자료
+      - day: 화
+        category: 학습 (논문 / 이론)
+        items:
+          - Formal Specification of AI 정리
   - week: 26. 02. 23 ~ 26. 02. 28
     rows:
       - day: 월

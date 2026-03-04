@@ -174,10 +174,32 @@ export default function CalendarClient() {
 
   return (
     <>
-      <main className="max-w-main mx-auto p-5 xl:h-[calc(100vh-64px)] xl:overflow-hidden">
-        <div className="grid gap-5 grid-cols-2 xl:grid-cols-[14rem_1fr_13rem] xl:h-full">
+      <main className="max-w-main mx-auto p-5 2xl:h-[calc(100vh-64px)] 2xl:overflow-hidden">
+        <div className="grid gap-5 grid-cols-1 2xl:grid-cols-[14rem_1fr_13rem] 2xl:h-full">
+        {/* ===== 가운데 Google Calendar ===== */}
+        <div className="order-1 2xl:order-2 2xl:col-start-2 2xl:row-start-1 flex flex-col gap-3 min-w-0">
+          <a
+            href="https://calendar.google.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm font-semibold text-primary hover:text-primary-light transition-colors flex items-center gap-1.5"
+          >
+            📅 Google Calendar
+          </a>
+          <div className="flex-1 min-h-[780px] bg-white rounded-xl shadow-card overflow-hidden">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FSeoul&showPrint=0&src=YTk2NTM2MDA5QGdtYWlsLmNvbQ&src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986cb&color=%230b8043"
+              width="100%"
+              height="100%"
+              frameBorder={0}
+              scrolling="no"
+              title="Google Calendar"
+            />
+          </div>
+        </div>
+
         {/* ===== 왼쪽 사이드바 ===== */}
-        <aside className="col-start-1 row-start-2 xl:col-start-1 xl:row-start-1 flex flex-col gap-4 overflow-y-auto">
+        <aside className="order-2 2xl:order-1 2xl:col-start-1 2xl:row-start-1 flex flex-col gap-4 overflow-y-auto">
           <div className="bg-white rounded-xl p-4 shadow-card">
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-xs font-bold text-primary uppercase tracking-wide">D-DAY</h2>
@@ -217,30 +239,8 @@ export default function CalendarClient() {
           </div>
         </aside>
 
-        {/* ===== 가운데 Google Calendar ===== */}
-        <div className="col-span-2 row-start-1 xl:col-start-2 xl:col-span-1 xl:row-start-1 flex flex-col gap-3 min-w-0">
-          <a
-            href="https://calendar.google.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm font-semibold text-primary hover:text-primary-light transition-colors flex items-center gap-1.5"
-          >
-            📅 Google Calendar
-          </a>
-          <div className="flex-1 min-h-[480px] bg-white rounded-xl shadow-card overflow-hidden">
-            <iframe
-              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FSeoul&showPrint=0&src=YTk2NTM2MDA5QGdtYWlsLmNvbQ&src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986cb&color=%230b8043"
-              width="100%"
-              height="100%"
-              frameBorder={0}
-              scrolling="no"
-              title="Google Calendar"
-            />
-          </div>
-        </div>
-
         {/* ===== 오른쪽 TODO ===== */}
-        <aside className="col-start-2 row-start-2 xl:col-start-3 xl:row-start-1 overflow-y-auto">
+        <aside className="order-3 2xl:col-start-3 2xl:row-start-1 overflow-y-auto">
           <div className="bg-white rounded-xl p-4 shadow-card">
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-xs font-bold text-primary uppercase tracking-wide">TODO</h2>

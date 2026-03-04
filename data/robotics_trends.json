@@ -1,6 +1,612 @@
 {
-  "lastUpdated": "2026-03-01T20:23:39.579Z",
+  "lastUpdated": "2026-03-02T21:06:45.357Z",
   "items": [
+    {
+      "id": "arxiv:2602.24235",
+      "title": "SafeGen-LLM: Enhancing Safety Generalization in Task Planning for Robotic Systems",
+      "abstract": "Safety-critical task planning in robotic systems remains challenging: classical planners suffer from poor scalability, Reinforcement Learning (RL)-based methods generalize poorly, and base Large Language Models (LLMs) cannot guarantee safety. To address this gap, we propose safety-generalizable large language models, named SafeGen-LLM. SafeGen-LLM can not only enhance the safety satisfaction of task plans but also generalize well to novel safety properties in various domains. We first construct a multi-domain Planning Domain Definition Language 3 (PDDL3) benchmark with explicit safety constraints. Then, we introduce a two-stage post-training framework: Supervised Fine-Tuning (SFT) on a constraint-compliant planning dataset to learn planning syntax and semantics, and Group Relative Policy Optimization (GRPO) guided by fine-grained reward machines derived from formal verification to enforce safety alignment and by curriculum learning to better handle complex tasks. Extensive experiments show that SafeGen-LLM achieves strong safety generalization and outperforms frontier proprietary baselines across multi-domain planning tasks and multiple input formats (e.g., PDDLs and natural language).",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24235",
+      "publishedAt": "2026-02-27T18:06:10Z",
+      "authors": [
+        "Jialiang Fan",
+        "Weizhe Xu",
+        "Mengyu Liu",
+        "Oleg Sokolsky",
+        "Insup Lee",
+        "Fangxin Kong"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "titleKo": "SafeGen-LLM: 로봇 시스템의 작업 계획에서 안전 일반화를 향상시키기",
+      "abstractKo": "로봇 시스템에서 안전이 중요한 작업 계획은 여전히 도전 과제가 남아 있습니다: 전통적인 계획 도구는 확장성이 떨어지고, 강화 학습(RL) 기반 방법은 일반화가 잘 되지 않으며, 기본 대형 언어 모델(LLM)은 안전성을 보장할 수 없습니다. 이러한 격차를 해소하기 위해, 우리는 SafeGen-LLM이라는 안전 일반화 가능한 대형 언어 모델을 제안합니다. SafeGen-LLM은 작업 계획의 안전 만족도를 향상시킬 뿐만 아니라 다양한 도메인에서 새로운 안전 속성에 잘 일반화될 수 있습니다. 우리는 먼저 명시적인 안전 제약 조건을 갖춘 다중 도메인 계획 도메인 정의 언어 3(PDDL3) 벤치마크를 구축합니다."
+    },
+    {
+      "id": "arxiv:2602.24202",
+      "title": "Evaluating Accuracy of Vine Robot Shape Sensing with Distributed Inertial Measurement Units",
+      "abstract": "Soft, tip-extending vine robots are well suited for navigating tight, debris-filled environments, making them ideal for urban search and rescue. Sensing the full shape of a vine robot's body is helpful both for localizing information from other sensors placed along the robot body and for determining the robot's configuration within the space being explored. Prior approaches have localized vine robot tips using a single inertial measurement unit (IMU) combined with force sensing or length estimation, while one method demonstrated full-body shape sensing using distributed IMUs on a passively steered robot in controlled maze environments. However, the accuracy of distributed IMU-based shape sensing under active steering, varying robot lengths, and different sensor spacings has not been systematically quantified. In this work, we experimentally evaluate the accuracy of vine robot shape sensing using distributed IMUs along the robot body. We quantify IMU drift, measuring an average orientation drift rate of 1.33 degrees/min across 15 sensors. For passive steering, mean tip position error was 11% of robot length. For active steering, mean tip position error increased to 16%. During growth experiments across lengths from 30-175 cm, mean tip error was 8%, with a positive trend with increasing length. We also analyze the influence of sensor spacing and observe that intermediate spacings can minimize error for single-curvature shapes. These results demonstrate the feasibility of distributed IMU-based shape sensing for vine robots while highlighting key limitations and opportunities for improved modeling and algorithmic integration for field deployment.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24202",
+      "publishedAt": "2026-02-27T17:28:42Z",
+      "authors": [
+        "Alexis E. Laudenslager",
+        "Antonio Alvarez Valdivia",
+        "Nathaniel Hanson",
+        "Margaret McGuinness"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "분산 관성 측정 장치를 이용한 포도 나무 로봇 형태 감지 정확도 평가",
+      "abstractKo": "부드럽고 팁이 확장되는 포도 나무 로봇은 좁고 잔해로 가득 찬 환경을 탐색하는 데 적합하여 도시 구조 및 구조 작업에 이상적입니다. 포도 나무 로봇의 전체 형태를 감지하는 것은 로봇 본체에 배치된 다른 센서로부터 정보를 지역화하고 탐색 중인 공간 내에서 로봇의 구성을 결정하는 데 유용합니다. 이전 접근 방식은 단일 관성 측정 장치(IMU)와 힘 감지 또는 길이 추정을 결합하여 포도 나무 로봇의 팁을 지역화했으며, 한 방법은 수동적으로 늘어나는 포도 나무 로봇에 분산된 IMU를 사용하여 전체 신체 형태 감지를 시연했습니다."
+    },
+    {
+      "id": "arxiv:2602.24192",
+      "title": "How IMU Drift Influences Multi-Radar Inertial Odometry for Ground Robots in Subterranean Terrains",
+      "abstract": "Reliable radar inertial odometry (RIO) requires mitigating IMU bias drift, a challenge that intensifies in subterranean environments due to extreme temperatures and gravity-induced accelerations. Cost-effective IMUs such as the Pixhawk, when paired with FMCW TI IWR6843AOP EVM radars, suffer from drift-induced degradation compounded by sparse, noisy, and flickering radar returns, making fusion less stable than LiDAR-based odometry. Yet, LiDAR fails under smoke, dust, and aerosols, whereas FMCW radars remain compact, lightweight, cost-effective, and robust in these situations. To address these challenges, we propose a two-stage MRIO framework that combines an IMU bias estimator for resilient localization and mapping in GPS-denied subterranean environments affected by smoke. Radar-based ego-velocity estimation is formulated through a least-squares approach and incorporated into an EKF for online IMU bias correction; the corrected IMU accelerations are fused with heterogeneous measurements from multiple radars and an IMU to refine odometry. The proposed framework further supports radar-only mapping by exploiting the robot's estimated translational and rotational displacements. In subterranean field trials, MRIO delivers robust localization and mapping, outperforming EKF-RIO. It maintains accuracy across cost-efficient FMCW radar setups and different IMUs, showing resilience with Pixhawk and higher-grade units such as VectorNav. The implementation will be provided as an open-source resource to the community (code available at https://github.com/LTU-RAI/MRIO",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24192",
+      "publishedAt": "2026-02-27T17:15:50Z",
+      "authors": [
+        "Moumita Mukherjee",
+        "Magnus Norén",
+        "Anton Koval",
+        "Avijit Banerjee",
+        "George Nikolakopoulos"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "IMU 드리프트가 지하 지형의 지상 로봇을 위한 다중 레이더 관성 오도메트리에 미치는 영향",
+      "abstractKo": "신뢰할 수 있는 레이더 관성 오도메트리(RIO)는 IMU 편향 드리프트를 완화해야 하며, 이는 극한의 온도와 중력에 의한 가속도로 인해 지하 환경에서 더욱 어려워진다. Pixhawk와 같은 비용 효율적인 IMU는 FMCW TI IWR6843AOP EVM 레이더와 결합될 때 드리프트로 인한 저하가 발생하며, 이는 희박하고 시끄럽고 깜박이는 레이더 반사로 인해 더욱 악화되어 LiDAR 기반 오도메트리보다 융합이 덜 안정적이다. 그러나 LiDAR는 연기, 먼지 및 에어로졸에서 실패하는 반면, FMCW 레이더는 이러한 상황에서 컴팩트하고 경량이며 비용 효율적이고 견고하다."
+    },
+    {
+      "id": "arxiv:2602.24156",
+      "title": "Humanoid Robots as First Assistants in Endoscopic Surgery",
+      "abstract": "Humanoid robots have become a focal point of technological ambition, with claims of surgical capability within years in mainstream discourse. These projections are aspirational yet lack empirical grounding. To date, no humanoid has assisted a surgeon through an actual procedure, let alone performed one. The work described here breaks this new ground. Here we report a proof of concept in which a teleoperated Unitree G1 provided endoscopic visualization while an attending otolaryngologist performed a cadaveric sphenoidectomy. The procedure was completed successfully, with stable visualization maintained throughout. Teleoperation allowed assessment of whether the humanoid form factor could meet the physical demands of surgical assistance in terms of sustenance and precision; the cognitive demands were satisfied -- for now -- by the operator. Post-procedure analysis identified engineering targets for clinical translation, alongside near-term opportunities such as autonomous diagnostic scoping. This work establishes form-factor feasibility for humanoid surgical assistance while identifying challenges for continued development.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24156",
+      "publishedAt": "2026-02-27T16:37:33Z",
+      "authors": [
+        "Sue Min Cho",
+        "Jan Emily Mangulabnan",
+        "Han Zhang",
+        "Zhekai Mao",
+        "Yufan He",
+        "Pengfei Guo",
+        "Daguang Xu",
+        "Gregory Hager",
+        "Masaru Ishii",
+        "Mathias Unberath"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "인간형 로봇을 이용한 내시경 수술의 첫 번째 보조자",
+      "abstractKo": "인간형 로봇은 기술적 야망의 중심이 되었으며, 주류 담론에서는 몇 년 내에 수술 능력을 갖출 것이라는 주장이 제기되고 있습니다. 이러한 예측은 야심 차지만 실증적 근거가 부족합니다. 현재까지 실제 수술에서 인간형 로봇이 외과의를 보조한 사례는 없으며, 수술을 수행한 적도 없습니다. 본 연구는 이러한 새로운 지평을 열었습니다. 우리는 원격 조작된 Unitree G1이 내시경 시각화를 제공하는 동안, 참석한 이비인후과 의사가 시신에 대한 접형골 절제술을 수행한 개념 증명을 보고합니다. 이 절차는 성공적으로 완료되었으며, 안정적인 시각화가 유지되었습니다."
+    },
+    {
+      "id": "arxiv:2602.24143",
+      "title": "Robust Skills, Brittle Grounding: Diagnosing Restricted Generalization in Vision-Language Action Policies via Multi-Object Picking",
+      "abstract": "Vision-language action (VLA) policies often report strong manipulation benchmark performance with relatively few demonstrations, but it remains unclear whether this reflects robust language-to-object grounding or reliance on object--location correlations that do not transfer beyond the training distribution. We present a controlled multi-object picking study that progressively increases object placement variability up to full workspace randomization and evaluates held-out object--location pairings that break familiar associations without increasing spatial difficulty. Across these stress tests and data scaling, we find that for representative VLA policies, including SmolVLA and $π_{0.5}$, execution of the manipulation primitive remains substantially more reliable than instruction-conditioned task success in harder regimes, suggesting that manipulation skill acquisition is decoupled from instruction following. We recommend augmenting manipulation benchmarks with task ladders and decomposed metrics that separately measure primitive execution and instruction-conditioned success to better diagnose instruction-grounded generalization.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24143",
+      "publishedAt": "2026-02-27T16:20:04Z",
+      "authors": [
+        "David Emukpere",
+        "Romain Deffayet",
+        "Jean-Michel Renders"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "강건한 기술, 취약한 기초: 다중 객체 선택을 통한 비전-언어 행동 정책의 제한된 일반화 진단",
+      "abstractKo": "비전-언어 행동(VLA) 정책은 상대적으로 적은 시연으로 강력한 조작 벤치마크 성능을 보고하지만, 이것이 강건한 언어-객체 기초를 반영하는지 아니면 훈련 분포를 넘어서는 객체-위치 상관관계에 의존하는지 여부는 여전히 불확실합니다. 우리는 객체 배치 변동성을 점진적으로 증가시켜 전체 작업 공간 무작위화에 이르는 통제된 다중 객체 선택 연구를 제시하고, 공간적 난이도를 증가시키지 않으면서 친숙한 연관성을 깨는 보류된 객체-위치 쌍을 평가합니다. 이러한 스트레스 테스트를 통해"
+    },
+    {
+      "id": "arxiv:2602.24121",
+      "title": "Planning from Observation and Interaction",
+      "abstract": "Observational learning requires an agent to learn to perform a task by referencing only observations of the performed task. This work investigates the equivalent setting in real-world robot learning where access to hand-designed rewards and demonstrator actions are not assumed. To address this data-constrained setting, this work presents a planning-based Inverse Reinforcement Learning (IRL) algorithm for world modeling from observation and interaction alone. Experiments conducted entirely in the real-world demonstrate that this paradigm is effective for learning image-based manipulation tasks from scratch in under an hour, without assuming prior knowledge, pre-training, or data of any kind beyond task observations. Moreover, this work demonstrates that the learned world model representation is capable of online transfer learning in the real-world from scratch. In comparison to existing approaches, including IRL, RL, and Behavior Cloning (BC), which have more restrictive assumptions, the proposed approach demonstrates significantly greater sample efficiency and success rates, enabling a practical path forward for online world modeling and planning from observation and interaction. Videos and more at: https://uwrobotlearning.github.io/mpail2/.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24121",
+      "publishedAt": "2026-02-27T15:58:11Z",
+      "authors": [
+        "Tyler Han",
+        "Siyang Shen",
+        "Rohan Baijal",
+        "Harine Ravichandiran",
+        "Bat Nemekhbold",
+        "Kevin Huang",
+        "Sanghun Jung",
+        "Byron Boots"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "관찰 및 상호작용을 통한 계획",
+      "abstractKo": "관찰 학습은 에이전트가 수행된 작업의 관찰만을 참조하여 작업을 수행하는 방법을 배우도록 요구합니다. 이 연구는 손으로 설계된 보상 및 시연자의 행동에 대한 접근이 가정되지 않는 실제 로봇 학습의 동등한 설정을 조사합니다. 이러한 데이터 제약 환경을 해결하기 위해, 본 연구는 관찰 및 상호작용만으로 세계 모델링을 위한 계획 기반의 역강화학습(IRL) 알고리즘을 제시합니다. 실제 환경에서 전적으로 수행된 실험은 이 패러다임이 이미지 기반 조작 작업 학습에 효과적임을 보여줍니다."
+    },
+    {
+      "id": "arxiv:2602.24104",
+      "title": "Geometry-based pneumatic actuators for soft robotics",
+      "abstract": "Soft pneumatic actuators enable safe human-machine interaction with lightweight and powerful applied parts. On the other side, they suffer design limitations as regards complex actuation patterns, including minimum bending radii, multi-states capabilities and structural stability. We present geometry-based pneumatic actuators (GPAs), a design and implementation approach that introduces constraint layers with configurable CNC heat-sealed chambers. The approach achieves predictable deformation, near-zero bending radii, multi-states actuation, and enables customizable and repeatable complex actuated geometries. Mathematical modeling reveals predictable linear angle transformations and validates nonlinear torque-angle relationships across diverse configurations. We demonstrate versatility of the GPAs approach through three applications: a 49 g wrist exoskeleton reducing muscle activity by up to 51%, a 30.8 g haptic interface delivering 8 N force feedback with fast response, and a 208 g bipedal robot achieving multi-gait locomotion. GPAs establish a configurable platform for next-generation wearable robotics, haptic systems, and soft locomotion devices.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24104",
+      "publishedAt": "2026-02-27T15:43:22Z",
+      "authors": [
+        "Rui Chen",
+        "Daniele Leonardis",
+        "Domenico Chiaradia",
+        "Antonio Frisoli"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "기하학 기반의 공압 액추에이터를 이용한 소프트 로보틱스",
+      "abstractKo": "소프트 공압 액추에이터는 경량이면서도 강력한 작동 부품을 통해 안전한 인간-기계 상호작용을 가능하게 합니다. 그러나 이들은 최소 굽힘 반경, 다중 상태 기능 및 구조적 안정성과 같은 복잡한 작동 패턴에 대한 설계 제한을 겪고 있습니다. 우리는 구성 가능한 CNC 열 밀봉 챔버와 제약층을 도입하는 설계 및 구현 접근 방식인 기하학 기반 공압 액추에이터(GPAs)를 제시합니다. 이 접근 방식은 예측 가능한 변형, 거의 제로에 가까운 굽힘 반경, 다중 상태 작동을 달성하며, 사용자 정의 가능하고 반복 가능한 복잡한 작동을 가능하게 합니다."
+    },
+    {
+      "id": "arxiv:2602.24030",
+      "title": "Curriculum Reinforcement Learning for Quadrotor Racing with Random Obstacles",
+      "abstract": "Autonomous drone racing has attracted increasing interest as a research topic for exploring the limits of agile flight. However, existing studies primarily focus on obstacle-free racetracks, while the perception and dynamic challenges introduced by obstacles remain underexplored, often resulting in low success rates and limited robustness in real-world flight. To this end, we propose a novel vision-based curriculum reinforcement learning framework for training a robust controller capable of addressing unseen obstacles in drone racing. We combine multi-stage cu rriculum learning, domain randomization, and a multi-scene updating strategy to address the conflicting challenges of obstacle avoidance and gate traversal. Our end-to-end control policy is implemented as a single network, allowing high-speed flight of quadrotors in environments with variable obstacles. Both hardware-in-the-loop and real-world experiments demonstrate that our method achieves faster lap times and higher success rates than existing approaches, effectively advancing drone racing in obstacle-rich environments. The video and code are available at: https://github.com/SJTU-ViSYS-team/CRL-Drone-Racing.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24030",
+      "publishedAt": "2026-02-27T13:56:59Z",
+      "authors": [
+        "Fangyu Sun",
+        "Fanxing Li",
+        "Yu Hu",
+        "Linzuo Zhang",
+        "Yueqian Liu",
+        "Wenxian Yu",
+        "Danping Zou"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "무작위 장애물을 고려한 쿼드로터 레이싱을 위한 커리큘럼 강화 학습",
+      "abstractKo": "자율 드론 레이싱은 민첩한 비행의 한계를 탐구하기 위한 연구 주제로 점점 더 많은 관심을 받고 있습니다. 그러나 기존 연구는 주로 장애물이 없는 레이싱 트랙에 초점을 맞추고 있으며, 장애물로 인해 발생하는 인식 및 동적 도전 과제는 충분히 탐구되지 않아 실제 비행에서 낮은 성공률과 제한된 강인성을 초래하고 있습니다. 이를 해결하기 위해, 우리는 드론 레이싱에서 보지 못한 장애물에 대응할 수 있는 강인한 제어기를 훈련하기 위한 새로운 비전 기반 커리큘럼 강화 학습 프레임워크를 제안합니다. 우리는 다단계 커리큘럼 학습과 도메인 무작위화를 결합합니다."
+    },
+    {
+      "id": "arxiv:2602.24011",
+      "title": "Autonomous Inspection of Power Line Insulators with UAV on an Unmapped Transmission Tower",
+      "abstract": "This paper introduces an online inspection algorithm that enables an autonomous UAV to fly around a transmission tower and obtain detailed inspection images without a prior map of the tower. Our algorithm relies on camera-LiDAR sensor fusion for online detection and localization of insulators. In particular, the algorithm is based on insulator detection using a convolutional neural network, projection of LiDAR points onto the image, and filtering them using the bounding boxes. The detection pipeline is coupled with several proposed insulator localization methods based on DBSCAN, RANSAC, and PCA algorithms. The performance of the proposed online inspection algorithm and camera-LiDAR sensor fusion pipeline is demonstrated through simulation and real-world flights. In simulation, we showed that our single-flight inspection strategy can save up to 24 % of total inspection time, compared to the two-flight strategy of scanning the tower and afterwards visiting the inspection waypoints in the optimal way. In a real-world experiment, the best performing proposed method achieves a mean horizontal and vertical localization error for the insulator of 0.16 +- 0.08 m and 0.16 +- 0.11 m, respectively. Compared to the most relevant approach, the proposed method achieves more than an order of magnitude lower variance in horizontal insulator localization error.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.24011",
+      "publishedAt": "2026-02-27T13:34:58Z",
+      "authors": [
+        "Václav Riss",
+        "Vít Krátký",
+        "Robert Pěnička",
+        "Martin Saska"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "지도 없는 송전탑에서 UAV를 이용한 전력선 절연체의 자율 점검",
+      "abstractKo": "본 논문에서는 자율 UAV가 송전탑 주위를 비행하며 사전 맵 없이도 상세한 점검 이미지를 획득할 수 있도록 하는 온라인 점검 알고리즘을 소개합니다. 우리의 알고리즘은 카메라-라이다 센서 융합을 기반으로 하여 절연체의 온라인 탐지 및 위치 추정을 수행합니다. 특히, 이 알고리즘은 합성곱 신경망을 이용한 절연체 탐지, 라이다 포인트의 이미지 투영, 그리고 바운딩 박스를 사용한 필터링에 기반합니다. 탐지 파이프라인은 DBSCAN, RANSAC 및 PC 기반의 여러 제안된 절연체 위치 추정 방법과 결합되어 있습니다."
+    },
+    {
+      "id": "arxiv:2602.23972",
+      "title": "Learning Robust Control Policies for Inverted Pose on Miniature Blimp Robots",
+      "abstract": "The ability to achieve and maintain inverted poses is essential for unlocking the full agility of miniature blimp robots (MBRs). However, developing reliable control methods for MBRs remains challenging due to their complex and underactuated dynamics. To address this challenge, we propose a novel framework that enables robust control policy learning for inverted pose on MBRs. The proposed framework operates through three core stages: First, a high-fidelity three-dimensional (3D) simulation environment was constructed, which was calibrated against real-world MBR motion data to ensure accurate replication of inverted-state dynamics. Second, a robust policy for MBR inverted control was trained within the simulation environment via a domain randomization strategy and a modified Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithm. Third, a mapping layer was designed to bridge the sim-to-real gap for the learned policy deployment. Comprehensive evaluations in the simulation environment demonstrate that the learned policy achieves a higher success rate compared to the energy-shaping controller. Furthermore, experimental results confirm that the learned policy with a mapping layer enables an MBR to achieve and maintain a fully upside-down pose in real-world settings.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23972",
+      "publishedAt": "2026-02-27T12:29:56Z",
+      "authors": [
+        "Yuanlin Yang",
+        "Lin Hong",
+        "Fumin Zhang"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "미니어처 블림프 로봇의 역방향 자세를 위한 강인한 제어 정책 학습",
+      "abstractKo": "역방향 자세를 달성하고 유지하는 능력은 미니어처 블림프 로봇(MBR)의 완전한 민첩성을 발휘하는 데 필수적입니다. 그러나 MBR의 복잡하고 저작동 동역학으로 인해 신뢰할 수 있는 제어 방법을 개발하는 것은 여전히 도전 과제가 되고 있습니다. 이 문제를 해결하기 위해, 우리는 MBR의 역방향 자세를 위한 강인한 제어 정책 학습을 가능하게 하는 새로운 프레임워크를 제안합니다. 제안된 프레임워크는 세 가지 핵심 단계로 운영됩니다: 첫째, 실제 MBR 운동 데이터를 기준으로 보정된 고충실도 3차원(3D) 시뮬레이션 환경이 구축되어 정확한 결과를 보장합니다."
+    },
+    {
+      "id": "arxiv:2602.23937",
+      "title": "Enhancing Vision-Language Navigation with Multimodal Event Knowledge from Real-World Indoor Tour Videos",
+      "abstract": "Vision-Language Navigation (VLN) agents often struggle with long-horizon reasoning in unseen environments, particularly when facing ambiguous, coarse-grained instructions. While recent advances use knowledge graph to enhance reasoning, the potential of multimodal event knowledge inspired by human episodic memory remains underexplored. In this work, we propose an event-centric knowledge enhancement strategy for automated process knowledge mining and feature fusion to solve coarse-grained instruction and long-horizon reasoning in VLN task. First, we construct YE-KG, the first large-scale multimodal spatiotemporal knowledge graph, with over 86k nodes and 83k edges, derived from real-world indoor videos. By leveraging multimodal large language models (i.e., LLaVa, GPT4), we extract unstructured video streams into structured semantic-action-effect events to serve as explicit episodic memory. Second, we introduce STE-VLN, which integrates the above graph into VLN models via a Coarse-to-Fine Hierarchical Retrieval mechanism. This allows agents to retrieve causal event sequences and dynamically fuse them with egocentric visual observations. Experiments on REVERIE, R2R, and R2R-CE benchmarks demonstrate the efficiency of our event-centric strategy, outperforming state-of-the-art approaches across diverse action spaces. Our data and code are available on the project website https://sites.google.com/view/y-event-kg/.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23937",
+      "publishedAt": "2026-02-27T11:38:06Z",
+      "authors": [
+        "Haoxuan Xu",
+        "Tianfu Li",
+        "Wenbo Chen",
+        "Yi Liu",
+        "Xingxing Zuo",
+        "Yaoxian Song",
+        "Haoang Li"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "titleKo": "실제 실내 투어 비디오에서 다중 모달 이벤트 지식을 활용한 비전-언어 내비게이션 향상",
+      "abstractKo": "비전-언어 내비게이션(VLN) 에이전트는 종종 보지 못한 환경에서 긴 수평 추론에 어려움을 겪으며, 특히 모호하고 조잡한 지침에 직면할 때 더욱 그렇습니다. 최근의 발전은 추론을 향상시키기 위해 지식 그래프를 사용하지만, 인간의 에피소드 기억에서 영감을 받은 다중 모달 이벤트 지식의 잠재력은 아직 충분히 탐구되지 않았습니다. 본 연구에서는 VLN 작업에서 조잡한 지침과 긴 수평 추론 문제를 해결하기 위해 자동화된 프로세스 지식 마이닝 및 특징 융합을 위한 이벤트 중심 지식 향상 전략을 제안합니다. 먼저, 우리는 YE-KG를 구축합니다. YE-KG는 대규모 다중 모달 이벤트 지식 그래프의 첫 번째 사례입니다."
+    },
+    {
+      "id": "arxiv:2602.23934",
+      "title": "Learning to Build: Autonomous Robotic Assembly of Stable Structures Without Predefined Plans",
+      "abstract": "This paper presents a novel autonomous robotic assembly framework for constructing stable structures without relying on predefined architectural blueprints. Instead of following fixed plans, construction tasks are defined through targets and obstacles, allowing the system to adapt more flexibly to environmental uncertainty and variations during the building process. A reinforcement learning (RL) policy, trained using deep Q-learning with successor features, serves as the decision-making component. As a proof of concept, we evaluate the approach on a benchmark of 15 2D robotic assembly tasks of discrete block construction. Experiments using a real-world closed-loop robotic setup demonstrate the feasibility of the method and its ability to handle construction noise. The results suggest that our framework offers a promising direction for more adaptable and robust robotic construction in real-world environments.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23934",
+      "publishedAt": "2026-02-27T11:31:49Z",
+      "authors": [
+        "Jingwen Wang",
+        "Johannes Kirschner",
+        "Paul Rolland",
+        "Luis Salamanca",
+        "Stefana Parascho"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "titleKo": "학습하여 구축하기: 미리 정의된 계획 없이 안정적인 구조물의 자율 로봇 조립",
+      "abstractKo": "이 논문은 미리 정의된 건축 청사진에 의존하지 않고 안정적인 구조물을 구축하기 위한 새로운 자율 로봇 조립 프레임워크를 제시합니다. 고정된 계획을 따르는 대신, 건설 작업은 목표와 장애물로 정의되어 시스템이 건축 과정 중 환경의 불확실성과 변동에 더 유연하게 적응할 수 있도록 합니다. 후속 기능을 사용한 심층 Q-학습으로 훈련된 강화 학습(RL) 정책이 의사 결정 구성 요소로 작용합니다. 개념 증명을 위해, 우리는 15개의 2D 로봇 조립 작업 벤치마크에서 이 접근 방식을 평가합니다."
+    },
+    {
+      "id": "arxiv:2602.23923",
+      "title": "Teleoperated Omni-directional Dual Arm Mobile Manipulation Robotic System with Shared Control for Retail Store",
+      "abstract": "The swiftly expanding retail sector is increasingly adopting autonomous mobile robots empowered by artificial intelligence and machine learning algorithms to gain an edge in the competitive market. However, these autonomous robots encounter challenges in adapting to the dynamic nature of retail products, often struggling to operate autonomously in novel situations. In this study, we introduce an omni-directional dual-arm mobile robot specifically tailored for use in retail environments. Additionally, we propose a tele-operation method that enables shared control between the robot and a human operator. This approach utilizes a Virtual Reality (VR) motion capture system to capture the operator's commands, which are then transmitted to the robot located remotely in a retail setting. Furthermore, the robot is equipped with heterogeneous grippers on both manipulators, facilitating the handling of a wide range of items. We validate the efficacy of the proposed system through testing in a mockup of retail environment, demonstrating its ability to manipulate various commonly encountered retail items using both single and dual-arm coordinated manipulation techniques.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23923",
+      "publishedAt": "2026-02-27T11:18:35Z",
+      "authors": [
+        "Rolif Lima",
+        "Somdeb Saha",
+        "Nijil George",
+        "Vismay Vakharia",
+        "Shubham Parab",
+        "Sahil Gaonkar",
+        "Vighnesh Vatsal",
+        "Kaushik Das"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "소매점을 위한 공유 제어 기능을 갖춘 원거리 조작식 전방향 이중 팔 이동 조작 로봇 시스템",
+      "abstractKo": "빠르게 성장하는 소매 분야는 경쟁 시장에서 우위를 점하기 위해 인공지능과 머신러닝 알고리즘으로 강화된 자율 이동 로봇을 점점 더 많이 채택하고 있습니다. 그러나 이러한 자율 로봇은 소매 제품의 동적인 특성에 적응하는 데 어려움을 겪으며, 종종 새로운 상황에서 자율적으로 작동하는 데 어려움을 겪습니다. 본 연구에서는 소매 환경에 맞게 특별히 설계된 전방향 이중 팔 이동 로봇을 소개합니다. 또한, 로봇과 인간 운영자 간의 공유 제어를 가능하게 하는 원거리 조작 방법을 제안합니다."
+    },
+    {
+      "id": "arxiv:2602.23901",
+      "title": "ABPolicy: Asynchronous B-Spline Flow Policy for Real-Time and Smooth Robotic Manipulation",
+      "abstract": "Robotic manipulation requires policies that are smooth and responsive to evolving observations. However, synchronous inference in the raw action space introduces several challenges, including intra-chunk jitter, inter-chunk discontinuities, and stop-and-go execution. These issues undermine a policy's smoothness and its responsiveness to environmental changes. We propose ABPolicy, an asynchronous flow-matching policy that operates in a B-spline control-point action space. First, the B-spline representation ensures intra-chunk smoothness. Second, we introduce bidirectional action prediction coupled with refitting optimization to enforce inter-chunk continuity. Finally, by leveraging asynchronous inference, ABPolicy delivers real-time, continuous updates. We evaluate ABPolicy across seven tasks encompassing both static settings and dynamic settings with moving objects. Empirical results indicate that ABPolicy reduces trajectory jerk, leading to smoother motion and improved performance. Project website: https://teee000.github.io/ABPolicy/.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23901",
+      "publishedAt": "2026-02-27T10:50:13Z",
+      "authors": [
+        "Fan Yang",
+        "Peiguang Jing",
+        "Kaihua Qu",
+        "Ningyuan Zhao",
+        "Yuting Su"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "titleKo": "ABPolicy: 실시간 및 부드러운 로봇 조작을 위한 비동기 B-스플라인 흐름 정책",
+      "abstractKo": "로봇 조작은 부드럽고 변화하는 관측에 반응하는 정책을 요구합니다. 그러나 원시 행동 공간에서의 동기 추론은 내부 청크 지터, 청크 간 불연속성, 정지 및 재개 실행 등 여러 가지 문제를 야기합니다. 이러한 문제는 정책의 부드러움과 환경 변화에 대한 반응성을 저해합니다. 우리는 B-스플라인 제어점 행동 공간에서 작동하는 비동기 흐름 일치 정책인 ABPolicy를 제안합니다. 첫째, B-스플라인 표현은 내부 청크의 부드러움을 보장합니다. 둘째, 우리는 양방향 행동 예측을 도입합니다."
+    },
+    {
+      "id": "arxiv:2602.23896",
+      "title": "TSC: Topology-Conditioned Stackelberg Coordination for Multi-Agent Reinforcement Learning in Interactive Driving",
+      "abstract": "Safe and efficient autonomous driving in dense traffic is fundamentally a decentralized multi-agent coordination problem, where interactions at conflict points such as merging and weaving must be resolved reliably under partial observability. With only local and incomplete cues, interaction patterns can change rapidly, often causing unstable behaviors such as oscillatory yielding or unsafe commitments. Existing multi-agent reinforcement learning (MARL) approaches either adopt synchronous decision-making, which exacerbate non-stationarity, or depend on centralized sequencing mechanisms that scale poorly as traffic density increases. To address these limitations, we propose Topology-conditioned Stackelberg Coordination (TSC), a learning framework for decentralized interactive driving under communication-free execution, which extracts a time-varying directed priority graph from braid-inspired weaving relations between trajectories, thereby defining local leader-follower dependencies without constructing a global order of play. Conditioned on this graph, TSC endogenously factorizes dense interactions into graph-local Stackelberg subgames and, under centralized training and decentralized execution (CTDE), learns a sequential coordination policy that anticipates leaders via action prediction and trains followers through action-conditioned value learning to approximate local best responses, improving training stability and safety in dense traffic. Experiments across four dense traffic scenarios show that TSC achieves superior performance over representative MARL baselines across key metrics, most notably reducing collisions while maintaining competitive traffic efficiency and control smoothness.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23896",
+      "publishedAt": "2026-02-27T10:46:41Z",
+      "authors": [
+        "Xiaotong Zhang",
+        "Gang Xiong",
+        "Yuanjing Wang",
+        "Siyu Teng",
+        "Alois Knoll",
+        "Long Chen"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "TSC: 다중 에이전트 강화 학습을 위한 토폴로지 조건 스택엘버그 조정 방식의 인터랙티브 주행",
+      "abstractKo": "밀집한 교통 상황에서 안전하고 효율적인 자율 주행은 본질적으로 분산된 다중 에이전트 조정 문제로, 병합 및 엮기와 같은 충돌 지점에서의 상호작용을 부분 관측 하에 신뢰성 있게 해결해야 합니다. 국소적이고 불완전한 단서만으로 상호작용 패턴이 빠르게 변화할 수 있으며, 이는 종종 진동하는 양보나 안전하지 않은 약속과 같은 불안정한 행동을 초래합니다. 기존의 다중 에이전트 강화 학습(MARL) 접근 방식은 비동기적 의사결정을 채택하여 비정상성을 악화시키거나 중앙 집중식 순서 매기기 메커니즘에 의존하여 확장성을 저해합니다."
+    },
+    {
+      "id": "arxiv:2602.23893",
+      "title": "AoE: Always-on Egocentric Human Video Collection for Embodied AI",
+      "abstract": "Embodied foundation models require large-scale, high-quality real-world interaction data for pre-training and scaling. However, existing data collection methods suffer from high infrastructure costs, complex hardware dependencies, and limited interaction scope, making scalable expansion challenging. In fact, humans themselves are ideal physically embodied agents. Therefore, obtaining egocentric real-world interaction data from globally distributed \"human agents\" offers advantages of low cost and sustainability. To this end, we propose the Always-on Egocentric (AoE) data collection system, which aims to simplify hardware dependencies by leveraging humans themselves and their smartphones, enabling low-cost, highly efficient, and scene-agnostic real-world interaction data collection to address the challenge of data scarcity. Specifically, we first employ an ergonomic neck-mounted smartphone holder to enable low-barrier, large-scale egocentric data collection through a cloud-edge collaborative architecture. Second, we develop a cross-platform mobile APP that leverages on-device compute for real-time processing, while the cloud hosts automated labeling and filtering pipelines that transform raw videos into high-quality training data. Finally, the AoE system supports distributed Ego video data collection by anyone, anytime, and anywhere. We evaluate AoE on data preprocessing quality and downstream tasks, demonstrating that high-quality egocentric data significantly boosts real-world generalization.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23893",
+      "publishedAt": "2026-02-27T10:41:49Z",
+      "authors": [
+        "Bowen Yang",
+        "Zishuo Li",
+        "Yang Sun",
+        "Changtao Miao",
+        "Yifan Yang",
+        "Man Luo",
+        "Xiaotong Yan",
+        "Feng Jiang",
+        "Jinchuan Shi",
+        "Yankai Fu",
+        "Ning Chen",
+        "Junkai Zhao",
+        "Pengwei Wang",
+        "Guocai Yao",
+        "Shanghang Zhang",
+        "Hao Chen",
+        "Zhe Li",
+        "Kai Zhu"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "titleKo": "AoE: 항상 켜져 있는 자기 중심 인간 비디오 수집을 위한 로봇 AI",
+      "abstractKo": "구현된 기초 모델은 사전 훈련 및 확장을 위해 대규모의 고품질 실제 상호작용 데이터가 필요합니다. 그러나 기존 데이터 수집 방법은 높은 인프라 비용, 복잡한 하드웨어 의존성, 제한된 상호작용 범위로 인해 확장성이 어려운 문제를 안고 있습니다. 사실, 인간은 이상적인 물리적으로 구현된 에이전트입니다. 따라서 전 세계에 분포된 '인간 에이전트'로부터 자기 중심의 실제 상호작용 데이터를 얻는 것은 낮은 비용과 지속 가능성의 이점을 제공합니다. 이를 위해 우리는 항상 켜져 있는 자기 중심(AoE) 데이터 수집 시스템을 제안합니다."
+    },
+    {
+      "id": "arxiv:2602.23872",
+      "title": "Altitude-Aware Visual Place Recognition in Top-Down View",
+      "abstract": "To address the challenge of aerial visual place recognition (VPR) problem under significant altitude variations, this study proposes an altitude-adaptive VPR approach that integrates ground feature density analysis with image classification techniques. The proposed method estimates airborne platforms' relative altitude by analyzing the density of ground features in images, then applies relative altitude-based cropping to generate canonical query images, which are subsequently used in a classification-based VPR strategy for localization. Extensive experiments across diverse terrains and altitude conditions demonstrate that the proposed approach achieves high accuracy and robustness in both altitude estimation and VPR under significant altitude changes. Compared to conventional methods relying on barometric altimeters or Time-of-Flight (ToF) sensors, this solution requires no additional hardware and offers a plug-and-play solution for downstream applications, {making it suitable for small- and medium-sized airborne platforms operating in diverse environments, including rural and urban areas.} Under significant altitude variations, incorporating our relative altitude estimation module into the VPR retrieval pipeline boosts average R@1 and R@5 by 29.85\\% and 60.20\\%, respectively, compared with applying VPR retrieval alone. Furthermore, compared to traditional {Monocular Metric Depth Estimation (MMDE) methods}, the proposed method reduces the mean error by 202.1 m, yielding average additional improvements of 31.4\\% in R@1 and 44\\% in R@5. These results demonstrate that our method establishes a robust, vision-only framework for three-dimensional visual place recognition, offering a practical and scalable solution for accurate airborne platforms localization under large altitude variations and limited sensor availability.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23872",
+      "publishedAt": "2026-02-27T10:15:15Z",
+      "authors": [
+        "Xingyu Shao",
+        "Mengfan He",
+        "Chunyu Li",
+        "Liangzheng Sun",
+        "Ziyang Meng"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "titleKo": "상향식 시각적 장소 인식을 위한 고도 인식",
+      "abstractKo": "본 연구는 고도가 크게 변동하는 상황에서의 공중 시각적 장소 인식(VPR) 문제를 해결하기 위해, 지상 특징 밀도 분석과 이미지 분류 기법을 통합한 고도 적응형 VPR 접근 방식을 제안합니다. 제안된 방법은 이미지에서 지상 특징의 밀도를 분석하여 공중 플랫폼의 상대 고도를 추정한 후, 상대 고도 기반의 크롭을 적용하여 표준 쿼리 이미지를 생성합니다. 이 이미지는 이후 위치 추정을 위한 분류 기반 VPR 전략에 사용됩니다. 다양한 지형과 고도에서의 광범위한 실험을 통해 검증되었습니다."
+    },
+    {
+      "id": "arxiv:2602.23870",
+      "title": "Hybrid Offline-Online Reinforcement Learning for Sensorless, High-Precision Force Regulation in Surgical Robotic Grasping",
+      "abstract": "Precise grasp force regulation in tendon-driven surgical instruments is fundamentally limited by nonlinear coupling between motor dynamics, transmission compliance, friction, and distal mechanics. Existing solutions typically rely on distal force sensing or analytical compensation, increasing hardware complexity or degrading performance under dynamic motion. We present a sensorless control framework that combines physics-consistent modeling and hybrid reinforcement learning to achieve high-precision distal force regulation in a proximally actuated surgical end-effector. We develop a first-principles digital twin of the da Vinci Xi grasping mechanism that captures coupled electrical, transmission, and jaw dynamics within a unified differential-algebraic formulation. To safely learn control policies in this stiff and highly nonlinear system, we introduce a three-stage pipeline:(i)a receding-horizon CMA-ES oracle that generates dynamically feasible expert trajectories,(ii)fully offline policy learning via Implicit Q-Learning to ensure stable initialization without unsafe exploration, and (iii)online refinement using TD3 for adaptation to on-policy dynamics. The resulting policy directly maps proximal measurements to motor voltages and requires no distal sensing. In simulation, the controller maintains grasp force within 1% of the desired reference during multi-harmonic jaw motion. Hardware experiments demonstrate average force errors below 4% across diverse trajectories, validating sim-to-real transfer. The learned policy contains approximately 71k param and executes at kH rates, enabling real-time deployment. These results demonstrate that high-fidelity modeling combined with structured offline-online RL can recover precise distal force behavior without additional sensing, offering a scalable and mechanically compatible solution for surgical robotic manipulation.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23870",
+      "publishedAt": "2026-02-27T10:11:59Z",
+      "authors": [
+        "Edoardo Fazzari",
+        "Omar Mohamed",
+        "Khalfan Hableel",
+        "Hamdan Alhadhrami",
+        "Cesare Stefanini"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "센서 없는 고정밀 힘 조절을 위한 하이브리드 오프라인-온라인 강화 학습 기반의 수술 로봇 그리핑",
+      "abstractKo": "힘줄 구동 수술 기구에서의 정밀한 그립 힘 조절은 모터 동역학, 전송 탄성, 마찰 및 원거리 기계 간의 비선형 결합으로 인해 근본적으로 제한됩니다. 기존 솔루션은 일반적으로 원거리 힘 센싱 또는 분석적 보상에 의존하여 하드웨어 복잡성을 증가시키거나 동적 운동에서 성능을 저하시킵니다. 우리는 물리적으로 일관된 모델링과 하이브리드 강화 학습을 결합하여 근위에서 구동되는 수술 엔드 이펙터에서 고정밀 원거리 힘 조절을 달성하는 센서 없는 제어 프레임워크를 제시합니다."
+    },
+    {
+      "id": "arxiv:2602.23843",
+      "title": "OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control",
+      "abstract": "High-fidelity motion tracking serves as the ultimate litmus test for generalizable, human-level motor skills. However, current policies often hit a \"generality barrier\": as motion libraries scale in diversity, tracking fidelity inevitably collapses - especially for real-world deployment of high-dynamic motions. We identify this failure as the result of two compounding factors: the learning bottleneck in scaling multi-motion optimization and the physical executability constraints that arise in real-world actuation. To overcome these challenges, we introduce OmniXtreme, a scalable framework that decouples general motor skill learning from sim-to-real physical skill refinement. Our approach uses a flow-matching policy with high-capacity architectures to scale representation capacity without interference-intensive multi-motion RL optimization, followed by an actuation-aware refinement phase that ensures robust performance on physical hardware. Extensive experiments demonstrate that OmniXtreme maintains high-fidelity tracking across diverse, high-difficulty datasets. On real robots, the unified policy successfully executes multiple extreme motions, effectively breaking the long-standing fidelity-scalability trade-off in high-dynamic humanoid control.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23843",
+      "publishedAt": "2026-02-27T09:28:06Z",
+      "authors": [
+        "Yunshen Wang",
+        "Shaohang Zhu",
+        "Peiyuan Zhi",
+        "Yuhan Li",
+        "Jiaxin Li",
+        "Yong-Lu Li",
+        "Yuchen Xiao",
+        "Xingxing Wang",
+        "Baoxiong Jia",
+        "Siyuan Huang"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "옴니익스트림: 고동적 휴머노이드 제어에서 일반성 장벽을 허물다",
+      "abstractKo": "고충실도 모션 추적은 일반화 가능한 인간 수준의 운동 기술에 대한 궁극적인 시험지 역할을 합니다. 그러나 현재의 정책은 종종 '일반성 장벽'에 부딪힙니다: 모션 라이브러리가 다양성에서 확장됨에 따라 추적 충실도가 불가피하게 무너집니다 - 특히 고동적 모션의 실제 배치에 있어서는 더욱 그렇습니다. 우리는 이러한 실패가 두 가지 복합적인 요인의 결과라고 식별합니다: 다중 모션 최적화의 확장에서 발생하는 학습 병목 현상과 실제 작동에서 발생하는 물리적 실행 가능성 제약입니다. 이러한 도전을 극복하기 위해, 우리는 옴니익스트림이라는 확장 가능한 프레임워크를 소개합니다."
+    },
+    {
+      "id": "arxiv:2602.23832",
+      "title": "OmniTrack: General Motion Tracking via Physics-Consistent Reference",
+      "abstract": "Learning motion tracking from rich human motion data is a foundational task for achieving general control in humanoid robots, enabling them to perform diverse behaviors. However, discrepancies in morphology and dynamics between humans and robots, combined with data noise, introduce physically infeasible artifacts in reference motions, such as floating and penetration. During both training and execution, these artifacts create a conflict between following inaccurate reference motions and maintaining the robot's stability, hindering the development of a generalizable motion tracking policy. To address these challenges, we introduce OmniTrack, a general tracking framework that explicitly decouples physical feasibility from general motion tracking. In the first stage, a privileged generalist policy generates physically plausible motions that strictly adhere to the robot's dynamics via trajectory rollout in simulation. In the second stage, the general control policy is trained to track these physically feasible motions, ensuring stable and coherent control transfer to the real robot. Experiments show that OmniTrack improves tracking accuracy and demonstrates strong generalization to unseen motions. In real-world tests, OmniTrack achieves hour-long, consistent, and stable tracking, including complex acrobatic motions such as flips and cartwheels. Additionally, we show that OmniTrack supports human-style stable and dynamic online teleoperation, highlighting its robustness and adaptability to varying user inputs.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2602.23832",
+      "publishedAt": "2026-02-27T09:12:15Z",
+      "authors": [
+        "Yuhan Li",
+        "Peiyuan Zhi",
+        "Yunshen Wang",
+        "Tengyu Liu",
+        "Sixu Yan",
+        "Wenyu Liu",
+        "Xinggang Wang",
+        "Baoxiong Jia",
+        "Siyuan Huang"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "옴니트랙: 물리적으로 일관된 참조를 통한 일반적인 모션 추적",
+      "abstractKo": "풍부한 인간 모션 데이터로부터 모션 추적을 학습하는 것은 휴머노이드 로봇에서 일반적인 제어를 달성하기 위한 기초 작업으로, 다양한 행동을 수행할 수 있게 합니다. 그러나 인간과 로봇 간의 형태학적 및 역학적 불일치와 데이터 노이즈가 결합되어, 부유 및 침투와 같은 물리적으로 불가능한 아티팩트를 참조 모션에 도입합니다. 훈련 및 실행 과정에서 이러한 아티팩트는 부정확한 참조 모션을 따르는 것과 로봇의 안정성을 유지하는 것 간의 갈등을 초래하여 일반화 가능한 모션 추적 정책의 개발을 방해합니다."
+    },
+    {
+      "id": "robotreport:725cc8240513",
+      "title": "6 lessons I learned watching a robotics startup die from the inside",
+      "abstract": "After a year as COO of K-Scale Labs, Rui Xu reflects on the hard lessons behind the collapse of its low-cost humanoid robot ambitions — from overreliance on AI to the unforgiving realities of hardware, supply chains, and rushed timelines. The post 6 lessons I learned watching a robotics startup die from the inside appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/6-lessons-learned-watching-a-robotics-startup-die-from-the-inside/",
+      "publishedAt": "2026-03-02T19:19:07.000Z",
+      "authors": [
+        "Rui Xu"
+      ],
+      "tags": [],
+      "titleKo": "로보틱스 스타트업의 내부에서 죽어가는 모습을 보며 배운 6가지 교훈",
+      "abstractKo": "K-Scale Labs의 COO로 1년을 보낸 Rui Xu는 저비용 휴머노이드 로봇 야망의 붕괴 뒤에 숨겨진 어려운 교훈들을 반성합니다. AI에 대한 과도한 의존에서부터 하드웨어, 공급망, 그리고 서두른 일정의 가혹한 현실까지 다양한 교훈을 다룹니다. 이 글은 '로봇 보고서(The Robot Report)'에 처음 게재되었습니다."
+    },
+    {
+      "id": "robotreport:1a835fbd2adf",
+      "title": "BMW piloting Hexagon’s wheeled humanoid in Germany",
+      "abstract": "BMW launched an initial test deployment of Hexagon's AEON humanoid at its Group Plant Leipzig in December 2025 The post BMW piloting Hexagon&#8217;s wheeled humanoid in Germany appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/bmw-piloting-hexagons-wheeled-humanoid-in-germany/",
+      "publishedAt": "2026-03-02T17:52:02.000Z",
+      "authors": [
+        "Brianna Wessling"
+      ],
+      "tags": [],
+      "titleKo": "BMW, 독일에서 Hexagon의 바퀴 달린 휴머노이드 시험 운전",
+      "abstractKo": "BMW는 2025년 12월 그룹 공장 라이프치히에서 Hexagon의 AEON 휴머노이드의 초기 테스트 배치를 시작했습니다. 이 글은 'BMW, 독일에서 Hexagon의 바퀴 달린 휴머노이드 시험 운전'이라는 제목으로 The Robot Report에 게재되었습니다."
+    },
+    {
+      "id": "robotreport:ac20cebe6c2f",
+      "title": "2026 Robotics Summit early bird registration ends today",
+      "abstract": "The Robotics Summit features a world-class agenda with speakers from Aethon, Agility Robotics, ASTM International, AWS, Boston Dynamics, Brightpick, Contoro Robotics, Ghost Robotics, GM, Harmonic Drive, Intrinsic, MathWorks, maxon, PickNik Robotics, Pickle Robot, QNX, RealSense, Robust AI, Tesla, Universal Robots and more. The post 2026 Robotics Summit early bird registration ends today appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/2026-robotics-summit-early-bird-registration-ends-march-2/",
+      "publishedAt": "2026-03-02T14:51:35.000Z",
+      "authors": [
+        "Steve Crowe"
+      ],
+      "tags": [],
+      "titleKo": "2026 로보틱스 서밋 조기 등록 마감 오늘",
+      "abstractKo": "로보틱스 서밋은 Aethon, Agility Robotics, ASTM International, AWS, Boston Dynamics, Brightpick, Contoro Robotics, Ghost Robotics, GM, Harmonic Drive, Intrinsic, MathWorks, maxon, PickNik Robotics, Pickle Robot, QNX, RealSense, Robust AI, Tesla, Universal Robots 등 세계적 수준의 연사들이 참여하는 프로그램을 제공합니다. '2026 로보틱스 서밋 조기 등록 마감 오늘'이라는 게시물은 The Robot Report에 처음 게재되었습니다."
+    },
+    {
+      "id": "ieeespectrum:55424b84a74e",
+      "title": "What Military Drones Can Teach Self-Driving Cars",
+      "abstract": "Self-driving cars often struggle with with situations that are commonplace for human drivers. When confronted with construction zones, school buses, power outages, or misbehaving pedestrians, these vehicles often behave unpredictably, leading to crashes or freezing events, causing significant disruption to local traffic and possibly blocking first responders from doing their jobs. Because self-driving cars cannot successfully handle such routine problems, self-driving companies use human babysitters to remotely supervise them and intervene when necessary. This idea—humans supervising autonomou",
+      "source": "ieeespectrum",
+      "url": "https://spectrum.ieee.org/military-drones-self-driving-cars",
+      "publishedAt": "2026-03-02T12:00:02.000Z",
+      "authors": [
+        "Missy Cummings"
+      ],
+      "tags": [],
+      "titleKo": "군용 드론이 자율주행차에 가르칠 수 있는 것",
+      "abstractKo": "자율주행차는 인간 운전자가 흔히 겪는 상황에서 종종 어려움을 겪습니다. 공사 구역, 스쿨버스, 정전, 또는 문제를 일으키는 보행자와 마주했을 때, 이러한 차량은 예측할 수 없는 방식으로 행동하여 사고를 일으키거나 멈추는 경우가 발생하며, 이는 지역 교통에 큰 혼잡을 초래하고 응급 구조대의 활동을 방해할 수 있습니다. 자율주행차가 이러한 일상적인 문제를 성공적으로 처리하지 못하기 때문에, 자율주행 회사들은 원격으로 이들을 감독하고 필요할 때 개입할 수 있는 인간 감독자를 사용합니다. 이 아이디어는 인간이 자율주행차를 감독하는 것입니다."
+    },
+    {
+      "id": "rosdiscourse:b8960d327256",
+      "title": "Best Free Simulators for Accurate Cable Physics?",
+      "abstract": "Just a general question. Does anyone have experience with simulators providing accurate cable physics? From what I understand, simulators that approximate a cable with many rigid bodys won’t be as accurate. I’m not sure how important the exact cable physics are, but I’m assuming it’s quite important for this competition. 1 post - 1 participant Read full topic",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/best-free-simulators-for-accurate-cable-physics/52849",
+      "publishedAt": "2026-03-02T20:39:24.000Z",
+      "authors": [
+        "Ahmed_Gabr"
+      ],
+      "tags": [],
+      "titleKo": "정확한 케이블 물리학을 위한 최고의 무료 시뮬레이터는?",
+      "abstractKo": "일반적인 질문입니다. 정확한 케이블 물리학을 제공하는 시뮬레이터에 대한 경험이 있는 분이 계신가요? 제가 이해하기로는, 많은 강체로 케이블을 근사하는 시뮬레이터는 그리 정확하지 않을 것입니다. 정확한 케이블 물리학이 얼마나 중요한지는 잘 모르겠지만, 이 대회에서는 꽤 중요할 것이라고 가정하고 있습니다. 1개의 게시물 - 1명의 참가자 전체 주제 읽기"
+    },
+    {
+      "id": "rosdiscourse:299ca7fdcb79",
+      "title": "Design discussion: “discoverable not serviceable” ROS interfaces for lifecycle nodes",
+      "abstract": "Hi all, We’d like to start a design discussion about a lifecycle-related gap that shows up in Nav2 but seems fundamentally ROS 2 / rclcpp-level. Context / links Nav2 PR where this surfaced: nav2_ros_common: add lifecycle-managed Subscription wrapper by Lotusymt · Pull Request #5834 · ros-navigation/navigation2 · GitHub Related Nav2 issue: nav2_ros_common interfaces for Services, Subscription, and Action to be lifecycle enabled · Issue #5298 · ros-navigation/navigation2 · GitHub What we want (high-level) For lifecycle nodes, it’s very useful to have all interfaces created and visible while the ",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/design-discussion-discoverable-not-serviceable-ros-interfaces-for-lifecycle-nodes/52842",
+      "publishedAt": "2026-03-02T17:22:27.000Z",
+      "authors": [
+        "Lotusymt"
+      ],
+      "tags": [],
+      "titleKo": "디자인 논의: 생애 주기 노드를 위한 '발견 가능하나 서비스 불가능한' ROS 인터페이스",
+      "abstractKo": "안녕하세요, 모든 분들. Nav2에서 나타나는 생애 주기 관련 격차에 대한 디자인 논의를 시작하고자 합니다. 이는 근본적으로 ROS 2 / rclcpp 수준의 문제로 보입니다. 관련 링크: 이 문제가 발생한 Nav2 PR: nav2_ros_common: 생애 주기 관리 구독 래퍼 추가 by Lotusymt · Pull Request #5834 · ros-navigation/navigation2 · GitHub 관련 Nav2 이슈: 서비스, 구독 및 액션을 생애 주기 가능하도록 하는 nav2_ros_common 인터페이스 · Issue #5298 · ros-navigation/navigation2 · GitHub 우리가 원하는 것 (고수준) 생애 주기 노드의 경우, 모든 인터페이스가 생성되고 가시적으로 존재하는 것이 매우 유용합니다."
+    },
+    {
+      "id": "rosdiscourse:4903d9fd5379",
+      "title": "How do people in industry handle updating a 3D pointcloud map?",
+      "abstract": "Hi everyone, I was trying to find a 3D mapping pkg to map a warehouse environment, have been using glim for mapping and hdl_slam for localization. Wanted to know if there was some technique/pkg that would like allow the pcd map to update without stopping the operations of a bot and running the mapper again. Found this pkg called LT_mapper (this) and also found that this has been implimented in nav2, but limited to 2D maps. Please share you insights on this, if you have any idea about this problem of updating the pointcloud map. Thanks in advance (PS first time posting, sorry in advance if the ",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/how-do-people-in-industry-handle-updating-a-3d-pointcloud-map/52841",
+      "publishedAt": "2026-03-02T17:21:57.000Z",
+      "authors": [
+        "Shashwat_Patil"
+      ],
+      "tags": [],
+      "titleKo": "산업에서 사람들이 3D 포인트 클라우드 맵 업데이트를 어떻게 처리하나요?",
+      "abstractKo": "안녕하세요, 저는 창고 환경을 매핑하기 위해 3D 매핑 패키지를 찾고 있었고, 매핑에는 glim을, 로컬라이제이션에는 hdl_slam을 사용하고 있습니다. 로봇의 작업을 중단하지 않고 포인트 클라우드 맵을 업데이트할 수 있는 기술이나 패키지가 있는지 알고 싶습니다. LT_mapper라는 패키지를 발견했으며, 이것이 nav2에 구현되었다는 것도 알게 되었지만 2D 맵에 한정되어 있습니다. 포인트 클라우드 맵 업데이트 문제에 대한 통찰이 있으시면 공유해 주시기 바랍니다. 미리 감사드립니다. (PS 처음 게시하는 거라서, 미리 양해 부탁드립니다.)"
+    },
+    {
+      "id": "rosdiscourse:b41e26006181",
+      "title": "Robotics Meetup Bremen - every 1st Thursday of a month",
+      "abstract": "In Bremen we initiated a robotics meetup where people can exchange, get to know each other an socialize. We meet every 1st Thursday of a month . In the past mostly in bars in central Bremen. This month we will meet at Cellumation on 05.03., a company in the logistics sector that sells ROS 2-based material conveying solutions. There will be an introduction, a tour and time to socialize with some drinks. During the spring we want to host the meetup at some more places and the expected next locations will be the university of Bremen and the DFKI. General information about the meetups is available",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/robotics-meetup-bremen-every-1st-thursday-of-a-month/52832",
+      "publishedAt": "2026-03-02T09:47:39.000Z",
+      "authors": [
+        "matthias-mayr"
+      ],
+      "tags": [],
+      "titleKo": "브레멘 로보틱스 밋업 - 매달 첫 번째 목요일",
+      "abstractKo": "브레멘에서 우리는 사람들이 교류하고 서로 알아가며 사교할 수 있는 로보틱스 밋업을 시작했습니다. 매달 첫 번째 목요일에 모입니다. 과거에는 주로 브레멘 중심가의 바에서 모였습니다. 이번 달에는 3월 5일에 물류 분야의 ROS 2 기반 자재 운반 솔루션을 판매하는 Cellumation에서 만날 예정입니다. 소개, 투어 및 음료와 함께 사교할 시간이 있을 것입니다. 봄 동안에는 더 많은 장소에서 밋업을 개최할 계획이며, 다음 예상 장소는 브레멘 대학교와 DFKI가 될 것입니다. 밋업에 대한 일반 정보는 제공됩니다."
+    },
+    {
+      "id": "rosdiscourse:f31e25ca0a17",
+      "title": "Interop SIG, 5 March 2026: Industrial Use-Case for the Crossflow Executor",
+      "abstract": "Industrial Use-Case for the Crossflow Executor Meeting Link Calendar Link Thu, Mar 5, 2026 3:00 PM UTC At this month’s session, Dillon Chew from ROS-Industrial Consortium Asia-Pacific will present on his team’s recent experiment with using Crossflow for an industrial use-case. Crossflow is a general-purpose reactive programming library which can also be used to execute graphical workflows. It was developed as part of the Open-RMF project to help orchestrate complex multi-agent interactions, but it could be used in any domain that involves defining and executing complex processes. Dillon will d",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/interop-sig-5-march-2026-industrial-use-case-for-the-crossflow-executor/52828",
+      "publishedAt": "2026-03-02T09:05:37.000Z",
+      "authors": [
+        "grey"
+      ],
+      "tags": [],
+      "titleKo": "인터롭 SIG, 2026년 3월 5일: 크로스플로우 실행기를 위한 산업적 사용 사례",
+      "abstractKo": "크로스플로우 실행기를 위한 산업적 사용 사례 회의 링크 캘린더 링크 2026년 3월 5일 목요일 오후 3:00 UTC 이번 세션에서는 ROS-Industrial Consortium Asia-Pacific의 딜런 추가 크로스플로우를 산업적 사용 사례에 적용한 최근 실험에 대해 발표할 예정입니다. 크로스플로우는 그래픽 워크플로우를 실행하는 데에도 사용할 수 있는 범용 반응형 프로그래밍 라이브러리입니다. 복잡한 다중 에이전트 상호작용을 조율하기 위해 Open-RMF 프로젝트의 일환으로 개발되었지만, 복잡한 프로세스를 정의하고 실행하는 모든 분야에서 사용할 수 있습니다."
+    },
+    {
+      "id": "rosdiscourse:b630bb057832",
+      "title": "Controlling the Nero Robotic Arm with OpenClaw",
+      "abstract": "Controlling the Nero Robotic Arm with OpenClaw As a popular open-source project, OpenClaw has become a highlight in the robotic arm control field with its intuitive operation and strong adaptability. It enables full end-to-end linkage between AI commands and device execution, greatly lowering the barrier for robotic arm control. This article focuses on practical implementation. Combined with the pyAgxArm SDK, we will guide you through the download, installation, and configuration of OpenClaw to achieve efficient control of the NERO 7-axis robotic arm. Seamless AI Control: AgileX NERO 7-DoF Arm",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/controlling-the-nero-robotic-arm-with-openclaw/52825",
+      "publishedAt": "2026-03-02T07:30:25.000Z",
+      "authors": [
+        "Agilex_Robotics"
+      ],
+      "tags": [],
+      "titleKo": "OpenClaw로 Nero 로봇 팔 제어하기",
+      "abstractKo": "OpenClaw로 Nero 로봇 팔 제어하기 OpenClaw는 인기 있는 오픈 소스 프로젝트로, 직관적인 조작과 강력한 적응성 덕분에 로봇 팔 제어 분야에서 주목받고 있습니다. 이는 AI 명령과 장치 실행 간의 완전한 엔드 투 엔드 연결을 가능하게 하여 로봇 팔 제어의 장벽을 크게 낮춥니다. 이 글은 실용적인 구현에 중점을 두고 있습니다. pyAgxArm SDK와 결합하여 OpenClaw의 다운로드, 설치 및 구성 과정을 안내하여 NERO 7축 로봇 팔의 효율적인 제어를 달성하는 방법을 설명합니다. 매끄러운 AI 제어: AgileX NERO 7-자유도 팔"
+    },
+    {
+      "id": "rosdiscourse:01d9ba239b72",
+      "title": "LinkForge v1.3.0 — The Linter & Bridge for Robotics",
+      "abstract": "Hi everyone! LinkForge v1.3.0 was just released! But more than a release announcement, I want to take a moment to share the bigger vision of where this project is going — because it’s grown far beyond a Blender plugin. The Vision LinkForge is not just a URDF exporter for Blender. The architecture is intentionally built as a Hexagonal Core , fully decoupled from any single 3D host or output format. The mission is simple: Bridge the gap between creative 3D design and high-fidelity robotics engineering. Design Systems (Blender, FreeCAD, Fusion 360) ➜ LinkForge Core ➜ Simulation & Production (ROS ",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/linkforge-v1-3-0-the-linter-bridge-for-robotics/52822",
+      "publishedAt": "2026-03-02T04:58:41.000Z",
+      "authors": [
+        "arounamounchili"
+      ],
+      "tags": [],
+      "titleKo": "LinkForge v1.3.0 — 로보틱스를 위한 린터 및 브리지",
+      "abstractKo": "안녕하세요, 여러분! LinkForge v1.3.0이 방금 출시되었습니다! 하지만 단순한 출시 발표 이상의 의미를 담고 싶습니다. 이 프로젝트가 어디로 나아가고 있는지에 대한 더 큰 비전을 공유하고자 합니다. LinkForge는 단순한 Blender 플러그인을 넘어 성장했습니다. 비전 LinkForge는 Blender를 위한 URDF 내보내기가 아닙니다. 이 아키텍처는 의도적으로 헥사곤 코어로 구축되어 있으며, 단일 3D 호스트나 출력 형식에 완전히 분리되어 있습니다. 우리의 사명은 간단합니다: 창의적인 3D 디자인과 고충실도의 로보틱스 엔지니어링 간의 간극을 메우는 것입니다. 디자인 시스템(Blender, FreeCAD, Fusion 360) ➜ LinkForge 코어 ➜ 시뮬레이션 및 생산(ROS)"
+    },
+    {
+      "id": "rosdiscourse:027b047346bd",
+      "title": "Hybrid Mechanism of ROS 2 and Advanced Mathematics",
+      "abstract": "Hello, I am the software development lead for an autonomous unmanned surface vehicle (USV) project. Despite being relatively new to this field, I am aiming for the best original software award this year and would like to benefit from the community’s experience throughout this process. In terms of architecture, I am planning to use ROS 2. For localization, I intend to implement an EKF (Extended Kalman Filter) to fuse GPS and IMU data. For obstacle prioritization and target selection, I am considering developing a decision-making mechanism based on the Generalized Choquet Integral. I am at a beg",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/hybrid-mechanism-of-ros-2-and-advanced-mathematics/52821",
+      "publishedAt": "2026-03-02T04:43:38.000Z",
+      "authors": [
+        "emre_kelebek"
+      ],
+      "tags": [],
+      "titleKo": "ROS 2와 고급 수학의 하이브리드 메커니즘",
+      "abstractKo": "안녕하세요, 저는 자율 무인 수상 차량(USV) 프로젝트의 소프트웨어 개발 책임자입니다. 이 분야에 비교적 새로움에도 불구하고, 올해 최고의 원본 소프트웨어 상을 목표로 하고 있으며, 이 과정에서 커뮤니티의 경험을 활용하고 싶습니다. 아키텍처 측면에서 저는 ROS 2를 사용할 계획입니다. 위치 추정을 위해 GPS와 IMU 데이터를 융합하는 EKF(확장 칼만 필터)를 구현할 예정입니다. 장애물 우선순위 지정 및 목표 선택을 위해 일반화된 쇼케 인테그랄에 기반한 의사결정 메커니즘 개발을 고려하고 있습니다. 저는 이제 막 시작한 단계입니다."
+    },
     {
       "id": "arxiv:2602.23312",
       "title": "Evaluating Zero-Shot and One-Shot Adaptation of Small Language Models in Leader-Follower Interaction",

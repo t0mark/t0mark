@@ -1,0 +1,42 @@
+nohup: 입력 무시
+
+> t0mark@0.1.0 dev
+> next dev -H 0.0.0.0 -p 5000
+
+   ▲ Next.js 15.5.12
+   - Local:        http://localhost:5000
+   - Network:      http://0.0.0.0:5000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1086ms
+ ○ Compiling / ...
+ ✓ Compiled / in 585ms (656 modules)
+ GET / 200 in 821ms
+ ⚠ Cross origin request detected from 114.70.195.115 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ✓ Compiled /api/calendar in 247ms (680 modules)
+ GET /api/logs 200 in 329ms
+ GET /api/calendar 200 in 333ms
+ GET / 200 in 146ms
+ GET /api/calendar 200 in 11ms
+ GET /api/logs 200 in 16ms
+ GET / 200 in 48ms
+ GET /api/calendar 200 in 7ms
+ GET /api/logs 200 in 8ms
+ GET / 200 in 45ms
+ GET /api/calendar 200 in 15ms
+ GET /api/logs 200 in 17ms
+ ✓ Compiled /_not-found in 227ms (662 modules)
+ GET / 404 in 367ms
+ GET / 200 in 68ms
+ GET / 200 in 46ms
+ GET / 200 in 42ms
+ GET / 200 in 43ms
+ GET / 200 in 43ms
+ GET / 200 in 41ms
+ GET / 200 in 42ms
+ ✓ Compiled in 100ms (257 modules)
+ GET / 200 in 42ms
+ GET / 200 in 41ms
+ ✓ Compiled in 73ms (257 modules)

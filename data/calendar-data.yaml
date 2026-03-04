@@ -14,7 +14,6 @@ todos:
   학습 (논문 / 이론):
     icon: 🔬
     items:
-      - Formal Specification of AI 정리
       - VLA 가이드라인 맞춰서
   기술 구현:
     icon: 🧑🏻‍💻
