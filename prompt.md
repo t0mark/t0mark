@@ -11,6 +11,10 @@ npm run fetch-trends
 rm -f data/interns.json data/interns-filter-cache.json
 node scripts/fetch-interns.js --limit=5 2>&1
 
+# 장학생 스크래핑
+rm -f data/scholarships.json data/scholarships-filter-cache.json
+npm run fetch-scholarships
+
 # 서버 시작
 npm run dev
 ```
