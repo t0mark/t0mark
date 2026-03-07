@@ -25,6 +25,7 @@ npm run dev
 ps -ef | grep node
 pkill -9 {pid}
 pkill -9 node
+pkill -9 next-server
 
 nohup npm run dev -- -H 0.0.0.0 -p 5000
 ```
