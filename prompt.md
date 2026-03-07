@@ -17,6 +17,7 @@ npm run fetch-scholarships
 
 # 서버 시작
 npm run dev
+nohup npm run dev -- -H 0.0.0.0 -p 5000 &
 ```
 
 #Server
@@ -27,5 +28,5 @@ pkill -9 {pid}
 pkill -9 node
 pkill -9 next-server
 
-nohup npm run dev -- -H 0.0.0.0 -p 5000
+nohup npm run dev -- -H 0.0.0.0 -p 5000 &
 ```
