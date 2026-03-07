@@ -19,6 +19,10 @@ logs:
         category: 학습 (논문 / 이론)
         items:
           - Transformer 공부중 (RNN -> Seq2Seq -> Attention -> Transformer)
+      - day: 금
+        category: 기술 구현
+        items:
+          - Isaac Sim 서버 환경 구축
   - week: 26. 02. 23 ~ 26. 02. 28
     rows:
       - day: 월
