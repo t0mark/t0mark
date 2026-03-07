@@ -89,7 +89,7 @@ export default function HomeRoutine() {
   function commitAdd() {
     if (!data || !newText.trim()) return
     const newItem: RoutineItem = {
-      id: crypto.randomUUID(),
+      id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`,
       text: newText.trim(),
       recurrence: newRecurrence,
       checked: false,
