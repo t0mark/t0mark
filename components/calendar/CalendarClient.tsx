@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { CalendarData, CategoryData } from '@/types/calendar'
+import type { CalendarData, CategoryData, TodoItem } from '@/types/calendar'
 import DDayCards from './DDayCards'
 import TaskList from './TaskList'
 import ProgressBars from './ProgressBars'
@@ -129,7 +129,8 @@ export default function CalendarClient() {
     if (!draft) return
     const entries = sectionEntries(draft, section)
     const [name, cat] = entries[catIdx]
-    entries[catIdx] = [name, { ...cat, items: [...cat.items, ''] }]
+    const newItem = section === 'todos' ? { text: '' } as unknown as string : ''
+    entries[catIdx] = [name, { ...cat, items: [...cat.items, newItem] }]
     setDraft({ ...draft, [section]: fromEntries(entries) })
   }
 
@@ -138,9 +139,25 @@ export default function CalendarClient() {
     const entries = sectionEntries(draft, section)
     const [name, cat] = entries[catIdx]
     const items = [...cat.items]
-    items[itemIdx] = value
+    if (section === 'todos') {
+      const existing = items[itemIdx] as unknown as TodoItem
+      items[itemIdx] = { ...existing, text: value } as unknown as string
+    } else {
+      items[itemIdx] = value
+    }
     entries[catIdx] = [name, { ...cat, items }]
     setDraft({ ...draft, [section]: fromEntries(entries) })
+  }
+
+  const updateItemDeadline = (catIdx: number, itemIdx: number, deadline: string | undefined) => {
+    if (!draft) return
+    const entries = sectionEntries(draft, 'todos')
+    const [name, cat] = entries[catIdx]
+    const items = [...cat.items]
+    const existing = items[itemIdx] as unknown as TodoItem
+    items[itemIdx] = (deadline ? { ...existing, deadline } : { text: existing.text }) as unknown as string
+    entries[catIdx] = [name, { ...cat, items }]
+    setDraft({ ...draft, todos: fromEntries(entries) })
   }
 
   const deleteItem = (section: Section, catIdx: number, itemIdx: number) => {
@@ -333,6 +350,7 @@ export default function CalendarClient() {
             onDeleteCategory={(ci) => deleteCategory('todos', ci)}
             onAddItem={(ci) => addItem('todos', ci)}
             onUpdateItem={(ci, ii, v) => updateItem('todos', ci, ii, v)}
+            onUpdateItemDeadline={(ci, ii, d) => updateItemDeadline(ci, ii, d)}
             onDeleteItem={(ci, ii) => deleteItem('todos', ci, ii)}
             onReorderCategories={(from, to) => reorderCategories('todos', from, to)}
             onReorderItems={(ci, from, to) => reorderItems('todos', ci, from, to)}
@@ -392,15 +410,45 @@ interface CategoryEditBodyProps {
   onDeleteCategory: (catIdx: number) => void
   onAddItem: (catIdx: number) => void
   onUpdateItem: (catIdx: number, itemIdx: number, value: string) => void
+  onUpdateItemDeadline?: (catIdx: number, itemIdx: number, deadline: string | undefined) => void
   onDeleteItem: (catIdx: number, itemIdx: number) => void
   onReorderCategories: (fromIdx: number, toIdx: number) => void
   onReorderItems: (catIdx: number, fromIdx: number, toIdx: number) => void
 }
 
+function getItemText(item: string): string {
+  if (item && typeof item === 'object' && 'text' in (item as object)) {
+    return (item as unknown as TodoItem).text
+  }
+  return item
+}
+
+function getItemDeadline(item: string): string | undefined {
+  if (item && typeof item === 'object' && 'deadline' in (item as object)) {
+    return (item as unknown as TodoItem).deadline
+  }
+  return undefined
+}
+
+function InlineDeadlineBadge({ deadline }: { deadline: string }) {
+  if (deadline === 'ASAP') return (
+    <span className="shrink-0 text-[9px] font-semibold px-1 py-0.5 rounded bg-red-100 text-red-600">ASAP</span>
+  )
+  if (deadline === 'TYT') return (
+    <span className="shrink-0 text-[9px] font-semibold px-1 py-0.5 rounded bg-gray-100 text-gray-500">TYT</span>
+  )
+  const d = new Date(deadline)
+  return (
+    <span className="shrink-0 text-[9px] font-semibold px-1 py-0.5 rounded bg-blue-50 text-blue-500">
+      {d.getMonth() + 1}/{d.getDate()}
+    </span>
+  )
+}
+
 function CategoryEditBody({
   section, draft,
   onAddCategory, onUpdateCategoryName, onUpdateCategoryIcon,
-  onDeleteCategory, onAddItem, onUpdateItem, onDeleteItem,
+  onDeleteCategory, onAddItem, onUpdateItem, onUpdateItemDeadline, onDeleteItem,
   onReorderCategories, onReorderItems,
 }: CategoryEditBodyProps) {
   const entries = Object.entries(draft[section]) as [string, CategoryData][]
@@ -479,12 +527,47 @@ function CategoryEditBody({
                   } ${dragItem?.ci === catIdx && dragItem?.ii === itemIdx ? 'opacity-40' : ''}`}
                 >
                   <GripVertical className="w-3 h-3 text-gray-300 cursor-grab shrink-0" />
-                  <input
-                    value={item}
-                    onChange={(e) => onUpdateItem(catIdx, itemIdx, e.target.value)}
-                    className="flex-1 text-xs border border-border rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
-                    placeholder="항목"
-                  />
+                  <div className="flex-1 flex flex-col gap-1 min-w-0">
+                    <input
+                      value={getItemText(item)}
+                      onChange={(e) => onUpdateItem(catIdx, itemIdx, e.target.value)}
+                      className="w-full text-xs border border-border rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="항목"
+                    />
+                    {onUpdateItemDeadline && (
+                      <div className="flex items-center gap-1 flex-wrap">
+                        {(['ASAP', 'TYT'] as const).map((opt) => (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => onUpdateItemDeadline(catIdx, itemIdx, getItemDeadline(item) === opt ? undefined : opt)}
+                            className={`text-[10px] font-semibold px-1.5 py-0.5 rounded transition-colors ${
+                              getItemDeadline(item) === opt
+                                ? opt === 'ASAP' ? 'bg-red-500 text-white' : 'bg-gray-500 text-white'
+                                : opt === 'ASAP' ? 'bg-red-100 text-red-600 hover:bg-red-200' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        ))}
+                        <input
+                          type="date"
+                          value={(() => { const d = getItemDeadline(item); return d && d !== 'ASAP' && d !== 'TYT' ? d : '' })()}
+                          onChange={(e) => onUpdateItemDeadline(catIdx, itemIdx, e.target.value || undefined)}
+                          className="text-[10px] border border-border rounded px-1 py-0.5 outline-none focus:border-primary text-text-muted"
+                        />
+                        {getItemDeadline(item) && (
+                          <button
+                            type="button"
+                            onClick={() => onUpdateItemDeadline(catIdx, itemIdx, undefined)}
+                            className="text-text-light hover:text-red-400"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </div>
                   <button
                     onClick={() => onDeleteItem(catIdx, itemIdx)}
                     className="text-gray-300 hover:text-red-400 transition-colors shrink-0"

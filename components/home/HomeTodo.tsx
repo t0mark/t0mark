@@ -1,68 +1,76 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import type { CalendarData } from '@/types/calendar'
+import { useState } from 'react'
+import type { CalendarData, TodoItem } from '@/types/calendar'
 import { Plus, X } from 'lucide-react'
 
-export default function HomeTodo() {
-  const [data, setData] = useState<CalendarData | null>(null)
-  const [error, setError] = useState(false)
+function DeadlineBadge({ deadline }: { deadline: string }) {
+  if (deadline === 'ASAP') return (
+    <span className="shrink-0 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-red-100 text-red-600">ASAP</span>
+  )
+  if (deadline === 'TYT') return (
+    <span className="shrink-0 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-gray-100 text-gray-500">TYT</span>
+  )
+  const d = new Date(deadline)
+  return (
+    <span className="shrink-0 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-50 text-blue-500">
+      {d.getMonth() + 1}/{d.getDate()}
+    </span>
+  )
+}
+
+interface HomeTodoProps {
+  data: CalendarData | null
+  onSave: (updated: CalendarData) => void
+}
+
+export default function HomeTodo({ data, onSave }: HomeTodoProps) {
   const [editingKey, setEditingKey] = useState<string | null>(null)
-  const [editValue, setEditValue] = useState('')
-
-  useEffect(() => {
-    fetch('/api/calendar')
-      .then((res) => { if (!res.ok) throw new Error(); return res.json() })
-      .then(setData)
-      .catch(() => setError(true))
-  }, [])
-
-  async function save(updated: CalendarData) {
-    setData(updated)
-    await fetch('/api/calendar', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updated),
-    })
-  }
+  const [editText, setEditText] = useState('')
+  const [editDeadline, setEditDeadline] = useState<string | undefined>(undefined)
 
   function startEdit(category: string, index: number) {
     if (!data) return
+    const item = data.todos[category].items[index]
     setEditingKey(`${category}:${index}`)
-    setEditValue(data.todos[category].items[index])
+    setEditText(item.text)
+    setEditDeadline(item.deadline)
   }
 
   function commitEdit(category: string, index: number) {
     if (!data) return
-    const trimmed = editValue.trim()
+    const trimmed = editText.trim()
     const items = [...data.todos[category].items]
     if (trimmed === '') {
       items.splice(index, 1)
     } else {
-      items[index] = trimmed
+      items[index] = { text: trimmed, ...(editDeadline ? { deadline: editDeadline } : {}) }
     }
-    save({ ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } })
+    onSave({ ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } })
     setEditingKey(null)
   }
 
   function deleteItem(category: string, index: number) {
     if (!data) return
     const items = data.todos[category].items.filter((_, i) => i !== index)
-    save({ ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } })
+    onSave({ ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } })
     setEditingKey(null)
   }
 
   function addItem(category: string) {
     if (!data) return
-    const items = [...data.todos[category].items, '']
-    const newIndex = items.length - 1
-    const updated = { ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } }
-    setData(updated)
+    const newIndex = data.todos[category].items.length
+    const items: TodoItem[] = [...data.todos[category].items, { text: '' }]
+    onSave({ ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } })
     setEditingKey(`${category}:${newIndex}`)
-    setEditValue('')
+    setEditText('')
+    setEditDeadline(undefined)
   }
 
-  if (error) return <p className="text-xs text-red-400">데이터 로드 실패</p>
+  function toggleQuickDeadline(option: 'ASAP' | 'TYT') {
+    setEditDeadline((prev) => (prev === option ? undefined : option))
+  }
+
   if (!data) return <div className="loading-spinner scale-75" />
 
   const todos = Object.entries(data.todos)
@@ -80,40 +88,97 @@ export default function HomeTodo() {
               const key = `${category}:${i}`
               const isEditing = editingKey === key
               return (
-                <li key={i} className="flex items-start gap-2 group">
-                  <span className="mt-1 shrink-0 w-3 h-3 rounded-full border border-border bg-bg-light" />
-                  {isEditing ? (
-                    <input
-                      autoFocus
-                      className="flex-1 text-sm text-text-muted leading-snug bg-transparent border-b border-primary outline-none min-w-0"
-                      value={editValue}
-                      onChange={(e) => setEditValue(e.target.value)}
-                      onBlur={() => commitEdit(category, i)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') e.currentTarget.blur()
-                        if (e.key === 'Escape') setEditingKey(null)
-                      }}
-                    />
-                  ) : (
-                    <span
-                      className="flex-1 text-sm text-text-muted leading-snug cursor-text"
-                      onClick={() => startEdit(category, i)}
-                    >
-                      {item}
-                    </span>
-                  )}
-                  {!isEditing && (
-                    <button
-                      onClick={() => deleteItem(category, i)}
-                      className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-text-light hover:text-red-400"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
+                <li
+                  key={i}
+                  className="flex flex-col gap-1 group"
+                  onBlur={isEditing ? (e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                      commitEdit(category, i)
+                    }
+                  } : undefined}
+                >
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 shrink-0 w-3 h-3 rounded-full border border-border bg-bg-light" />
+                    {isEditing ? (
+                      <input
+                        autoFocus
+                        className="flex-1 text-sm text-text-muted leading-snug bg-transparent border-b border-primary outline-none min-w-0"
+                        value={editText}
+                        onChange={(e) => setEditText(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') commitEdit(category, i)
+                          if (e.key === 'Escape') setEditingKey(null)
+                        }}
+                      />
+                    ) : (
+                      <>
+                        <span
+                          className="flex-1 text-sm text-text-muted leading-snug cursor-text"
+                          onClick={() => startEdit(category, i)}
+                        >
+                          {item.text}
+                        </span>
+                        {item.deadline && <DeadlineBadge deadline={item.deadline} />}
+                      </>
+                    )}
+                    {!isEditing && (
+                      <button
+                        onClick={() => deleteItem(category, i)}
+                        className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-text-light hover:text-red-400"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+
+                  {isEditing && (
+                    <div className="ml-5 flex items-center gap-1 flex-wrap">
+                      {(['ASAP', 'TYT'] as const).map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          onMouseDown={(e) => e.preventDefault()}
+                          onClick={() => toggleQuickDeadline(opt)}
+                          className={`text-[10px] font-semibold px-1.5 py-0.5 rounded transition-colors ${
+                            editDeadline === opt
+                              ? opt === 'ASAP' ? 'bg-red-500 text-white' : 'bg-gray-500 text-white'
+                              : opt === 'ASAP' ? 'bg-red-100 text-red-600 hover:bg-red-200' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                          }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                      <input
+                        type="date"
+                        value={editDeadline && editDeadline !== 'ASAP' && editDeadline !== 'TYT' ? editDeadline : ''}
+                        onChange={(e) => setEditDeadline(e.target.value || undefined)}
+                        onMouseDown={(e) => e.stopPropagation()}
+                        className="text-[10px] border border-border rounded px-1 py-0.5 outline-none focus:border-primary text-text-muted"
+                      />
+                      {editDeadline && (
+                        <button
+                          type="button"
+                          onMouseDown={(e) => e.preventDefault()}
+                          onClick={() => setEditDeadline(undefined)}
+                          className="text-text-light hover:text-red-400"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => commitEdit(category, i)}
+                        className="ml-auto text-[10px] font-medium text-primary hover:opacity-70 transition-opacity"
+                      >
+                        저장
+                      </button>
+                    </div>
                   )}
                 </li>
               )
             })}
-            {catData.items.length === 0 && editingKey !== `${category}:0` && (
+            {catData.items.length === 0 && !editingKey?.startsWith(`${category}:`) && (
               <li className="text-xs text-text-light italic">항목 없음</li>
             )}
           </ul>

@@ -1,0 +1,11 @@
+{
+  "topics": [
+    {
+      "name": "VLA",
+      "description": "로봇이 시각 정보와 언어 명령을 동시에 이해하여 물리적인 행동을 직접 수행할 수 있도록 설계된 차세대 인공지능 모델",
+      "id": "ylf861r7npommg8r58o",
+      "color": "#7c3aed"
+    }
+  ],
+  "papers": []
+}

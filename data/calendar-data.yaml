@@ -14,27 +14,45 @@ todos:
   학습 (논문 / 이론):
     icon: 🔬
     items:
-      - VLA 가이드라인 맞춰서
+      - text: Attention + Self Attention + Transformer
+        deadline: ASAP
   기술 구현:
     icon: 🧑🏻‍💻
     items:
-      - NaVILA 출력 → cmd_vel 파싱 방법 수정
-      - NaVILA 호출 방식 변경
-      - RB-Y1 SDK 작성 (cmd_vel 및 Teleop)
-      - 시뮬레이션 환경 구축 (RB-Y1, Go2)
+      - text: NaVILA 호출 방식 변경
+        deadline: ASAP
+      - text: RB-Y1 SDK 작성 (cmd_vel 및 Teleop)
+        deadline: ASAP
+      - text: 시뮬레이션 환경 구축 (RB-Y1, Go2)
+        deadline: ASAP
+  프로그래밍:
+    icon: 🖥️
+    items: []
+  영어:
+    icon: 🔠
+    items: []
   주간 통합 & 계획:
     icon: 🗓️
     items:
-      - 영어 공부 계획
-      - 정처기 실기 계획
+      - text: 영어 공부 계획
+        deadline: ASAP
+      - text: 정처기 실기 계획
+        deadline: ASAP
   과제:
     icon: 📚
     items:
-      - Isaac Sim 사용 및 자료 준비
-      - 4월 이공 학술 지원 준비
+      - text: Isaac Sim 사용 및 자료 준비
+        deadline: TYT
+      - text: 4월 이공 학술 지원 준비
+        deadline: '2026-04-06'
+      - text: RT 논문 발표 준비
+        deadline: '2026-03-11'
   개인 공부:
     icon: 👨‍💻
     items:
-      - 3D Printer
-      - Web / Network
-      - isaacsim 서버 어떻게 개발?
+      - text: 3D Printer
+        deadline: TYT
+      - text: Web / Network
+        deadline: TYT
+      - text: Isaac Sim Server 도커 / Web
+        deadline: ASAP
