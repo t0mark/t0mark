@@ -14,7 +14,7 @@ function buildPriorityList(data: CalendarData): PriorityItem[] {
   const eligible: PriorityItem[] = []
   for (const [category, catData] of Object.entries(data.todos)) {
     for (const item of catData.items) {
-      if (item.deadline !== 'TYT' && item.text.trim()) {
+      if (item.deadline && item.deadline !== 'TYT' && item.text.trim()) {
         eligible.push({ category, text: item.text, deadline: item.deadline })
       }
     }

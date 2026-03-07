@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { Search, Plus, X } from 'lucide-react'
+import { Search, Plus, X, FileDown } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import {
   loadPaperData,
@@ -87,6 +87,30 @@ export default function PaperGraphClient() {
     setClickedNode(null)
   }, [clickedNode, data, saveData])
 
+  const handleExportXlsx = useCallback(async () => {
+    const xlsx = await import('xlsx')
+    const rows = data.papers
+      .map((p) => {
+        const topic = data.topics.find((t) => t.id === p.topicId)
+        return {
+          주제: topic?.name ?? '',
+          Year: p.year,
+          Conference: p.venue,
+          '3줄 요약': p.summary,
+          'Code URL': p.codeUrl,
+        }
+      })
+      .sort((a, b) => {
+        if (a.주제 !== b.주제) return a.주제.localeCompare(b.주제)
+        if (a.Year !== b.Year) return a.Year - b.Year
+        return 0
+      })
+    const ws = xlsx.utils.json_to_sheet(rows)
+    const wb = xlsx.utils.book_new()
+    xlsx.utils.book_append_sheet(wb, ws, 'Papers')
+    xlsx.writeFile(wb, 'papers.xlsx')
+  }, [data])
+
   const allComponents = Array.from(new Set(data.papers.flatMap((p) => p.components)))
 
   const searchResults = searchQuery.trim()
@@ -167,6 +191,13 @@ export default function PaperGraphClient() {
 
         {/* Action buttons */}
         <div className="flex gap-2 ml-auto shrink-0">
+          <button
+            onClick={handleExportXlsx}
+            disabled={data.papers.length === 0}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-accent-hardware border border-accent-hardware rounded-lg hover:bg-emerald-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            <FileDown className="w-4 h-4" /> xlsx 저장
+          </button>
           <button
             onClick={() => setShowAddTopic(true)}
             className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-accent-research border border-accent-research rounded-lg hover:bg-purple-50 transition-colors"

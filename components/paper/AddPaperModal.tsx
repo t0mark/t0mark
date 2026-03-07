@@ -24,6 +24,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
   const [method, setMethod] = useState('')
   const [results, setResults] = useState('')
   const [limitations, setLimitations] = useState('')
+  const [codeUrl, setCodeUrl] = useState('')
   const [components, setComponents] = useState<string[]>([])
   const [compInput, setCompInput] = useState('')
 
@@ -51,6 +52,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
       method: method.trim(),
       results: results.trim(),
       limitations: limitations.trim(),
+      codeUrl: codeUrl.trim(),
       components,
     })
   }
@@ -211,6 +213,15 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
                       ))}
                     </div>
                   )}
+                </FormField>
+                <FormField label="Code URL">
+                  <input
+                    type="url"
+                    value={codeUrl}
+                    onChange={(e) => setCodeUrl(e.target.value)}
+                    placeholder="https://github.com/..."
+                    className={INPUT}
+                  />
                 </FormField>
               </div>
             </section>

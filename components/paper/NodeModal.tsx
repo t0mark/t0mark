@@ -141,6 +141,16 @@ export default function NodeModal({ node, onClose, onDelete }: Props) {
                     label="Components"
                     value={node.data.components.length > 0 ? node.data.components.join(', ') : '—'}
                   />
+                  <div>
+                    <dt className="text-xs font-semibold text-text-light uppercase tracking-wider mb-1">Code URL</dt>
+                    <dd className="text-sm text-text-muted">
+                      {node.data.codeUrl ? (
+                        <a href={node.data.codeUrl} target="_blank" rel="noreferrer" className="text-accent-industry hover:underline break-all">
+                          {node.data.codeUrl}
+                        </a>
+                      ) : '—'}
+                    </dd>
+                  </div>
                 </div>
               </section>
             </>

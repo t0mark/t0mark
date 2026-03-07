@@ -18,6 +18,7 @@ export interface Paper {
   results: string
   limitations: string
   components: string[]
+  codeUrl: string
 }
 
 export interface PaperData {

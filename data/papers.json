@@ -7,5 +7,21 @@
       "color": "#7c3aed"
     }
   ],
-  "papers": []
+  "papers": [
+    {
+      "topicId": "ylf861r7npommg8r58o",
+      "title": "Na-VILA",
+      "year": 2026,
+      "authors": "",
+      "venue": "",
+      "summary": "",
+      "problem": "",
+      "method": "",
+      "results": "",
+      "limitations": "",
+      "codeUrl": "",
+      "components": [],
+      "id": "jpnoi8lak7smmgfb27r"
+    }
+  ]
 }
