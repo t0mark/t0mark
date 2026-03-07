@@ -14,7 +14,7 @@ const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id: 'fields', label: '연구 분야', icon: Settings2 },
 ]
 
-export default function GraduateClient() {
+export default function InsightsClient() {
   const [activeTab, setActiveTab] = useState<Tab>('trends')
 
   return (

@@ -271,7 +271,7 @@ export default function TrendsTab() {
   const [sort, setSort] = useState<'newest' | 'oldest'>('newest')
 
   useEffect(() => {
-    fetch('/api/graduate/trends')
+    fetch('/api/insights/trends')
       .then((r) => r.json())
       .then((d: TrendsData) => setData(d))
       .catch(console.error)
@@ -328,9 +328,6 @@ export default function TrendsTab() {
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
           <h3 className="text-base font-bold text-primary">로보틱스 최신 동향</h3>
-          <p className="text-xs text-text-light mt-0.5">
-            arXiv · Semantic Scholar · RSS 피드 수집 / GPT-4o-mini 번역
-          </p>
         </div>
         {data.lastUpdated && (
           <div className="text-[10px] text-text-light bg-bg-light rounded-lg px-3 py-1.5 border border-border">

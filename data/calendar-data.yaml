@@ -27,8 +27,7 @@ todos:
         deadline: ASAP
   프로그래밍:
     icon: 🖥️
-    items:
-      - text: ''
+    items: []
   영어:
     icon: 🔠
     items: []

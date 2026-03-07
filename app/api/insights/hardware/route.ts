@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import type { HardwareData } from '@/types/graduate'
+import type { HardwareData } from '@/types/insights'
 
 export async function GET() {
   try {
-    const filePath = join(process.cwd(), 'data', 'graduate', 'hardware.json')
+    const filePath = join(process.cwd(), 'data', 'insights', 'hardware.json')
     const fileContent = readFileSync(filePath, 'utf-8')
     const data = JSON.parse(fileContent) as HardwareData
     return NextResponse.json(data)

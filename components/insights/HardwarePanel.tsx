@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { HardwareData, HardwareCategory, CategoryInfo } from '@/types/graduate'
+import type { HardwareData, HardwareCategory, CategoryInfo } from '@/types/insights'
 
 const categoryInfo: Record<HardwareCategory, CategoryInfo> = {
   platforms: { title: '차세대 로봇 플랫폼', badge: '2024 HOT', badgeColor: '#ff6b6b' },

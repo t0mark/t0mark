@@ -9,7 +9,7 @@ const navLinks = [
   { href: '/calendar', label: 'Calendar' },
   { href: '/paper', label: 'Paper' },
   { href: '/projects', label: 'Project' },
-  { href: '/graduate', label: 'Graduate' },
+  { href: '/insights', label: 'Insights' },
   { href: '/cv', label: 'CV' },
 ]
 

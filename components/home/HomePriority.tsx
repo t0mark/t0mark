@@ -78,7 +78,7 @@ export default function HomePriority({ data, onSave }: HomePriorityProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-card border border-border p-4 max-w-2xl">
+    <div className="bg-white rounded-xl shadow-card border border-border p-4">
       <ul className="space-y-0.5">
         {items.map((item, i) => (
           <li
