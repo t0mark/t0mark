@@ -10,6 +10,15 @@ logs:
         category: 학습 (논문 / 이론)
         items:
           - Formal Specification of AI 정리
+      - day: 수
+        category: 기술 구현, 학습 (논문 / 이론)
+        items:
+          - Local Isaac Sim 환경 구축
+          - 논문 세미나 자료 제작
+      - day: 목
+        category: 학습 (논문 / 이론)
+        items:
+          - Transformer 공부중 (RNN -> Seq2Seq -> Attention -> Transformer)
   - week: 26. 02. 23 ~ 26. 02. 28
     rows:
       - day: 월
