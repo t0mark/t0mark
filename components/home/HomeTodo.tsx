@@ -71,6 +71,26 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
     setEditDeadline((prev) => (prev === option ? undefined : option))
   }
 
+  function deadlineRank(deadline?: string): number {
+    if (deadline === 'ASAP') return 0
+    if (deadline && deadline !== 'TYT') return 1  // ISO date
+    if (deadline === 'TYT') return 2
+    return 3  // no deadline
+  }
+
+  function sortedItems(items: TodoItem[]): { item: TodoItem; originalIdx: number }[] {
+    return items
+      .map((item, originalIdx) => ({ item, originalIdx }))
+      .sort((a, b) => {
+        const ra = deadlineRank(a.item.deadline)
+        const rb = deadlineRank(b.item.deadline)
+        if (ra !== rb) return ra - rb
+        // 날짜끼리는 오름차순
+        if (ra === 1) return a.item.deadline!.localeCompare(b.item.deadline!)
+        return a.item.text.localeCompare(b.item.text, 'ko')
+      })
+  }
+
   if (!data) return <div className="loading-spinner scale-75" />
 
   const todos = Object.entries(data.todos)
@@ -84,7 +104,7 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
             <span>{category}</span>
           </p>
           <ul className="space-y-1.5">
-            {catData.items.map((item, i) => {
+            {sortedItems(catData.items).map(({ item, originalIdx: i }) => {
               const key = `${category}:${i}`
               const isEditing = editingKey === key
               return (
