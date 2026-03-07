@@ -293,22 +293,25 @@ export default function CalendarClient() {
             </button>
           </div>
           <div className="space-y-2">
-            {Object.entries(draft.dDay).map(([name, item], idx) => (
-              <div key={idx} className="flex items-center gap-2">
+            {Object.entries(draft.dDay)
+              .map(([name, item], originalIdx) => ({ name, item, originalIdx }))
+              .sort((a, b) => new Date(a.item.targetDate).getTime() - new Date(b.item.targetDate).getTime())
+              .map(({ name, item, originalIdx }) => (
+              <div key={originalIdx} className="flex items-center gap-2">
                 <input
                   value={name}
-                  onChange={(e) => updateDDayName(idx, e.target.value)}
+                  onChange={(e) => updateDDayName(originalIdx, e.target.value)}
                   className="flex-1 min-w-0 text-xs border border-border rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
                   placeholder="이름"
                 />
                 <input
                   type="date"
                   value={item.targetDate}
-                  onChange={(e) => updateDDayDate(idx, e.target.value)}
+                  onChange={(e) => updateDDayDate(originalIdx, e.target.value)}
                   className="text-xs border border-border rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
                 />
                 <button
-                  onClick={() => deleteDDay(idx)}
+                  onClick={() => deleteDDay(originalIdx)}
                   className="text-gray-300 hover:text-red-400 transition-colors shrink-0"
                 >
                   <Trash2 className="w-3.5 h-3.5" />

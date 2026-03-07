@@ -23,7 +23,9 @@ const colorMap: Record<DDayColorClass, { bg: string; text: string; ring: string;
 }
 
 export default function DDayCards({ dDay }: DDayCardsProps) {
-  const entries = Object.entries(dDay)
+  const entries = Object.entries(dDay).sort(([, a], [, b]) =>
+    new Date(a.targetDate).getTime() - new Date(b.targetDate).getTime()
+  )
   const today = new Date()
   const yearStart = new Date(today.getFullYear(), 0, 1)
   const yearEnd = new Date(today.getFullYear() + 1, 0, 1)
