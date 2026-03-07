@@ -24,6 +24,19 @@ const RECURRENCE_OPTIONS: RoutineRecurrence[] = [
   'daily', 'weekly', 'monthly', 'every-semester', 'annually',
 ]
 
+const RECURRENCE_ORDER: Record<RoutineRecurrence, number> = {
+  daily: 0, weekly: 1, monthly: 2, 'every-semester': 3, annually: 4,
+}
+
+function sortItems(items: RoutineItem[]): RoutineItem[] {
+  return [...items].sort((a, b) => {
+    if (a.checked !== b.checked) return Number(a.checked) - Number(b.checked)
+    const rd = RECURRENCE_ORDER[a.recurrence] - RECURRENCE_ORDER[b.recurrence]
+    if (rd !== 0) return rd
+    return a.text.localeCompare(b.text, 'ko')
+  })
+}
+
 interface EditState {
   id: string
   text: string
@@ -122,7 +135,7 @@ export default function HomeRoutine() {
       )}
 
       <ul className="space-y-1">
-        {data.items.map((item) => {
+        {sortItems(data.items).map((item) => {
           const isEditing = edit?.id === item.id
 
           return (
