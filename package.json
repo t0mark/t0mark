@@ -8,12 +8,17 @@
     "start": "next start",
     "lint": "next lint",
     "fetch-trends": "node scripts/fetch-trends.js",
-    "fetch-trends:fast": "node scripts/fetch-trends.js --no-translate"
+    "fetch-trends:fast": "node scripts/fetch-trends.js --no-translate",
+    "fetch-interns": "node scripts/fetch-interns.js",
+    "fetch-interns:fast": "node scripts/fetch-interns.js --limit=3",
+    "fetch-scholarships": "node scripts/fetch-scholarships.js",
+    "fetch-scholarships:fast": "node scripts/fetch-scholarships.js --limit=5 --skip-gpt"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
     "lucide-react": "^0.469.0",
     "next": "^15.5.12",
+    "node-cron": "^4.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vis-data": "^7.1.9",

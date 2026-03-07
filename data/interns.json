@@ -1,0 +1,91 @@
+{
+  "lastUpdated": "2026-03-07T19:57:39.150Z",
+  "items": [
+    {
+      "id": "jobkorea:5980b308bc43",
+      "title": "2026년 상반기 에이로봇 신입/경력 채용전환형 인턴 채용 (연구원)",
+      "company": "㈜에이로봇",
+      "location": "안산시",
+      "deadline": "2026-03-25T14:59:00.000Z",
+      "postedAt": "2026-02-22T15:00:00.000Z",
+      "source": "jobkorea",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48642216",
+      "tags": [
+        "로봇",
+        "연구"
+      ],
+      "experience": "신입"
+    },
+    {
+      "id": "jobkorea:4fe4208d8086",
+      "title": "에너자이 ML Engineer/Researcher 채용 공고 (전문연구요원 가능)",
+      "company": "에너자이",
+      "location": "엔지니어즉시",
+      "deadline": "2026-03-23T14:59:00.000Z",
+      "postedAt": "2026-02-20T15:00:00.000Z",
+      "source": "jobkorea",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48635232",
+      "tags": [
+        "연구"
+      ],
+      "experience": "경력무관"
+    },
+    {
+      "id": "jobkorea:42e934e87755",
+      "title": "AMR(자율주행로봇) 서비스 앱 개발자",
+      "company": "㈜폴라리스쓰리디",
+      "location": "포항시",
+      "deadline": "상시채용",
+      "postedAt": "2026-01-29T15:00:00.000Z",
+      "source": "jobkorea",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48516334",
+      "tags": [
+        "로봇",
+        "자율주행",
+        "개발"
+      ],
+      "experience": "경력무관"
+    },
+    {
+      "id": "jobkorea:744507436146",
+      "title": "[Quest Global] 차량 제어 소프트웨어 개발",
+      "company": "퀘스트글로벌코리아 유한회사",
+      "location": "전자엔지니어즉시",
+      "deadline": "2026-04-04T14:59:00.000Z",
+      "postedAt": "2026-03-04T15:00:00.000Z",
+      "source": "jobkorea",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48718173",
+      "tags": [
+        "제어",
+        "소프트웨어",
+        "개발"
+      ]
+    },
+    {
+      "id": "wanted:41e93c2b9af7",
+      "title": "[인턴] Backend Engineer(AI Platform)",
+      "company": "딥오토",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-03-07T19:57:17.507Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/345365",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "wanted:f87ea2826c87",
+      "title": "[인턴] AI Engineer",
+      "company": "딥오토",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-03-07T19:57:17.507Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/345358",
+      "tags": [
+        "a"
+      ]
+    }
+  ]
+}

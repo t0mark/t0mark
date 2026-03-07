@@ -1,9 +1,17 @@
 #Command
 ``` bash
+# 의존성 설치
 npm install
 
+# 뉴스 스크래핑
 echo '{"lastUpdated":null,"items":[]}' > data/robotics_trends.json
 npm run fetch-trends
+
+# 공고 스크래핑
+rm -f data/interns.json data/interns-filter-cache.json
+node scripts/fetch-interns.js --limit=5 2>&1
+
+# 서버 시작
 npm run dev
 ```
 

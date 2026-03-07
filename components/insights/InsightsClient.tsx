@@ -1,17 +1,21 @@
 'use client'
 
 import { useState } from 'react'
-import { Settings2, TrendingUp, Building2 } from 'lucide-react'
+import { Settings2, TrendingUp, Building2, Briefcase, GraduationCap } from 'lucide-react'
 import FieldsTab from './tabs/FieldsTab'
 import TrendsTab from './tabs/TrendsTab'
 import ConferencesTab from './tabs/ConferencesTab'
+import InternTab from './tabs/InternTab'
+import ScholarshipTab from './tabs/ScholarshipTab'
 
-type Tab = 'fields' | 'trends' | 'conferences'
+type Tab = 'fields' | 'trends' | 'conferences' | 'interns' | 'scholarships'
 
 const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id: 'trends', label: '연구 동향', icon: TrendingUp },
   { id: 'conferences', label: '학회 & 저널', icon: Building2 },
   { id: 'fields', label: '연구 분야', icon: Settings2 },
+  { id: 'interns', label: '인턴', icon: Briefcase },
+  { id: 'scholarships', label: '산학장학생', icon: GraduationCap },
 ]
 
 export default function InsightsClient() {
@@ -42,6 +46,8 @@ export default function InsightsClient() {
         {activeTab === 'fields' && <FieldsTab />}
         {activeTab === 'trends' && <TrendsTab />}
         {activeTab === 'conferences' && <ConferencesTab />}
+        {activeTab === 'interns' && <InternTab />}
+        {activeTab === 'scholarships' && <ScholarshipTab />}
       </div>
     </div>
   )
