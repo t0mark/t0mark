@@ -11,7 +11,10 @@
       "Bash(pkill -f \"next dev\")",
       "Bash(taskkill /F /IM node.exe)",
       "Bash(tasklist /FI \"PID eq 27784\")",
-      "Bash(tasklist /FI \"PID eq 11048\")"
+      "Bash(tasklist /FI \"PID eq 11048\")",
+      "Read(//etc/cron.d/**)",
+      "Bash(systemctl list-timers --user)",
+      "Bash(node -e \"const d = require\\(''/home/t0mark/Desktop/t0mark/data/interns.json''\\); console.log\\(JSON.stringify\\(d.items[0], null, 2\\)\\)\")"
     ]
   }
 }

@@ -1,21 +1,6 @@
 {
-  "lastUpdated": "2026-03-07T19:57:39.150Z",
+  "lastUpdated": "2026-03-09T01:40:36.813Z",
   "items": [
-    {
-      "id": "jobkorea:5980b308bc43",
-      "title": "2026년 상반기 에이로봇 신입/경력 채용전환형 인턴 채용 (연구원)",
-      "company": "㈜에이로봇",
-      "location": "안산시",
-      "deadline": "2026-03-25T14:59:00.000Z",
-      "postedAt": "2026-02-22T15:00:00.000Z",
-      "source": "jobkorea",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48642216",
-      "tags": [
-        "로봇",
-        "연구"
-      ],
-      "experience": "신입"
-    },
     {
       "id": "jobkorea:4fe4208d8086",
       "title": "에너자이 ML Engineer/Researcher 채용 공고 (전문연구요원 가능)",
@@ -28,7 +13,8 @@
       "tags": [
         "연구"
       ],
-      "experience": "경력무관"
+      "experience": "경력무관",
+      "description": null
     },
     {
       "id": "jobkorea:42e934e87755",
@@ -44,7 +30,8 @@
         "자율주행",
         "개발"
       ],
-      "experience": "경력무관"
+      "experience": "경력무관",
+      "description": null
     },
     {
       "id": "jobkorea:744507436146",
@@ -59,20 +46,8 @@
         "제어",
         "소프트웨어",
         "개발"
-      ]
-    },
-    {
-      "id": "wanted:41e93c2b9af7",
-      "title": "[인턴] Backend Engineer(AI Platform)",
-      "company": "딥오토",
-      "location": "서울",
-      "deadline": "상시채용",
-      "postedAt": "2026-03-07T19:57:17.507Z",
-      "source": "wanted",
-      "url": "https://www.wanted.co.kr/wd/345365",
-      "tags": [
-        "a"
-      ]
+      ],
+      "description": null
     },
     {
       "id": "wanted:f87ea2826c87",
@@ -80,12 +55,13 @@
       "company": "딥오토",
       "location": "서울",
       "deadline": "상시채용",
-      "postedAt": "2026-03-07T19:57:17.507Z",
+      "postedAt": "2026-03-09T01:39:24.418Z",
       "source": "wanted",
       "url": "https://www.wanted.co.kr/wd/345358",
       "tags": [
         "a"
-      ]
+      ],
+      "description": "주요 업무 (Key Responsibilities) ＜Track 1: 에이전트 설계 및 구현 (0명)＞ • 멀티모달 에이전트 개발: PDF, Excel, CAD(AutoCAD, SolidWorks, CATIA) 등 다양한 포맷의 비정형 문서 구조를 분석하고, 객체 간의 연결 관계를 파악하는 LLM/VLM 에이전트 워크플로우를 설계합니다. • Agentic System 고도화: 에이전트가 복잡한 태스크를 자율적으로 수행할 수 있도록 Planning, Memory, Tool-Use 로직을 설계 및 구현합니다. • 하이브리드 로직 최적화: 객체 병합(Bbox Merging), 경로 추적(Tracing) 등 데이터 특징 기반의 Rule-based 전처리와 AI 모델을 결합한 하이브리드 추론 시스템을 고도화합니다. "
     }
   ]
 }

@@ -3,6 +3,7 @@
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
+const { fetchDescriptions } = require('../fetch-description');
 
 const CACHE_FILE = path.join(process.cwd(), 'data', 'interns-filter-cache.json');
 const BATCH_SIZE = 10;
@@ -66,7 +67,12 @@ function saveCache(cacheSet) {
  */
 async function evaluateBatch(batch, apiKey) {
   const userMessage = JSON.stringify(
-    batch.map((item) => ({ id: item.id, title: item.title, company: item.company }))
+    batch.map((item) => ({
+      id: item.id,
+      title: item.title,
+      company: item.company,
+      ...(item.description ? { description: item.description } : {}),
+    }))
   );
 
   const response = await axios.post(
@@ -132,6 +138,12 @@ async function gptFilter(items) {
   console.log(`[GPT Filter] 평가 대상: ${uncached.length}개 (캐시 통과: ${alreadyApproved.length}개)`);
 
   if (uncached.length === 0) return alreadyApproved;
+
+  // 신규 항목 상세 페이지에서 직무 내용 fetch
+  console.log(`[GPT Filter] 직무 내용 수집 중... (${uncached.length}개)`);
+  await fetchDescriptions(uncached);
+  const fetched = uncached.filter((i) => i.description).length;
+  console.log(`[GPT Filter] 직무 내용 수집 완료: ${fetched}/${uncached.length}개`);
 
   const approved = [...alreadyApproved];
 
