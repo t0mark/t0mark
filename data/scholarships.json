@@ -1,6 +1,21 @@
 {
-  "lastUpdated": "2026-03-07T20:11:50.590Z",
+  "lastUpdated": "2026-03-09T18:00:25.014Z",
   "items": [
+    {
+      "id": "jobkorea-sch:3c14d26e07ab",
+      "title": "2026년 상반기 R&D 석/박사 산학장학생 채용(LGE Members) - Software R&D",
+      "company": "엘지전자㈜LG그룹",
+      "location": "미기재",
+      "deadline": "2026-03-30T14:59:00.000Z",
+      "postedAt": "2026-03-09T18:00:00.795Z",
+      "source": "jobkorea",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48735262",
+      "tags": [
+        "산학장학생"
+      ],
+      "experience": "신입",
+      "description": null
+    },
     {
       "id": "jobkorea-sch:9f8fe286a82c",
       "title": "'26년 R&D분야 산학장학생(석/박사) 모집",
@@ -13,7 +28,8 @@
       "tags": [
         "산학장학생"
       ],
-      "experience": "신입"
+      "experience": "신입",
+      "description": null
     },
     {
       "id": "jobkorea-sch:5814fb5782d5",
@@ -27,7 +43,8 @@
       "tags": [
         "산학장학생"
       ],
-      "experience": "신입"
+      "experience": "신입",
+      "description": null
     },
     {
       "id": "jobkorea-sch:322102c4f39b",
@@ -41,7 +58,8 @@
       "tags": [
         "산학장학생"
       ],
-      "experience": "신입"
+      "experience": "신입",
+      "description": null
     }
   ]
 }

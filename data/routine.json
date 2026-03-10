@@ -2,13 +2,37 @@
   "items": [
     {
       "id": "df0ebb6a-1aa8-4f3b-a8d4-236b1e4e526d",
-      "text": "영어 공부",
+      "text": "영어 공부 (Opic, 단어)",
       "recurrence": "daily",
+      "checked": false
+    },
+    {
+      "id": "mmiiqlbb-j5wd5o0wr9f",
+      "text": "정보처리기사 강의 (2~3)",
+      "recurrence": "weekly",
+      "checked": false
+    },
+    {
+      "id": "mmiiy2db-i8ad39u6pu",
+      "text": "논문 세미나 준비",
+      "recurrence": "weekly",
+      "checked": true
+    },
+    {
+      "id": "mmiiyex8-ri9kus906o",
+      "text": "랩 미팅 자료 준비",
+      "recurrence": "weekly",
+      "checked": true
+    },
+    {
+      "id": "mmixt993-zyrvga2b9qs",
+      "text": "전자공 조교 근무 일지",
+      "recurrence": "monthly",
       "checked": false
     }
   ],
   "lastReset": {
-    "daily": "2026-03-08T18:00:00.000Z",
+    "daily": "2026-03-09T18:00:00.000Z",
     "weekly": "2026-03-07T18:00:00.000Z",
     "monthly": "2026-02-28T18:00:00.000Z"
   }

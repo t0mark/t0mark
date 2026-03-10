@@ -10,18 +10,18 @@
   "papers": [
     {
       "topicId": "ylf861r7npommg8r58o",
-      "title": "Na-VILA",
-      "year": 2026,
-      "authors": "",
-      "venue": "",
-      "summary": "",
-      "problem": "",
-      "method": "",
+      "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
+      "year": 2023,
+      "authors": "Anthony Brohan, Noah Brown, Justice Carbajal, Yevgen Chebotar etc",
+      "venue": "RSS",
+      "summary": "- 로봇 학습은 태스크마다 별도 데이터를 수집해 훈련하는 방식이라 일반화가 안 됐음\n- RT-1은 대규모 다양한 데이터로 훈련한 단일 Transformer 모델로 이를 해결함\n- 700개 이상의 지시를 97% 성공률로 수행하고, 새로운 태스크·환경에도 강한 일반화 성능을 보임",
+      "problem": "- 기존 로봇 학습 정책은 작업별로 데이터를 따로 수집하고 별도로 훈련\n- Transformer 모델은 표현력은 높지만 추론 속도가 느려서 실시간 제어가 어려움",
+      "method": "1. 대규모 데이터셋\n- 학습 방법\n    - 사람이 직접 데이터셋 구축 → 모방학습\n    - 성공한 케이스만 사용 → 특정 상황에서 사람이 한 행동이 나올 확률을 최대화하도록 모델 학습\n- 데이터셋 수집 방법\n    - VR Teleop\n    - 행동에 맞는 자연어 지시 라벨링\n    - 13개의 로봇 + 17개월 → 13만개의 케이스 + 700개의 자연어 명령\n2. 모델 구조\n- FiLM EfficientNet : 자연어 지시를 이미지 인코딩 초기 단계에 융합(early fusion)하여 지시와 관련된 시각 특징에만 집중\n- TokenLearner : 81개 visual token을 8개로 압축해 추론 속도 2.4× 향상\n- Transformer : 인코딩 된 자연어 + 이미지 Token을 Action Token으로 출력\n- Action Tokenization : 각 행동 차원을 256개 bin으로 discretize",
       "results": "",
       "limitations": "",
       "codeUrl": "",
       "components": [],
-      "id": "jpnoi8lak7smmgfb27r"
+      "id": "79sr2spcsekmmjwwm2m"
     }
   ]
 }

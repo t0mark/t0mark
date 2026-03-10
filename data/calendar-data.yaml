@@ -27,15 +27,17 @@ todos:
         deadline: ASAP
   프로그래밍:
     icon: 🖥️
-    items: []
+    items:
+      - text: Isaac Sim Tutorial
+        deadline: ASAP
   영어:
     icon: 🔠
     items: []
   주간 통합 & 계획:
     icon: 🗓️
     items:
-      - text: 정처기 실기 계획
-        deadline: ASAP
+      - text: 가족 여행 계획
+        deadline: TYT
   과제:
     icon: 📚
     items:
@@ -52,26 +54,18 @@ todos:
         deadline: TYT
       - text: Web / Network
         deadline: TYT
-      - text: Isaac Sim Server 도커 / Web
-        deadline: ASAP
-      - text: 청약 알아보기
-        deadline: ASAP
 priorityOrder:
-  - category: 주간 통합 & 계획
-    text: 정처기 실기 계획
-  - category: 개인 공부
-    text: 청약 알아보기
-  - category: 개인 공부
-    text: Isaac Sim Server 도커 / Web
+  - category: 과제
+    text: RT 논문 발표 준비
+  - category: 프로그래밍
+    text: Isaac Sim Tutorial
   - category: 학습 (논문 / 이론)
     text: Attention + Self Attention + Transformer
-  - category: 기술 구현
-    text: NaVILA 호출 방식 변경
   - category: 기술 구현
     text: RB-Y1 SDK 작성 (cmd_vel 및 Teleop)
   - category: 기술 구현
     text: 시뮬레이션 환경 구축 (RB-Y1, Go2)
+  - category: 기술 구현
+    text: NaVILA 호출 방식 변경
   - category: 과제
     text: 4월 이공 학술 지원 준비
-  - category: 과제
-    text: RT 논문 발표 준비

@@ -1,6 +1,905 @@
 {
-  "lastUpdated": "2026-03-04T23:36:24.589Z",
+  "lastUpdated": "2026-03-09T02:50:18.938Z",
   "items": [
+    {
+      "id": "arxiv:2603.06525",
+      "title": "Underactuated multimodal jumping robot for extraterrestrial exploration",
+      "abstract": "We present a rolling and jumping underactuated monopedal robot designed to explore multimodal locomotion on low-gravity bodies. It uses only two reaction wheels to control its spatial orientation with two controllers: a balancing controller which can aim the robot's jump direction on the ground, and an aerial reorientation controller which can aim the robot's leg for landing after flight. We demonstrate rolling, targeted jumping and landing, and self-righting using only three actuators total, keeping system size to 0.33m and 1.25kg. Simple switching between locomotion modes enables the system to deal with differing landscapes and environmental conditions.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06525",
+      "publishedAt": "2026-03-06T18:08:32Z",
+      "authors": [
+        "Neil R. Wagner",
+        "Justin K. Yim"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "외계 탐사를 위한 저구동 다중 모드 점프 로봇",
+      "abstractKo": "우리는 저중력 천체에서 다중 모드 이동을 탐색하기 위해 설계된 구르고 점프하는 저구동 단족 로봇을 소개합니다. 이 로봇은 두 개의 반응 휠만을 사용하여 공간 방향을 제어하며, 두 개의 컨트롤러를 사용합니다: 지면에서 로봇의 점프 방향을 조정할 수 있는 균형 조정기와 비행 후 착지를 위해 로봇의 다리를 조정할 수 있는 공중 재조정기입니다. 우리는 총 세 개의 액추에이터만을 사용하여 구르기, 목표 지점으로의 점프 및 착지, 그리고 스스로 일어서는 동작을 시연하며, 시스템 크기는 0.33m, 무게는 1.25kg으로 유지합니다. 이동 모드 간의 간단한 전환이 시스템을 가능하게 합니다."
+    },
+    {
+      "id": "arxiv:2603.06512",
+      "title": "SG-DOR: Learning Scene Graphs with Direction-Conditioned Occlusion Reasoning for Pepper Plants",
+      "abstract": "Robotic harvesting in dense crop canopies requires effective interventions that depend not only on geometry, but also on explicit, direction-conditioned relations identifying which organs obstruct a target fruit. We present SG-DOR (Scene Graphs with Direction-Conditioned Occlusion Reasoning), a relational framework that, given instance-segmented organ point clouds, infers a scene graph encoding physical attachments and direction-conditioned occlusion. We introduce an occlusion ranking task for retrieving and ranking candidate leaves for a target fruit and approach direction, and propose a direction-aware graph neural architecture with per-fruit leaf-set attention and union-level aggregation. Experiments on a multi-plant synthetic pepper dataset show improved occlusion prediction (F1=0.73, NDCG@3=0.85) and attachment inference (edge F1=0.83) over strong ablations, yielding a structured relational signal for downstream intervention planning.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06512",
+      "publishedAt": "2026-03-06T17:52:51Z",
+      "authors": [
+        "Rohit Menon",
+        "Niklas Mueller-Goldingen",
+        "Sicong Pan",
+        "Gokul Krishna Chenchani",
+        "Maren Bennewitz"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "titleKo": "SG-DOR: 방향 조건화된 폐색 추론을 통한 장면 그래프 학습을 위한 페퍼 식물",
+      "abstractKo": "조밀한 작물 캐노피에서의 로봇 수확은 기하학뿐만 아니라 목표 과일을 가리는 기관을 식별하는 명시적이고 방향 조건화된 관계에 의존하는 효과적인 개입이 필요합니다. 우리는 인스턴스 분할된 기관 포인트 클라우드를 기반으로 물리적 부착과 방향 조건화된 폐색을 인코딩하는 장면 그래프를 추론하는 관계적 프레임워크인 SG-DOR(방향 조건화된 폐색 추론을 통한 장면 그래프)를 제시합니다. 우리는 목표 과일과 접근 방향에 대한 후보 잎을 검색하고 순위를 매기기 위한 폐색 순위 작업을 도입하고, 방향을 제안합니다."
+    },
+    {
+      "id": "arxiv:2603.06501",
+      "title": "CFEAR-Teach-and-Repeat: Fast and Accurate Radar-only Localization",
+      "abstract": "Reliable localization in prior maps is essential for autonomous navigation, particularly under adverse weather, where optical sensors may fail. We present CFEAR-TR, a teach-and-repeat localization pipeline using a single spinning radar, which is designed for easily deployable, lightweight, and robust navigation in adverse conditions. Our method localizes by jointly aligning live scans to both stored scans from the teach mapping pass, and to a sliding window of recent live keyframes. This ensures accurate and robust pose estimation across different seasons and weather phenomena. Radar scans are represented using a sparse set of oriented surface points, computed from Doppler-compensated measurements. The map is stored in a pose graph that is traversed during localization. Experiments on the held-out test sequences from the Boreas dataset show that CFEAR-TR can localize with an accuracy as low as 0.117 m and 0.096°, corresponding to improvements of up to 63% over the previous state of the art, while running efficiently at 29 Hz. These results substantially narrow the gap to lidar-level localization, particularly in heading estimation. We make the C++ implementation of our work available to the community.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06501",
+      "publishedAt": "2026-03-06T17:35:58Z",
+      "authors": [
+        "Maximilian Hilger",
+        "Daniel Adolfsson",
+        "Ralf Becker",
+        "Henrik Andreasson",
+        "Achim J. Lilienthal"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "CFEAR-가르치고-반복하기: 빠르고 정확한 레이더 전용 위치 추정",
+      "abstractKo": "신뢰할 수 있는 위치 추정은 자율 내비게이션에 필수적이며, 특히 광학 센서가 실패할 수 있는 악천후에서 더욱 중요합니다. 우리는 단일 회전 레이더를 사용하는 가르치고-반복하기 위치 추정 파이프라인인 CFEAR-TR을 제안합니다. 이 시스템은 악조건에서 쉽게 배치할 수 있고 경량이며 견고한 내비게이션을 위해 설계되었습니다. 우리의 방법은 실시간 스캔을 가르침 매핑 패스에서 저장된 스캔과 최근 실시간 키프레임의 슬라이딩 윈도우에 동시에 정렬하여 위치를 추정합니다. 이를 통해 다양한 계절과 기상 현상에서 정확하고 견고한 자세 추정을 보장합니다."
+    },
+    {
+      "id": "arxiv:2603.06497",
+      "title": "A Unified Low-Dimensional Design Embedding for Joint Optimization of Shape, Material, and Actuation in Soft Robots",
+      "abstract": "Soft robots achieve functionality through tight coupling among geometry, material composition, and actuation. As a result, effective design optimization requires these three aspects to be considered jointly rather than in isolation. This coupling is computationally challenging: nonlinear large-deformation mechanics increase simulation cost, while contact, collision handling, and non-smooth state transitions limit the applicability of standard gradient-based approaches. We introduce a smooth, low-dimensional design embedding for soft robots that unifies shape morphing, multi-material distribution, and actuation within a single structured parameter space. Shape variation is modeled through continuous deformation maps of a reference geometry, while material properties are encoded as spatial fields. Both are constructed from shared basis functions. This representation enables expressive co-design while drastically reducing the dimensionality of the search space. In our experiments, we show that design expressiveness increases with the number of basis functions, unlike comparable neural network encodings whose representational capacity does not scale predictably with parameter count. We further show that joint co-optimization of shape, material, and actuation using our unified embedding consistently outperforms sequential strategies. All experiments are performed independently of the underlying simulator, confirming compatibility with black-box simulation pipelines. Across multiple dynamic tasks, the proposed embedding surpasses neural network and voxel-based baseline parameterizations while using significantly fewer design parameters. Together, these findings demonstrate that structuring the design space itself enables efficient co-design of soft robots.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06497",
+      "publishedAt": "2026-03-06T17:33:32Z",
+      "authors": [
+        "Vittorio Candiello",
+        "Manuel Mekkattu",
+        "Mike Y. Michelis",
+        "Robert K. Katzschmann"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "형상, 재료 및 작동의 공동 최적화를 위한 통합 저차원 설계 임베딩 소프트 로봇",
+      "abstractKo": "소프트 로봇은 기하학, 재료 조성 및 작동 간의 긴밀한 결합을 통해 기능을 달성합니다. 따라서 효과적인 설계 최적화는 이 세 가지 측면을 개별적으로가 아니라 함께 고려해야 합니다. 이러한 결합은 계산적으로 도전적입니다: 비선형 대변형 역학은 시뮬레이션 비용을 증가시키고, 접촉, 충돌 처리 및 비부드러운 상태 전이는 표준 경량 기반 접근 방식의 적용 가능성을 제한합니다. 우리는 소프트 로봇을 위한 매끄럽고 저차원 설계 임베딩을 소개하여 형상 변형, 다중 재료 분포를 통합합니다."
+    },
+    {
+      "id": "arxiv:2603.06494",
+      "title": "Control Barrier Corridors: From Safety Functions to Safe Sets",
+      "abstract": "Safe autonomy is a critical requirement and a key enabler for robots to operate safely in unstructured complex environments. Control barrier functions and safe motion corridors are two widely used but technically distinct safety methods, functional and geometric, respectively, for safe motion planning and control. Control barrier functions are applied to the safety filtering of control inputs to limit the decay rate of system safety, whereas safe motion corridors are geometrically constructed to define a local safe zone around the system state for use in motion optimization and reference-governor design. This paper introduces a new notion of control barrier corridors, which unifies these two approaches by converting control barrier functions into local safe goal regions for reference goal selection in feedback control systems. We show, with examples on fully actuated systems, kinematic unicycles, and linear output regulation systems, that individual state safety can be extended locally over control barrier corridors for convex barrier functions, provided the control convergence rate matches the barrier decay rate, highlighting a trade-off between safety and reactiveness. Such safe control barrier corridors enable safely reachable persistent goal selection over continuously changing barrier corridors during system motion, which we demonstrate for verifiably safe and persistent path following in autonomous exploration of unknown environments.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06494",
+      "publishedAt": "2026-03-06T17:23:56Z",
+      "authors": [
+        "Ömür Arslan",
+        "Nikolay Atanasov"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "titleKo": "제어 장벽 회랑: 안전 기능에서 안전 집합으로",
+      "abstractKo": "안전 자율성은 로봇이 비구조적 복잡 환경에서 안전하게 작동하기 위한 중요한 요구사항이자 핵심 요소입니다. 제어 장벽 함수와 안전 운동 회랑은 안전한 운동 계획 및 제어를 위한 두 가지 널리 사용되지만 기술적으로 구별되는 안전 방법으로, 각각 기능적 및 기하학적입니다. 제어 장벽 함수는 시스템 안전의 감소율을 제한하기 위해 제어 입력의 안전 필터링에 적용되며, 안전 운동 회랑은 운동 최적화 및 참조 제어에 사용하기 위해 시스템 상태 주변에 지역 안전 구역을 정의하기 위해 기하학적으로 구성됩니다."
+    },
+    {
+      "id": "arxiv:2603.06480",
+      "title": "History-Conditioned Spatio-Temporal Visual Token Pruning for Efficient Vision-Language Navigation",
+      "abstract": "Vision-Language Navigation (VLN) enables robots to follow natural-language instructions in visually grounded environments, serving as a key capability for embodied robotic systems. Recent Vision-Language-Action (VLA) models have demonstrated strong navigation performance, but their high computational cost introduces latency that limits real-time deployment. We propose a training-free spatio-temporal vision token pruning framework tailored to VLA-based VLN. We apply spatial token selection to the current view, alongside spatio-temporal compression for historical memories, enabling efficient long-horizon inference while reducing redundant computation. Leveraging attention-based token importance and query-guided spatio-temporal filtering, the proposed approach preserves navigation-relevant information without retraining or modifying pretrained models, allowing plug-and-play integration into existing VLA systems. Through experiments on standard VLN benchmarks, we confirm that our method significantly outperforms existing pruning strategies. It successfully preserves superior navigation accuracy under extreme pruning scenarios, all while maintaining the highly competitive inference efficiency. Real-world deployment on a Unitree Go2 quadruped robot further validates reliable and low-latency instruction-following navigation under practical robotic constraints. We hope this work helps bridge the gap between large-scale multimodal modeling and efficient, real-time embodied deployment in robotic navigation systems.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06480",
+      "publishedAt": "2026-03-06T17:03:16Z",
+      "authors": [
+        "Qitong Wang",
+        "Yijun Liang",
+        "Ming Li",
+        "Tianyi Zhou",
+        "Christopher Rasmussen"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "효율적인 비전-언어 내비게이션을 위한 역사 조건 기반 시공간 비주얼 토큰 프루닝",
+      "abstractKo": "비전-언어 내비게이션(VLN)은 로봇이 시각적으로 기반한 환경에서 자연어 지침을 따를 수 있게 하여, 구현된 로봇 시스템의 핵심 기능으로 작용합니다. 최근 비전-언어-행동(VLA) 모델은 강력한 내비게이션 성능을 보여주었지만, 높은 계산 비용은 실시간 배치를 제한하는 지연을 초래합니다. 우리는 VLA 기반 VLN에 맞춘 훈련 없는 시공간 비주얼 토큰 프루닝 프레임워크를 제안합니다. 현재 뷰에 대한 공간 토큰 선택과 역사적 메모리에 대한 시공간 압축을 적용하여 효율적인 롱..."
+    },
+    {
+      "id": "arxiv:2603.06450",
+      "title": "Data Analogies Enable Efficient Cross-Embodiment Transfer",
+      "abstract": "Generalist robot policies are trained on demonstrations collected across a wide variety of robots, scenes, and viewpoints. Yet it remains unclear how to best organize and scale such heterogeneous data so that it genuinely improves performance in a given target setting. In this work, we ask: what form of demonstration data is most useful for enabling transfer across robot set-ups? We conduct controlled experiments that vary end-effector morphology, robot platform appearance, and camera perspective, and compare the effects of simply scaling the number of demonstrations against systematically broadening the diversity in different ways. Our simulated experiments show that while perceptual shifts such as viewpoint benefit most from broad diversity, morphology shifts benefit far less from unstructured diversity and instead see the largest gains from data analogies, i.e. paired demonstrations that align scenes, tasks, and/or trajectories across different embodiments. Informed by the simulation results, we improve real-world cross-embodiment transfer success by an average of $22.5\\%$ over large-scale, unpaired datasets by changing only the composition of the data.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06450",
+      "publishedAt": "2026-03-06T16:42:46Z",
+      "authors": [
+        "Jonathan Yang",
+        "Chelsea Finn",
+        "Dorsa Sadigh"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "데이터 유사성이 효율적인 크로스 임바디먼트 전이를 가능하게 한다",
+      "abstractKo": "일반화된 로봇 정책은 다양한 로봇, 장면 및 관점에서 수집된 시연을 기반으로 훈련됩니다. 그러나 이러한 이질적인 데이터를 어떻게 최적으로 조직하고 확장하여 특정 목표 설정에서 실제로 성능을 향상시킬 수 있는지는 여전히 불분명합니다. 본 연구에서는 로봇 설정 간 전이를 가능하게 하는 데 가장 유용한 시연 데이터의 형태는 무엇인지 질문합니다. 우리는 엔드 이펙터 형태, 로봇 플랫폼 외관 및 카메라 관점을 변화시키는 통제된 실험을 수행하고, 단순히 시연 수를 확장하는 것과 체계적으로 비교하여 그 효과를 분석합니다."
+    },
+    {
+      "id": "arxiv:2603.06356",
+      "title": "Safe Consensus of Cooperative Manipulation with Hierarchical Event-Triggered Control Barrier Functions",
+      "abstract": "Cooperative transport and manipulation of heavy or bulky payloads by multiple manipulators requires coordinated formation tracking, while simultaneously enforcing strict safety constraints in varying environments with limited communication and real-time computation budgets. This paper presents a distributed control framework that achieves consensus coordination with safety guarantees via hierarchical event-triggered control barrier functions (CBFs). We first develop a consensus-based protocol that relies solely on local neighbor information to enforce both translational and rotational consistency in task space. Building on this coordination layer, we propose a three-level hierarchical event-triggered safety architecture with CBFs, which is integrated with a risk-aware leader selection and smooth switching strategy to reduce online computation. The proposed approach is validated through real-world hardware experiments using two Franka manipulators operating with static obstacles, as well as comprehensive simulations demonstrating scalable multi-arm cooperation with dynamic obstacles. Results demonstrate higher precision cooperation under strict safety constraints, achieving substantially reduced computational cost and communication frequency compared to baseline methods.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06356",
+      "publishedAt": "2026-03-06T15:09:07Z",
+      "authors": [
+        "Simiao Zhuang",
+        "Bingkun Huang",
+        "Zewen Yang"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "계층적 이벤트 트리거 제어 장벽 함수에 의한 협력 조작의 안전한 합의",
+      "abstractKo": "여러 조작자가 무겁거나 부피가 큰 화물을 협력적으로 운반하고 조작하기 위해서는 조정된 형상 추적이 필요하며, 동시에 제한된 통신 및 실시간 계산 예산으로 다양한 환경에서 엄격한 안전 제약을 준수해야 합니다. 본 논문에서는 계층적 이벤트 트리거 제어 장벽 함수(CBFs)를 통해 안전 보장을 갖춘 합의 조정을 달성하는 분산 제어 프레임워크를 제시합니다. 우리는 먼저 이동 및 회전 일관성을 모두 보장하기 위해 오직 지역 이웃 정보에만 의존하는 합의 기반 프로토콜을 개발합니다."
+    },
+    {
+      "id": "arxiv:2603.06343",
+      "title": "Open-Source Based and ETSI Compliant Cooperative, Connected, and Automated Mini-Cars",
+      "abstract": "The automotive sector is following a revolutionary path from vehicles controlled by humans to vehicles that will be fully automated, fully connected, and ultimately fully cooperative. Along this road, new cooperative algorithms and protocols will be designed and field tested, which represents a great challenge in terms of costs. In this context, in particular, moving from simulations to practical experiments requires huge investments that are not always affordable and may become a barrier in some cases. To solve this issue and provide the community with an intermediate step, we here propose the use of 1:10 scaled cooperative, autonomous, and connected mini-cars. The mini-car is equipped with a Jetson Orin board running the open Robot Operating System 2 (ROS2), sensors for autonomous operations, and a Raspberry Pi board for connectivity mounting the open source Open Stack for Car (OScar). A key aspect of the proposal is the use of OScar, which implements a full ETSI cooperative-intelligent transport systems (C-ITS) compliant stack. The feasibility and potential of the proposed platform is here demonstrated through the implementation of a case study where the Day-1 intersection collision warning (ICW) application is implemented and validated.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06343",
+      "publishedAt": "2026-03-06T14:48:23Z",
+      "authors": [
+        "Lorenzo Farina",
+        "Federico Gavioli",
+        "Salvatore Iandolo",
+        "Francesco Moretti",
+        "Giuseppe Perrone",
+        "Matteo Piccoli",
+        "Francesco Raviglione",
+        "Marco Rapelli",
+        "Antonio Solida",
+        "Paolo Burgio",
+        "Carlo Augusto Grazia",
+        "Alessandro Bazzi"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.NI"
+      ],
+      "titleKo": "오픈 소스 기반의 ETSI 준수 협력형, 연결형 및 자동화된 미니카",
+      "abstractKo": "자동차 산업은 인간이 제어하는 차량에서 완전 자동화되고, 완전 연결되며, 궁극적으로 완전 협력적인 차량으로 나아가는 혁신적인 경로를 따르고 있습니다. 이 과정에서 새로운 협력 알고리즘과 프로토콜이 설계되고 현장 테스트될 것이며, 이는 비용 측면에서 큰 도전 과제를 나타냅니다. 특히, 시뮬레이션에서 실제 실험으로 이동하는 데는 항상 감당할 수 없는 막대한 투자가 필요하며, 이는 경우에 따라 장벽이 될 수 있습니다. 이 문제를 해결하고 커뮤니티에 중간 단계를 제공하기 위해, 우리는 여기서 제안합니다."
+    },
+    {
+      "id": "arxiv:2603.06280",
+      "title": "SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation",
+      "abstract": "High-quality, long-horizon demonstrations are essential for embodied AI, yet acquiring such data for tightly coupled wheeled mobile manipulators remains a fundamental bottleneck. Unlike fixed-base systems, mobile manipulators require continuous coordination between $SE(2)$ locomotion and precise manipulation, exposing limitations in existing teleoperation and wearable interfaces. We present \\textbf{SuperSuit}, a bimodal data acquisition framework that supports both robot-in-the-loop teleoperation and active demonstration under a shared kinematic interface. Both modalities produce structurally identical joint-space trajectories, enabling direct data mixing without modifying downstream policies. For locomotion, SuperSuit maps natural human stepping to continuous planar base velocities, eliminating discrete command switches. For manipulation, it employs a strictly isomorphic wearable arm in both modes, while policy training is formulated in a shift-invariant delta-joint representation to mitigate calibration offsets and structural compliance without inverse kinematics. Real-world experiments on long-horizon mobile manipulation tasks show 2.6$\\times$ higher demonstration throughput in active mode compared to a teleoperation baseline, comparable policy performance when substituting teleoperation data with active demonstrations at fixed dataset size, and monotonic performance improvement as active data volume increases. These results indicate that consistent kinematic representations across collection modalities enable scalable data acquisition for long-horizon mobile manipulation.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06280",
+      "publishedAt": "2026-03-06T13:40:30Z",
+      "authors": [
+        "Tongqing Chen",
+        "Hang Wu",
+        "Jiasen Wang",
+        "Xiaotao Li",
+        "Zhu Jin",
+        "Lu Fang"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "슈퍼수트: 확장 가능한 모바일 조작을 위한 동형 이중 모드 인터페이스",
+      "abstractKo": "고품질의 장기 시연은 구현된 AI에 필수적이지만, 밀접하게 결합된 바퀴형 모바일 조작기를 위한 이러한 데이터를 획득하는 것은 여전히 근본적인 병목 현상입니다. 고정 기반 시스템과 달리, 모바일 조작기는 $SE(2)$ 이동과 정밀한 조작 간의 지속적인 조정이 필요하여 기존의 원격 조작 및 착용형 인터페이스의 한계를 드러냅니다. 우리는 로봇-루프 원격 조작과 공유 운동학 인터페이스 하의 능동적 시연을 지원하는 이중 모드 데이터 수집 프레임워크인 \textbf{슈퍼수트}를 제시합니다. 두 가지 모드는 구조적으로"
+    },
+    {
+      "id": "arxiv:2603.06279",
+      "title": "Can we Trust Unreliable Voxels? Exploring 3D Semantic Occupancy Prediction under Label Noise",
+      "abstract": "3D semantic occupancy prediction is a cornerstone of robotic perception, yet real-world voxel annotations are inherently corrupted by structural artifacts and dynamic trailing effects. This raises a critical but underexplored question: can autonomous systems safely rely on such unreliable occupancy supervision? To systematically investigate this issue, we establish OccNL, the first benchmark dedicated to 3D occupancy under occupancy-asymmetric and dynamic trailing noise. Our analysis reveals a fundamental domain gap: state-of-the-art 2D label noise learning strategies collapse catastrophically in sparse 3D voxel spaces, exposing a critical vulnerability in existing paradigms. To address this challenge, we propose DPR-Occ, a principled label noise-robust framework that constructs reliable supervision through dual-source partial label reasoning. By synergizing temporal model memory with representation-level structural affinity, DPR-Occ dynamically expands and prunes candidate label sets to preserve true semantics while suppressing noise propagation. Extensive experiments on SemanticKITTI demonstrate that DPR-Occ prevents geometric and semantic collapse under extreme corruption. Notably, even at 90% label noise, our method achieves significant performance gains (up to 2.57% mIoU and 13.91% IoU) over existing label noise learning baselines adapted to the 3D occupancy prediction task. By bridging label noise learning and 3D perception, OccNL and DPR-Occ provide a reliable foundation for safety-critical robotic perception in dynamic environments. The benchmark and source code will be made publicly available at https://github.com/mylwx/OccNL.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06279",
+      "publishedAt": "2026-03-06T13:40:09Z",
+      "authors": [
+        "Wenxin Li",
+        "Kunyu Peng",
+        "Di Wen",
+        "Junwei Zheng",
+        "Jiale Wei",
+        "Mengfei Duan",
+        "Yuheng Zhang",
+        "Rui Fan",
+        "Kailun Yang"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO",
+        "eess.IV"
+      ],
+      "titleKo": "신뢰할 수 없는 복셀을 믿을 수 있을까? 레이블 노이즈 하의 3D 의미적 점유 예측 탐구",
+      "abstractKo": "3D 의미적 점유 예측은 로봇 인식의 초석이지만, 실제 세계의 복셀 주석은 본질적으로 구조적 아티팩트와 동적 잔여 효과에 의해 손상됩니다. 이는 자율 시스템이 이러한 신뢰할 수 없는 점유 감독에 안전하게 의존할 수 있는지에 대한 중요한 그러나 충분히 탐구되지 않은 질문을 제기합니다. 이 문제를 체계적으로 조사하기 위해, 우리는 점유 비대칭 및 동적 잔여 노이즈 하의 3D 점유에 전념하는 첫 번째 벤치마크인 OccNL을 설정합니다. 우리의 분석은 근본적인 도메인 격차를 드러냅니다: 최첨단 2D 레이블 노이즈 학습 전략이 재앙적으로 붕괴됩니다."
+    },
+    {
+      "id": "arxiv:2603.06266",
+      "title": "Towards Robotic Lake Maintenance: Integrating SONAR and Satellite Data to Assist Human Operators",
+      "abstract": "Artificial Water Bodies (AWBs) are human-made systems that require continuous monitoring due to their artificial biological processes. These systems demand regular maintenance to manage their ecosystems effectively. As a result of these artificial conditions, underwater vegetation can grow rapidly and must be harvested to preserve the ecological balance. This paper proposes a two-step approach to support targeted weed harvesting for the maintenance of artificial lakes. The first step is the initial detection of Submerged Aquatic Vegetation (SAV), also referred to in this paper as areas of interest, is performed using satellite-derived indices, specifically the Aquatic Plants and Algae (APA) index, which highlights submerged vegetation in water bodies. Subsequently, an Unmanned Surface Vehicle (USV) equipped with multibeam SOund NAvigation and Ranging (SONAR) performs high-resolution bathymetric mapping to locate and quantify aquatic vegetation precisely. This two-stage approach offers an effective human-robot collaboration, where satellite data guides the USV missions and boat skippers leverage detailed SONAR maps for targeted harvesting. This setup narrows the search space and reduces manual workload from human operators, making the harvesting process less labour-intensive for operators. Preliminary results demonstrate the feasibility of integrating satellite imagery and underwater acoustic sensing to improve vegetation management in artificial lakes.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06266",
+      "publishedAt": "2026-03-06T13:30:50Z",
+      "authors": [
+        "Ahmed H. Elsayed",
+        "Christoph Manss",
+        "Tarek A. El-Mihoub",
+        "Andrej Lejman",
+        "Frederic Stahl"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "로봇 호수 유지 관리: 인간 작업자를 지원하기 위한 SONAR 및 위성 데이터 통합",
+      "abstractKo": "인공 수역(Artificial Water Bodies, AWBs)은 인위적인 생물학적 과정으로 인해 지속적인 모니터링이 필요한 인간이 만든 시스템입니다. 이러한 시스템은 생태계를 효과적으로 관리하기 위해 정기적인 유지 관리가 필요합니다. 인위적인 조건으로 인해 수중 식물이 빠르게 성장할 수 있으며, 생태적 균형을 유지하기 위해 수확해야 합니다. 본 논문은 인공 호수의 유지 관리를 위한 표적 잡초 수확을 지원하는 두 단계 접근 방식을 제안합니다. 첫 번째 단계는 잠수 식물(Submerged Aquatic Vegetation, SAV)의 초기 탐지로, 본 논문에서는 이를 '관심 지역'으로 언급합니다."
+    },
+    {
+      "id": "arxiv:2603.06254",
+      "title": "NOVA: Next-step Open-Vocabulary Autoregression for 3D Multi-Object Tracking in Autonomous Driving",
+      "abstract": "Generalizing across unknown targets is critical for open-world perception, yet existing 3D Multi-Object Tracking (3D MOT) pipelines remain limited by closed-set assumptions and ``semantic-blind'' heuristics. To address this, we propose Next-step Open-Vocabulary Autoregression (NOVA), an innovative paradigm that shifts 3D tracking from traditional fragmented distance-based matching toward generative spatio-temporal semantic modeling. NOVA reformulates 3D trajectories as structured spatio-temporal semantic sequences, enabling the simultaneous encoding of physical motion continuity and deep linguistic priors. By leveraging the autoregressive capabilities of Large Language Models (LLMs), we transform the tracking task into a principled process of next-step sequence completion. This mechanism allows the model to explicitly utilize the hierarchical structure of language space to resolve fine-grained semantic ambiguities and maintain identity consistency across complex long-range sequences through high-level commonsense reasoning. Extensive experiments on nuScenes, V2X-Seq-SPD, and KITTI demonstrate the superior performance of NOVA. Notably, on the nuScenes dataset, NOVA achieves an AMOTA of 22.41% for Novel categories, yielding a significant 20.21% absolute improvement over the baseline. These gains are realized through a compact 0.5B autoregressive model. Code will be available at https://github.com/xifen523/NOVA.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06254",
+      "publishedAt": "2026-03-06T13:12:28Z",
+      "authors": [
+        "Kai Luo",
+        "Xu Wang",
+        "Rui Fan",
+        "Kailun Yang"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO",
+        "eess.IV"
+      ],
+      "titleKo": "NOVA: 자율주행에서 3D 다중 객체 추적을 위한 다음 단계 개방 어휘 자기 회귀",
+      "abstractKo": "알려지지 않은 대상에 대한 일반화는 개방형 세계 인식에 있어 매우 중요하지만, 기존의 3D 다중 객체 추적(3D MOT) 파이프라인은 폐쇄 집합 가정과 '의미 비맹' 휴리스틱에 의해 제한되고 있습니다. 이를 해결하기 위해, 우리는 다음 단계 개방 어휘 자기 회귀(NOVA)를 제안합니다. 이는 전통적인 단편화된 거리 기반 매칭에서 생성적 시공간 의미 모델링으로 3D 추적을 전환하는 혁신적인 패러다임입니다. NOVA는 3D 궤적을 구조화된 시공간 의미 시퀀스로 재구성하여 물리적 운동 연속성과 깊은 언어적 의미를 동시에 인코딩할 수 있게 합니다."
+    },
+    {
+      "id": "arxiv:2603.06231",
+      "title": "TaPD: Temporal-adaptive Progressive Distillation for Observation-Adaptive Trajectory Forecasting in Autonomous Driving",
+      "abstract": "Trajectory prediction is essential for autonomous driving, enabling vehicles to anticipate the motion of surrounding agents to support safe planning. However, most existing predictors assume fixed-length histories and suffer substantial performance degradation when observations are variable or extremely short in real-world settings (e.g., due to occlusion or a limited sensing range). We propose TaPD (Temporal-adaptive Progressive Distillation), a unified plug-and-play framework for observation-adaptive trajectory forecasting under variable history lengths. TaPD comprises two cooperative modules: an Observation-Adaptive Forecaster (OAF) for future prediction and a Temporal Backfilling Module (TBM) for explicit reconstruction of the past. OAF is built on progressive knowledge distillation (PKD), which transfers motion pattern knowledge from long-horizon \"teachers\" to short-horizon \"students\" via hierarchical feature regression, enabling short observations to recover richer motion context. We further introduce a cosine-annealed distillation weighting scheme to balance forecasting supervision and feature alignment, improving optimization stability and cross-length consistency. For extremely short histories where implicit alignment is insufficient, TBM backfills missing historical segments conditioned on scene evolution, producing context-rich trajectories that strengthen PKD and thereby improve OAF. We employ a decoupled pretrain-reconstruct-finetune protocol to preserve real-motion priors while adapting to backfilled inputs. Extensive experiments on Argoverse 1 and Argoverse 2 show that TaPD consistently outperforms strong baselines across all observation lengths, delivers especially large gains under very short inputs, and improves other predictors (e.g., HiVT) in a plug-and-play manner. Code will be available at https://github.com/zhouhao94/TaPD.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06231",
+      "publishedAt": "2026-03-06T12:51:32Z",
+      "authors": [
+        "Mingyu Fan",
+        "Yi Liu",
+        "Hao Zhou",
+        "Deheng Qian",
+        "Mohammad Haziq Khan",
+        "Matthias Raetsch"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "titleKo": "TaPD: 관찰 적응형 경로 예측을 위한 시간 적응형 점진적 증류",
+      "abstractKo": "경로 예측은 자율 주행에 필수적이며, 차량이 주변 에이전트의 움직임을 예측하여 안전한 계획을 지원할 수 있도록 합니다. 그러나 기존의 대부분 예측기는 고정 길이의 이력을 가정하며, 실제 환경에서 관측이 변동적이거나 매우 짧을 경우(예: 가림 현상 또는 제한된 감지 범위로 인해) 성능이 크게 저하됩니다. 우리는 변동 이력 길이에 따른 관찰 적응형 경로 예측을 위한 통합형 플러그 앤 플레이 프레임워크인 TaPD(시간 적응형 점진적 증류)를 제안합니다. TaPD는 두 개의 협력 모듈로 구성됩니다."
+    },
+    {
+      "id": "arxiv:2603.06218",
+      "title": "Few-Shot Neural Differentiable Simulator: Real-to-Sim Rigid-Contact Modeling",
+      "abstract": "Accurate physics simulation is essential for robotic learning and control, yet analytical simulators often fail to capture complex contact dynamics, while learning-based simulators typically require large amounts of costly real-world data. To bridge this gap, we propose a few-shot real-to-sim approach that combines the physical consistency of analytical formulations with the representational capacity of graph neural network (GNN)-based models. Using only a small amount of real-world data, our method calibrates analytical simulators to generate large-scale synthetic datasets that capture diverse contact interactions. On this foundation, we introduce a mesh-based GNN that implicitly models rigid-body forward dynamics and derive surrogate gradients for collision detection, achieving full differentiability. Experimental results demonstrate that our approach enables learning-based simulators to outperform differentiable baselines in replicating real-world trajectories. In addition, the differentiable design supports gradient-based optimization, which we validate through simulation-based policy learning in multi-object interaction scenarios. Extensive experiments show that our framework not only improves simulation fidelity with minimal supervision but also increases the efficiency of policy learning. Taken together, these findings suggest that differentiable simulation with few-shot real-world grounding provides a powerful direction for advancing future robotic manipulation and control.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06218",
+      "publishedAt": "2026-03-06T12:32:56Z",
+      "authors": [
+        "Zhenhao Huang",
+        "Siyuan Luo",
+        "Bingyang Zhou",
+        "Ziqiu Zeng",
+        "Jason Pho",
+        "Fan Shi"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "소수 샷 신경 미분 가능 시뮬레이터: 실제에서 시뮬레이션으로의 강체 접촉 모델링",
+      "abstractKo": "정확한 물리 시뮬레이션은 로봇 학습 및 제어에 필수적이지만, 분석적 시뮬레이터는 종종 복잡한 접촉 동역학을 포착하지 못하며, 학습 기반 시뮬레이터는 일반적으로 많은 양의 비용이 드는 실제 데이터를 필요로 합니다. 이러한 격차를 해소하기 위해, 우리는 분석적 공식의 물리적 일관성과 그래프 신경망(GNN) 기반 모델의 표현 능력을 결합한 소수 샷 실제에서 시뮬레이션으로의 접근 방식을 제안합니다. 소량의 실제 데이터만을 사용하여, 우리의 방법은 분석적 시뮬레이터를 보정하여 다양한 특성을 포착하는 대규모 합성 데이터셋을 생성합니다."
+    },
+    {
+      "id": "arxiv:2603.06210",
+      "title": "VG3S: Visual Geometry Grounded Gaussian Splatting for Semantic Occupancy Prediction",
+      "abstract": "3D semantic occupancy prediction has become a crucial perception task for comprehensive scene understanding in autonomous driving. While recent advances have explored 3D Gaussian splatting for occupancy modeling to substantially reduce computational overhead, the generation of high-quality 3D Gaussians relies heavily on accurate geometric cues, which are often insufficient in purely vision-centric paradigms. To bridge this gap, we advocate for injecting the strong geometric grounding capability from Vision Foundation Models (VFMs) into occupancy prediction. In this regard, we introduce Visual Geometry Grounded Gaussian Splatting (VG3S), a novel framework that empowers Gaussian-based occupancy prediction with cross-view 3D geometric grounding. Specifically, to fully exploit the rich 3D geometric priors from a frozen VFM, we propose a plug-and-play hierarchical geometric feature adapter, which can effectively transform generic VFM tokens via feature aggregation, task-specific alignment, and multi-scale restructuring. Extensive experiments on the nuScenes occupancy benchmark demonstrate that VG3S achieves remarkable improvements of 12.6% in IoU and 7.5% in mIoU over the baseline. Furthermore, we show that VG3S generalizes seamlessly across diverse VFMs, consistently enhancing occupancy prediction accuracy and firmly underscoring the immense value of integrating priors derived from powerful, pre-trained geometry-grounded VFMs.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06210",
+      "publishedAt": "2026-03-06T12:26:47Z",
+      "authors": [
+        "Xiaoyang Yan",
+        "Muleilan Pei",
+        "Shaojie Shen"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "titleKo": "VG3S: 시각 기하학 기반 가우시안 스플래팅을 통한 의미론적 점유 예측",
+      "abstractKo": "3D 의미론적 점유 예측은 자율 주행에서 포괄적인 장면 이해를 위한 중요한 인식 작업이 되었습니다. 최근의 발전은 점유 모델링을 위한 3D 가우시안 스플래팅을 탐구하여 계산 오버헤드를 상당히 줄였지만, 고품질 3D 가우시안 생성은 종종 순수한 비전 중심 패러다임에서는 부족한 정확한 기하학적 단서에 크게 의존합니다. 이러한 격차를 해소하기 위해, 우리는 비전 기초 모델(VFMs)에서 강력한 기하학적 기반 능력을 점유 예측에 주입할 것을 제안합니다. 이와 관련하여, 우리는 시각적..."
+    },
+    {
+      "id": "arxiv:2603.06205",
+      "title": "KISS-IMU: Self-supervised Inertial Odometry with Motion-balanced Learning and Uncertainty-aware Inference",
+      "abstract": "Inertial measurement units (IMUs), which provide high-frequency linear acceleration and angular velocity measurements, serve as fundamental sensing modalities in robotic systems. Recent advances in deep neural networks have led to remarkable progress in inertial odometry. However, the heavy reliance on ground truth data during training fundamentally limits scalability and generalization to unseen and diverse environments. We propose KISS-IMU, a novel self-supervised inertial odometry framework that eliminates ground truth dependency by leveraging simple LiDAR-based ICP registration and pose graph optimization as a supervisory signal. Our approach embodies two key principles: keeping the IMU stable through motion-aware balanced training and keeping the IMU strong through uncertainty-driven adaptive weighting during inference. To evaluate performance across diverse motion patterns and scenarios, we conducted comprehensive experiments on various real-world platforms, including quadruped robots. Importantly, we train only the IMU network in a self-supervised manner, with LiDAR serving solely as a lightweight supervisory signal rather than requiring additional learnable processes. This design enables the framework to ensure robustness without relying on joint multi-modal learning or ground truth supervision. The supplementary materials are available at https://sparolab.github.io/research/kiss_imu.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06205",
+      "publishedAt": "2026-03-06T12:22:14Z",
+      "authors": [
+        "Jiwon Choi",
+        "Hogyun Kim",
+        "Geonmo Yang",
+        "Juhui Lee",
+        "Younggun Cho"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "KISS-IMU: 모션 균형 학습과 불확실성 인식을 통한 자기 지도 관성 항법",
+      "abstractKo": "고주파 선형 가속도 및 각속도 측정을 제공하는 관성 측정 장치(IMU)는 로봇 시스템에서 기본적인 센싱 모달리티로 작용합니다. 최근 심층 신경망의 발전은 관성 항법에서 놀라운 진전을 가져왔습니다. 그러나 훈련 중 실제 데이터에 대한 의존도가 높아지면서 미지의 다양한 환경에 대한 확장성과 일반화가 근본적으로 제한됩니다. 우리는 간단한 LiDAR 기반 ICP 등록 및 자세 추정을 활용하여 실제 데이터 의존성을 제거하는 새로운 자기 지도 관성 항법 프레임워크인 KISS-IMU를 제안합니다."
+    },
+    {
+      "id": "arxiv:2603.06190",
+      "title": "DreamToNav: Generalizable Navigation for Robots via Generative Video Planning",
+      "abstract": "We present DreamToNav, a novel autonomous robot framework that uses generative video models to enable intuitive, human-in-the-loop control. Instead of relying on rigid waypoint navigation, users provide natural language prompts (e.g. ``Follow the person carefully''), which the system translates into executable motion. Our pipeline first employs Qwen 2.5-VL-7B-Instruct to refine vague user instructions into precise visual descriptions. These descriptions condition NVIDIA Cosmos 2.5, a state-of-the-art video foundation model, to synthesize a physically consistent video sequence of the robot performing the task. From this synthetic video, we extract a valid kinematic path using visual pose estimation, robot detection and trajectory recovery. By treating video generation as a planning engine, DreamToNav allows robots to visually \"dream\" complex behaviors before executing them, providing a unified framework for obstacle avoidance and goal-directed navigation without task-specific engineering. We evaluate the approach on both a wheeled mobile robot and a quadruped robot in indoor navigation tasks. DreamToNav achieves a success rate of 76.7%, with final goal errors typically within 0.05-0.10 m and trajectory tracking errors below 0.15 m. These results demonstrate that trajectories extracted from generative video predictions can be reliably executed on physical robots across different locomotion platforms.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06190",
+      "publishedAt": "2026-03-06T11:57:10Z",
+      "authors": [
+        "Valerii Serpiva",
+        "Jeffrin Sam",
+        "Chidera Simon",
+        "Hajira Amjad",
+        "Iana Zhura",
+        "Artem Lykov",
+        "Dzmitry Tsetserukou"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "DreamToNav: 생성적 비디오 계획을 통한 로봇의 일반화된 내비게이션",
+      "abstractKo": "우리는 생성적 비디오 모델을 사용하여 직관적이고 인간 중심의 제어를 가능하게 하는 새로운 자율 로봇 프레임워크인 DreamToNav를 소개합니다. 사용자가 자연어 프롬프트(예: \"사람을 조심스럽게 따라가세요\")를 제공하는 대신, 시스템은 이를 실행 가능한 동작으로 변환합니다. 우리의 파이프라인은 먼저 Qwen 2.5-VL-7B-Instruct를 사용하여 모호한 사용자 지침을 정확한 시각적 설명으로 다듬습니다. 이러한 설명은 NVIDIA Cosmos 2.5라는 최첨단 비디오 기초 모델을 조건으로 하여 로봇의 물리적으로 일관된 비디오 시퀀스를 합성합니다."
+    },
+    {
+      "id": "arxiv:2603.06163",
+      "title": "Dual-Agent Multiple-Model Reinforcement Learning for Event-Triggered Human-Robot Co-Adaptation in Decoupled Task Spaces",
+      "abstract": "This paper presents a shared-control rehabilitation policy for a custom 6-degree-of-freedom (6-DoF) upper-limb robot that decomposes complex reaching tasks into decoupled spatial axes. The patient governs the primary reaching direction using binary commands, while the robot autonomously manages orthogonal corrective motions. Because traditional fixed-frequency control often induces trajectory oscillations due to variable inverse-kinematics execution times, an event-driven progression strategy is proposed. This architecture triggers subsequent control actions only when the end-effector enters an admission sphere centred on the immediate target waypoint, and was validated in a semi-virtual setup linking a physical pressure sensor to a MuJoCo simulation. To optimise human--robot co-adaptation safely and efficiently, this study introduces Dual Agent Multiple Model Reinforcement Learning (DAMMRL). This framework discretises decision characteristics: the human agent selects the admission sphere radius to reflect their inherent speed--accuracy trade-off, while the robot agent dynamically adjusts its 3D Cartesian step magnitudes to complement the user's cognitive state. Trained in simulation and deployed across mixed environments, this event-triggered DAMMRL approach effectively suppresses waypoint chatter, balances spatial precision with temporal efficiency, and significantly improves success rates in object acquisition tasks.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06163",
+      "publishedAt": "2026-03-06T11:15:10Z",
+      "authors": [
+        "Yaqi Li",
+        "Zhengqi Han",
+        "Huifang Liu",
+        "Steven W. Su"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "이벤트 기반 인간-로봇 공동 적응을 위한 이중 에이전트 다중 모델 강화 학습",
+      "abstractKo": "이 논문은 복잡한 도달 작업을 분리된 공간 축으로 분해하는 맞춤형 6자유도(6-DoF) 상지 로봇을 위한 공유 제어 재활 정책을 제시합니다. 환자는 이진 명령을 사용하여 주요 도달 방향을 제어하고, 로봇은 자율적으로 직교 보정 동작을 관리합니다. 전통적인 고정 주파수 제어는 가변 역운동학 실행 시간으로 인해 종종 궤적 진동을 유발하므로, 이벤트 기반 진행 전략이 제안됩니다. 이 아키텍처는 최종 효과기가 특정 조건에 도달했을 때만 후속 제어 동작을 트리거합니다."
+    },
+    {
+      "id": "arxiv:2603.06130",
+      "title": "A Hazard-Informed Data Pipeline for Robotics Physical Safety",
+      "abstract": "This report presents a structured Robotics Physical Safety Framework based on explicit asset declaration, systematic vulnerability enumeration, and hazard-driven synthetic data generation. The approach bridges classical risk engineering with modern machine learning pipelines, enabling safety envelope learning grounded in a formalized hazard ontology. The key contribution of this framework is the alignment between classical safety engineering, digital twin simulation, synthetic data generation, and machine learning model training.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2603.06130",
+      "publishedAt": "2026-03-06T10:38:30Z",
+      "authors": [
+        "Alexei Odinokov",
+        "Rostislav Yavorskiy"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "titleKo": "위험 정보 기반 로보틱스 물리적 안전 데이터 파이프라인",
+      "abstractKo": "이 보고서는 명시적인 자산 선언, 체계적인 취약성 열거 및 위험 기반 합성 데이터 생성을 기반으로 한 구조화된 로보틱스 물리적 안전 프레임워크를 제시합니다. 이 접근 방식은 고전적인 위험 공학과 현대 기계 학습 파이프라인을 연결하여 공식화된 위험 온톨로지에 기반한 안전 경계 학습을 가능하게 합니다. 이 프레임워크의 주요 기여는 고전적인 안전 공학, 디지털 트윈 시뮬레이션, 합성 데이터 생성 및 기계 학습 모델 훈련 간의 정렬입니다."
+    },
+    {
+      "id": "robotreport:4903ae25e766",
+      "title": "Humanoid developer Agility Robotics rebrands",
+      "abstract": "The company said the rebrand reflects its readiness to scale deployments and lead humanoid adoption across new industries. The post Humanoid developer Agility Robotics rebrands appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/humanoid-developer-agility-robotics-rebrands/",
+      "publishedAt": "2026-03-07T14:00:48.000Z",
+      "authors": [
+        "Mike Oitzman"
+      ],
+      "tags": [],
+      "titleKo": "휴머노이드 개발사 아질리티 로보틱스, 브랜드 리뉴얼",
+      "abstractKo": "회사는 이번 브랜드 리뉴얼이 배포 규모 확대와 새로운 산업에서의 휴머노이드 채택을 선도할 준비가 되었음을 반영한다고 밝혔습니다. '휴머노이드 개발사 아질리티 로보틱스, 브랜드 리뉴얼'이라는 게시물이 로봇 리포트에 처음으로 게재되었습니다."
+    },
+    {
+      "id": "robotreport:4bf0d1285580",
+      "title": "Plug-and-Play AI: Transforming robotics with modular skills",
+      "abstract": "Our guest this week is Dinesh Narayanan, Head of Commercialization, General Robotics. The post Plug-and-Play AI: Transforming robotics with modular skills appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/plug-and-play-ai-transforming-robotics-with-modular-skills/",
+      "publishedAt": "2026-03-06T23:34:48.000Z",
+      "authors": [
+        "Mike Oitzman"
+      ],
+      "tags": [],
+      "titleKo": "플러그 앤 플레이 AI: 모듈형 기술로 로보틱스 혁신하기",
+      "abstractKo": "이번 주의 게스트는 제너럴 로보틱스의 상용화 책임자인 디네시 나라얀입니다. '플러그 앤 플레이 AI: 모듈형 기술로 로보틱스 혁신하기'라는 글은 로봇 리포트에 처음 게재되었습니다."
+    },
+    {
+      "id": "robotreport:2084ceff0936",
+      "title": "Simbe Tally shelf-scanning robot achieves UL 3300 certification",
+      "abstract": "As part of the UL 3300 evaluation, Tally passed more than 40 safety tests, demonstrating its ability to operate safely in retail settings. The post Simbe Tally shelf-scanning robot achieves UL 3300 certification appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/simbe-tally-shelf-scanning-robot-achieves-ul-3300-certification/",
+      "publishedAt": "2026-03-06T20:06:37.000Z",
+      "authors": [
+        "The Robot Report Staff"
+      ],
+      "tags": [],
+      "titleKo": "심베 탈리 선반 스캐닝 로봇, UL 3300 인증 획득",
+      "abstractKo": "UL 3300 평가의 일환으로, 탈리는 40개 이상의 안전 테스트를 통과하여 소매 환경에서 안전하게 작동할 수 있는 능력을 입증했습니다. 이 글은 '심베 탈리 선반 스캐닝 로봇, UL 3300 인증 획득'이라는 제목으로 로봇 리포트에 처음 게재되었습니다."
+    },
+    {
+      "id": "robotreport:52bc9044bdf0",
+      "title": "Vicarious Surgical faces NYSE delisting again",
+      "abstract": "Vicarious Surgical faces NYSE delisting after its market capitalization fell below the required $15 million threshold. The post Vicarious Surgical faces NYSE delisting again appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/vicarious-surgical-faces-nyse-delisting-again/",
+      "publishedAt": "2026-03-05T22:49:12.000Z",
+      "authors": [
+        "Sean Whooley"
+      ],
+      "tags": [],
+      "titleKo": "비카리어스 서지컬, 다시 한 번 NYSE 상장 폐지 위기",
+      "abstractKo": "비카리어스 서지컬은 시가총액이 요구되는 1,500만 달러 이하로 떨어지면서 NYSE 상장 폐지 위기에 직면했습니다. 이 글은 '비카리어스 서지컬, 다시 한 번 NYSE 상장 폐지 위기'라는 제목으로 로봇 보고서에 처음 게재되었습니다."
+    },
+    {
+      "id": "robotreport:c412ea19a6c0",
+      "title": "11 women shaping the future of robotics",
+      "abstract": "The IFR said it hopes the list will give women in the robotics industry more visibility and acknowledgment. The post 11 women shaping the future of robotics appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/11-women-shaping-the-future-of-robotics/",
+      "publishedAt": "2026-03-05T21:58:05.000Z",
+      "authors": [
+        "Brianna Wessling"
+      ],
+      "tags": [],
+      "titleKo": "로보틱스의 미래를 형성하는 11명의 여성",
+      "abstractKo": "IFR은 이 목록이 로보틱스 산업의 여성들에게 더 많은 가시성과 인정을 제공하기를 희망한다고 밝혔습니다. '로보틱스의 미래를 형성하는 11명의 여성'이라는 게시물은 The Robot Report에 처음 게재되었습니다."
+    },
+    {
+      "id": "robotreport:54b741feb966",
+      "title": "Tesollo and Techman Robot unveil robot for high-mix, low-volume production",
+      "abstract": "Tesollo demonstrated its DG-3F-M articulated gripper with Techman's TM5S cobot arm for tasks such as bin picking and assembly. The post Tesollo and Techman Robot unveil robot for high-mix, low-volume production appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/tesollo-techman-robot-unveil-robot-high-mix-low-volume-production/",
+      "publishedAt": "2026-03-05T20:37:40.000Z",
+      "authors": [
+        "Eugene Demaitre"
+      ],
+      "tags": [],
+      "titleKo": "테솔로와 테크맨 로봇, 고혼합 저용량 생산을 위한 로봇 공개",
+      "abstractKo": "테솔로는 Techman의 TM5S 협동 로봇 팔과 함께 DG-3F-M 관절 그리퍼를 시연하며, 이 로봇이 빈 픽킹 및 조립과 같은 작업에 활용될 수 있음을 보여주었습니다. 이 게시물은 '테솔로와 테크맨 로봇, 고혼합 저용량 생산을 위한 로봇 공개'라는 제목으로 로봇 리포트에 처음 게재되었습니다."
+    },
+    {
+      "id": "robotreport:b014ea11b7c2",
+      "title": "Dexterity unveils Foresight world model for truck loading",
+      "abstract": "Foresight is Dexterity's physics-consistent world model, a real-time, transactable representation of the physical environment. The post Dexterity unveils Foresight world model for truck loading appeared first on The Robot Report .",
+      "source": "robotreport",
+      "url": "https://www.therobotreport.com/dexterity-unveils-foresight-world-model-for-truck-loading/",
+      "publishedAt": "2026-03-05T19:29:48.000Z",
+      "authors": [
+        "The Robot Report Staff"
+      ],
+      "tags": [],
+      "titleKo": "덱스터리, 트럭 적재를 위한 포어사이트 세계 모델 공개",
+      "abstractKo": "포어사이트는 덱스터리의 물리학 일관성 세계 모델로, 물리적 환경의 실시간 거래 가능한 표현입니다. 이 글은 '덱스터리, 트럭 적재를 위한 포어사이트 세계 모델 공개'에서 처음 게시되었습니다."
+    },
+    {
+      "id": "ieeespectrum:0cd33de42554",
+      "title": "Video Friday: A Robot Hand With Artificial Muscles and Tendons",
+      "abstract": "Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. ICRA 2026 : 1–5 June 2026, VIENNA Enjoy today’s videos! The functional replication and actuation of complex structures inspired by nature is a longstanding goal for humanity. Creating such complex structures combining soft and rigid features and actuating them with artificial muscles would further our understanding of natural kinematic structures. We pr",
+      "source": "ieeespectrum",
+      "url": "https://spectrum.ieee.org/video-friday-robot-hand-artificial-muscles",
+      "publishedAt": "2026-03-06T16:00:05.000Z",
+      "authors": [
+        "Evan Ackerman"
+      ],
+      "tags": [],
+      "titleKo": "비디오 금요일: 인공 근육과 힘줄을 가진 로봇 손",
+      "abstractKo": "비디오 금요일은 IEEE 스펙트럼 로보틱스 팀이 수집한 멋진 로보틱스 비디오의 주간 선택입니다. 우리는 또한 향후 몇 개월 동안의 로보틱스 이벤트 일정도 매주 게시합니다. 포함할 이벤트가 있다면 저희에게 보내주세요. ICRA 2026: 2026년 6월 1일~5일, 비엔나. 오늘의 비디오를 즐기세요! 자연에서 영감을 받은 복잡한 구조의 기능적 복제 및 작동은 인류의 오랜 목표입니다. 인공 근육으로 작동하는 부드럽고 단단한 특징을 결합한 복잡한 구조를 만드는 것은 자연의 운동학적 구조에 대한 우리의 이해를 더욱 발전시킬 것입니다."
+    },
+    {
+      "id": "robohub:43013e41bd35",
+      "title": "Robot Talk Episode 147 – Miniature living robots, with Maria Guix",
+      "abstract": "Claire chatted to Maria Guix from the University of Barcelona about combining electronics and biology to create biohybrid robots with emergent properties. Maria Guix is a chemist and nanotechnology researcher in the University of Barcelona’s ChemInFlow lab, developing miniaturised living robots and integrating flexible sensors into microfluidic platforms to better understand biohybrid robotic platforms. Her [&#8230;]",
+      "source": "robohub",
+      "url": "https://robohub.org/robot-talk-episode-147-miniature-living-robots-with-maria-guix/",
+      "publishedAt": "2026-03-06T13:37:45.000Z",
+      "authors": [
+        "Robot Talk"
+      ],
+      "tags": [],
+      "titleKo": "로봇 토크 에피소드 147 – 미니어처 생체 로봇, 마리아 기스와 함께",
+      "abstractKo": "클레어는 바르셀로나 대학교의 마리아 기스와 대화하며 전자공학과 생물학을 결합하여 emergent properties를 가진 바이오하이브리드 로봇을 만드는 방법에 대해 이야기했습니다. 마리아 기스는 바르셀로나 대학교의 ChemInFlow 연구실에서 화학자이자 나노기술 연구원으로, 미니어처 생체 로봇을 개발하고 유연한 센서를 마이크로플루이딕 플랫폼에 통합하여 바이오하이브리드 로봇 플랫폼을 더 잘 이해하기 위해 노력하고 있습니다."
+    },
+    {
+      "id": "robohub:55bb9a1e5133",
+      "title": "Developing an optical tactile sensor for tracking head motion during radiotherapy: an interview with Bhoomika Gandhi",
+      "abstract": "Illustration of the radiotherapy room and the occlusion problem faced by ceiling-mounted cameras in this application. What was the topic of your PhD research and why was it an interesting area? My topic of research was developing an optical tactile sensor to track head motion during radiotherapy. I worked on both the hardware and software [&#8230;]",
+      "source": "robohub",
+      "url": "https://robohub.org/developing-an-optical-tactile-sensor-for-tracking-head-motion-during-radiotherapy-an-interview-with-bhoomika-gandhi/",
+      "publishedAt": "2026-03-05T11:35:06.000Z",
+      "authors": [
+        "Ella Scallan"
+      ],
+      "tags": [],
+      "titleKo": "방사선 치료 중 머리 움직임 추적을 위한 광학 촉각 센서 개발: 부미카 간디와의 인터뷰",
+      "abstractKo": "방사선 치료실의 일러스트와 이 응용 프로그램에서 천장에 장착된 카메라가 직면한 가림 문제. 당신의 박사 연구 주제는 무엇이었고 왜 흥미로운 분야였나요? 제 연구 주제는 방사선 치료 중 머리 움직임을 추적하기 위한 광학 촉각 센서를 개발하는 것이었습니다. 저는 하드웨어와 소프트웨어 모두에서 작업했습니다."
+    },
+    {
+      "id": "rosdiscourse:b5d9b91c469a",
+      "title": "TurtleBot4 Plans for Lyrical Luth / Ubuntu 26?",
+      "abstract": "Is anyone planning to try building the Turtlebot4 (and Create3) packages on Lyrical Luth / Ubuntu 26? The Lyrical Luth Test Party will probably launch May 1st, with official release usually May 23rd. (Understandably) we didn’t see a Kilted Kaiju release for Turtlebot4, but Lyrical Luth will be another Long Term Support distribution. It is not like this is an emergency, since Jazzy won’t EOL until May 2029. Porting the Turtlebot4 code base to Lyrical is beyond my abilities, but thought I would ask the community (if there is still a community). My TB5-WaLI is doing great on Jazzy - recently tryi",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/turtlebot4-plans-for-lyrical-luth-ubuntu-26/53032",
+      "publishedAt": "2026-03-08T13:36:49.000Z",
+      "authors": [
+        "RobotDreams"
+      ],
+      "tags": [],
+      "titleKo": "TurtleBot4의 Lyrical Luth / Ubuntu 26에 대한 계획?",
+      "abstractKo": "누구든지 Lyrical Luth / Ubuntu 26에서 Turtlebot4 (및 Create3) 패키지를 구축해 보려는 계획이 있나요? Lyrical Luth 테스트 파티는 아마도 5월 1일에 시작될 것이며, 공식 릴리스는 보통 5월 23일입니다. (이해할 수 있게도) Turtlebot4에 대한 Kilted Kaiju 릴리스를 보지 못했지만, Lyrical Luth는 또 다른 장기 지원 배포판이 될 것입니다. Jazzy는 2029년 5월까지 EOL되지 않기 때문에 이것이 긴급 상황은 아닙니다. Turtlebot4 코드베이스를 Lyrical로 포팅하는 것은 제 능력을 넘어서는 일이지만, 커뮤니티에 물어보려고 했습니다 (아직 커뮤니티가 있다면). 제 TB5-WaLI는 Jazzy에서 잘 작동하고 있습니다 - 최근에 시도해 보았습니다."
+    },
+    {
+      "id": "rosdiscourse:c310f72335f6",
+      "title": "ROS News for March 2nd, 2026",
+      "abstract": "ROS News for March 2nd, 2026 This week we released the ROSCon Global 2026 artwork as well as our diversity scholarships. We also announced a new regional ROSCon in Belgium. On the meetup front we added events in Mountain View, Nigeria, Krakow, and Medellin along with a laundry list of other events (see the full list below). The Intrinsic AI for Industry Challenge kicked off this week with a series of meetings along with an open source Toolkit for simulating your workcell. Even if you are not competing there are some real gems in the toolkit, so it is worth checking out. Jasmeet Singh has a cou",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/ros-news-for-march-2nd-2026/52998",
+      "publishedAt": "2026-03-06T20:38:40.000Z",
+      "authors": [
+        "Katherine_Scott"
+      ],
+      "tags": [],
+      "titleKo": "2026년 3월 2일 ROS 뉴스",
+      "abstractKo": "2026년 3월 2일 ROS 뉴스 이번 주에는 ROSCon Global 2026 아트워크와 다양성 장학금을 발표했습니다. 또한 벨기에에서 새로운 지역 ROSCon을 발표했습니다. 모임 일정에는 마운틴 뷰, 나이지리아, 크라쿠프, 메델린에서의 이벤트가 추가되었으며, 그 외에도 많은 이벤트가 있습니다(아래 전체 목록 참조). 산업을 위한 내재적 AI 챌린지가 이번 주에 시작되었으며, 작업 셀을 시뮬레이션할 수 있는 오픈 소스 툴킷과 함께 일련의 회의가 진행되었습니다. 경쟁에 참여하지 않더라도 툴킷에는 유용한 자원이 많으니 확인해 볼 가치가 있습니다."
+    },
+    {
+      "id": "rosdiscourse:b526871fcfdc",
+      "title": "LSEP: Open protocol for standardized robot-to-human state communication (light + sound + motion)",
+      "abstract": "Hello ROS community, I’d like to introduce LSEP (Light Signal Expression Protocol) — an open standard I’ve been developing for how robots communicate their internal state to nearby humans using coordinated light signals, sound, and motion cues. The problem LSEP solves: Every robot manufacturer currently invents their own LED patterns and sound cues. There’s no shared vocabulary. A blinking blue light could mean “charging” on one platform and “human detected” on another. With the EU AI Act (Art. 50) now requiring transparency for human-facing AI systems, the industry needs a standardized approa",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/lsep-open-protocol-for-standardized-robot-to-human-state-communication-light-sound-motion/52997",
+      "publishedAt": "2026-03-06T19:13:50.000Z",
+      "authors": [
+        "NemanjaGalic"
+      ],
+      "tags": [],
+      "titleKo": "LSEP: 표준화된 로봇-인간 상태 통신을 위한 개방형 프로토콜 (빛 + 소리 + 동작)",
+      "abstractKo": "안녕하세요 ROS 커뮤니티, 제가 개발하고 있는 LSEP(빛 신호 표현 프로토콜)를 소개하고자 합니다. 이는 로봇이 주변 인간에게 내부 상태를 조정된 빛 신호, 소리, 동작 신호를 사용하여 소통하는 방법에 대한 개방형 표준입니다. LSEP가 해결하는 문제: 현재 모든 로봇 제조업체는 자신만의 LED 패턴과 소리 신호를 발명하고 있습니다. 공유된 어휘가 없습니다. 깜박이는 파란 불빛은 한 플랫폼에서는 '충전 중'을 의미하고, 다른 플랫폼에서는 '인간 감지'를 의미할 수 있습니다. EU AI 법안(제50조)이 이제 인간을 대상으로 하는 AI 시스템의 투명성을 요구함에 따라, 산업계는 표준화된 접근 방식이 필요합니다."
+    },
+    {
+      "id": "rosdiscourse:0f979e3087e5",
+      "title": "Got error when trying to do pixi install",
+      "abstract": "I got the following error when trying to do step 1 in quick start ( aic/docs/getting_started.md at main · intrinsic-dev/aic · GitHub ) lhphanto@first-instance:~$ # Clone this repo mkdir -p ~/ws_aic/src cd ~/ws_aic/src git clone https://github.com/intrinsic-dev/aic # Install and build dependencies cd ~/ws_aic/src/aic pixi install Cloning into 'aic'... remote: Enumerating objects: 5075, done. remote: Counting objects: 100% (1749/1749), done. remote: Compressing objects: 100% (662/662), done. remote: Total 5075 (delta 1443), reused 1109 (delta 1083), pack-reused 3326 (from 3) Receiving objects: 1",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/got-error-when-trying-to-do-pixi-install/52995",
+      "publishedAt": "2026-03-06T17:40:09.000Z",
+      "authors": [
+        "Hui_Liu"
+      ],
+      "tags": [],
+      "titleKo": "pixi 설치 시 오류 발생",
+      "abstractKo": "빠른 시작의 1단계를 수행하려고 할 때 다음과 같은 오류가 발생했습니다 (aic/docs/getting_started.md at main · intrinsic-dev/aic · GitHub) lhphanto@first-instance:~$ # 이 저장소 복제 mkdir -p ~/ws_aic/src cd ~/ws_aic/src git clone https://github.com/intrinsic-dev/aic # 의존성 설치 및 빌드 cd ~/ws_aic/src/aic pixi install 'aic'로 복제 중... 원격: 객체 수 세기: 5075, 완료. 원격: 객체 수 세기: 100% (1749/1749), 완료. 원격: 객체 압축: 100% (662/662), 완료. 원격: 총 5075 (델타 1443), 재사용 1109 (델타 1083), 패키지 재사용 3326 (3에서) 객체 수 수신 중: 1"
+    },
+    {
+      "id": "rosdiscourse:d9f3f688d18e",
+      "title": "Groot1Publisher: Visualize and Monitor BehaviorTree v4 trees in Groot 1",
+      "abstract": "Hi all, I would like to share a small open-source project I built in my free time as a personal fun project: Groot1Publisher. It is a bridge that lets you visualize and monitor live BehaviorTree.CPP v4 node execution in Groot 1. I originally built it because after moving to BT.CPP v4, I still wanted to use Groot 1 for its simple and fully free workflow. What it provides: drop-in replacement for Groot2Publisher live visualization of BT.CPP v4 trees in Groot 1 full SubTree support, including port remapping works with ROS 2 Humble, Iron, and Jazzy Zero source code modifications needed Repository:",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/groot1publisher-visualize-and-monitor-behaviortree-v4-trees-in-groot-1/52994",
+      "publishedAt": "2026-03-06T17:39:59.000Z",
+      "authors": [
+        "Vishnu-Kr"
+      ],
+      "tags": [],
+      "titleKo": "Groot1Publisher: Groot 1에서 BehaviorTree v4 트리를 시각화하고 모니터링하기",
+      "abstractKo": "안녕하세요, 저는 개인적인 재미 프로젝트로 만든 작은 오픈 소스 프로젝트인 Groot1Publisher를 공유하고 싶습니다. 이것은 Groot 1에서 BehaviorTree.CPP v4 노드 실행을 실시간으로 시각화하고 모니터링할 수 있게 해주는 브리지입니다. BT.CPP v4로 이동한 후에도 간단하고 완전히 무료인 Groot 1의 워크플로우를 계속 사용하고 싶어서 처음 만들었습니다. 제공하는 기능: Groot2Publisher의 드롭인 대체, Groot 1에서 BT.CPP v4 트리의 실시간 시각화, 포트 리매핑을 포함한 전체 서브트리 지원, ROS 2 Humble, Iron, Jazzy Zero와 호환, 소스 코드 수정 필요 없음. 저장소:"
+    },
+    {
+      "id": "rosdiscourse:1cf9fb8b43ef",
+      "title": "Реєстрація на подію: “ROS Ukraine 9 років”",
+      "abstract": "Цього року продимо подію 18го березня у гібридному форматі (онлайн і офлайн). Інформацію про час проведення заходу і реєстрацію можна знайти тут 1 post - 1 participant Read full topic",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/ros-ukraine-9/52983",
+      "publishedAt": "2026-03-06T10:11:19.000Z",
+      "authors": [
+        "Andriy"
+      ],
+      "tags": [],
+      "titleKo": "이벤트 등록: “ROS 우크라이나 9주년”",
+      "abstractKo": "올해는 3월 18일에 하이브리드 형식(온라인 및 오프라인)으로 행사를 진행합니다. 행사 시간 및 등록에 대한 정보는 여기에서 확인할 수 있습니다. 1 게시물 - 1 참가자 전체 주제 읽기"
+    },
+    {
+      "id": "rosdiscourse:884d2ebc4535",
+      "title": "Rover + LiDAR perception inside a Forest3D-generated world (Gazebo Harmonic)",
+      "abstract": "Rover + LiDAR inside a Forest3D-generated world (Gazebo Harmonic) A quick demonstration of spawning a robot and running LiDAR perception inside a Forest3D -generated environment with realistic visuals, making it a solid base for mapping and navigation tasks. Watch on YouTube Performance can be improved by tuning the mesh decimation level depending on your use case. Current work: Integrating terramechanics for more realistic rover-terrain interaction, Forest3D supports a variety of environments beyond forests, including lunar and other unstructured terrains. Feel free to reach out 1 post - 1 pa",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/rover-lidar-perception-inside-a-forest3d-generated-world-gazebo-harmonic/52977",
+      "publishedAt": "2026-03-05T23:42:01.000Z",
+      "authors": [
+        "khalidbourr"
+      ],
+      "tags": [],
+      "titleKo": "로버 + LiDAR 인식: Forest3D 생성 세계 내에서 (Gazebo Harmonic)",
+      "abstractKo": "로버 + LiDAR: Forest3D 생성 세계 내에서 (Gazebo Harmonic) 로봇을 생성하고 Forest3D로 생성된 환경 내에서 LiDAR 인식을 실행하는 간단한 시연으로, 사실적인 시각 효과를 제공하여 매핑 및 내비게이션 작업의 견고한 기반을 마련합니다. YouTube에서 시청하세요. 성능은 사용 사례에 따라 메쉬 축소 수준을 조정하여 개선할 수 있습니다. 현재 작업: 보다 현실적인 로버-지형 상호작용을 위한 테라메카닉스 통합, Forest3D는 숲을 넘어 달 및 기타 비구조적 지형을 포함한 다양한 환경을 지원합니다. 언제든지 문의해 주세요."
+    },
+    {
+      "id": "rosdiscourse:fddd7e984cd4",
+      "title": "Looking for a good outdoor camera for ROS2 robot without ribbon cables",
+      "abstract": "Hi ROS2 community, I’m building an outdoor autonomous robot and I’m looking for a high-quality camera that is fully compatible with ROS2 and does NOT use ribbon (flat) cables or other fragile connectors. My priorities are: • Robust connectivity (e.g., USB or other mechanical connector, no CSI ribbon cables ) • Works well outdoors (good image quality / low light performance) • Compatible with Raspberry Pi 5 now, and ideally future‑proof for NVIDIA Jetson platforms • Easy to integrate with ROS2 Could anyone recommend specific camera models or setups that fit these requirements? Thanks in advance",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/looking-for-a-good-outdoor-camera-for-ros2-robot-without-ribbon-cables/52976",
+      "publishedAt": "2026-03-05T23:07:22.000Z",
+      "authors": [
+        "PatrolForce"
+      ],
+      "tags": [],
+      "titleKo": "리본 케이블 없이 ROS2 로봇을 위한 좋은 야외 카메라 찾기",
+      "abstractKo": "안녕하세요 ROS2 커뮤니티, 저는 야외 자율 로봇을 만들고 있으며, ROS2와 완벽하게 호환되면서 리본(평면) 케이블이나 기타 취약한 커넥터를 사용하지 않는 고품질 카메라를 찾고 있습니다. 제 우선사항은 다음과 같습니다: • 견고한 연결성(예: USB 또는 기타 기계적 커넥터, CSI 리본 케이블 없음) • 야외에서 잘 작동(좋은 이미지 품질 / 저조도 성능) • 현재 Raspberry Pi 5와 호환되며, 이상적으로는 NVIDIA Jetson 플랫폼에 대한 미래 대비 • ROS2와 쉽게 통합 가능 특정 카메라 모델이나 이러한 요구 사항에 맞는 설정을 추천해 주실 수 있나요? 미리 감사합니다."
+    },
+    {
+      "id": "rosdiscourse:41762edb08e7",
+      "title": "2026 Maritime CWG Pulse Survey",
+      "abstract": "ROS Maritime WG members — quick request. Please help us understand working group priorities, future directions, etc. by filling out this pulse survey. If you’re using ROS in maritime robotics, this is worth 5–10 minutes of your time. Your insights will help directly shape the working group and I will present the results at the next working group meeting! This will help us: • Identify recurring technical pain points • Prioritize tooling and documentation gaps • Focus collaboration where it has the highest impact If you’ve been working on maritime ROS systems (AUVs, USVs, simulation, sensor inte",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/2026-maritime-cwg-pulse-survey/52973",
+      "publishedAt": "2026-03-05T18:31:43.000Z",
+      "authors": [
+        "ivandor"
+      ],
+      "tags": [],
+      "titleKo": "2026 해양 CWG 설문조사",
+      "abstractKo": "ROS 해양 WG 회원 여러분 — 간단한 요청입니다. 작업 그룹의 우선 사항, 향후 방향 등을 이해하는 데 도움을 주시기 위해 이 설문조사를 작성해 주시기 바랍니다. 해양 로봇 공학에서 ROS를 사용하고 계신다면, 5~10분의 시간이 가치 있을 것입니다. 여러분의 통찰력은 작업 그룹의 방향을 직접적으로 형성하는 데 도움이 될 것이며, 다음 작업 그룹 회의에서 결과를 발표할 예정입니다! 이는 다음과 같은 데 도움이 됩니다: • 반복되는 기술적 문제 식별 • 도구 및 문서의 격차 우선순위 지정 • 가장 큰 영향을 미치는 협력에 집중"
+    },
+    {
+      "id": "rosdiscourse:eb3c51669ccc",
+      "title": "ROS PMC Minutes for March 3, 2026",
+      "abstract": "The ROS PMC meeting for this week was on Tuesday. The notes from the meeting are available at ROS PMC weekly meeting agenda ROS PMC Business Daylight Savings Time : US Daylight Savings Time starts this weekend. The meeting will move 1 hour earlier to retain its relative position in most calendars. @mjcarroll will update the event. Regular Business Buildfarm update The ROS Buildfarm is the central infrastructure for building, testing, and distributing ROS packages. It ensures that the thousands of packages in the ROS ecosystem are compatible and correctly built for all supported platforms. Issu",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/ros-pmc-minutes-for-march-3-2026/52968",
+      "publishedAt": "2026-03-05T13:57:02.000Z",
+      "authors": [
+        "mjcarroll"
+      ],
+      "tags": [],
+      "titleKo": "2026년 3월 3일 ROS PMC 회의록",
+      "abstractKo": "이번 주 ROS PMC 회의는 화요일에 열렸습니다. 회의록은 ROS PMC 주간 회의 일정에서 확인할 수 있습니다. 미국 일광 절약 시간이 이번 주말에 시작됩니다. 회의는 대부분의 일정에서 상대적인 위치를 유지하기 위해 1시간 일찍 진행됩니다. @mjcarroll이 이벤트를 업데이트할 예정입니다. 정기 비즈니스 빌드팜 업데이트 ROS 빌드팜은 ROS 패키지를 빌드, 테스트 및 배포하기 위한 중앙 인프라입니다. 이는 ROS 생태계의 수천 개 패키지가 모든 지원 플랫폼에서 호환되고 올바르게 빌드되도록 보장합니다."
+    },
+    {
+      "id": "deepmind:3573eb82740e",
+      "title": "How our open-source AI model SpeciesNet is helping to promote wildlife conservation",
+      "abstract": "An overview of SpeciesNet, our open-source AI model that is helping people around the world protect and conserve wildlife.",
+      "source": "deepmind",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/speciesnet-open-source-ai-wildlife/",
+      "publishedAt": "2026-03-06T18:00:00.000Z",
+      "authors": [
+        {
+          "$": {
+            "xmlns:author": "http://www.w3.org/2005/Atom"
+          },
+          "name": [
+            "Tanya Birch"
+          ],
+          "title": [
+            "Senior Program Manager, Google Earth Outreach"
+          ],
+          "department": [
+            ""
+          ],
+          "company": [
+            ""
+          ]
+        }
+      ],
+      "tags": [],
+      "titleKo": "우리의 오픈소스 AI 모델 SpeciesNet이 야생 동물 보호를 촉진하는 방법",
+      "abstractKo": "전 세계 사람들이 야생 동물을 보호하고 보존하는 데 도움을 주는 우리의 오픈소스 AI 모델 SpeciesNet에 대한 개요."
+    },
+    {
+      "id": "deepmind:d4b70b90f586",
+      "title": "Ask a Techspert: How does AI understand my visual searches?",
+      "abstract": "Learn more about AI Mode in Search’s query fan-out method for visual search.",
+      "source": "deepmind",
+      "url": "https://blog.google/company-news/inside-google/googlers/how-google-ai-visual-search-works/",
+      "publishedAt": "2026-03-05T18:00:00.000Z",
+      "authors": [
+        {
+          "$": {
+            "xmlns:author": "http://www.w3.org/2005/Atom"
+          },
+          "name": [
+            "Molly McHugh-Johnson"
+          ],
+          "title": [
+            "Contributor"
+          ],
+          "department": [
+            "The Keyword"
+          ],
+          "company": [
+            ""
+          ]
+        }
+      ],
+      "tags": [],
+      "titleKo": "기술 전문가에게 물어보세요: AI는 어떻게 내 시각 검색을 이해할까요?",
+      "abstractKo": "시각 검색을 위한 검색의 쿼리 팬 아웃 방법에서 AI 모드에 대해 더 알아보세요."
+    },
+    {
+      "id": "deepmind:442508867b11",
+      "title": "The latest AI news we announced in February",
+      "abstract": "Here are Google’s latest AI updates from February 2026",
+      "source": "deepmind",
+      "url": "https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026/",
+      "publishedAt": "2026-03-05T16:30:00.000Z",
+      "authors": [
+        {
+          "$": {
+            "xmlns:author": "http://www.w3.org/2005/Atom"
+          },
+          "name": [
+            "Keyword Team"
+          ],
+          "title": [
+            ""
+          ],
+          "department": [
+            ""
+          ],
+          "company": [
+            ""
+          ]
+        }
+      ],
+      "tags": [],
+      "titleKo": "2026년 2월에 발표한 최신 AI 뉴스",
+      "abstractKo": "여기 2026년 2월 구글의 최신 AI 업데이트가 있습니다."
+    },
+    {
+      "id": "openai:6267c2357116",
+      "title": "How Descript enables multilingual video dubbing at scale",
+      "abstract": "Descript uses OpenAI models to scale multilingual video dubbing, optimizing translations for both meaning and timing so dubbed speech sounds natural across languages.",
+      "source": "openai",
+      "url": "https://openai.com/index/descript",
+      "publishedAt": "2026-03-06T10:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "Descript가 대규모 다국어 비디오 더빙을 가능하게 하는 방법",
+      "abstractKo": "Descript는 OpenAI 모델을 사용하여 대규모 다국어 비디오 더빙을 지원하며, 번역의 의미와 타이밍을 최적화하여 더빙된 음성이 언어 간 자연스럽게 들리도록 합니다."
+    },
+    {
+      "id": "openai:b06f54ac4981",
+      "title": "Codex Security: now in research preview",
+      "abstract": "Codex Security is an AI application security agent that analyzes project context to detect, validate, and patch complex vulnerabilities with higher confidence and less noise.",
+      "source": "openai",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview",
+      "publishedAt": "2026-03-06T10:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "코덱스 보안: 현재 연구 미리보기",
+      "abstractKo": "코덱스 보안은 프로젝트 맥락을 분석하여 복잡한 취약점을 더 높은 신뢰도로 탐지, 검증 및 패치하는 AI 애플리케이션 보안 에이전트입니다."
+    },
+    {
+      "id": "openai:a816e227c891",
+      "title": "How Balyasny Asset Management built an AI research engine for investing",
+      "abstract": "See how Balyasny built an AI research system with GPT-5.4, rigorous model evaluation, and agent workflows to transform investment analysis at scale.",
+      "source": "openai",
+      "url": "https://openai.com/index/balyasny-asset-management",
+      "publishedAt": "2026-03-06T07:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "Balyasny 자산 관리가 투자용 AI 연구 엔진을 구축한 방법",
+      "abstractKo": "Balyasny가 GPT-5.4, 철저한 모델 평가 및 에이전트 워크플로를 통해 대규모 투자 분석을 혁신하기 위해 AI 연구 시스템을 구축한 방법을 살펴보세요."
+    },
+    {
+      "id": "openai:7535c2f2ce51",
+      "title": "GPT-5.4 Thinking System Card",
+      "abstract": "",
+      "source": "openai",
+      "url": "https://openai.com/index/gpt-5-4-thinking-system-card",
+      "publishedAt": "2026-03-05T10:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "GPT-5.4 사고 시스템 카드",
+      "abstractKo": ""
+    },
+    {
+      "id": "openai:a12b30c470dc",
+      "title": "Reasoning models struggle to control their chains of thought, and that’s good",
+      "abstract": "OpenAI introduces CoT-Control and finds reasoning models struggle to control their chains of thought, reinforcing monitorability as an AI safety safeguard.",
+      "source": "openai",
+      "url": "https://openai.com/index/reasoning-models-chain-of-thought-controllability",
+      "publishedAt": "2026-03-05T10:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "추론 모델은 사고의 흐름을 제어하는 데 어려움을 겪으며, 이는 긍정적이다",
+      "abstractKo": "OpenAI는 CoT-Control을 소개하고, 추론 모델이 사고의 흐름을 제어하는 데 어려움을 겪고 있음을 발견하여, 모니터링 가능성이 AI 안전성의 보호 장치로서 강화됨을 보여준다."
+    },
+    {
+      "id": "openai:11c2367d7276",
+      "title": "Introducing GPT-5.4",
+      "abstract": "Introducing GPT-5.4, OpenAI’s most most capable and efficient frontier model for professional work, with state-of-the-art coding, computer use, tool search, and 1M-token context.",
+      "source": "openai",
+      "url": "https://openai.com/index/introducing-gpt-5-4",
+      "publishedAt": "2026-03-05T10:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "GPT-5.4 소개",
+      "abstractKo": "GPT-5.4를 소개합니다. OpenAI의 가장 강력하고 효율적인 전문 작업을 위한 최첨단 모델로, 최신 코딩, 컴퓨터 사용, 도구 검색 및 1M 토큰 컨텍스트를 지원합니다."
+    },
+    {
+      "id": "openai:51c5e121f963",
+      "title": "Ensuring AI use in education leads to opportunity",
+      "abstract": "OpenAI shares new tools, certifications, and measurement resources to help schools and universities close AI capability gaps and expand opportunity.",
+      "source": "openai",
+      "url": "https://openai.com/index/ai-education-opportunity",
+      "publishedAt": "2026-03-05T09:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "교육에서 AI 사용이 기회를 창출하도록 보장하기",
+      "abstractKo": "OpenAI는 학교와 대학이 AI 역량 격차를 해소하고 기회를 확장할 수 있도록 돕기 위한 새로운 도구, 인증 및 측정 리소스를 공유합니다."
+    },
+    {
+      "id": "openai:24645d86cb6e",
+      "title": "Introducing the Adoption news channel",
+      "abstract": "Practical insights and frameworks to turn AI progress into business advantage",
+      "source": "openai",
+      "url": "https://openai.com/index/introducing-the-adoption-news-channel",
+      "publishedAt": "2026-03-05T00:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "채택 뉴스 채널 소개",
+      "abstractKo": "AI 발전을 비즈니스 이점으로 전환하기 위한 실용적인 통찰력과 프레임워크"
+    },
+    {
+      "id": "openai:d70be7f157f5",
+      "title": "Introducing ChatGPT for Excel and new financial data integrations",
+      "abstract": "OpenAI introduces ChatGPT for Excel and new financial app integrations, powered by GPT-5.4 to accelerate modeling, research, and analysis in regulated environments.",
+      "source": "openai",
+      "url": "https://openai.com/index/chatgpt-for-excel",
+      "publishedAt": "2026-03-05T00:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "Excel을 위한 ChatGPT 및 새로운 금융 데이터 통합 소개",
+      "abstractKo": "OpenAI는 규제 환경에서 모델링, 연구 및 분석을 가속화하기 위해 GPT-5.4로 구동되는 Excel용 ChatGPT와 새로운 금융 앱 통합을 소개합니다."
+    },
+    {
+      "id": "openai:e7c3d13ae6e2",
+      "title": "The five AI value models driving business reinvention",
+      "abstract": "Five AI value models show how leaders can sequence AI from workforce fluency to process reinvention and build durable business advantage.",
+      "source": "openai",
+      "url": "https://openai.com/index/the-five-ai-value-models-driving-business-reinvention",
+      "publishedAt": "2026-03-05T00:00:00.000Z",
+      "authors": [],
+      "tags": [],
+      "titleKo": "비즈니스 혁신을 이끄는 다섯 가지 AI 가치 모델",
+      "abstractKo": "다섯 가지 AI 가치 모델은 리더들이 인력의 유창성에서 프로세스 혁신으로 AI를 순차적으로 적용하여 지속 가능한 비즈니스 우위를 구축할 수 있는 방법을 보여줍니다."
+    },
     {
       "id": "arxiv:2603.03280",
       "title": "How to Peel with a Knife: Aligning Fine-Grained Manipulation with Human Preference",
