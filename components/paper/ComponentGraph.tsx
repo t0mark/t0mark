@@ -1,16 +1,17 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import type { Paper, Topic } from '@/data/paperStore'
+import type { Paper, Topic, ComponentRelation } from '@/data/paperStore'
 
 interface Props {
   components: string[]
   papers: Paper[]
   topics: Topic[]
+  componentRelations: ComponentRelation[]
   onNodeClick: (type: string, id: string) => void
 }
 
-export default function ComponentGraph({ components, papers, topics, onNodeClick }: Props) {
+export default function ComponentGraph({ components, papers, topics, componentRelations, onNodeClick }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const networkRef = useRef<{ destroy(): void; on(event: string, cb: (p: { nodes: string[] }) => void): void } | null>(null)
 
@@ -67,8 +68,21 @@ export default function ComponentGraph({ components, papers, topics, onNodeClick
         })
       })
 
-      // Edges: component → paper
+      // Edges: parent → child (hierarchy)
       const edges: object[] = []
+      componentRelations.forEach((rel) => {
+        if (components.includes(rel.parent) && components.includes(rel.child)) {
+          edges.push({
+            from: `comp-${rel.parent}`,
+            to: `comp-${rel.child}`,
+            color: { color: '#8b5cf6', highlight: '#7c3aed', hover: '#7c3aed' },
+            width: 2,
+            smooth: { enabled: true, type: 'curvedCW', roundness: 0.25 },
+          })
+        }
+      })
+
+      // Edges: component → paper
       papers.forEach((p) => {
         p.components.forEach((comp) => {
           if (components.includes(comp)) {
@@ -136,7 +150,7 @@ export default function ComponentGraph({ components, papers, topics, onNodeClick
         networkRef.current = null
       }
     }
-  }, [components, papers, topics, onNodeClick])
+  }, [components, papers, topics, componentRelations, onNodeClick])
 
   if (components.length === 0) {
     return (

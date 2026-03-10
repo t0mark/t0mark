@@ -21,8 +21,14 @@ export interface Paper {
   codeUrl: string
 }
 
+export interface ComponentRelation {
+  parent: string
+  child: string
+}
+
 export interface PaperData {
   topics: Topic[]
+  componentRelations: ComponentRelation[]
   papers: Paper[]
 }
 
@@ -41,7 +47,12 @@ export async function loadPaperData(): Promise<PaperData> {
   try {
     const res = await fetch('/api/papers')
     if (!res.ok) return { topics: [], papers: [] }
-    return (await res.json()) as PaperData
+    const raw = await res.json()
+    return {
+      topics: raw.topics ?? [],
+      componentRelations: raw.componentRelations ?? [],
+      papers: raw.papers ?? [],
+    } as PaperData
   } catch {
     return { topics: [], papers: [] }
   }

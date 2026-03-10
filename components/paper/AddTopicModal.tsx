@@ -34,7 +34,7 @@ export default function AddTopicModal({ onAdd, onClose }: Props) {
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
-          <FormField label="이름 *">
+          <FormField label="Name *">
             <input
               type="text"
               value={name}
@@ -46,7 +46,7 @@ export default function AddTopicModal({ onAdd, onClose }: Props) {
             />
           </FormField>
 
-          <FormField label="설명">
+          <FormField label="Description">
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -62,14 +62,14 @@ export default function AddTopicModal({ onAdd, onClose }: Props) {
               onClick={onClose}
               className="px-4 py-2 text-sm text-text-light hover:text-primary transition-colors"
             >
-              취소
+              Cancel
             </button>
             <button
               type="submit"
               disabled={!name.trim()}
               className="px-4 py-2 text-sm font-medium text-white bg-accent-research rounded-lg disabled:opacity-40 hover:opacity-90 transition-opacity"
             >
-              추가
+              Add
             </button>
           </div>
         </form>

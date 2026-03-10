@@ -74,6 +74,25 @@ export default function PaperGraphClient() {
     [data, saveData]
   )
 
+  const handleUpdateRelations = useCallback((relations: typeof data.componentRelations) => {
+    saveData({ ...data, componentRelations: relations })
+  }, [data, saveData])
+
+  const handleUpdate = useCallback((updated: Topic | Paper) => {
+    if ('topicId' in updated) {
+      const paper = updated as Paper
+      const newData = { ...data, papers: data.papers.map((p) => p.id === paper.id ? paper : p) }
+      const topic = newData.topics.find((t) => t.id === paper.topicId) ?? null
+      setClickedNode({ type: 'paper', data: paper, topic })
+      saveData(newData)
+    } else {
+      const topic = updated as Topic
+      const newData = { ...data, topics: data.topics.map((t) => t.id === topic.id ? topic : t) }
+      setClickedNode({ type: 'topic', data: topic })
+      saveData(newData)
+    }
+  }, [data, saveData])
+
   const handleDelete = useCallback(() => {
     if (!clickedNode) return
     if (clickedNode.type === 'paper') {
@@ -232,6 +251,7 @@ export default function PaperGraphClient() {
             components={allComponents}
             papers={data.papers}
             topics={data.topics}
+            componentRelations={data.componentRelations}
             onNodeClick={handleNodeClick}
           />
         )}
@@ -239,7 +259,16 @@ export default function PaperGraphClient() {
 
       {/* ── Modals ── */}
       {clickedNode && (
-        <NodeModal node={clickedNode} onClose={() => setClickedNode(null)} onDelete={handleDelete} />
+        <NodeModal
+          node={clickedNode}
+          topics={data.topics}
+          allComponentNames={allComponents}
+          componentRelations={data.componentRelations}
+          onClose={() => setClickedNode(null)}
+          onDelete={handleDelete}
+          onUpdate={handleUpdate}
+          onUpdateRelations={handleUpdateRelations}
+        />
       )}
       {showAddTopic && (
         <AddTopicModal onAdd={handleAddTopic} onClose={() => setShowAddTopic(false)} />

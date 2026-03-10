@@ -76,7 +76,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
 
             {/* ── Properties ── */}
             <section>
-              <SectionTitle>기본 정보</SectionTitle>
+              <SectionTitle>Properties</SectionTitle>
               <div className="grid grid-cols-2 gap-4">
                 <FormField label="Topic *">
                   <select value={topicId} onChange={(e) => setTopicId(e.target.value)} className={INPUT}>
@@ -85,7 +85,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
                     ))}
                   </select>
                 </FormField>
-                <FormField label="발행 연도">
+                <FormField label="Year">
                   <input
                     type="number"
                     value={year}
@@ -95,7 +95,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
                     max={2099}
                   />
                 </FormField>
-                <FormField label="제목 *" className="col-span-2">
+                <FormField label="Title *" className="col-span-2">
                   <input
                     type="text"
                     value={title}
@@ -106,7 +106,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
                     required
                   />
                 </FormField>
-                <FormField label="저자">
+                <FormField label="Authors">
                   <input
                     type="text"
                     value={authors}
@@ -115,7 +115,7 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
                     className={INPUT}
                   />
                 </FormField>
-                <FormField label="게재지">
+                <FormField label="Venue">
                   <input
                     type="text"
                     value={venue}
@@ -131,49 +131,49 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
 
             {/* ── Content ── */}
             <section>
-              <SectionTitle>내용</SectionTitle>
+              <SectionTitle>Content</SectionTitle>
               <div className="space-y-4">
-                <FormField label="3줄 요약">
+                <FormField label="Summary">
                   <textarea
                     value={summary}
                     onChange={(e) => setSummary(e.target.value)}
-                    rows={3}
+                    rows={5}
                     placeholder="논문의 핵심 내용을 3문장으로 요약..."
                     className={TEXTAREA}
                   />
                 </FormField>
-                <FormField label="문제점">
+                <FormField label="Problem">
                   <textarea
                     value={problem}
                     onChange={(e) => setProblem(e.target.value)}
-                    rows={2}
+                    rows={4}
                     placeholder="이 논문이 다루는 문제는 무엇인가?"
                     className={TEXTAREA}
                   />
                 </FormField>
-                <FormField label="제안 방법">
+                <FormField label="Method">
                   <textarea
                     value={method}
                     onChange={(e) => setMethod(e.target.value)}
-                    rows={2}
+                    rows={4}
                     placeholder="제안하는 방법 또는 접근 방식..."
                     className={TEXTAREA}
                   />
                 </FormField>
-                <FormField label="주요 결과">
+                <FormField label="Results">
                   <textarea
                     value={results}
                     onChange={(e) => setResults(e.target.value)}
-                    rows={2}
+                    rows={4}
                     placeholder="핵심 결과 및 성과..."
                     className={TEXTAREA}
                   />
                 </FormField>
-                <FormField label="비판 및 한계">
+                <FormField label="Limitations">
                   <textarea
                     value={limitations}
                     onChange={(e) => setLimitations(e.target.value)}
-                    rows={2}
+                    rows={4}
                     placeholder="한계점 및 비판..."
                     className={TEXTAREA}
                   />
@@ -234,14 +234,14 @@ export default function AddPaperModal({ topics, onAdd, onClose }: Props) {
               onClick={onClose}
               className="px-4 py-2 text-sm text-text-light hover:text-primary transition-colors"
             >
-              취소
+              Cancel
             </button>
             <button
               type="submit"
               disabled={!title.trim() || !topicId}
               className="px-4 py-2 text-sm font-medium text-white bg-accent-industry rounded-lg disabled:opacity-40 hover:opacity-90 transition-opacity"
             >
-              추가
+              Add
             </button>
           </div>
         </form>

@@ -7,6 +7,7 @@
       "color": "#7c3aed"
     }
   ],
+  "componentRelations": [],
   "papers": [
     {
       "topicId": "ylf861r7npommg8r58o",
@@ -20,7 +21,10 @@
       "results": "",
       "limitations": "",
       "codeUrl": "",
-      "components": [],
+      "components": [
+        "Transformer",
+        "Self-Attention"
+      ],
       "id": "79sr2spcsekmmjwwm2m"
     }
   ]
