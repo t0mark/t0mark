@@ -1,10 +1,10 @@
 dDay:
-  이공분야 학술지원:
-    targetDate: '2026-04-13'
   ICROS:
     targetDate: '2026-04-26'
   ICCAS:
     targetDate: '2026-05-31'
+  CoRL:
+    targetDate: '2026-05-25'
 tasks:
   Labs:
     icon: 🔬
@@ -14,22 +14,19 @@ todos:
   학습 (논문 / 이론):
     icon: 🔬
     items:
-      - text: Attention + Self Attention + Transformer
-        deadline: ASAP
+      - text: URMA 계열 제어기 공부
+      - text: MPC, PD 제어기 공부
+      - text: Morphology GNN 논문 공부
   기술 구현:
     icon: 🧑🏻‍💻
     items:
-      - text: NaVILA 호출 방식 변경
+      - text: Na-VILA + Action Chunking
         deadline: ASAP
-      - text: RB-Y1 SDK 작성 (cmd_vel 및 Teleop)
-        deadline: ASAP
-      - text: 시뮬레이션 환경 구축 (RB-Y1, Go2)
-        deadline: ASAP
+      - text: VR Teleop 3D 공간 생성
+        deadline: TYT
   프로그래밍:
     icon: 🖥️
-    items:
-      - text: Isaac Sim Tutorial
-        deadline: ASAP
+    items: []
   영어:
     icon: 🔠
     items: []
@@ -37,35 +34,25 @@ todos:
     icon: 🗓️
     items:
       - text: 가족 여행 계획
-        deadline: TYT
+        deadline: '2026-04-30'
   과제:
     icon: 📚
     items:
-      - text: Isaac Sim 사용 및 자료 준비
-        deadline: TYT
-      - text: 4월 이공 학술 지원 준비
-        deadline: '2026-04-06'
-      - text: RT 논문 발표 준비
-        deadline: '2026-03-11'
+      - text: 스마트팩토리 세미나 자료 보강
+        deadline: '2026-04-27'
+      - text: 시설농업 AI 과제 대면 발표 자료 준비
+        deadline: '2026-04-27'
   개인 공부:
     icon: 👨‍💻
     items:
       - text: 3D Printer
         deadline: TYT
-      - text: Web / Network
-        deadline: TYT
 priorityOrder:
+  - category: 기술 구현
+    text: Na-VILA + Action Chunking
   - category: 과제
-    text: RT 논문 발표 준비
-  - category: 프로그래밍
-    text: Isaac Sim Tutorial
-  - category: 학습 (논문 / 이론)
-    text: Attention + Self Attention + Transformer
-  - category: 기술 구현
-    text: RB-Y1 SDK 작성 (cmd_vel 및 Teleop)
-  - category: 기술 구현
-    text: 시뮬레이션 환경 구축 (RB-Y1, Go2)
-  - category: 기술 구현
-    text: NaVILA 호출 방식 변경
+    text: 시설농업 AI 과제 대면 발표 자료 준비
   - category: 과제
-    text: 4월 이공 학술 지원 준비
+    text: 스마트팩토리 세미나 자료 보강
+  - category: 주간 통합 & 계획
+    text: 가족 여행 계획

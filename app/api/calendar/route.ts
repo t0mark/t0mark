@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, renameSync } from 'fs'
 import { join } from 'path'
 import yaml from 'js-yaml'
 import type { CalendarData } from '@/types/calendar'
@@ -20,7 +20,9 @@ export async function PUT(request: Request) {
   try {
     const body = await request.json() as CalendarData
     const yamlStr = yaml.dump(body, { lineWidth: -1 })
-    writeFileSync(filePath, yamlStr, 'utf-8')
+    const tmpPath = filePath + '.tmp'
+    writeFileSync(tmpPath, yamlStr, 'utf-8')
+    renameSync(tmpPath, filePath)
     return NextResponse.json({ ok: true })
   } catch (error) {
     console.error('calendar-data.yaml 저장 실패:', error)

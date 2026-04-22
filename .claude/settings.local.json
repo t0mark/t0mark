@@ -14,7 +14,20 @@
       "Bash(tasklist /FI \"PID eq 11048\")",
       "Read(//etc/cron.d/**)",
       "Bash(systemctl list-timers --user)",
-      "Bash(node -e \"const d = require\\(''/home/t0mark/Desktop/t0mark/data/interns.json''\\); console.log\\(JSON.stringify\\(d.items[0], null, 2\\)\\)\")"
+      "Bash(node -e \"const d = require\\(''/home/t0mark/Desktop/t0mark/data/interns.json''\\); console.log\\(JSON.stringify\\(d.items[0], null, 2\\)\\)\")",
+      "Bash(journalctl --no-pager -n 300)",
+      "Bash(vcgencmd measure_temp)",
+      "Read(//sys/class/thermal/**)",
+      "Bash(crontab -l)",
+      "Bash(sudo crontab:*)",
+      "Bash(last -20)",
+      "Bash(journalctl --no-pager -n 1000)",
+      "Read(//proc/sys/fs/inotify/**)",
+      "Bash(who -b)",
+      "Bash(journalctl --no-pager -n 50)",
+      "Bash(pm2 start:*)",
+      "Bash(pm2 save:*)",
+      "Bash(pm2 startup:*)"
     ]
   }
 }

@@ -1,0 +1,655 @@
+
+> t0mark@0.1.0 dev
+> next dev -H 0.0.0.0 -p 5000 -H 0.0.0.0 -p 5000
+
+   ▲ Next.js 15.5.12
+   - Local:        http://localhost:5000
+   - Network:      http://0.0.0.0:5000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Compiled /instrumentation in 762ms (24 modules)
+[Cron] 인턴/산학장학생 공고 수집 스케줄 등록 완료 (매일 02:00 / 03:00)
+ ✓ Ready in 3.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 1902ms (675 modules)
+ GET / 200 in 2615ms
+ ⚠ Cross origin request detected from 59.1.173.175 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /api/logs ...
+ ✓ Compiled /api/logs in 786ms (701 modules)
+ GET /api/calendar 200 in 1051ms
+ GET /api/logs 200 in 1067ms
+ GET /api/routine 200 in 1096ms
+ PUT /api/logs 200 in 25ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 627ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 549ms (681 modules)
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 1077ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 325ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 311ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 310ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 370ms
+ GET / 200 in 333ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 405ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 367ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 339ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 316ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 361ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 345ms
+ GET / 200 in 102ms
+ GET / 200 in 124ms
+ GET /security.txt 404 in 107ms
+ GET / 200 in 115ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 403ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 335ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 332ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 306ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 348ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 331ms
+ GET / 200 in 122ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 457ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 346ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 324ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 316ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 344ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 339ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 465ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 336ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 320ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 312ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 348ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 334ms
+ GET / 200 in 142ms
+ GET / 200 in 117ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 457ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 343ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 322ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 321ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 351ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 341ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 457ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 337ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 319ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 316ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 348ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 333ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 492ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 339ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 323ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 313ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 350ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 342ms
+ GET / 200 in 143ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 457ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 346ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 332ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 310ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 358ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 344ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 458ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 335ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 320ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 311ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 352ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 345ms
+ GET / 200 in 141ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 440ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 365ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 370ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 366ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 328ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 315ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 349ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 482ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 339ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 317ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 309ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 357ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 339ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 475ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 336ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 322ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 309ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 347ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 342ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 468ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 341ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 320ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 308ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 347ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 339ms
+ GET / 200 in 140ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 466ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 342ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 332ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 313ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 354ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 343ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 461ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 328ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 324ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 312ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 353ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 347ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 472ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 342ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 314ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 319ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 338ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /login 404 in 324ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /login 404 in 349ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /login 404 in 337ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /apps 404 in 334ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /apps 404 in 328ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /apps 404 in 341ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /formaction 404 in 335ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /formaction 404 in 376ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /formaction 404 in 340ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 340ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 318ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 342ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 463ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 332ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 325ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 309ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 350ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 357ms
+ GET / 200 in 132ms
+ GET / 200 in 82ms
+ GET /robots.txt 404 in 110ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 450ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 342ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 326ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 313ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 351ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 328ms
+
+> t0mark@0.1.0 dev
+> next dev -H 0.0.0.0 -p 5000 -H 0.0.0.0 -p 5000
+
+   ▲ Next.js 15.5.12
+   - Local:        http://localhost:5000
+   - Network:      http://0.0.0.0:5000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Compiled /instrumentation in 761ms (24 modules)
+[Cron] 인턴/산학장학생 공고 수집 스케줄 등록 완료 (매일 02:00 / 03:00)
+ ✓ Ready in 3.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 1889ms (675 modules)
+ GET / 200 in 2599ms
+ ⚠ Cross origin request detected from 59.1.173.175 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /api/logs ...
+ ✓ Compiled /api/logs in 1044ms (701 modules)
+ GET /api/calendar 200 in 1313ms
+ GET /api/logs 200 in 1328ms
+ GET /api/routine 200 in 1351ms
+ GET / 200 in 384ms
+ GET /api/routine 200 in 45ms
+ GET /api/calendar 200 in 115ms
+ GET /api/logs 200 in 124ms
+ GET / 200 in 109ms
+ GET /api/routine 200 in 30ms
+ GET /api/calendar 200 in 36ms
+ GET /api/logs 200 in 46ms
+ GET / 200 in 86ms
+ GET /api/routine 200 in 28ms
+ GET /api/calendar 200 in 35ms
+ GET /api/logs 200 in 43ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 539ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 588ms (706 modules)
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 1049ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 312ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 310ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 312ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 312ms
+ GET / 200 in 326ms
+ GET /api/routine 200 in 55ms
+ GET /api/calendar 200 in 88ms
+ GET /api/logs 200 in 95ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 463ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 336ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 319ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 335ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 342ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 324ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 476ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 337ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 315ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 323ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 334ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 349ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 348ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 326ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 308ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 381ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 337ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 315ms
+ GET / 200 in 151ms
+ GET /api/routine 200 in 39ms
+ GET /api/calendar 200 in 48ms
+ GET /api/logs 200 in 56ms
+ PUT /api/logs 200 in 19ms
+ PUT /api/calendar 200 in 21ms
+ GET / 200 in 116ms
+ GET /api/routine 200 in 29ms
+ GET /api/calendar 200 in 35ms
+ GET /api/logs 200 in 43ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 463ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 322ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 314ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 314ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 334ms
+[Cron] fetch-interns 완료
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 316ms
+ GET / 200 in 117ms
+ GET /api/routine 200 in 29ms
+ GET /api/calendar 200 in 40ms
+ GET /api/logs 200 in 47ms
+ GET / 200 in 85ms
+ GET /api/routine 200 in 12ms
+ GET /api/calendar 200 in 45ms
+ GET /api/logs 200 in 62ms
+ GET / 200 in 130ms
+ GET /api/routine 200 in 31ms
+ GET /api/calendar 200 in 36ms
+ GET /api/logs 200 in 44ms
+ GET / 200 in 90ms
+ GET /api/calendar 200 in 27ms
+ GET /api/routine 200 in 39ms
+ GET /api/logs 200 in 51ms
+ GET / 200 in 84ms
+ GET /api/calendar 200 in 25ms
+ GET /api/logs 200 in 32ms
+ GET /api/routine 200 in 41ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 452ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 327ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 329ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 331ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 351ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 333ms
+ GET / 200 in 114ms
+ GET /api/routine 200 in 31ms
+ GET /api/calendar 200 in 37ms
+ GET /api/logs 200 in 46ms
+ PUT /api/calendar 200 in 16ms
+ PUT /api/calendar 200 in 22ms
+ PUT /api/calendar 200 in 17ms
+ PUT /api/calendar 200 in 23ms
+ PUT /api/calendar 200 in 22ms
+ PUT /api/calendar 200 in 22ms
+ PUT /api/calendar 200 in 20ms
+ PUT /api/calendar 200 in 22ms
+ PUT /api/calendar 200 in 14ms
+ PUT /api/calendar 200 in 16ms
+ PUT /api/calendar 200 in 17ms
+ PUT /api/calendar 200 in 21ms
+ PUT /api/routine 200 in 14ms
+ PUT /api/calendar 200 in 14ms
+ PUT /api/calendar 200 in 21ms
+ PUT /api/calendar 200 in 33ms
+ PUT /api/calendar 200 in 14ms
+ PUT /api/calendar 200 in 16ms
+[Cron] fetch-scholarships 완료
+ GET / 200 in 101ms
+ GET /api/routine 200 in 36ms
+ GET /api/calendar 200 in 41ms
+ GET /api/logs 200 in 50ms
+ GET / 200 in 121ms
+ GET /api/calendar 200 in 23ms
+ GET /api/routine 200 in 35ms
+ GET /api/logs 200 in 41ms
+ GET / 200 in 81ms
+ GET /api/logs 200 in 38ms
+ GET /api/calendar 200 in 46ms
+ GET /api/routine 200 in 54ms
+ GET / 200 in 111ms
+ GET /api/routine 200 in 26ms
+ GET /api/calendar 200 in 32ms
+ GET /api/logs 200 in 40ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST / 404 in 490ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next 404 in 350ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api 404 in 313ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /_next/server 404 in 312ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /app 404 in 356ms
+[Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
+ POST /api/route 404 in 324ms

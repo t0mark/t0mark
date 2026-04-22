@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, renameSync } from 'fs'
 import { join } from 'path'
 import type { RoutineData } from '@/types/routine'
 
@@ -101,7 +101,9 @@ export async function GET() {
     const { data: updated, changed } = applyAutoReset(data)
 
     if (changed) {
-      writeFileSync(filePath, JSON.stringify(updated, null, 2), 'utf-8')
+      const tmpPath = filePath + '.tmp'
+      writeFileSync(tmpPath, JSON.stringify(updated, null, 2), 'utf-8')
+      renameSync(tmpPath, filePath)
     }
 
     return NextResponse.json(updated)
