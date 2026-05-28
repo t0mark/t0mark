@@ -1,58 +1,47 @@
-dDay:
-  ICROS:
-    targetDate: '2026-04-26'
-  ICCAS:
-    targetDate: '2026-05-31'
-  CoRL:
-    targetDate: '2026-05-25'
-tasks:
-  Labs:
-    icon: 🔬
-    items:
-      - RB-Y1 범용 VLA
+dDay: {}
+tasks: {}
 todos:
   학습 (논문 / 이론):
     icon: 🔬
     items:
-      - text: URMA 계열 제어기 공부
-      - text: MPC, PD 제어기 공부
-      - text: Morphology GNN 논문 공부
+      - text: AAAI 논문 주제
+        deadline: ASAP
+      - text: ICRA 논문 주제
+        deadline: TYT
   기술 구현:
     icon: 🧑🏻‍💻
     items:
-      - text: Na-VILA + Action Chunking
-        deadline: ASAP
       - text: VR Teleop 3D 공간 생성
         deadline: TYT
   프로그래밍:
     icon: 🖥️
-    items: []
+    items:
+      - text: NPU 테스트
+        deadline: '2026-05-29'
   영어:
     icon: 🔠
     items: []
   주간 통합 & 계획:
     icon: 🗓️
-    items:
-      - text: 가족 여행 계획
-        deadline: '2026-04-30'
+    items: []
   과제:
     icon: 📚
     items:
-      - text: 스마트팩토리 세미나 자료 보강
-        deadline: '2026-04-27'
-      - text: 시설농업 AI 과제 대면 발표 자료 준비
-        deadline: '2026-04-27'
+      - text: 스마트팩토리 세미나
+        deadline: '2026-06-01'
+      - text: TA 일지 2개
+        deadline: '2026-05-29'
   개인 공부:
     icon: 👨‍💻
     items:
       - text: 3D Printer
         deadline: TYT
 priorityOrder:
-  - category: 기술 구현
-    text: Na-VILA + Action Chunking
   - category: 과제
-    text: 시설농업 AI 과제 대면 발표 자료 준비
+    text: TA 일지 2개
+  - category: 프로그래밍
+    text: NPU 테스트
   - category: 과제
-    text: 스마트팩토리 세미나 자료 보강
-  - category: 주간 통합 & 계획
-    text: 가족 여행 계획
+    text: 스마트팩토리 세미나
+  - category: 학습 (논문 / 이론)
+    text: AAAI 논문 주제

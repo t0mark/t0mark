@@ -1,6 +1,1718 @@
 {
-  "lastUpdated": "2026-04-22T17:00:26.591Z",
+  "lastUpdated": "2026-05-27T17:00:28.821Z",
   "items": [
+    {
+      "id": "jasoseol:4f02244367af",
+      "title": "채용연계형 인턴 모집",
+      "company": "아이마켓코리아",
+      "location": "미기재",
+      "deadline": "2026-06-07T14:59:00.000Z",
+      "postedAt": "2026-05-21T01:56:03.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104250",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:4c1a79cb10ce",
+      "title": "2026년 3차 E-ON 채용연계형 인턴 모집",
+      "company": "이트너스",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-26T07:14:02.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104295",
+      "tags": [
+        "인턴"
+      ],
+      "description": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\"> <html><body><div><img style=\"max-width:100%;\" src=\"https://daoift3qrrnil.cloudfront.net/content_images/images/000/354/955/webp/%EC%B5%9C%EC%A2%85_26-3%EC%B0%A8_%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0.webp?1779776651\" alt=\"이트너스 2026년 3차 E-ON 채용연계형 인턴 모집\"></div></body></html>"
+    },
+    {
+      "id": "jasoseol:41482d406e42",
+      "title": "2026년 상반기 채용 (지역인재/체험형 인턴/보훈)",
+      "company": "우리은행",
+      "location": "미기재",
+      "deadline": "2026-06-08T05:00:00.000Z",
+      "postedAt": "2026-05-26T00:13:32.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104286",
+      "tags": [
+        "인턴"
+      ],
+      "description": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\"> <html><body> <div><img style=\"max-width:100%;\" src=\"https://daoift3qrrnil.cloudfront.net/content_images/images/000/354/884/webp/image.webp?1779754407\" alt=\"우리은행 2026년 상반기 채용 (지역인재/체험형 인턴/보훈)\"></div> <div><img style=\"max-width:100%;\" src=\"https://daoift3qrrnil.cloudfront.net/content_images/ima"
+    },
+    {
+      "id": "jasoseol:2155db0c646a",
+      "title": "백엔드 개발자(Python) 인턴/신입 채용",
+      "company": "에코마케팅",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-26T00:05:27.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104284",
+      "tags": [
+        "인턴"
+      ],
+      "description": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\"> <html><body><div><img style=\"max-width:100%;\" src=\"https://daoift3qrrnil.cloudfront.net/content_images/images/000/354/812/webp/%EB%B0%B1%EC%97%94%EB%93%9C_%EA%B0%9C%EB%B0%9C%EC%9E%90.webp?1779433909\" alt=\"에코마케팅 백엔드 개발자(Python) 인턴/신입 채용\"></div></body></html>"
+    },
+    {
+      "id": "jasoseol:c72582b5c2a3",
+      "title": "AI 기반 직무 교육 교육생 모집",
+      "company": "서울경제진흥원",
+      "location": "미기재",
+      "deadline": "2026-06-21T14:59:00.000Z",
+      "postedAt": "2026-05-22T06:25:52.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104274",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:22b31b63c6ed",
+      "title": "2026 스마트조선소 AI전문가 양성과정",
+      "company": "삼성중공업",
+      "location": "미기재",
+      "deadline": "2026-06-14T14:59:00.000Z",
+      "postedAt": "2026-05-20T04:42:16.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104233",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:c0aba7126301",
+      "title": "2026년 체험형 인턴 모집",
+      "company": "한국가스공사(KOGAS)",
+      "location": "미기재",
+      "deadline": "2026-06-05T08:00:00.000Z",
+      "postedAt": "2026-05-22T07:10:48.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104276",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:472b3fbfc1de",
+      "title": "2026년 하반기 디캠프 인턴 채용",
+      "company": "은행권청년창업재단",
+      "location": "미기재",
+      "deadline": "2026-06-03T08:00:00.000Z",
+      "postedAt": "2026-05-22T07:46:01.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104277",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:f0d04a3a1b13",
+      "title": "2026년 하반기 신입(인턴) 채용",
+      "company": "인크로스",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-22T05:57:55.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104271",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:0fbf3e45cb4a",
+      "title": "[제조] 뷰티 디바이스 제조 운영 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-21T14:59:00.000Z",
+      "postedAt": "2026-05-22T05:17:46.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104269",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:7e3b57e3fae1",
+      "title": "수출부문 Fabric R&D 경력 채용",
+      "company": "신원",
+      "location": "미기재",
+      "deadline": "2026-06-05T14:59:00.000Z",
+      "postedAt": "2026-05-22T02:04:30.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104265",
+      "tags": [
+        "r&d"
+      ]
+    },
+    {
+      "id": "jasoseol:78cb280845b7",
+      "title": "[마케팅] 미국 메디큐브 틱톡샵 마케팅 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-20T14:59:00.000Z",
+      "postedAt": "2026-05-21T08:28:21.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104257",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:263b55c16b0b",
+      "title": "[슈퍼알람] 글로벌 크리에이터 마케팅 매니저 인턴",
+      "company": "마룩스",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-21T05:53:45.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104254",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:840edcd4676e",
+      "title": "2026년도 7급 신입사원(채용형인턴) 채용",
+      "company": "한국농어촌공사(KR)",
+      "location": "미기재",
+      "deadline": "2026-06-08T05:00:00.000Z",
+      "postedAt": "2026-05-19T05:50:59.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104220",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:e732b84af8e0",
+      "title": "2026 인턴 채용",
+      "company": "팀스파르타",
+      "location": "미기재",
+      "deadline": "2026-06-06T14:59:00.000Z",
+      "postedAt": "2026-05-21T04:11:53.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104252",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:37210926cc08",
+      "title": "데이터센터 자동제어 운영 관리",
+      "company": "NHN Cloud",
+      "location": "미기재",
+      "deadline": "2026-07-20T14:59:00.000Z",
+      "postedAt": "2026-05-21T02:02:24.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104251",
+      "tags": [
+        "제어"
+      ]
+    },
+    {
+      "id": "jasoseol:baaedff82279",
+      "title": "퍼포먼스 마케터 인턴/신입 채용",
+      "company": "에코마케팅",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-20T08:02:31.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104242",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:056016f53562",
+      "title": "양천구 청년 취업교육 프로그램 - AI기반 시험인증 전문가 양성과정",
+      "company": "한국산업기술시험원(KTL)",
+      "location": "미기재",
+      "deadline": "2026-05-29T14:59:00.000Z",
+      "postedAt": "2026-05-20T04:52:14.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104235",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:7ce02391b863",
+      "title": "[마케팅] 영미권(미국·영국) 뷰티 인플루언서 마케팅(PR) 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-18T14:59:00.000Z",
+      "postedAt": "2026-05-19T23:41:51.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104227",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "wanted:9cde46e3ae35",
+      "title": "[인턴] CAIO(최고 AI 책임자) Assistant",
+      "company": "딥오토",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-20T17:00:12.241Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/361881",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "jasoseol:31337cffcd89",
+      "title": "[마케팅] 독일 아마존 MD 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-17T14:59:00.000Z",
+      "postedAt": "2026-05-18T08:03:07.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104205",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:776ca72a6bbf",
+      "title": "[마케팅] 중동 아마존 MD 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-17T14:59:00.000Z",
+      "postedAt": "2026-05-18T08:02:42.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104204",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:beb27810269d",
+      "title": "[마케팅] 유럽 인플루언서 마케팅(PR) 채용연계형 인턴사원 모집 (독일/스페인/이탈리아)",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-17T14:59:00.000Z",
+      "postedAt": "2026-05-18T07:58:33.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104203",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:38a6c825248d",
+      "title": "[핀테크 스타트업] 프로덕트 세일즈 스페셜리스트 인턴 채용",
+      "company": "페이히어",
+      "location": "미기재",
+      "deadline": "2026-07-17T14:59:00.000Z",
+      "postedAt": "2026-05-18T04:37:33.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104193",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:dea08a30aadc",
+      "title": "2026년도 체험형 청년인턴 공개채용",
+      "company": "대구경북과학기술원(DGIST)",
+      "location": "미기재",
+      "deadline": "2026-05-29T02:00:00.000Z",
+      "postedAt": "2026-05-18T04:08:32.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104192",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:e1046da167e8",
+      "title": "글로벌 뷰티 수출 SCM 인턴 (정규직 전환형)",
+      "company": "앳홈",
+      "location": "미기재",
+      "deadline": "2026-06-06T14:59:00.000Z",
+      "postedAt": "2026-05-18T02:56:38.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104189",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:7f1d1d343fca",
+      "title": "SEED Internship 3.0 - Training / Marketing / People / Legal",
+      "company": "한국시세이도",
+      "location": "미기재",
+      "deadline": "2026-05-27T14:59:00.000Z",
+      "postedAt": "2026-05-18T01:36:38.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104187",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "wanted:bb9d8e3d76fa",
+      "title": "[인턴] [Solution] AI Software Engineer (전환형)",
+      "company": "노타(Nota)",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-19T17:00:01.761Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/362737",
+      "tags": [
+        "a"
+      ],
+      "description": "• CV 모델과 VLM(Vision Language Model)을 활용한 인공지능 비전 솔루션 설계·개발 • 다양한 산업(교통·산업 안전·제조 등) 환경의 영상 데이터의 실시간 인식/분석, 품질 평가 및 개선 • 엣지·서버·클라우드 환경에서의 AI 응용 SW 패키징, 배포 자동화, 모니터링/로깅 운영 • 개념 증명 아이디어를 사용자 스펙·성능 기준에 맞춘 상업적 제품으로 고도화 (성능/비용/지연 최적화 포함) • 산업 전문가, AI/백엔드 엔지니어 등과의 긴밀한 협업을 통한 문제정의, 데이터 설계, 릴리즈 운영 • AI Native 개발(Claude, Cursor, Codex 등 활용)에 익숙하고, 이를 통해 신속한 기능 요구사항 대응 뿐만 아니라 설계 고도화, 리팩토링이 가능한 분 • 컴퓨터과학/인공지능 "
+    },
+    {
+      "id": "jasoseol:65a4d7ba76c9",
+      "title": "피지컬 AI 제조 AX 캠퍼스 1기",
+      "company": "KG ICT",
+      "location": "미기재",
+      "deadline": "2026-06-14T14:59:00.000Z",
+      "postedAt": "2026-05-15T07:32:07.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104176",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "wanted:294f6226f3ad",
+      "title": "[인턴] AI 엔지니어",
+      "company": "딥그로브",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-18T17:00:03.686Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/362118",
+      "tags": [
+        "a"
+      ],
+      "description": "• 프론티아의 AI 경험을 개선하기 위한 리서치를 수행합니다. • (모델 리서치, 프롬프트 구조화, 에이전트 구조 설계, 메모리 시스템, RP 이벤트/알고리즘 설계, 실시간 미디어 생성 등) • 리서치 결과를 바탕으로 구체적인 개선안을 팀과 함께 설계하고 제안합니다. • 새로운 AI 기술과 모델을 빠르게 탐색하고, 프로덕트 적용 가능성을 검증합니다. • 복잡한 문제를 구조적으로 분해하고 시스템으로 설계할 수 있는 분 • 자기 주도적으로 리서치하고 결론을 도출한 경험이 있는 분 딥그로브는 AI 엔터테인먼트 개척 팀입니다. 크랙, 이루다 등 시장에서 가장 주목받았던 AI 제품들을 성공시킨 팀원들이 다음 세대의 AI 엔터테인먼트 제품을 만들기 위해 모였습니다. \"프론티아\"는 '채팅'을 넘어 영화같은 '경험'을 제"
+    },
+    {
+      "id": "jasoseol:25d32698ca33",
+      "title": "2026년 2분기 신입·채용연계형 인턴·경력사원 정기 채용",
+      "company": "세방그룹",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-15T07:05:36.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104172",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:89f1b3fa0349",
+      "title": "2026년 체험형 청년인턴 채용 공고",
+      "company": "한국환경산업기술원(KEITI)",
+      "location": "미기재",
+      "deadline": "2026-05-29T07:00:00.000Z",
+      "postedAt": "2026-05-15T07:50:52.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104179",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:41a2d5062aca",
+      "title": "반도체 CMP장비 기구설계 엔지니어 모집(채용연계형 인턴/동탄)",
+      "company": "케이씨텍",
+      "location": "미기재",
+      "deadline": "2026-05-24T14:59:00.000Z",
+      "postedAt": "2026-05-15T07:00:52.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104171",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:a3e43652f7a4",
+      "title": "[셀리맥스] 스페인 아마존 MD 인턴 채용",
+      "company": "앱솔브랩",
+      "location": "미기재",
+      "deadline": "2026-07-14T14:59:00.000Z",
+      "postedAt": "2026-05-15T06:05:06.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104168",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:d714b6c9e8c5",
+      "title": "해충방제 연구개발 지원 담당자 채용",
+      "company": "세스코",
+      "location": "미기재",
+      "deadline": "2026-05-29T14:59:00.000Z",
+      "postedAt": "2026-05-15T02:22:47.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104162",
+      "tags": [
+        "연구개발"
+      ]
+    },
+    {
+      "id": "jasoseol:d6af244f4e6c",
+      "title": "청년취업사관학교 양천캠퍼스 AI 융합 2기 교육생 모집",
+      "company": "서울경제진흥원",
+      "location": "미기재",
+      "deadline": "2026-06-22T14:59:00.000Z",
+      "postedAt": "2026-05-14T00:51:08.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104133",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:988c3efc49c7",
+      "title": "전환형 인턴 채용_품질관리",
+      "company": "SK머티리얼즈퍼포먼스",
+      "location": "미기재",
+      "deadline": "2026-05-24T09:00:00.000Z",
+      "postedAt": "2026-05-14T00:40:54.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104130",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:061c32ba9f83",
+      "title": "2026 인턴/경력 채용공고",
+      "company": "블랭크코퍼레이션",
+      "location": "미기재",
+      "deadline": "2026-05-29T14:59:00.000Z",
+      "postedAt": "2026-05-14T07:11:11.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104147",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:abc2053024ec",
+      "title": "2026년도 체험형 청년인턴 공개채용 공고",
+      "company": "대구경북과학기술원",
+      "location": "미기재",
+      "deadline": "2026-05-29T02:00:00.000Z",
+      "postedAt": "2026-05-14T09:15:13.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104153",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:9bf2d7db4a11",
+      "title": "첨단바이오 융합인재 (AI전문가) 모집 (신입/경력)",
+      "company": "GC셀",
+      "location": "미기재",
+      "deadline": "2026-05-26T14:59:00.000Z",
+      "postedAt": "2026-05-14T07:36:32.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104149",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:27298e63b2bf",
+      "title": "AI 팩토리 GPU 가속 MLOps 스쿨",
+      "company": "NHN Cloud",
+      "location": "미기재",
+      "deadline": "2026-06-18T02:00:00.000Z",
+      "postedAt": "2026-05-14T06:00:22.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104144",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:f86d4dab2611",
+      "title": "Physical AI 활용 반도체장비 설계 및 CAE 해석 스쿨",
+      "company": "앤시스코리아",
+      "location": "미기재",
+      "deadline": "2026-06-18T02:00:00.000Z",
+      "postedAt": "2026-05-14T02:12:06.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104137",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:1f8ba4a1eed7",
+      "title": "AI 마케팅 (GEO) 기획 (Junior/Assistant)",
+      "company": "이노션",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-14T01:58:04.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104136",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:a25820aad40f",
+      "title": "상반기 HW·AI·SW 엔지니어 채용 (신입/경력)",
+      "company": "보스반도체",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-14T00:46:35.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104132",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:bf475661180d",
+      "title": "General Affairs Assistant",
+      "company": "토스플레이스",
+      "location": "미기재",
+      "deadline": "2026-07-12T14:59:00.000Z",
+      "postedAt": "2026-05-14T00:32:26.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104126",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:2c6535f26224",
+      "title": "2026년 하반기 인턴",
+      "company": "윈스테크넷",
+      "location": "미기재",
+      "deadline": "2026-05-24T14:59:00.000Z",
+      "postedAt": "2026-05-13T07:50:28.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104117",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:219fb451e95e",
+      "title": "'26년 2분기 수시채용 채용연계형 인턴사원",
+      "company": "가온전선",
+      "location": "미기재",
+      "deadline": "2026-05-24T14:59:00.000Z",
+      "postedAt": "2026-05-13T05:35:20.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104102",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:5c99f4d7ec1f",
+      "title": "[경영지원] 해외법인 관리/결산 채용연계형 인턴 및 경력사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-12T14:59:00.000Z",
+      "postedAt": "2026-05-13T02:05:34.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104097",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:f709755f7592",
+      "title": "[SCM] 수요계획/재고관리 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-12T14:59:00.000Z",
+      "postedAt": "2026-05-13T01:58:58.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104096",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:1bc9bd945e26",
+      "title": "<AI 멀티콘텐츠 창작자 아카데미> 운영 프로젝트 계약직 사원 모집",
+      "company": "엠비씨씨앤아이",
+      "location": "미기재",
+      "deadline": "2026-05-19T14:59:00.000Z",
+      "postedAt": "2026-05-13T00:58:17.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104093",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:4bccc2f9709e",
+      "title": "26년 2분기 채용연계형 인턴 수시채용",
+      "company": "BGF로지스",
+      "location": "미기재",
+      "deadline": "2026-05-19T14:59:00.000Z",
+      "postedAt": "2026-05-12T23:37:48.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104088",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:266571096818",
+      "title": "2026년 채용연계형 하계인턴 모집",
+      "company": "대한항공",
+      "location": "미기재",
+      "deadline": "2026-05-26T14:59:00.000Z",
+      "postedAt": "2026-05-12T08:49:46.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104084",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:c18e7e43112f",
+      "title": "2026 하반기 체험형 인턴십",
+      "company": "안랩",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-14T05:45:59.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104143",
+      "tags": [
+        "인턴",
+        "인턴십"
+      ],
+      "description": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\"> <html><body><div style=\"position:relative;\"> <div><a style=\"display:block;height:1.639344262295082%;left:7.74365821094793%;position:absolute;text-decoration:none;top:96.01735776277724%;width:83.97863818424565%;z-index:1;\" href=\"https://ahnlabrecruiting.ninehire.site\" target=\"_blank\"> </a></di"
+    },
+    {
+      "id": "jasoseol:73dcf1d2ae6a",
+      "title": "2026 채용연계형 인턴십 GENIUS 8th",
+      "company": "컴투스",
+      "location": "미기재",
+      "deadline": "2026-05-26T01:00:00.000Z",
+      "postedAt": "2026-05-12T05:27:12.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104065",
+      "tags": [
+        "인턴",
+        "인턴십"
+      ]
+    },
+    {
+      "id": "jasoseol:9706e07c15d2",
+      "title": "[제조] PDRN/PN 품질관리(QC) 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-07-11T14:59:00.000Z",
+      "postedAt": "2026-05-12T08:57:14.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104086",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:357819d66be9",
+      "title": "취업연계 AI·클라우드 개발 실무교육 | 카카오클라우드 AIaas 마스터 클래스 6기 모집 ✅",
+      "company": "스나이퍼팩토리",
+      "location": "미기재",
+      "deadline": "2026-06-21T14:59:00.000Z",
+      "postedAt": "2026-05-12T08:47:03.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104082",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:28040883e1f3",
+      "title": "취업연계 AI 개발 실무교육 | 한컴 AI 아카데미 6기 수강생 정식 모집(~6/21) 🚀",
+      "company": "스나이퍼팩토리",
+      "location": "미기재",
+      "deadline": "2026-06-21T14:59:00.000Z",
+      "postedAt": "2026-05-12T08:38:47.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104081",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:d1aa59f3e3f9",
+      "title": "글로벌 틱톡 마케팅 인턴 채용 (해외대 전형)",
+      "company": "메디테라피",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-12T08:25:02.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104078",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:e8d7462dc3c2",
+      "title": "대졸신입사원 및 채용형 인턴 채용 (회계/경영지원)",
+      "company": "현대비앤지스틸",
+      "location": "미기재",
+      "deadline": "2026-05-21T14:00:00.000Z",
+      "postedAt": "2026-05-12T08:19:36.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104077",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:9c077c3e3ce0",
+      "title": "[피엔티 채용예정자 부트캠프] 경북대 K-Digital Training AI 캠퍼스 17기 교육생 모집",
+      "company": "경북대학교데이터융복합연구원",
+      "location": "미기재",
+      "deadline": "2026-06-10T14:59:00.000Z",
+      "postedAt": "2026-05-12T08:10:41.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104076",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:0ec0eb979ae9",
+      "title": "상품기획팀 PM 인턴(체험형 인턴)",
+      "company": "앳홈",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-12T07:49:09.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104074",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:48066fde485d",
+      "title": "CATIA 첨단로봇 제조 스쿨 5기 교육생 모집 공고",
+      "company": "다쏘시스템코리아",
+      "location": "미기재",
+      "deadline": "2026-06-08T14:59:00.000Z",
+      "postedAt": "2026-05-11T07:41:30.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104057",
+      "tags": [
+        "로봇"
+      ]
+    },
+    {
+      "id": "jasoseol:c922fb29c623",
+      "title": "2026 상반기 전환형 인턴 채용",
+      "company": "키다리·레진",
+      "location": "미기재",
+      "deadline": "2026-05-31T14:59:00.000Z",
+      "postedAt": "2026-05-11T04:33:09.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104046",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:d8ff0fd489bb",
+      "title": "2026년 6월 체험형 인턴 채용 (교육 운영 분야)",
+      "company": "현대엔지비",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-10T23:23:01.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104038",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "wanted:b4ac78cacb14",
+      "title": "[인턴] AI Engineer - LLM Inference",
+      "company": "업스테이지",
+      "location": "경기",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-11T17:00:03.220Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/360495",
+      "tags": [
+        "a",
+        "llm"
+      ],
+      "description": "주요 업무 LLM 추론의 latency, throughput, cost 간 trade-off를 최적화하기 위한 시스템 및 알고리즘을 설계·구현합니다. Upstage Solar 모델의 구조적 특성을 고려한 추론 최적화 기법을 연구하고 프로덕션에 적용합니다. Upstage Solar 모델 benchmark, evaluation을 자동화하기 위한 CI 파이프라인을 개발합니다. 모니터링 및 관측 가능성(Observability) 체계를 구축하고, 프로덕션 환경에서 비용 효율성을 평가하기 위한 시스템을 구축합니다. 필수사항 최신 LLM 아키텍처 및 서빙 기술에 대한 깊은 이해 모델 추론 시스템의 병목 지점을 이해하고, 이를 분석·개선한 경험 하나 이상의 프로그래밍 언어에 대한 높은 수준의 이해 (예: Golang, "
+    },
+    {
+      "id": "wanted:7c9b14cfc363",
+      "title": "[인턴] AI 데이터 엔지니어",
+      "company": "팬딩(Fanding)",
+      "location": "서울",
+      "deadline": "2026-05-31T00:00:00.000Z",
+      "postedAt": "2026-05-09T17:00:01.773Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/360377",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "wanted:fb6530a85915",
+      "title": "[인턴] ML Engineer",
+      "company": "피에프씨테크놀로지스",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-09T17:00:03.034Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/360178",
+      "tags": [
+        "ml"
+      ]
+    },
+    {
+      "id": "wanted:f10db7dedaf0",
+      "title": "[인턴] B2B AI Product Owner(PO)",
+      "company": "피에프씨테크놀로지스",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-09T17:00:03.034Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/360172",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "jasoseol:0bb63a6be559",
+      "title": "2026 상반기 채용연계형 인턴십",
+      "company": "한온시스템",
+      "location": "미기재",
+      "deadline": "2026-05-19T07:00:00.000Z",
+      "postedAt": "2026-05-08T06:57:13.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104031",
+      "tags": [
+        "인턴",
+        "인턴십"
+      ]
+    },
+    {
+      "id": "jasoseol:76293afda547",
+      "title": "채용연계형 하계인턴 채용",
+      "company": "E1",
+      "location": "미기재",
+      "deadline": "2026-05-25T14:59:00.000Z",
+      "postedAt": "2026-05-07T09:05:04.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104001",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:80cde360f679",
+      "title": "2026년 제2차 계약직 및 체험형 청년인턴 채용",
+      "company": "한국산업단지공단(KICOX)",
+      "location": "미기재",
+      "deadline": "2026-05-21T09:00:00.000Z",
+      "postedAt": "2026-05-08T01:45:43.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104021",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:3312ec139c1c",
+      "title": "반도체 소자개발 부문 연구원 채용",
+      "company": "아이쓰리시스템",
+      "location": "미기재",
+      "deadline": "2026-05-26T22:59:00.000Z",
+      "postedAt": "2026-05-08T01:38:05.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104019",
+      "tags": [
+        "연구원"
+      ]
+    },
+    {
+      "id": "jasoseol:bbe3d655c1c8",
+      "title": "34기 인턴십 공개채용 (마케팅/사업기획/AI/세일즈 외)",
+      "company": "모비데이즈",
+      "location": "미기재",
+      "deadline": "2026-05-24T14:59:00.000Z",
+      "postedAt": "2026-05-08T01:27:11.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104018",
+      "tags": [
+        "ai",
+        "인턴",
+        "인턴십"
+      ]
+    },
+    {
+      "id": "jasoseol:4fa1d4e5343c",
+      "title": "2026년 하반기 인턴채용",
+      "company": "NHN AD",
+      "location": "미기재",
+      "deadline": "2026-05-21T14:59:00.000Z",
+      "postedAt": "2026-05-08T00:39:00.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104013",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:c5567420277c",
+      "title": "AI Platform DevOps Engineer 채용",
+      "company": "마이다스그룹",
+      "location": "미기재",
+      "deadline": "2026-05-17T14:59:00.000Z",
+      "postedAt": "2026-05-08T00:25:30.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/104005",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:34ab990f2336",
+      "title": "데이터 엔지니어(DE) 인턴/신입 채용",
+      "company": "에코마케팅",
+      "location": "미기재",
+      "deadline": "2026-05-17T14:59:00.000Z",
+      "postedAt": "2026-05-07T08:26:57.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103997",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:1e5af72767c2",
+      "title": "준법감시팀 Data Privacy & AI Compliance 담당자 채용",
+      "company": "AXA손해보험",
+      "location": "미기재",
+      "deadline": "2026-05-17T14:59:00.000Z",
+      "postedAt": "2026-05-07T07:46:24.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103993",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:e76a47e67153",
+      "title": "[대학내일ES] 마케팅(AE)/IT(웹기획자)/STAFF(재무 및 HRM) 인턴/경력 채용",
+      "company": "대학내일ES",
+      "location": "미기재",
+      "deadline": "2026-05-18T06:00:00.000Z",
+      "postedAt": "2026-05-07T07:11:38.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103991",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:3c8e6d06f84b",
+      "title": "2026년 2분기 신입·경력·인턴 채용",
+      "company": "NHR",
+      "location": "미기재",
+      "deadline": "2026-05-18T06:00:00.000Z",
+      "postedAt": "2026-05-04T02:09:19.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103943",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:dd7c4614cf70",
+      "title": "해외마케팅팀_글로벌 임플로이언서 마케팅 인턴 (정규직 전환형)",
+      "company": "앳홈",
+      "location": "미기재",
+      "deadline": "2026-05-26T14:59:00.000Z",
+      "postedAt": "2026-05-07T04:07:31.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103984",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:10e035c3e638",
+      "title": "2026년 상반기 DISCO 채용연계형 인턴(신입사원) 채용",
+      "company": "디스코하이테크코리아",
+      "location": "미기재",
+      "deadline": "2026-05-14T14:59:00.000Z",
+      "postedAt": "2026-05-06T00:35:18.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103953",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:bd586b4ab037",
+      "title": "General Affairs Assistant",
+      "company": "비바리퍼블리카(토스)",
+      "location": "미기재",
+      "deadline": "2026-05-24T14:59:00.000Z",
+      "postedAt": "2026-05-06T09:25:19.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103973",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:03ce9c7b00b9",
+      "title": "2026년 체험형 인턴 채용",
+      "company": "한국해양진흥공사(KOBC)",
+      "location": "미기재",
+      "deadline": "2026-05-20T09:00:00.000Z",
+      "postedAt": "2026-05-06T09:17:31.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103972",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:1774c3cd06e3",
+      "title": "2026년 제2차 체험형 청년인턴 및 기간제 근로자 채용공고",
+      "company": "한국관광공사",
+      "location": "미기재",
+      "deadline": "2026-05-21T03:00:00.000Z",
+      "postedAt": "2026-05-06T08:48:53.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103970",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:8f81a8bd9747",
+      "title": "ESG평가본부 인턴 채용",
+      "company": "한국ESG기준원",
+      "location": "미기재",
+      "deadline": "2026-05-18T04:00:00.000Z",
+      "postedAt": "2026-05-06T01:33:42.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103956",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:78730126c885",
+      "title": "2026년 하계 스틸캠프(체험형 인턴십) 인턴 모집",
+      "company": "포스코",
+      "location": "미기재",
+      "deadline": "2026-05-13T14:59:00.000Z",
+      "postedAt": "2026-05-04T09:09:45.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103950",
+      "tags": [
+        "인턴",
+        "인턴십"
+      ]
+    },
+    {
+      "id": "jasoseol:c107b95d125f",
+      "title": "2026년 채용형 청년인턴 채용 공고",
+      "company": "공영홈쇼핑",
+      "location": "미기재",
+      "deadline": "2026-05-16T05:00:00.000Z",
+      "postedAt": "2026-05-04T00:50:28.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103939",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:654292ad24f7",
+      "title": "2026 INTERNSHIP : BREAST CANCER CAMPAIGN",
+      "company": "이엘씨에이한국",
+      "location": "미기재",
+      "deadline": "2026-05-14T14:59:00.000Z",
+      "postedAt": "2026-04-29T23:43:58.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103903",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:fa98b273db26",
+      "title": "2026년 채용연계형 인턴 및 경력직 공개채용",
+      "company": "한국투자부동산신탁",
+      "location": "미기재",
+      "deadline": "2026-05-17T14:59:00.000Z",
+      "postedAt": "2026-04-29T04:55:12.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103889",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:be658718ea70",
+      "title": "2026 채용연계형 인턴 모집",
+      "company": "프레인글로벌",
+      "location": "미기재",
+      "deadline": "2026-05-24T14:59:00.000Z",
+      "postedAt": "2026-04-27T08:34:01.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103832",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "wanted:0bd0775b3d79",
+      "title": "[인턴] AI 크리에이티브 제작",
+      "company": "지로",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-01T17:00:01.621Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/359124",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "wanted:b1a9b93d9cac",
+      "title": "[인턴] 대화형 AI휴먼 콘텐츠 기획자",
+      "company": "클레온",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-05-01T17:00:03.395Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/358875",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "jasoseol:f6cf2fa06594",
+      "title": "Biodance 썸머 인턴 대규모 채용",
+      "company": "뷰티셀렉션",
+      "location": "미기재",
+      "deadline": "2026-05-17T14:59:00.000Z",
+      "postedAt": "2026-04-30T05:56:08.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103919",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:1b808d74334d",
+      "title": "서울시 여성인력개발센터와 함께하는 무료 AI 교육",
+      "company": "서울경제진흥원",
+      "location": "미기재",
+      "deadline": "2026-06-24T14:59:00.000Z",
+      "postedAt": "2026-04-30T00:34:37.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103905",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:8ef5c412b219",
+      "title": "ESG정보분석센터 인턴 채용",
+      "company": "한국ESG기준원",
+      "location": "미기재",
+      "deadline": "2026-05-12T04:00:00.000Z",
+      "postedAt": "2026-04-30T02:29:53.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103911",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:bdfe779449ad",
+      "title": "2026년 직원(정규직, 계약직, 청년인턴) 채용 공고",
+      "company": "과천도시공사",
+      "location": "미기재",
+      "deadline": "2026-05-20T05:00:00.000Z",
+      "postedAt": "2026-04-30T08:41:04.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103931",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:b86585a736d6",
+      "title": "아트디렉터 (체험형 인턴)",
+      "company": "이노션",
+      "location": "미기재",
+      "deadline": "2026-05-05T14:59:00.000Z",
+      "postedAt": "2026-04-30T05:17:06.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103916",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:e28fbf78474e",
+      "title": "2026년 상반기 체험형 청년인턴(일반·자립준비청년) 채용 공고",
+      "company": "중소벤처기업진흥공단(KOSME)",
+      "location": "미기재",
+      "deadline": "2026-05-14T08:00:00.000Z",
+      "postedAt": "2026-04-28T01:00:17.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103839",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:2af3de2ba5e7",
+      "title": "Digital Innovation Lab – 생성형 AI & AX 개발자/컨설턴트 경력직 채용",
+      "company": "삼일회계법인",
+      "location": "미기재",
+      "deadline": "2026-06-01T14:59:00.000Z",
+      "postedAt": "2026-04-30T00:56:46.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103907",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:aeb628bde170",
+      "title": "UX부문 인턴 연구원 채용",
+      "company": "한국리서치",
+      "location": "미기재",
+      "deadline": "2026-05-10T14:59:00.000Z",
+      "postedAt": "2026-04-29T23:53:40.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103904",
+      "tags": [
+        "연구원",
+        "인턴"
+      ]
+    },
+    {
+      "id": "wanted:51c0196e92a7",
+      "title": "[인턴] [채널톡] AI Growth Sales",
+      "company": "채널코퍼레이션",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-04-30T17:00:06.364Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/358343",
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "id": "jasoseol:51096670a18d",
+      "title": "[영업] 해외 B2B 영업지원 채용연계형 인턴사원 모집",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-06-28T14:59:00.000Z",
+      "postedAt": "2026-04-29T07:18:54.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103895",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:11b8a5ce8c81",
+      "title": "[영업] 해외 B2B 영업 채용연계형 인턴사원 모집(미국/유럽/러시아/CIS 권역)",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-05-10T14:59:00.000Z",
+      "postedAt": "2026-04-29T04:15:57.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103886",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:1d992c275d98",
+      "title": "[영업] 해외 B2B 영업 채용연계형 인턴사원 모집(중남미/MENA/아시아 권역)",
+      "company": "에이피알",
+      "location": "미기재",
+      "deadline": "2026-06-28T14:59:00.000Z",
+      "postedAt": "2026-04-29T04:14:15.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103885",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:e4d90b35a1e1",
+      "title": "2026년 체험형 인턴(청년) 공개채용",
+      "company": "한국산업기술진흥원(KIAT)",
+      "location": "미기재",
+      "deadline": "2026-05-13T05:00:00.000Z",
+      "postedAt": "2026-04-28T06:44:37.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103859",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:46ae652f5f96",
+      "title": "광고 운영 인턴 (기간제 인턴)",
+      "company": "와디즈",
+      "location": "미기재",
+      "deadline": "2026-06-23T14:59:00.000Z",
+      "postedAt": "2026-04-28T06:24:07.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103857",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:dc14821cf267",
+      "title": "2026년도 제1차 신입직원 및 체험형 청년인턴 채용",
+      "company": "국가철도공단(KR)",
+      "location": "미기재",
+      "deadline": "2026-05-11T09:00:00.000Z",
+      "postedAt": "2026-04-28T05:27:41.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103854",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:ef88a9ba99af",
+      "title": "2026년 2분기 계약직원(용역사업)/계약직원(휴직대체, 사업수행, 청년인턴, 장애인)",
+      "company": "한국보건산업진흥원",
+      "location": "미기재",
+      "deadline": "2026-05-11T09:00:00.000Z",
+      "postedAt": "2026-04-28T01:18:14.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103842",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:de34e238d87e",
+      "title": "쿠팡CFS 전국 대규모 현장관리자(Team Captain) 정규직 공개채용",
+      "company": "쿠팡풀필먼트서비스",
+      "location": "미기재",
+      "deadline": "2026-06-27T14:59:00.000Z",
+      "postedAt": "2026-04-28T01:31:36.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103844",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:f79ceecd526e",
+      "title": "생성형AI 활용 데이터 엔지니어 3기 모집",
+      "company": "SK플래닛",
+      "location": "미기재",
+      "deadline": "2026-06-14T14:59:00.000Z",
+      "postedAt": "2026-04-28T01:20:51.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103843",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:2d023b3cda3a",
+      "title": "2026년 하반기 채용연계형 인턴 채용 공고",
+      "company": "공항철도",
+      "location": "미기재",
+      "deadline": "2026-05-07T02:00:00.000Z",
+      "postedAt": "2026-04-27T02:35:59.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103818",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:0741f2fd66a7",
+      "title": "2026년 사무직 신입직원(채용형 인턴) 채용",
+      "company": "공무원연금공단(GEPS)",
+      "location": "미기재",
+      "deadline": "2026-05-11T09:00:00.000Z",
+      "postedAt": "2026-04-27T06:27:54.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103825",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:0319c74d2640",
+      "title": "[셀리맥스] 스페인어 마케팅 인턴 채용",
+      "company": "앱솔브랩",
+      "location": "미기재",
+      "deadline": "2026-06-26T14:59:00.000Z",
+      "postedAt": "2026-04-27T05:50:15.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103823",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:9466e40a4a62",
+      "title": "청년인턴[체험형] 채용공고",
+      "company": "한국에너지공단",
+      "location": "미기재",
+      "deadline": "2026-05-13T05:00:00.000Z",
+      "postedAt": "2026-04-27T05:04:04.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103821",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:371468a49f3a",
+      "title": "2026 상반기 채용연계형 인턴 수시채용",
+      "company": "OCI",
+      "location": "미기재",
+      "deadline": "2026-05-11T00:59:00.000Z",
+      "postedAt": "2026-04-27T02:31:20.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103817",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:b7b62da85ef4",
+      "title": "수출부문 Style R&D Womens Plus 주니어경력 채용",
+      "company": "신원",
+      "location": "미기재",
+      "deadline": "2026-05-08T14:59:00.000Z",
+      "postedAt": "2026-04-27T01:57:09.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103815",
+      "tags": [
+        "r&d"
+      ]
+    },
+    {
+      "id": "jasoseol:eaa79e9c2ea9",
+      "title": "엔지니어 체험형 인턴 모집",
+      "company": "어플라이드 머티어리얼즈 코리아",
+      "location": "미기재",
+      "deadline": "2026-05-06T08:00:00.000Z",
+      "postedAt": "2026-04-24T00:42:16.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103786",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:61a0931435aa",
+      "title": "2026 여름 인턴십 채용연계형",
+      "company": "펄어비스",
+      "location": "미기재",
+      "deadline": "2026-05-11T06:00:00.000Z",
+      "postedAt": "2026-04-23T04:07:54.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103777",
+      "tags": [
+        "인턴",
+        "인턴십"
+      ]
+    },
+    {
+      "id": "jasoseol:20a01e14f68f",
+      "title": "[홈페이지지원] 2026 글로벌 AI 비지니스 플랫폼 개발 인재 모집",
+      "company": "티맥스소프트",
+      "location": "미기재",
+      "deadline": "2026-05-10T14:59:00.000Z",
+      "postedAt": "2026-04-24T05:05:02.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103795",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:edc01cedad1f",
+      "title": "AI+ Academy 교육생 모집",
+      "company": "대한상공회의소",
+      "location": "미기재",
+      "deadline": "2026-05-10T14:59:00.000Z",
+      "postedAt": "2026-04-20T05:14:21.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103718",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:dfa3daedb94a",
+      "title": "2026년 채용연계형 해외대 인턴 공개채용",
+      "company": "한국투자리얼에셋운용",
+      "location": "미기재",
+      "deadline": "2026-05-08T06:00:00.000Z",
+      "postedAt": "2026-04-24T05:53:57.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103800",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:45543849d625",
+      "title": "2026년 상반기 체험형 인턴 채용",
+      "company": "한국남부발전(KOSPO)",
+      "location": "미기재",
+      "deadline": "2026-05-07T02:00:00.000Z",
+      "postedAt": "2026-04-24T05:19:18.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103797",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:6aeb287459d1",
+      "title": "2026년 청년체험형 인턴 채용계획 공고",
+      "company": "인천시설공단",
+      "location": "미기재",
+      "deadline": "2026-05-14T09:00:00.000Z",
+      "postedAt": "2026-04-24T04:20:50.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103793",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:e282e428f12a",
+      "title": "졸업예정자를 위한 채용전환형 하계 인턴십",
+      "company": "현대자동차",
+      "location": "미기재",
+      "deadline": "2026-05-08T08:00:00.000Z",
+      "postedAt": "2026-04-23T05:44:41.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103779",
+      "tags": [
+        "인턴",
+        "인턴십"
+      ]
+    },
+    {
+      "id": "jasoseol:19ced5ebcfe8",
+      "title": "2026년 하계 체험형 청년인턴 채용",
+      "company": "IBK기업은행",
+      "location": "미기재",
+      "deadline": "2026-05-13T05:00:00.000Z",
+      "postedAt": "2026-04-22T08:36:30.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103768",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:59dce7652ebe",
+      "title": "데이터/AI 부문 경력직 채용",
+      "company": "우리자산운용",
+      "location": "미기재",
+      "deadline": "2026-05-03T14:59:00.000Z",
+      "postedAt": "2026-04-23T06:50:18.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103781",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "jasoseol:24a63de4b075",
+      "title": "2026년 상반기 신입사원 및 채용연계형 인턴 채용",
+      "company": "대우건설",
+      "location": "미기재",
+      "deadline": "2026-05-06T14:59:00.000Z",
+      "postedAt": "2026-04-22T07:11:02.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103762",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "jasoseol:0a6d1aa1d315",
+      "title": "2026년 제3차 체험형 청년인턴(일반) 채용 공고",
+      "company": "창업진흥원(KISED)",
+      "location": "미기재",
+      "deadline": "2026-05-07T07:00:00.000Z",
+      "postedAt": "2026-04-23T01:19:59.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103773",
+      "tags": [
+        "인턴"
+      ]
+    },
+    {
+      "id": "saramin:5818dfab7808",
+      "title": "제닉스로보틱스(주) 관리직/연구직/기술직 각 부문 채용",
+      "company": "제닉스로보틱스(주)",
+      "location": "충남  천안시 서북구",
+      "deadline": "2026-04-28T14:59:00.000Z",
+      "postedAt": "2026-04-23T17:00:01.645Z",
+      "source": "saramin",
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx=53684692",
+      "tags": [
+        "반도체",
+        "알고리즘",
+        "영상처리",
+        "자율주행",
+        "C++"
+      ],
+      "experience": "신입·경력"
+    },
+    {
+      "id": "jasoseol:f455d066fe90",
+      "title": "2026년 체험형 청년인턴 공개모집",
+      "company": "코레일유통",
+      "location": "미기재",
+      "deadline": "2026-05-06T08:00:00.000Z",
+      "postedAt": "2026-04-22T04:33:30.000Z",
+      "source": "jasoseol",
+      "url": "https://jasoseol.com/recruit/103758",
+      "tags": [
+        "인턴"
+      ]
+    },
     {
       "id": "wanted:512f89a0254b",
       "title": "[인턴] AI Product Builder",

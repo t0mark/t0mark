@@ -19,6 +19,19 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const body = await request.json() as CalendarData
+    // Remove stale priorityOrder entries that no longer exist in todos
+    if (body.priorityOrder && body.todos) {
+      const validKeys = new Set(
+        Object.entries(body.todos).flatMap(([cat, catData]) =>
+          catData.items
+            .filter((item) => item.text && item.text.trim())
+            .map((item) => `${cat}::${item.text}`)
+        )
+      )
+      body.priorityOrder = body.priorityOrder.filter(
+        (entry) => entry.text && entry.category && validKeys.has(`${entry.category}::${entry.text}`)
+      )
+    }
     const yamlStr = yaml.dump(body, { lineWidth: -1 })
     const tmpPath = filePath + '.tmp'
     writeFileSync(tmpPath, yamlStr, 'utf-8')

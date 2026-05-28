@@ -76,7 +76,8 @@ function applyAutoReset(data: RoutineData): { data: RoutineData; changed: boolea
   const items = data.items.map((item) => ({ ...item }))
 
   for (const { recurrence, boundary } of checks) {
-    const lastResetTime = new Date(lastReset[recurrence]).getTime()
+    const parsed = new Date(lastReset[recurrence]).getTime()
+    const lastResetTime = isNaN(parsed) ? 0 : parsed
     if (lastResetTime < boundary.getTime()) {
       // 체크 해제
       for (const item of items) {

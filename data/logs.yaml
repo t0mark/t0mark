@@ -1,11 +1,10 @@
 logs:
-  - week: 26. 04. 20 ~ 26. 04. 25
+  - week: 26. 05. 25 ~ 26. 05. 30
     rows: []
-  - week: 26. 04. 13 ~ 26. 04. 18
-    rows: []
-  - week: 26. 04. 06 ~ 26. 04. 11
+  - week: 26. 05. 11 ~ 26. 05. 16
     rows:
       - day: 월
-        category: 과제
-        items:
-          - '@@ctFqc'
+        category: ''
+        items: []
+  - week: 26. 05. 04 ~ 26. 05. 09
+    rows: []
