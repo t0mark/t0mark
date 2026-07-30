@@ -8,11 +8,11 @@ echo '{"lastUpdated":null,"items":[]}' > data/robotics_trends.json
 npm run fetch-trends
 
 # 공고 스크래핑
-rm -f data/interns.json data/interns-filter-cache.json
+rm -f data/interns.json data/.cache/interns-filter.json
 node scripts/fetch-interns.js --limit=5 2>&1
 
 # 장학생 스크래핑
-rm -f data/scholarships.json data/scholarships-filter-cache.json
+rm -f data/scholarships.json data/.cache/scholarships-filter.json
 npm run fetch-scholarships
 
 # 서버 시작

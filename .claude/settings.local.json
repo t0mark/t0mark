@@ -1,33 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias=\"@/*\" --no-git --yes)",
-      "Bash(npm install)",
-      "Bash(npm run build)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
-      "Bash(curl -s \"http://localhost:3000/api/calendar\")",
-      "Bash(python -m json.tool)",
-      "Bash(curl -s \"http://localhost:3000/api/graduate/hardware\")",
-      "Bash(pkill -f \"next dev\")",
-      "Bash(taskkill /F /IM node.exe)",
-      "Bash(tasklist /FI \"PID eq 27784\")",
-      "Bash(tasklist /FI \"PID eq 11048\")",
-      "Read(//etc/cron.d/**)",
-      "Bash(systemctl list-timers --user)",
-      "Bash(node -e \"const d = require\\(''/home/t0mark/Desktop/t0mark/data/interns.json''\\); console.log\\(JSON.stringify\\(d.items[0], null, 2\\)\\)\")",
-      "Bash(journalctl --no-pager -n 300)",
-      "Bash(vcgencmd measure_temp)",
-      "Read(//sys/class/thermal/**)",
-      "Bash(crontab -l)",
-      "Bash(sudo crontab:*)",
-      "Bash(last -20)",
-      "Bash(journalctl --no-pager -n 1000)",
-      "Read(//proc/sys/fs/inotify/**)",
-      "Bash(who -b)",
-      "Bash(journalctl --no-pager -n 50)",
-      "Bash(pm2 start:*)",
-      "Bash(pm2 save:*)",
-      "Bash(pm2 startup:*)"
-    ]
+      "Task", "Bash", "Glob", "Grep", "LS", "Read", "Edit", "MultiEdit", "Write", "WebFetch", "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
   }
 }

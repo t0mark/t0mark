@@ -1,7 +1,0 @@
-/* 네트워크 그래프 */
-#network {
-  width: 100%;
-  max-width: 1400px;
-  height: calc(100vh - var(--nav-height) - var(--space-xl));
-  border: none;
-}

@@ -6,7 +6,9 @@ require('dotenv').config({ path: require('path').join(process.cwd(), '.env.local
 const { fetchSaramin } = require('./scholarships/saramin');
 const { fetchJobkorea } = require('./scholarships/jobkorea');
 const { gptFilter } = require('./scholarships/gpt-filter');
-const { loadData, saveData, mergeItems } = require('./scholarships/storage');
+const { createStorage } = require('./shared/storage');
+
+const { loadData, saveData, mergeItems } = createStorage('data/scholarships.json');
 
 function parseArgs() {
   const args = process.argv.slice(2);

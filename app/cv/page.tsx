@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Phone, Mail, MapPin, Linkedin, Github, Trophy, BookOpen } from 'lucide-react'
-import { cvData } from '@/data/cv'
+import { cvData } from '@/lib/cv'
 
 export const metadata = { title: 'CV – Hyeonung Yang' }
 

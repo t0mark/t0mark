@@ -9,7 +9,9 @@ const { fetchJobkorea } = require('./interns/jobkorea');
 const { fetchWanted } = require('./interns/wanted');
 const { fetchJasoseol } = require('./interns/jasoseol');
 const { gptFilter } = require('./interns/gpt-filter');
-const { loadData, saveData, mergeItems } = require('./interns/storage');
+const { createStorage } = require('./shared/storage');
+
+const { loadData, saveData, mergeItems } = createStorage('data/interns.json');
 
 /**
  * CLI 옵션 파싱

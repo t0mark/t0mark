@@ -1,23 +1,24 @@
-dDay: {}
+dDay:
+  ICRA:
+    targetDate: '2026-09-16'
 tasks: {}
 todos:
   학습 (논문 / 이론):
     icon: 🔬
     items:
-      - text: AAAI 논문 주제
-        deadline: ASAP
       - text: ICRA 논문 주제
-        deadline: TYT
+        deadline: '2026-09-15'
+      - text: EA-VLN 논문
+        deadline: '2026-09-11'
   기술 구현:
     icon: 🧑🏻‍💻
     items:
       - text: VR Teleop 3D 공간 생성
         deadline: TYT
+      - text: VR Teleop 웹 기반으로 전환
   프로그래밍:
     icon: 🖥️
-    items:
-      - text: NPU 테스트
-        deadline: '2026-05-29'
+    items: []
   영어:
     icon: 🔠
     items: []
@@ -26,22 +27,14 @@ todos:
     items: []
   과제:
     icon: 📚
-    items:
-      - text: 스마트팩토리 세미나
-        deadline: '2026-06-01'
-      - text: TA 일지 2개
-        deadline: '2026-05-29'
+    items: []
   개인 공부:
     icon: 👨‍💻
     items:
       - text: 3D Printer
         deadline: TYT
 priorityOrder:
-  - category: 과제
-    text: TA 일지 2개
-  - category: 프로그래밍
-    text: NPU 테스트
-  - category: 과제
-    text: 스마트팩토리 세미나
   - category: 학습 (논문 / 이론)
-    text: AAAI 논문 주제
+    text: EA-VLN 논문
+  - category: 학습 (논문 / 이론)
+    text: ICRA 논문 주제

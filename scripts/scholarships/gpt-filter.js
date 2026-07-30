@@ -3,9 +3,9 @@
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
-const { fetchDescriptions } = require('../fetch-description');
+const { fetchDescriptions } = require('../shared/fetch-description');
 
-const CACHE_FILE = path.join(process.cwd(), 'data', 'scholarships-filter-cache.json');
+const CACHE_FILE = path.join(process.cwd(), 'data', '.cache', 'scholarships-filter.json');
 const BATCH_SIZE = 10;
 const MODEL = 'gpt-4o-mini';
 

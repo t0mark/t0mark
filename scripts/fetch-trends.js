@@ -7,8 +7,10 @@ require('dotenv').config({ path: '.env.local' });
 const { fetchArxiv } = require('./fetchers/arxiv');
 const { fetchSemanticScholar } = require('./fetchers/semanticscholar');
 const { fetchRssFeeds } = require('./fetchers/rss');
-const { translateItems } = require('./translator');
-const { loadData, saveData, mergeItems } = require('./storage');
+const { translateItems } = require('./shared/translator');
+const { createStorage } = require('./shared/storage');
+
+const { loadData, saveData, mergeItems } = createStorage('data/robotics_trends.json');
 
 /**
  * CLI 옵션 파싱
