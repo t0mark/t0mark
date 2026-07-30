@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Navbar from './Navbar'
 
-const HIDDEN_PATHS = ['/cv']
+const HIDDEN_PATHS = ['/cv', '/memo-editor']
 
 export default function ConditionalNavbar() {
   const pathname = usePathname()

@@ -9,48 +9,48 @@ const catColor: Record<string, string> = {
   Mechatronics: 'bg-rose-50 text-rose-700 border-rose-200',
 }
 
-const conferences: { category: string; items: { name: string; fullName?: string; organizer: string[]; deadline: string; date: string }[] }[] = [
+const conferences: { category: string; items: { name: string; fullName?: string; organizer: string[]; deadline: string; date: string; difficulty: number }[] }[] = [
   {
     category: 'Robot',
     items: [
-      { name: 'ICRA',                    fullName: 'International Conference on Robotics and Automation',                   organizer: ['IEEE RAS'],        deadline: '24.09.15', date: '25.05.19' },
-      { name: 'RoboSoft',                fullName: 'IEEE International Conference on Soft Robotics',                        organizer: ['IEEE'],            deadline: '24.10.15', date: '25.04.23' },
-      { name: 'RSS',                     fullName: 'Robotics: Science and Systems',                                         organizer: ['RSS Foundation'],  deadline: '25.01.24', date: '25.06.21' },
-      { name: 'IROS',                    fullName: 'International Conference on Intelligent Robots and Systems',             organizer: ['IEEE RAS', 'RSJ'], deadline: '25.03.02', date: '25.10.19' },
-      { name: 'CASE',                    fullName: 'IEEE International Conference on Automation Science and Engineering',    organizer: ['IEEE RAS'],        deadline: '25.03.15', date: '25.08.17' },
-      { name: 'ICROS Annual Conference', fullName: undefined,                                                                organizer: ['ICROS'],           deadline: '25.04.18', date: '25.06.25' },
-      { name: 'CoRL',                    fullName: 'Conference on Robot Learning',                                          organizer: ['IPAM'],            deadline: '25.04.28', date: '25.09.27' },
-      { name: 'Humanoids',               fullName: 'IEEE-RAS International Conference on Humanoid Robots',                  organizer: ['IEEE RAS'],        deadline: '25.05.31', date: '25.09.30' },
-      { name: 'ICCAS',                   fullName: 'International Conference on Control, Automation, and Systems',          organizer: ['ICROS'],           deadline: '25.05.31', date: '25.11.04' },
-      { name: 'KRoC',                    fullName: '한국로봇종합학술대회',                                                    organizer: ['KROS'],            deadline: '25.08.29', date: '26.02.04' },
-      { name: 'HRI',                     fullName: 'ACM/IEEE International Conference on Human-Robot Interaction',          organizer: ['ACM', 'IEEE RAS'], deadline: '25.09.30', date: '26.03.16' },
+      { name: 'ICRA',             fullName: 'International Conference on Robotics and Automation',                   organizer: ['IEEE RAS'],        deadline: '24.09.15', date: '25.05.19', difficulty: 3 },
+      { name: 'RSS',              fullName: 'Robotics: Science and Systems',                                         organizer: ['RSS Foundation'],  deadline: '25.01.24', date: '25.06.21', difficulty: 5 },
+      { name: 'IROS',             fullName: 'International Conference on Intelligent Robots and Systems',             organizer: ['IEEE RAS', 'RSJ'], deadline: '25.03.02', date: '25.10.19', difficulty: 2 },
+      { name: 'ICROS 학술대회',   fullName: '제어로봇시스템학회 국내 학술대회',                                        organizer: ['ICROS'],           deadline: '25.04.18', date: '25.06.25', difficulty: 1 },
+      { name: 'CoRL',             fullName: 'Conference on Robot Learning',                                          organizer: ['IPAM'],            deadline: '25.04.28', date: '25.09.27', difficulty: 4 },
+      { name: 'ICCAS',            fullName: 'International Conference on Control, Automation, and Systems (ICROS 주관 국제)', organizer: ['ICROS'],  deadline: '25.05.31', date: '25.11.04', difficulty: 1 },
+      { name: 'KRoC',             fullName: '한국로봇종합학술대회',                                                    organizer: ['KROS'],            deadline: '25.08.29', date: '26.02.04', difficulty: 1 },
+      { name: 'HRI',              fullName: 'ACM/IEEE International Conference on Human-Robot Interaction',          organizer: ['ACM', 'IEEE RAS'], deadline: '25.09.30', date: '26.03.16', difficulty: 4 },
     ],
   },
   {
     category: 'CV',
     items: [
-      { name: 'CVPR', fullName: 'Conference on Computer Vision and Pattern Recognition', organizer: ['IEEE CVF'], deadline: '24.11.08', date: '25.06.10' },
-      { name: 'ICCV', fullName: 'International Conference on Computer Vision',           organizer: ['IEEE CVF'], deadline: '25.03.07', date: '25.10.19' },
-      { name: 'ECCV', fullName: 'European Conference on Computer Vision',                organizer: ['ECVA'],     deadline: '26.03.05', date: '26.09.08' },
+      { name: 'CVPR', fullName: 'Conference on Computer Vision and Pattern Recognition', organizer: ['IEEE CVF'], deadline: '24.11.08', date: '25.06.10', difficulty: 5 },
+      { name: 'ICCV', fullName: 'International Conference on Computer Vision',           organizer: ['IEEE CVF'], deadline: '25.03.07', date: '25.10.19', difficulty: 5 },
+      { name: 'ECCV', fullName: 'European Conference on Computer Vision',                organizer: ['ECVA'],     deadline: '26.03.05', date: '26.09.08', difficulty: 5 },
     ],
   },
   {
     category: 'AI/ML',
     items: [
-      { name: 'ICLR',    fullName: 'International Conference on Learning Representations',  organizer: ['ICLR'],               deadline: '24.10.01', date: '25.04.24' },
-      { name: 'ICML',    fullName: 'International Conference on Machine Learning',          organizer: ['IMLS'],               deadline: '25.01.31', date: '25.07.13' },
-      { name: 'NeurIPS', fullName: 'Conference on Neural Information Processing Systems',   organizer: ['NeurIPS Foundation'], deadline: '25.05.15', date: '25.12.02' },
-      { name: 'AAAI',    fullName: 'AAAI Conference on Artificial Intelligence',            organizer: ['AAAI'],               deadline: '25.08.01', date: '26.01.20' },
-    ],
-  },
-  {
-    category: 'Control',
-    items: [
-      { name: 'ACC', fullName: 'American Control Conference',             organizer: ['AACC'],     deadline: '24.10.02', date: '25.07.08' },
-      { name: 'CDC', fullName: 'IEEE Conference on Decision and Control', organizer: ['IEEE CSS'], deadline: '25.03.31', date: '25.12.10' },
+      { name: 'ICLR',    fullName: 'International Conference on Learning Representations',  organizer: ['ICLR'],               deadline: '24.10.01', date: '25.04.24', difficulty: 4 },
+      { name: 'ICML',    fullName: 'International Conference on Machine Learning',          organizer: ['IMLS'],               deadline: '25.01.31', date: '25.07.13', difficulty: 5 },
+      { name: 'NeurIPS', fullName: 'Conference on Neural Information Processing Systems',   organizer: ['NeurIPS Foundation'], deadline: '25.05.15', date: '25.12.02', difficulty: 5 },
+      { name: 'AAAI',    fullName: 'AAAI Conference on Artificial Intelligence',            organizer: ['AAAI'],               deadline: '25.08.01', date: '26.01.20', difficulty: 3 },
     ],
   },
 ]
+
+function DifficultyStars({ level }: { level: number }) {
+  const filled = Math.max(0, Math.min(5, level))
+  return (
+    <span className="font-mono tracking-tight whitespace-nowrap" aria-label={`난이도 ${filled}/5`}>
+      <span className="text-amber-500">{'★'.repeat(filled)}</span>
+      <span className="text-gray-300">{'★'.repeat(5 - filled)}</span>
+    </span>
+  )
+}
 
 const journals: { category: string; items: { name: string; fullName: string; organizer: string[]; freq: string; if_: string; index_: string; q_: string }[] }[] = [
   {
@@ -134,6 +134,7 @@ export default function ConferencesTab() {
                 <th className="text-left px-4 py-2.5 font-semibold text-text-muted">주관</th>
                 <th className="text-left px-4 py-2.5 font-semibold text-text-muted whitespace-nowrap">제출 마감일</th>
                 <th className="text-left px-4 py-2.5 font-semibold text-text-muted whitespace-nowrap">개최일</th>
+                <th className="text-left px-4 py-2.5 font-semibold text-text-muted whitespace-nowrap">난이도</th>
               </tr>
             </thead>
             <tbody>
@@ -163,6 +164,9 @@ export default function ConferencesTab() {
                     </td>
                     <td className="px-4 py-2.5 align-middle text-text-muted font-mono">{item.deadline}</td>
                     <td className="px-4 py-2.5 align-middle text-text-muted font-mono">{item.date}</td>
+                    <td className="px-4 py-2.5 align-middle">
+                      <DifficultyStars level={item.difficulty} />
+                    </td>
                   </tr>
                 ))
               )}

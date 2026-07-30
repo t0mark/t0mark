@@ -18,16 +18,19 @@ const parser = new Parser({
   },
 });
 
-// NVIDIA 블로그 로보틱스 관련 키워드 필터
-const NVIDIA_KEYWORDS = [
+// 일반 AI 블로그(NVIDIA/DeepMind/OpenAI)에서 로보틱스 관련 글만 걸러내는
+// 저비용 키워드 필터. 정밀 판정은 downstream GPT filter가 담당.
+const ROBOTICS_KEYWORDS = [
   'robot', 'robotics', 'autonomous', 'manipulation', 'isaac',
   'perception', 'humanoid', 'drone', 'navigation', 'embodied',
-  'sim-to-real', 'dexterous', 'locomotion',
+  'sim-to-real', 'dexterous', 'locomotion', 'slam',
+  'vla', 'visuomotor', 'quadruped', 'physical intelligence',
+  'world model', 'mobile robot',
 ];
 
-function isNvidiaRoboticsRelated(title, abstract) {
+function isRoboticsRelated(title, abstract) {
   const text = `${title} ${abstract}`.toLowerCase();
-  return NVIDIA_KEYWORDS.some((kw) => text.includes(kw));
+  return ROBOTICS_KEYWORDS.some((kw) => text.includes(kw));
 }
 
 // 구독할 RSS 피드 목록 (무인증, 무료)
@@ -60,19 +63,19 @@ const RSS_FEEDS = [
     source: 'nvidia',
     label: 'NVIDIA Technical Blog',
     url: 'https://blogs.nvidia.com/feed/',
-    filter: isNvidiaRoboticsRelated, // 로보틱스 관련 글만 수집
+    filter: isRoboticsRelated,
   },
   {
     source: 'deepmind',
     label: 'Google DeepMind / AI Blog',
     url: 'https://blog.google/innovation-and-ai/technology/ai/rss/',
-    filter: null,
+    filter: isRoboticsRelated,
   },
   {
     source: 'openai',
     label: 'OpenAI News',
     url: 'https://openai.com/news/rss.xml',
-    filter: null,
+    filter: isRoboticsRelated,
   },
 ];
 

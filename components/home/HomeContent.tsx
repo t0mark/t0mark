@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react'
 import type { CalendarData } from '@/types/calendar'
 import HomePriority from './HomePriority'
 import HomeTodo from './HomeTodo'
+import HomeNote from './HomeNote'
 
 export default function HomeContent() {
   const [data, setData] = useState<CalendarData | null>(null)
@@ -37,6 +38,11 @@ export default function HomeContent() {
       <section className="mt-10">
         <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">TODO</h2>
         <HomeTodo data={data} onSave={save} />
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Note</h2>
+        <HomeNote data={data} />
       </section>
     </>
   )

@@ -5,14 +5,30 @@ const axios = require('axios');
 const SS_API = 'https://api.semanticscholar.org/graph/v1/paper/search';
 const REQUEST_TIMEOUT_MS = 20000;
 
-// 로보틱스 관련 검색 쿼리 (최신 핫 토픽 중심)
+// 로보틱스 관련 검색 쿼리 - 관심 R&D 도메인 전반을 커버
+// (조작/휴머노이드/VLA는 기존, SLAM/자율주행/RL/모바일 매니퓰레이션 추가)
 const QUERIES = [
+  // 조작·손
   'robot manipulation foundation model',
-  'vision language action robot',
-  'sim-to-real transfer robotics',
-  'diffusion policy robot',
   'dexterous hand manipulation',
+  'mobile manipulation',
+  // 학습 정책
+  'vision language action robot',
+  'diffusion policy robot',
+  'visuomotor policy learning',
+  'robot reinforcement learning',
+  // 시뮬-투-리얼
+  'sim-to-real transfer robotics',
+  // 휴머노이드·이동
   'humanoid robot learning',
+  'quadruped locomotion learning',
+  // 인식·SLAM
+  'visual SLAM localization',
+  'lidar 3D object detection',
+  // 자율주행
+  'end-to-end autonomous driving',
+  // 임베디드 AI
+  'embodied AI navigation',
 ];
 
 /**

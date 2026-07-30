@@ -15,6 +15,7 @@
     "fetch-scholarships:fast": "node scripts/fetch-scholarships.js --limit=5 --skip-gpt"
   },
   "dependencies": {
+    "googleapis": "^173.0.0",
     "js-yaml": "^4.1.0",
     "lucide-react": "^0.469.0",
     "next": "^15.5.12",

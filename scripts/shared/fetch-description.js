@@ -4,7 +4,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const TIMEOUT = 12000;
-const MAX_CHARS = 400;
+const MAX_CHARS = 1500;
 const MAX_CONCURRENCY = 3;
 
 const HEADERS = {
@@ -15,6 +15,27 @@ const HEADERS = {
 
 function truncate(text) {
   return text.replace(/\s+/g, ' ').trim().slice(0, MAX_CHARS);
+}
+
+/**
+ * HTML을 순수 텍스트로 변환. <img alt="..."> 등 태그 속성값은 버림.
+ * 실제 본문이 이미지·비어있는 마크업 뿐이면 빈 문자열 반환 → null 처리로 이어짐.
+ */
+function stripHtml(text) {
+  if (!text || typeof text !== 'string') return '';
+  // HTML로 판단되면 cheerio로 파싱해 body 텍스트만 추출
+  if (/<[a-z!][^>]*>/i.test(text)) {
+    try {
+      const $ = cheerio.load(text);
+      // script/style 태그는 제거
+      $('script, style, noscript').remove();
+      return $('body').text() || $.root().text() || '';
+    } catch {
+      // 파싱 실패 시 태그만 rough하게 제거
+      return text.replace(/<[^>]+>/g, ' ');
+    }
+  }
+  return text;
 }
 
 async function fetchSaraminDescription(url) {
@@ -96,8 +117,11 @@ async function fetchJasoseolDescription(url) {
     }
   );
   const job = response.data ?? {};
-  const text = job.description || job.content || job.body || job.detail || '';
-  return truncate(text) || null;
+  const raw = job.description || job.content || job.body || job.detail || '';
+  const plain = stripHtml(raw);
+  const cleaned = truncate(plain);
+  // HTML 껍데기(예: <img>만 있는 경우)라 실제 텍스트가 없으면 null 반환
+  return cleaned.length >= 20 ? cleaned : null;
 }
 
 async function fetchDescription(item) {

@@ -11,7 +11,7 @@ const { fetchJasoseol } = require('./interns/jasoseol');
 const { gptFilter } = require('./interns/gpt-filter');
 const { createStorage } = require('./shared/storage');
 
-const { loadData, saveData, mergeItems } = createStorage('data/interns.json');
+const { loadData, saveData, mergeItems, pruneExpired } = createStorage('data/interns.json');
 
 /**
  * CLI 옵션 파싱
@@ -39,9 +39,11 @@ async function main() {
   if (skipGpt) console.log(`GPT      : 건너뜀 (--skip-gpt)`);
   console.log('');
 
-  // 1. 기존 데이터 로드
-  const existing = loadData();
-  console.log(`[Info] 기존 항목: ${existing.items.length}개`);
+  // 1. 기존 데이터 로드 + 만료 공고 정리
+  const loaded = loadData();
+  console.log(`[Info] 기존 항목: ${loaded.items.length}개`);
+  const existing = pruneExpired(loaded);
+  console.log(`[Info] 유효 항목: ${existing.items.length}개`);
 
   // 2. 병렬 수집
   console.log('\n── 수집 중 ───────────────────────────');

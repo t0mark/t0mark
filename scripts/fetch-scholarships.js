@@ -8,7 +8,7 @@ const { fetchJobkorea } = require('./scholarships/jobkorea');
 const { gptFilter } = require('./scholarships/gpt-filter');
 const { createStorage } = require('./shared/storage');
 
-const { loadData, saveData, mergeItems } = createStorage('data/scholarships.json');
+const { loadData, saveData, mergeItems, pruneExpired } = createStorage('data/scholarships.json');
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -31,8 +31,10 @@ async function main() {
   if (skipGpt) console.log(`GPT      : 건너뜀 (--skip-gpt)`);
   console.log('');
 
-  const existing = loadData();
-  console.log(`[Info] 기존 항목: ${existing.items.length}개`);
+  const loaded = loadData();
+  console.log(`[Info] 기존 항목: ${loaded.items.length}개`);
+  const existing = pruneExpired(loaded);
+  console.log(`[Info] 유효 항목: ${existing.items.length}개`);
 
   console.log('\n── 수집 중 ───────────────────────────');
   const [saraminItems, jobkoreaItems] = await Promise.all([

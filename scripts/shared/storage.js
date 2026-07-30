@@ -52,7 +52,59 @@ function createStorage(relativePath) {
     };
   }
 
-  return { loadData, saveData, mergeItems };
+  /**
+   * 만료된 공고 제거
+   * - deadline이 오늘 이전이면 제거 (마감일 지남)
+   * - deadline 파싱 불가(상시채용/미기재/수시채용 등)면 postedAt 기준으로 staleDays 초과 시 제거
+   * - deadline과 postedAt 모두 없으면 유지 (안전한 기본값)
+   */
+  function pruneExpired(data, { staleDays = 90, now = new Date() } = {}) {
+    const kept = [];
+    const removed = [];
+
+    for (const item of data.items) {
+      const deadlineDate = item.deadline ? new Date(item.deadline) : null;
+      const deadlineValid = deadlineDate && !isNaN(deadlineDate.getTime());
+
+      if (deadlineValid) {
+        if (deadlineDate < now) {
+          removed.push({ item, reason: `마감 ${item.deadline.slice(0, 10)}` });
+          continue;
+        }
+        kept.push(item);
+        continue;
+      }
+
+      const postedDate = item.postedAt ? new Date(item.postedAt) : null;
+      const postedValid = postedDate && !isNaN(postedDate.getTime());
+      if (postedValid) {
+        const ageDays = (now.getTime() - postedDate.getTime()) / 86400000;
+        if (ageDays > staleDays) {
+          removed.push({ item, reason: `게시 ${Math.floor(ageDays)}일 경과` });
+          continue;
+        }
+      }
+
+      kept.push(item);
+    }
+
+    if (removed.length > 0) {
+      console.log(`[Storage] 만료 정리: ${removed.length}개 제거`);
+      for (const { item, reason } of removed.slice(0, 10)) {
+        const preview = (item.title || '').slice(0, 40);
+        console.log(`  - [${item.company}] ${preview} (${reason})`);
+      }
+      if (removed.length > 10) {
+        console.log(`  ... 외 ${removed.length - 10}개`);
+      }
+    } else {
+      console.log('[Storage] 만료 정리: 대상 없음');
+    }
+
+    return { ...data, items: kept };
+  }
+
+  return { loadData, saveData, mergeItems, pruneExpired };
 }
 
 module.exports = { createStorage };

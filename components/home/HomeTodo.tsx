@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { CalendarData, TodoItem } from '@/types/calendar'
-import { Plus, X } from 'lucide-react'
+import { Plus, X, GripVertical } from 'lucide-react'
 
 function DeadlineBadge({ deadline }: { deadline: string }) {
   if (deadline === 'ASAP') return (
@@ -28,6 +28,24 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
   const [editingKey, setEditingKey] = useState<string | null>(null)
   const [editText, setEditText] = useState('')
   const [editDeadline, setEditDeadline] = useState<string | undefined>(undefined)
+  const [dragging, setDragging] = useState<{ category: string; index: number } | null>(null)
+  const [overCategory, setOverCategory] = useState<string | null>(null)
+
+  function moveItem(fromCat: string, fromIdx: number, toCat: string) {
+    if (!data || fromCat === toCat) return
+    const item = data.todos[fromCat]?.items[fromIdx]
+    if (!item) return
+    const nextTodos = { ...data.todos }
+    nextTodos[fromCat] = {
+      ...nextTodos[fromCat],
+      items: nextTodos[fromCat].items.filter((_, i) => i !== fromIdx),
+    }
+    nextTodos[toCat] = {
+      ...nextTodos[toCat],
+      items: [...nextTodos[toCat].items, item],
+    }
+    onSave({ ...data, todos: nextTodos })
+  }
 
   function startEdit(category: string, index: number) {
     if (!data) return
@@ -98,7 +116,31 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {todos.map(([category, catData]) => (
-        <div key={category} className="bg-white rounded-xl shadow-card border border-border p-4">
+        <div
+          key={category}
+          onDragOver={(e) => {
+            if (!dragging || dragging.category === category) return
+            e.preventDefault()
+            e.dataTransfer.dropEffect = 'move'
+            if (overCategory !== category) setOverCategory(category)
+          }}
+          onDragLeave={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+              setOverCategory((prev) => (prev === category ? null : prev))
+            }
+          }}
+          onDrop={(e) => {
+            e.preventDefault()
+            if (dragging && dragging.category !== category) {
+              moveItem(dragging.category, dragging.index, category)
+            }
+            setDragging(null)
+            setOverCategory(null)
+          }}
+          className={`bg-white rounded-xl shadow-card border p-4 transition-all ${
+            overCategory === category ? 'border-primary ring-2 ring-primary/30' : 'border-border'
+          }`}
+        >
           <p className="text-sm font-bold text-primary mb-2.5 flex items-center gap-1.5">
             <span>{catData.icon}</span>
             <span>{category}</span>
@@ -107,10 +149,18 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
             {sortedItems(catData.items).map(({ item, originalIdx: i }) => {
               const key = `${category}:${i}`
               const isEditing = editingKey === key
+              const isDraggingThis = dragging?.category === category && dragging?.index === i
               return (
                 <li
                   key={i}
-                  className="flex flex-col gap-1 group"
+                  draggable={!isEditing}
+                  onDragStart={(e) => {
+                    if (isEditing) { e.preventDefault(); return }
+                    e.dataTransfer.effectAllowed = 'move'
+                    setDragging({ category, index: i })
+                  }}
+                  onDragEnd={() => { setDragging(null); setOverCategory(null) }}
+                  className={`flex flex-col gap-1 group transition-opacity ${isDraggingThis ? 'opacity-40' : ''}`}
                   onBlur={isEditing ? (e) => {
                     if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
                       commitEdit(category, i)
@@ -118,7 +168,9 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
                   } : undefined}
                 >
                   <div className="flex items-start gap-2">
-                    <span className="mt-1 shrink-0 w-3 h-3 rounded-full border border-border bg-bg-light" />
+                    <GripVertical
+                      className="mt-0.5 shrink-0 w-3 h-3 text-gray-300 group-hover:text-gray-400 cursor-grab active:cursor-grabbing"
+                    />
                     {isEditing ? (
                       <input
                         autoFocus

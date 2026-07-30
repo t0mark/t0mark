@@ -36,3 +36,5 @@ data/.cache/
 
 # TypeScript
 *.tsbuildinfo
+
+google-credentials.json

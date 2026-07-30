@@ -32,14 +32,13 @@ export default function DDayCards({ dDay }: DDayCardsProps) {
   const totalDays = Math.ceil((yearEnd.getTime() - yearStart.getTime()) / 86400000)
 
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="flex flex-col gap-2">
       {entries.map(([key, data]) => {
         const targetDate = new Date(data.targetDate)
         const diffDays = Math.ceil((targetDate.getTime() - today.getTime()) / 86400000)
         const colorClass = getDDayColor(diffDays)
         const colors = colorMap[colorClass]
 
-        // 원형 진행률 (연 기준)
         const progress = Math.max(0, Math.min(100, (diffDays / totalDays) * 100))
         const circumference = 283
         const offset = circumference - (circumference * progress) / 100
@@ -47,10 +46,9 @@ export default function DDayCards({ dDay }: DDayCardsProps) {
         return (
           <div
             key={key}
-            className={`${colors.bg} ${colors.ring} ring-1 rounded-xl p-3 flex flex-col items-center gap-1`}
+            className={`${colors.bg} ${colors.ring} ring-1 rounded-xl px-3 py-2 flex items-center gap-2.5`}
           >
-            {/* 원형 진행바 */}
-            <div className="relative w-14 h-14">
+            <div className="relative w-10 h-10 shrink-0">
               <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" strokeWidth="8" />
                 <circle
@@ -62,11 +60,11 @@ export default function DDayCards({ dDay }: DDayCardsProps) {
                   style={{ transition: 'stroke-dashoffset 0.6s ease' }}
                 />
               </svg>
-              <div className={`absolute inset-0 flex items-center justify-center text-xs font-bold ${colors.text}`}>
+              <div className={`absolute inset-0 flex items-center justify-center text-[10px] font-bold ${colors.text}`}>
                 D-{diffDays}
               </div>
             </div>
-            <span className="text-[10px] font-semibold text-center text-gray-600 leading-tight">{key}</span>
+            <span className="text-xs font-semibold text-gray-600 leading-tight min-w-0 truncate">{key}</span>
           </div>
         )
       })}

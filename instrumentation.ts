@@ -22,6 +22,19 @@ export async function register() {
       })
     })
 
-    console.log('[Cron] 인턴/산학장학생 공고 수집 스케줄 등록 완료 (매일 02:00 / 03:00)')
+    // 매일 새벽 4시 연구 동향 자동 수집 (arXiv + Semantic Scholar + RSS)
+    cron.schedule('0 4 * * *', () => {
+      const scriptPath = path.join(process.cwd(), 'scripts', 'fetch-trends.js')
+      execFile('node', [scriptPath], { cwd: process.cwd(), maxBuffer: 20 * 1024 * 1024 }, (err) => {
+        if (err) console.error('[Cron] fetch-trends 실패:', err.message)
+        else console.log('[Cron] fetch-trends 완료')
+      })
+    })
+
+    console.log('[Cron] 인턴/산학장학생/연구동향 수집 스케줄 등록 완료 (매일 02:00 / 03:00 / 04:00)')
+
+    // 세미나 논문 자동 동기화 (설정된 요일/시간에 실행)
+    const { registerSeminarCron } = await import('./lib/seminar/cron')
+    await registerSeminarCron()
   }
 }

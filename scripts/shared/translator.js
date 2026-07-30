@@ -37,7 +37,7 @@ async function translateItem(title, abstract, retryCount = 0) {
     const response = await axios.post(
       OPENAI_API_URL,
       {
-        model: 'gpt-4o-mini',
+        model: 'gpt-5-mini',
         messages: [
           {
             role: 'system',
@@ -46,8 +46,9 @@ async function translateItem(title, abstract, retryCount = 0) {
           },
           { role: 'user', content: prompt },
         ],
-        max_tokens: 800,
-        temperature: 0.2,
+        // gpt-5 계열(reasoning 모델)은 max_tokens/temperature 커스텀 미지원.
+        // reasoning tokens까지 포함하므로 여유롭게 잡음.
+        max_completion_tokens: 3000,
         response_format: { type: 'json_object' },
       },
       {

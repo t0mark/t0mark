@@ -14,10 +14,9 @@ const navLinks = [
 
 const socialLinks = [
   { href: 'https://www.notion.so/184923d83eb5806bb153fca443c1d153?source=copy_link', src: '/images/notion_icon.svg', alt: 'Notion' },
-  { href: 'https://solved.ac/profile/gusdnd5297', src: '/images/boj-icon.png', alt: '백준' },
   { href: 'https://github.com/t0mark', src: '/images/github_icon.png', alt: 'GitHub' },
   { href: 'mailto:iwagoho@gmail.com', src: '/images/Gmail_icon.svg', alt: 'Gmail' },
-  { href: 'https://www.linkedin.com/in/%ED%98%84%EC%9B%85-%EC%96%91-531931339/', src: '/images/LinkedIn_icon.svg', alt: 'LinkedIn' },
+  { href: 'https://www.linkedin.com/in/hw12/', src: '/images/LinkedIn_icon.svg', alt: 'LinkedIn' },
 ]
 
 export default function MobileMenu() {

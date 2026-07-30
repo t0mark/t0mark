@@ -1,63 +1,152 @@
 'use strict';
 
 const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
 const { fetchDescriptions } = require('../shared/fetch-description');
+const { createFilterCache } = require('../shared/filter-cache');
 
-const CACHE_FILE = path.join(process.cwd(), 'data', '.cache', 'interns-filter.json');
+const filterCache = createFilterCache('data/.cache/interns-filter.json');
 const BATCH_SIZE = 10;
-const MODEL = 'gpt-4o-mini';
+const MODEL = 'gpt-5-mini';
 
-const SYSTEM_PROMPT = `당신은 한국의 로봇공학/AI 연구 분야 대학원생을 위한 인턴십 공고 필터입니다.
+// title에 이 단어들이 있으면 GPT 호출 없이 즉시 탈락 (도메인/직무 성격)
+const TITLE_BLACKLIST = [
+  // 관심 없는 도메인
+  '소재', 'CMP', '나노', '반도체', '화학', '바이오', '제약', '의료', '헬스케어', '병원',
+  '광고', '마케팅', '유통', '물류', '영업', '회계', '재무', '인사', '총무',
+  '행정 보조', '행정보조', '사무 보조', '사무보조', '경영지원', '상담', '고객 응대',
+  '디자인', '콘텐츠', 'SNS', '기획', '사업개발', 'PM', 'PMO',
+  '게임', '블록체인', '금융', '보험', '부동산',
+  '통번역', '번역', '통역', '강의', '교육 운영', '행사',
+];
 
-관심 분야:
-- 휴머노이드 로봇, 사족보행 로봇, 로봇 매니퓰레이션
-- 컴퓨터 비전 (CV), 3D 인식, 객체 탐지
-- 자율주행, 라이다/카메라 인식
-- 딥러닝, 강화학습 (특히 로봇 제어)
-- 임베디드 로봇 시스템, 모터 제어
-- SLAM, 경로 계획, 모션 플래닝
-- 로보틱스 소프트웨어 R&D, ROS
+// SW가 아닌 순수 HW/기구 직무 패턴 — SW/HW 통합이 아니라 명확히 HW 전담이면 탈락
+const HW_ONLY_PATTERNS = [
+  /하드웨어\s*개발/,
+  /하드웨어\s*엔지니어/,
+  /\bHW\s*개발/,
+  /\bHW\s*엔지니어/,
+  /회로\s*설계/,
+  /PCB\s*설계/,
+  /기구\s*설계/,
+  /기계\s*설계/,
+  /금형/,
+  /사출/,
+  /부품\s*조립/,
+];
 
-각 공고에 대해 이 연구자에게 실질적으로 유용한 인턴십인지 판단하세요.
+// 정규직·경력 채용처럼 대학원생 대상이 아닌 고용 형태
+const REJECT_EMPLOYMENT_PATTERNS = [
+  /\[?\s*경력\s*\]/,
+  /경력\s*사원/,
+  /경력\s*채용/,
+  /정규직\s*채용/,
+  /수시\s*채용/,
+];
 
-판단 기준:
-- relevant=true: 인턴십/체험형 인턴이면서 기술 연구/개발 직무 (로봇 SW, 비전 알고리즘, ML/RL 연구, 제어 시스템, 임베디드 등)
-- relevant=false: 정규직/계약직/신입사원/경력사원 채용 (인턴십이 아닌 경우 무조건 false)
-- relevant=false: 영업/마케팅/경영/디자인/회계/사무 직무 (회사가 연구소·기술기업이더라도 직무가 비기술이면 반드시 false)
-- relevant=false: 단순 IT 지원, 데이터 입력, 고객센터, 상담, 사무보조, 행정 등
-- relevant=false: 탄소/환경/정책/법무/행정/회계/인사 관련 직무
-- 핵심 규칙: 공고 제목에 "신입사원", "경력사원", "정규직", "사무보조", "상담지원", "행정", "경영지원" 이 포함된 경우 무조건 false
+// 통과 대상: 인턴 + 신입 + 교육 프로그램 (사용자 지정)
+const ALLOWED_EMPLOYMENT_RE = /인턴|intern|체험형|신입|교육\s*프로그램|캠프|캠퍼스\s*아카데미|아카데미|트레이닝|R&D\s*프로그램/i;
 
-응답은 반드시 JSON 형식으로만 출력하세요:
-{"results": [{"id": "...", "relevant": true}, {"id": "...", "relevant": false}, ...]}`;
+function hardReject(item) {
+  const title = item.title || '';
+  const titleLower = title.toLowerCase();
 
-/**
- * 캐시 로드: { ids: string[] } 형태
- */
-function loadCache() {
-  try {
-    if (fs.existsSync(CACHE_FILE)) {
-      const data = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-      return new Set(Array.isArray(data.ids) ? data.ids : []);
+  // 1. 고용 형태 필터: 인턴/신입/교육 명시 없이 정규직·경력만 있으면 탈락
+  const hasAllowedEmployment = ALLOWED_EMPLOYMENT_RE.test(title);
+  if (!hasAllowedEmployment) {
+    for (const pat of REJECT_EMPLOYMENT_PATTERNS) {
+      if (pat.test(title)) return { rejected: true, reason: '정규직/경력 채용' };
     }
-  } catch { /* 캐시 없으면 빈 Set */ }
-  return new Set();
+  }
+
+  // 2. 순수 HW 직무 탈락 (SW/HW 통합이 명시되지 않은 HW 전담)
+  const hasSw = /(?:^|[\s(/])(SW|소프트웨어|Software|software|S\/W|SW\s*엔지니어)(?:[\s)/]|$)/.test(title);
+  if (!hasSw) {
+    for (const pat of HW_ONLY_PATTERNS) {
+      if (pat.test(title)) return { rejected: true, reason: '순수 HW 직무 (SW 아님)' };
+    }
+  }
+
+  // 3. 관심 없는 도메인 키워드
+  for (const kw of TITLE_BLACKLIST) {
+    if (title.includes(kw) || titleLower.includes(kw.toLowerCase())) {
+      return { rejected: true, reason: `title에 "${kw}" 포함` };
+    }
+  }
+
+  return { rejected: false };
 }
 
-/**
- * 캐시 저장
- */
-function saveCache(cacheSet) {
-  try {
-    const dataDir = path.dirname(CACHE_FILE);
-    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-    fs.writeFileSync(CACHE_FILE, JSON.stringify({ ids: [...cacheSet] }, null, 2));
-  } catch (err) {
-    console.error('[GPT Filter] 캐시 저장 실패:', err.message);
-  }
-}
+const SYSTEM_PROMPT = `당신은 로봇 R&D 대학원생을 위한 채용 공고 심사관입니다.
+직무가 소프트웨어 개발/연구여야 하며, 조금이라도 애매하면 반드시 relevant=false를 반환합니다.
+
+【통과 가능한 도메인 — 아래 셋 중 하나에 명확히 해당해야만 relevant=true】
+
+A. 로봇 소프트웨어 (Robotics SW)
+   - SLAM, VIO, 3D 매핑, Localization
+   - Path Planning, Motion Planning, Trajectory Optimization, Task Planning
+   - 로봇 SDK / 미들웨어 (ROS, ROS2, Isaac ROS, MoveIt, Nav2 등)
+   - 로봇 제어 SW (Manipulation, Locomotion, Whole-body Control)
+   - Teleoperation SW
+   - 로봇 펌웨어·제어 소프트웨어 (SW 코드 작성이 주 업무)
+
+B. 로봇에 적용되는 AI (AI for Robotics)
+   - 로봇용 강화학습(RL), 모방학습(Imitation Learning), 정책 학습
+   - VLA (Vision-Language-Action) 모델, Foundation Model for Robotics
+   - Sim-to-Real, Domain Randomization, 시뮬레이션 학습
+   - 로봇용 지각 SW (6DoF Pose Estimation, Grasping, 센서 퓨전 for 로봇)
+
+C. 공간 AI (Spatial AI)
+   - 3D 재구성 (NeRF, Gaussian Splatting, SfM, MVS)
+   - 3D 씬 이해, Semantic Mapping, Occupancy Prediction
+   - VLN (Vision-Language Navigation), Embodied AI
+   - 3D Foundation Model, 공간 표현 학습
+
+【판단 순서】
+
+Step 1. 대학원생이 지원 가능한 프로그램인가?
+- 통과: 인턴, 체험형 인턴, R&D 인턴, 연구 인턴, 산학 인턴, 신입 채용/신입사원,
+  교육 프로그램, R&D 캠프/캠퍼스 아카데미, 아카데미, 트레이닝 프로그램.
+- 탈락: title에 "[경력]", "경력 사원", "경력 채용", "정규직 채용", "수시 채용"만 있고
+  위 통과 표현이 하나도 없으면 → false.
+- "정규직 신입 채용"처럼 신입이 명시된 정규직은 통과.
+
+Step 2. 직무가 소프트웨어인가? (매우 중요 — HW 직무는 반드시 탈락)
+- 통과: description에 SLAM / Path Planning / Motion Planning / ROS / MoveIt / Nav2 /
+  로봇 제어 SW / 매니퓰레이션 SW / 강화학습 for robot / VLA / Sim-to-Real /
+  NeRF / Gaussian Splatting / VLN / Embodied AI / 6DoF pose / Grasping 같은 SW 개발·연구 서술.
+- 탈락 (SW가 아닌 순수 HW 직무):
+  * "하드웨어 개발자/엔지니어", "HW 개발자/엔지니어"
+  * "회로 설계", "PCB 설계", "임베디드 HW 설계"
+  * "기구 설계", "기계 설계", "구조 설계", "금형", "사출", "액추에이터 설계"
+  * "부품 조립", "생산", "제조 공정"
+  * 로봇 의수/의족 등을 다뤄도 HW 개발이 주 업무면 반드시 false.
+- 통합 개발이라도 SW 비중이 명시적으로 나오지 않으면 false.
+- "AI/딥러닝/CV/자율주행"만 막연히 언급되고 로봇/공간 응용이 명시 없음 → false.
+- description이 HTML/CSS 마크업뿐이거나 유효 텍스트 80자 이하면 → false.
+
+Step 3. 명시적 탈락 도메인 (title 또는 description 어디든 해당하면 즉시 false)
+- 반도체, CMP, 소재, 나노, 화학, 바이오, 제약, 의료, 헬스케어
+- 광고, 마케팅, 유통, 물류, 행정, 사무, 총무, 회계, 재무, 인사, 영업, 상담, 고객지원
+- 콘텐츠, 디자인, PM/PMO, 기획, 사업개발
+- 게임, 웹/앱 서비스 개발, 블록체인, 금융, 보험, 부동산
+- 순수 LLM/NLP/추천/광고AI/의료AI 등 로봇·공간 응용이 아닌 AI
+- 통신, 전력, 에너지, 환경 등 로봇과 무관한 하드웨어·과학 R&D
+
+【최종 판정 원칙】
+- Step 1·2·3 모두 명확히 통과해야만 relevant=true.
+- 회사가 로봇/AI 기업이라도 이 공고의 직무가 A/B/C의 SW가 아니면 반드시 false.
+- HW 개발/엔지니어링/설계/제조 관련 직무는 어떤 이유로든 반드시 false.
+- 조금이라도 확신 없으면 false.
+
+【응답 형식 - 반드시 아래 스키마의 JSON 객체 하나만 반환】
+JSON 예시:
+{"results": [{"id": "<id>", "relevant": true|false, "reason": "<한국어 30자 이내 근거>"}, ...]}
+
+【판단 시 핵심 원칙】
+- 회사가 어디인지(로봇 회사·대기업·스타트업 여부)는 판단 근거로 삼지 말 것.
+- description에 기술된 실제 직무(job function)만 근거로 판단할 것.
+- 특히 SW인지 HW인지가 가장 중요 — HW는 무조건 탈락.
+- description이 없거나 유효 텍스트가 부족하면 title의 직무 문구로만 판단하되, 확신 없으면 false.`;
 
 /**
  * 배치 단위로 GPT에 관련성 판단 요청
@@ -84,7 +173,9 @@ async function evaluateBatch(batch, apiKey) {
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: userMessage },
       ],
-      temperature: 0,
+      // gpt-5 계열은 reasoning model — reasoning_tokens + 실제 출력 합계가 이 값 안에 들어가야 함
+      // 배치당 최대 10개 아이템 * (reasoning + JSON 출력) → 10000 이상 필요
+      max_completion_tokens: 12000,
     },
     {
       headers: {
@@ -97,15 +188,15 @@ async function evaluateBatch(batch, apiKey) {
 
   const content = response.data.choices[0]?.message?.content ?? '{}';
   const parsed = JSON.parse(content);
-  const relevantIds = new Set();
+  const verdicts = new Map();
 
   if (Array.isArray(parsed.results)) {
     for (const r of parsed.results) {
-      if (r.relevant === true) relevantIds.add(r.id);
+      verdicts.set(r.id, { relevant: r.relevant === true, reason: r.reason || '' });
     }
   }
 
-  return relevantIds;
+  return verdicts;
 }
 
 /**
@@ -127,61 +218,101 @@ async function gptFilter(items) {
 
   if (items.length === 0) return items;
 
-  const cache = loadCache();
+  const { approved, rejected } = filterCache.load();
 
-  // 이미 평가된 항목: 캐시에 있으면 이전에 YES였던 것만 통과
-  // (NO였으면 캐시에는 있지만 저장된 items에는 없을 것)
-  // → 단순화: 캐시에 없는 것만 GPT 평가, 캐시에 있으면 이미 통과한 것으로 간주
-  const uncached = items.filter((item) => !cache.has(item.id));
-  const alreadyApproved = items.filter((item) => cache.has(item.id));
+  // 캐시 분류:
+  //  - approved: YES 이력이 있는 ID → GPT 재호출 없이 통과
+  //  - rejected: NO 이력이 있는 ID → GPT 재호출 없이 제외
+  //  - 그 외: 이번 실행에서 평가
+  const pass = [];
+  const uncached = [];
+  let cachedReject = 0;
+  for (const item of items) {
+    if (approved.has(item.id)) pass.push(item);
+    else if (rejected.has(item.id)) cachedReject++;
+    else uncached.push(item);
+  }
 
-  console.log(`[GPT Filter] 평가 대상: ${uncached.length}개 (캐시 통과: ${alreadyApproved.length}개)`);
+  console.log(
+    `[GPT Filter] 평가 대상: ${uncached.length}개 ` +
+    `(승인 캐시 통과: ${pass.length}개, 거부 캐시 제외: ${cachedReject}개)`
+  );
 
-  if (uncached.length === 0) return alreadyApproved;
+  if (uncached.length === 0) {
+    filterCache.save({ approved, rejected });
+    return pass;
+  }
 
-  // 신규 항목 상세 페이지에서 직무 내용 fetch
-  console.log(`[GPT Filter] 직무 내용 수집 중... (${uncached.length}개)`);
-  await fetchDescriptions(uncached);
-  const fetched = uncached.filter((i) => i.description).length;
-  console.log(`[GPT Filter] 직무 내용 수집 완료: ${fetched}/${uncached.length}개`);
+  // GPT 호출 전 하드 필터: title만으로 확실히 탈락되는 것 걸러내기
+  const hardRejected = [];
+  const survivors = [];
+  for (const item of uncached) {
+    const result = hardReject(item);
+    if (result.rejected) {
+      hardRejected.push({ item, reason: result.reason });
+      rejected.add(item.id);
+    } else {
+      survivors.push(item);
+    }
+  }
+  if (hardRejected.length > 0) {
+    console.log(`[GPT Filter] 하드 필터 탈락: ${hardRejected.length}개`);
+    for (const { item, reason } of hardRejected.slice(0, 10)) {
+      const preview = (item.title || '').slice(0, 40);
+      console.log(`  ✗ [${item.company}] ${preview} — ${reason}`);
+    }
+    if (hardRejected.length > 10) console.log(`  ... 외 ${hardRejected.length - 10}개`);
+  }
 
-  const approved = [...alreadyApproved];
+  if (survivors.length === 0) {
+    filterCache.save({ approved, rejected });
+    return pass;
+  }
+
+  // 하드 필터 통과한 항목만 description fetch + GPT 판단
+  console.log(`[GPT Filter] 직무 내용 수집 중... (${survivors.length}개)`);
+  await fetchDescriptions(survivors);
+  const fetched = survivors.filter((i) => i.description).length;
+  console.log(`[GPT Filter] 직무 내용 수집 완료: ${fetched}/${survivors.length}개`);
 
   // 배치 처리
-  for (let i = 0; i < uncached.length; i += BATCH_SIZE) {
-    const batch = uncached.slice(i, i + BATCH_SIZE);
+  for (let i = 0; i < survivors.length; i += BATCH_SIZE) {
+    const batch = survivors.slice(i, i + BATCH_SIZE);
     console.log(`[GPT Filter] 배치 ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length}개) 평가 중...`);
 
     try {
-      const relevantIds = await evaluateBatch(batch, apiKey);
+      const verdicts = await evaluateBatch(batch, apiKey);
 
+      let passed = 0;
       for (const item of batch) {
-        // 캐시에 평가 결과 기록 (YES/NO 모두)
-        cache.add(item.id);
-        if (relevantIds.has(item.id)) {
-          approved.push(item);
+        const v = verdicts.get(item.id);
+        const mark = v?.relevant ? '✓' : '✗';
+        const preview = (item.title || '').slice(0, 40);
+        console.log(`  ${mark} [${item.company}] ${preview} — ${v?.reason || '판단 없음'}`);
+        if (v?.relevant) {
+          approved.add(item.id);
+          pass.push(item);
+          passed++;
+        } else {
+          rejected.add(item.id);
         }
       }
 
       console.log(
-        `[GPT Filter] 배치 결과: ${relevantIds.size}개 통과 / ${batch.length - relevantIds.size}개 제외`
+        `[GPT Filter] 배치 결과: ${passed}개 통과 / ${batch.length - passed}개 제외`
       );
     } catch (err) {
       console.error(`[GPT Filter] 배치 평가 실패: ${err.message}`);
-      console.warn('[GPT Filter] 실패한 배치는 필터 없이 통과 처리');
-      for (const item of batch) {
-        approved.push(item);
-        cache.add(item.id);
-      }
+      console.warn('[GPT Filter] 실패한 배치는 이번 실행에서 제외 (다음 실행에 재평가)');
+      // 캐시에 추가하지 않아 다음 실행 때 재시도됨. pass에도 추가하지 않음.
     }
   }
 
-  saveCache(cache);
+  filterCache.save({ approved, rejected });
 
-  const excluded = uncached.length - (approved.length - alreadyApproved.length);
-  console.log(`[GPT Filter] 완료: ${approved.length}개 통과 / ${excluded}개 제외`);
+  console.log(`[GPT Filter] 완료: ${pass.length}개 통과 / ${items.length - pass.length}개 제외`);
 
-  return approved;
+  return pass;
 }
 
 module.exports = { gptFilter };

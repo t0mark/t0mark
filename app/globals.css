@@ -156,6 +156,33 @@
   filter: drop-shadow(0 0 8px rgba(44, 62, 80, 0.6));
 }
 
+/* ===== Note 편집기 (contentEditable) ===== */
+.note-editor {
+  outline: none;
+  min-height: 1.5em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  tab-size: 2;
+}
+
+.note-editor > div {
+  position: relative;
+  padding-left: calc(1.25rem + var(--depth, 0) * 1.5rem);
+  min-height: 1.5em;
+}
+
+.note-editor > div::before {
+  content: "•";
+  position: absolute;
+  left: calc(0.25rem + var(--depth, 0) * 1.5rem);
+  top: 0;
+  color: var(--text-light);
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
 /* ===== 캠퍼스 건물 호버 ===== */
 .campus-building {
   cursor: pointer;
