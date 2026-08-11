@@ -1,76 +1,75 @@
-import { spawn } from 'child_process'
-import { join } from 'path'
+import type { ChildProcess } from 'child_process'
+import { runVisit, parseIsoDate } from '@/lib/changjo/runner'
+import { loadApplicants } from '@/lib/changjo/applicants'
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}))
-  const { start, end, equipment } = body as {
-    start?: string
-    end?: string
-    equipment?: string
+  const { date, only, dryRun } = body as {
+    date?: string
+    only?: string[]
+    dryRun?: boolean
   }
 
-  if (!start || !/^\d{4}-\d{2}-\d{2}$/.test(start)) {
-    return new Response(JSON.stringify({ error: '시작 날짜가 필요합니다 (YYYY-MM-DD)' }), {
+  const bad = (error: string) =>
+    new Response(JSON.stringify({ error }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     })
-  }
-  if (end && !/^\d{4}-\d{2}-\d{2}$/.test(end)) {
-    return new Response(JSON.stringify({ error: '종료 날짜 형식이 잘못되었습니다 (YYYY-MM-DD)' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    })
-  }
 
-  const scriptPath = join(process.cwd(), 'scripts', 'changjo-visit.js')
-  const args = ['--headless', '--start', start]
-  if (end) args.push('--end', end)
-  if (equipment) args.push('--equipment', equipment)
+  const targetDate = typeof date === 'string' ? date : ''
+  const parsed = parseIsoDate(targetDate)
+  if (!parsed) return bad('신청일이 필요합니다 (실재하는 YYYY-MM-DD)')
+
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  if (parsed < today) return bad('지난 날짜로는 신청할 수 없습니다.')
+
+  const ids = Array.isArray(only) ? only.filter((v): v is string => typeof v === 'string') : []
+  const all = loadApplicants().applicants
+  const targets = ids.length ? all.filter((a) => ids.includes(a.id)) : all.filter((a) => a.active)
+  if (targets.length === 0) return bad('활성화된 신청자가 없습니다. 신청할 사람을 활성화해 주세요.')
 
   const encoder = new TextEncoder()
+  let child: ChildProcess | null = null
 
   const stream = new ReadableStream({
     start(controller) {
-      const child = spawn('node', [scriptPath, ...args], {
-        env: { ...process.env, CHROMIUM_PATH: '/usr/bin/chromium' },
-      })
-
-      const send = (line: string) => {
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ line })}\n\n`))
-      }
-
-      let buf = ''
-      const flush = (chunk: string) => {
-        buf += chunk
-        const lines = buf.split('\n')
-        buf = lines.pop() ?? ''
-        for (const line of lines) {
-          if (line.trim()) send(line)
+      let closed = false
+      const push = (payload: unknown) => {
+        if (closed) return
+        try {
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify(payload)}\n\n`))
+        } catch {
+          closed = true
         }
       }
 
-      child.stdout.on('data', (d: Buffer) => flush(d.toString()))
-      child.stderr.on('data', (d: Buffer) => flush(d.toString()))
+      const handle = runVisit(
+        { date: targetDate, only: ids, dryRun: Boolean(dryRun) },
+        (line) => push({ line }),
+      )
+      child = handle.child
 
-      child.on('close', (code: number) => {
-        if (buf.trim()) send(buf)
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, code })}\n\n`))
-        controller.close()
+      handle.done.then((code) => {
+        push({ done: true, code })
+        closed = true
+        try { controller.close() } catch { /* 이미 닫힘 */ }
       })
-
-      child.on('error', (err: Error) => {
-        send(`오류: ${err.message}`)
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, code: -1 })}\n\n`))
-        controller.close()
-      })
+    },
+    // 브라우저가 연결을 끊으면 chromium 이 그대로 남는다 — 같이 정리한다.
+    cancel() {
+      child?.kill('SIGTERM')
+      const doomed = child
+      setTimeout(() => { if (doomed && doomed.exitCode === null) doomed.kill('SIGKILL') }, 5000)
     },
   })
 
   return new Response(stream, {
     headers: {
       'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
+      'Cache-Control': 'no-cache, no-transform',
       'Connection': 'keep-alive',
+      'X-Accel-Buffering': 'no',
     },
   })
 }

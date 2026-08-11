@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { Pencil, Plus, Trash2, X } from 'lucide-react'
 import type { CalendarData } from '@/types/calendar'
 import DDayCards from '@/components/calendar/DDayCards'
@@ -173,10 +174,14 @@ interface EditPanelProps {
 }
 
 function EditPanel({ title, saving, onSave, onClose, children }: EditPanelProps) {
-  return (
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+  if (!mounted) return null
+
+  const panel = (
     <div className="fixed inset-0 z-[1001] flex">
       <div className="flex-1 bg-black/30" onClick={onClose} />
-      <div className="w-[420px] bg-white h-full shadow-2xl flex flex-col border-l border-border">
+      <div className="w-[420px] max-w-full bg-white h-full shadow-2xl flex flex-col border-l border-border">
         <div className="flex items-center justify-between px-5 py-4 border-b border-border shrink-0">
           <h2 className="text-sm font-bold text-primary">{title} 편집</h2>
           <div className="flex items-center gap-2">
@@ -198,4 +203,6 @@ function EditPanel({ title, saving, onSave, onClose, children }: EditPanelProps)
       </div>
     </div>
   )
+
+  return createPortal(panel, document.body)
 }

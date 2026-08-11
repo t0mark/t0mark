@@ -82,6 +82,22 @@ function normalizeVenue(raw: string): string {
   return v
 }
 
+// Fallback: scan raw slide text for a known venue token + 4-digit year.
+// Used when GPT misses obvious matches like "RA-L, 2021".
+const VENUE_TOKENS = Array.from(new Set(Object.values(VENUE_CANONICAL)))
+const YEAR_RE = /\b(19[89]\d|20\d{2})\b/
+
+function fallbackVenueYear(text: string): { venue: string; year: string } {
+  let venue = ''
+  for (const v of VENUE_TOKENS) {
+    // word-boundary sensitive: avoid matching "T-RO" inside "T-ROBOT"
+    const re = new RegExp(`(?:^|[^A-Za-z0-9-])${v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:[^A-Za-z0-9-]|$)`, 'i')
+    if (re.test(text)) { venue = v; break }
+  }
+  const yearMatch = text.match(YEAR_RE)
+  return { venue, year: yearMatch?.[1] ?? '' }
+}
+
 export async function extractPapersWithGPT(
   presenters: PresenterSlideTexts[]
 ): Promise<ExtractedPaper[]> {
@@ -120,16 +136,44 @@ export async function extractPapersWithGPT(
   const parsed = JSON.parse(content) as { papers?: unknown }
   if (!Array.isArray(parsed.papers)) return []
 
-  const out: ExtractedPaper[] = []
+  const raw: ExtractedPaper[] = []
   for (const p of parsed.papers) {
     if (!p || typeof p !== 'object') continue
     const obj = p as Record<string, unknown>
-    out.push({
+    raw.push({
       presenter: String(obj.presenter ?? '').trim(),
       title: String(obj.title ?? '').trim(),
       venue: normalizeVenue(String(obj.venue ?? '').trim()),
       year: String(obj.year ?? '').trim(),
     })
   }
-  return out
+  // One paper per presenter. If GPT returned multiple entries for the same
+  // presenter, keep the one with the longest title (usually the real paper
+  // title; secondary entries tend to be section headers or duplicates).
+  const byPresenter = new Map<string, ExtractedPaper>()
+  for (const p of raw) {
+    if (!p.presenter) continue
+    const existing = byPresenter.get(p.presenter)
+    if (!existing || p.title.length > existing.title.length) {
+      byPresenter.set(p.presenter, p)
+    }
+  }
+
+  // Fallback: if GPT missed venue/year but the raw slide text has an obvious
+  // "<venue> <year>" pair (e.g. "RA-L, 2021"), fill it in.
+  const rawByPresenter = new Map<string, string>()
+  for (const p of presenters) rawByPresenter.set(p.presenter, p.slideTexts.join(' '))
+  const filled: ExtractedPaper[] = []
+  for (const paper of byPresenter.values()) {
+    if (paper.venue && paper.year) { filled.push(paper); continue }
+    const rawText = rawByPresenter.get(paper.presenter) ?? ''
+    if (!rawText) { filled.push(paper); continue }
+    const fb = fallbackVenueYear(rawText)
+    filled.push({
+      ...paper,
+      venue: paper.venue || normalizeVenue(fb.venue),
+      year: paper.year || fb.year,
+    })
+  }
+  return filled
 }

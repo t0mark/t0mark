@@ -43,9 +43,10 @@ export async function findSeminarFile(folderId: string, dateHint?: string): Prom
 
   if (candidates.length === 0) return null
 
+  // With a date hint: only return an exact match. Never fall back to a
+  // different date — that would silently sync the wrong week's papers.
   if (dateHint) {
-    const target = candidates.find((c) => c.date === dateHint)
-    if (target) return target
+    return candidates.find((c) => c.date === dateHint) ?? null
   }
 
   candidates.sort((a, b) => (a.date < b.date ? 1 : -1))

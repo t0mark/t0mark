@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p 5000",
-    "build": "next build",
+    "build": "taskset -c 0,1 node --max-old-space-size=2048 node_modules/next/dist/bin/next build",
+    "build:full": "next build",
     "start": "next start",
     "lint": "next lint",
     "fetch-trends": "node scripts/fetch-trends.js",
@@ -15,6 +16,7 @@
     "fetch-scholarships:fast": "node scripts/fetch-scholarships.js --limit=5 --skip-gpt"
   },
   "dependencies": {
+    "@notionhq/client": "^5.23.3",
     "googleapis": "^173.0.0",
     "js-yaml": "^4.1.0",
     "lucide-react": "^0.469.0",

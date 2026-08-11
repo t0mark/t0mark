@@ -62,7 +62,11 @@ export default function HomeTodo({ data, onSave }: HomeTodoProps) {
     if (trimmed === '') {
       items.splice(index, 1)
     } else {
-      items[index] = { text: trimmed, ...(editDeadline ? { deadline: editDeadline } : {}) }
+      const existing = items[index]
+      const updated: TodoItem = { ...existing, text: trimmed }
+      if (editDeadline) updated.deadline = editDeadline
+      else delete updated.deadline
+      items[index] = updated
     }
     onSave({ ...data, todos: { ...data.todos, [category]: { ...data.todos[category], items } } })
     setEditingKey(null)

@@ -9,11 +9,14 @@ interface Match {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json() as { matches?: Match[] }
+    const body = await request.json() as { matches?: Match[]; sheetTitle?: string }
     if (!Array.isArray(body.matches)) {
       return NextResponse.json({ error: 'matches array required' }, { status: 400 })
     }
-    const result = await runCommit({ matches: body.matches })
+    if (!body.sheetTitle) {
+      return NextResponse.json({ error: 'sheetTitle required' }, { status: 400 })
+    }
+    const result = await runCommit({ matches: body.matches, sheetTitle: body.sheetTitle })
     return NextResponse.json({ ok: true, ...result })
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)

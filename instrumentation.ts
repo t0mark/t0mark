@@ -36,5 +36,9 @@ export async function register() {
     // 세미나 논문 자동 동기화 (설정된 요일/시간에 실행)
     const { registerSeminarCron } = await import('./lib/seminar/cron')
     await registerSeminarCron()
+
+    // 창조2관 방문 신청 (매일 설정 시간에 실행, 다음 날이 평일일 때만 신청)
+    const { registerChangjoCron } = await import('./lib/changjo/cron')
+    await registerChangjoCron()
   }
 }

@@ -1,21 +1,25 @@
 dDay:
   ICRA:
     targetDate: '2026-09-16'
+  ICLR:
+    targetDate: '2026-09-19'
 tasks: {}
 todos:
   학습 (논문 / 이론):
     icon: 🔬
     items:
-      - text: ICRA 논문 주제
-        deadline: '2026-09-15'
-      - text: EA-VLN 논문
-        deadline: '2026-09-11'
+      - text: ICRA - VLN
+        deadline: ASAP
+        notionPageId: 3b0923d8-3eb5-812e-b42f-e6c5b7dc164c
+      - text: ICRA - VLA 주제
+        deadline: ASAP
+        notionPageId: 3b0923d8-3eb5-81db-8ae5-f229cce1a354
   기술 구현:
     icon: 🧑🏻‍💻
     items:
-      - text: VR Teleop 웹 기반으로 전환
-      - text: VR Teleop 3D 공간 생성
+      - text: VR Teleop 수정
         deadline: TYT
+        notionPageId: 3ae923d8-3eb5-81fa-bc93-c545e90301aa
   프로그래밍:
     icon: 🖥️
     items: []
@@ -27,12 +31,10 @@ todos:
     items: []
   과제:
     icon: 📚
-    items: []
+    items:
+      - text: DIY 로봇 청소기 키트
+        deadline: ASAP
+        notionPageId: 3b0923d8-3eb5-81ca-b134-c1e8b7b30bfa
   개인 공부:
     icon: 👨‍💻
     items: []
-priorityOrder:
-  - category: 학습 (논문 / 이론)
-    text: EA-VLN 논문
-  - category: 학습 (논문 / 이론)
-    text: ICRA 논문 주제

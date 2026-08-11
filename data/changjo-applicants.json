@@ -1,0 +1,28 @@
+{
+  "applicants": [
+    {
+      "id": "2b72bbfe-d7ae-422c-bc0d-f820f5bdf2fb",
+      "name": "양현웅",
+      "org": "전북대학교 조형기 교수님 연구실",
+      "position": "석사과정생",
+      "contact": "010-9653-6009",
+      "purpose": "연구",
+      "equipment": "서버 1호기",
+      "entryTime": "10:00",
+      "exitTime": "18:00",
+      "active": true
+    },
+    {
+      "id": "temp-msododas-1",
+      "name": "강진우",
+      "org": "전북대학교 조형기 교수님 연구실",
+      "position": "학부생",
+      "contact": "010-4321-1218",
+      "purpose": "연구",
+      "equipment": "OMY",
+      "entryTime": "10:00",
+      "exitTime": "18:00",
+      "active": true
+    }
+  ]
+}

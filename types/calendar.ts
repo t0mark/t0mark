@@ -5,6 +5,7 @@ export interface DDayItem {
 export interface TodoItem {
   text: string
   deadline?: string // ISO date string, 'ASAP', or 'TYT'
+  notionPageId?: string
 }
 
 export interface CategoryData {
@@ -15,6 +16,7 @@ export interface CategoryData {
 export interface TodoCategoryData {
   icon: string
   items: TodoItem[]
+  notionPageId?: string
 }
 
 // backward-compat aliases
