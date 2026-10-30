@@ -7,19 +7,47 @@ import { Pencil, Plus, Trash2, X } from 'lucide-react'
 import type { CalendarData } from '@/types/calendar'
 import DDayCards from '@/components/calendar/DDayCards'
 
+// 날짜가 지정된 TODO 항목은 별도로 저장하지 않고 표시할 때 D-DAY 로 합친다.
+// 같은 이름의 D-DAY 가 이미 있으면 직접 입력한 쪽을 쓴다.
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
+const PRUNE_AFTER_MS = 3 * 86400000
+
+function todoDDays(todos: CalendarData['todos']): CalendarData['dDay'] {
+  const cutoff = Date.now() - PRUNE_AFTER_MS
+  const out: CalendarData['dDay'] = {}
+  for (const cat of Object.values(todos ?? {})) {
+    for (const item of cat.items) {
+      const text = item.text?.trim()
+      if (!text || !item.deadline || !ISO_DATE.test(item.deadline)) continue
+      if (new Date(item.deadline).getTime() < cutoff) continue
+      out[text] = { targetDate: item.deadline }
+    }
+  }
+  return out
+}
+
 export default function HomeDDay() {
   const [data, setData] = useState<CalendarData | null>(null)
   const [error, setError] = useState(false)
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState<CalendarData | null>(null)
   const [saving, setSaving] = useState(false)
+  const [todos, setTodos] = useState<CalendarData['todos']>({})
+
+  // 홈의 TODO 가 저장되면 HomeContent 가 보내는 이벤트로 바로 반영
+  useEffect(() => {
+    const onTodos = (e: Event) => setTodos((e as CustomEvent<CalendarData['todos']>).detail)
+    window.addEventListener('calendar:todos', onTodos)
+    return () => window.removeEventListener('calendar:todos', onTodos)
+  }, [])
 
   useEffect(() => {
     fetch('/api/calendar')
       .then((res) => { if (!res.ok) throw new Error(); return res.json() })
       .then((fetched: CalendarData) => {
+        setTodos(fetched.todos ?? {})
         const now = new Date()
-        const cutoff = now.getTime() - 3 * 86400000
+        const cutoff = now.getTime() - PRUNE_AFTER_MS
         const kept = Object.fromEntries(
           Object.entries(fetched.dDay).filter(([, item]) => {
             const t = new Date(item.targetDate).getTime()
@@ -33,7 +61,7 @@ export default function HomeDDay() {
           fetch('/api/calendar', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(pruned),
+            body: JSON.stringify({ dDay: kept }),
           })
         } else {
           setData(fetched)
@@ -60,7 +88,7 @@ export default function HomeDDay() {
       const res = await fetch('/api/calendar', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(draft),
+        body: JSON.stringify({ dDay: draft.dDay }),
       })
       if (!res.ok) throw new Error()
       setData(draft)
@@ -119,11 +147,14 @@ export default function HomeDDay() {
         </div>
         {error && <p className="text-xs text-red-400">데이터 로드 실패</p>}
         {!data && !error && <div className="loading-spinner scale-75" />}
-        {data?.dDay && <DDayCards dDay={data.dDay} />}
+        {data?.dDay && <DDayCards dDay={{ ...todoDDays(todos), ...data.dDay }} />}
       </div>
 
       {editing && draft && (
         <EditPanel title="D-DAY" saving={saving} onSave={save} onClose={closeEdit}>
+          <p className="text-[11px] text-text-muted mb-3">
+            날짜가 지정된 TODO 항목은 자동으로 표시됩니다. 여기서는 직접 추가한 D-DAY만 편집할 수 있습니다.
+          </p>
           <div className="flex justify-end mb-3">
             <button
               onClick={addDDay}

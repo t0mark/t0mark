@@ -1,4 +1,67 @@
 {
-  "lastUpdated": "2026-08-10T17:00:29.895Z",
-  "items": []
+  "lastUpdated": "2026-10-30T17:00:32.583Z",
+  "items": [
+    {
+      "id": "wanted:da9c848427bf",
+      "title": "[인턴][Physical AI] Robotics / AI Researcher",
+      "company": "에이플라",
+      "location": "경기",
+      "deadline": "2026-10-31T00:00:00.000Z",
+      "postedAt": "2026-09-22T17:00:04.119Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/388467",
+      "tags": [
+        "a",
+        "robot"
+      ],
+      "description": "대규모 데이터 인프라를 기반으로 차세대 RFM 및 Embodied AI의 미래를 연구합니다. 1) 차세대 로봇 파운데이션 모델(RFM) 학습을 위한 대규모 데이터 생성/가공 파이프라인 개발 및 멀티모달 제어 알고리즘 선행 연구 - 거대 멀티모달 로봇 제어 모델(VLA, VLM-to-Action) 연구, 파이프라인 설계 및 제어 알고리즘 최적화. - 글로벌 선행 기술 기반 차세대 Embodied AI 및 로봇 선행 기술 아키텍처 연구. 2) 대규모 로봇 학습 데이터셋 구축 및 학습 파이프라인 개발 - 대규모 Embodied AI 데이터셋(e.g., LeRobotDataset, Open-X 등) 수집/가공/정제 파이프라인 연동 및 검증. - 데이터 효율적 학습 기법(Data-efficient Learning) 및 멀티 로봇/이기종 데이터 도메인 적응 연구. 3) 비정형 물체 조작(Manipulation) 및 실시간 제어 고도화 - 모방 학습 및 강화 학습 기반 비정형 조작 알고리즘 연구. - 실시간 정밀 피드백 제어(Visual Servoing), 3D Vision 기반 Object 6D Pose Estimation, 모션 리타게팅 기술 설계. 1) 관련 분야 석·박사 학위 소지자(또는 이에 준하는 기술적 깊이와 연구 역량을 보유하신 분) - 로보틱스, 컴퓨터공학, AI, 전기전자, 기계공학 등 관련 전공자 2) PyTorch 기반의 최신 로봇 AI 모델 설계, 구현 및 최적화 경험을 보유하신 분 - 최신 로보틱스/AI 논문을 빠르게 이해하고 실용적인 코드(C++/Python)로 구현 및 재현 가능한 분. 3) 로봇 매니퓰레이션, 제어 이론 및 Embodied AI 파이프라인에 대한 깊은 이해도를 가지신 분 에이플라는 서울대학교 출신 석박사 개발자를 주축으로 설립되어 Physical AI 및 Vision AI, 로봇 학습 데이터를 핵심 축으로 삼아 가파르게 성장하고있는 딥테크 스타트업입니다. 에이플라는 고품질 로봇 데이터 양산 인프라 구축부터 차세대 Embodied AI 선행 연구, 그리고 실제 산업 현장의 로봇 자동화까지 로보틱스의 전 과정을 혁신하고 있습니다. 단순한 이론에 그치지 않고, Real-World 데이터와 실전 로봇 제어를 바탕으로 함께 성장을 이끌어갈 Robotics / AI Researcher의 많은 지원을 바랍니다."
+    },
+    {
+      "id": "wanted:17634e6c50d3",
+      "title": "[인턴][Physical AI] Robotics System Engineer",
+      "company": "에이플라",
+      "location": "경기",
+      "deadline": "2026-10-31T00:00:00.000Z",
+      "postedAt": "2026-09-22T17:00:04.119Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/388466",
+      "tags": [
+        "a",
+        "robot"
+      ],
+      "description": "대규모 데이터 인프라를 기반으로 차세대 RFM 및 Embodied AI의 미래를 연구합니다. 1) 차세대 로봇 파운데이션 모델(RFM) 학습을 위한 대규모 데이터 생성/가공 파이프라인 개발 및 멀티모달 제어 알고리즘 선행 연구 - 거대 멀티모달 로봇 제어 모델(VLA, VLM-to-Action) 연구, 파이프라인 설계 및 제어 알고리즘 최적화. - 글로벌 선행 기술 기반 차세대 Embodied AI 및 로봇 선행 기술 아키텍처 연구. 2) 대규모 로봇 학습 데이터셋 구축 및 학습 파이프라인 개발 - 대규모 Embodied AI 데이터셋(e.g., LeRobotDataset, Open-X 등) 수집/가공/정제 파이프라인 연동 및 검증. - 데이터 효율적 학습 기법(Data-efficient Learning) 및 멀티 로봇/이기종 데이터 도메인 적응 연구. 3) 비정형 물체 조작(Manipulation) 및 실시간 제어 고도화 - 모방 학습 및 강화 학습 기반 비정형 조작 알고리즘 연구. - 실시간 정밀 피드백 제어(Visual Servoing), 3D Vision 기반 Object 6D Pose Estimation, 모션 리타게팅 기술 설계. 1) 관련 분야 석·박사 학위 소지자(또는 이에 준하는 기술적 깊이와 연구 역량을 보유하신 분) - 로보틱스, 컴퓨터공학, AI, 전기전자, 기계공학 등 관련 전공자 2) PyTorch 기반의 최신 로봇 AI 모델 설계, 구현 및 최적화 경험을 보유하신 분 - 최신 로보틱스/AI 논문을 빠르게 이해하고 실용적인 코드(C++/Python)로 구현 및 재현 가능한 분. 3) 로봇 매니퓰레이션, 제어 이론 및 Embodied AI 파이프라인에 대한 깊은 이해도를 가지신 분 에이플라는 서울대학교 출신 석박사 개발자를 주축으로 설립되어 Physical AI 및 Vision AI, 로봇 학습 데이터를 핵심 축으로 삼아 가파르게 성장하고있는 딥테크 스타트업입니다. 에이플라는 고품질 로봇 데이터 양산 인프라 구축부터 차세대 Embodied AI 선행 연구, 그리고 실제 산업 현장의 로봇 자동화까지 로보틱스의 전 과정을 혁신하고 있습니다. 단순한 이론에 그치지 않고, Real-World 데이터와 실전 로봇 제어를 바탕으로 함께 성장을 이끌어갈 Robotics System Engineer의 많은 지원을 바랍니다."
+    },
+    {
+      "id": "wanted:f93d5efa18e6",
+      "title": "[인턴][Physical AI] 딥러닝 기반 2D/3D 컴퓨터 비전",
+      "company": "에이플라",
+      "location": "경기",
+      "deadline": "상시채용",
+      "postedAt": "2026-09-21T17:00:04.354Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/388174",
+      "tags": [
+        "딥러닝",
+        "컴퓨터 비전",
+        "a"
+      ],
+      "description": "1) 학습 데이터셋 준비 - 라벨링 프로그램 준비 - 라벨링 결과 검증 - raw 라벨링 데이터를 학습 시킬 수 있는 데이터셋 포맷으로 전처리 2) 2D BBox Detection, 2D Instance Segmentation 모델 학습 - 학습 데이터셋을 활용해 PyTorch/PyTorchLightening 기반 학습 코드 작성 및 학습 - TensorBoard, Weights & Biases 기반 학습 모니터링 및 관리 Visual Anomaly Detection, Change Detection 모델 학습 및 튜닝 3) On-Device AI 환경 학습 모델 배포 - Qualcomm SoC Embedded Board에 Vision AI 모델 최적화 및 배포 (PyTorch, ONNX, QNN, QAIRT 등 툴체인 사용) - NVIDIA Jetson Embedded Board에 Vision AI 모델 최적화 및 배포 (JetPack, TensorRT, CUDA 등 툴체인 사용) 1) Vision AI 학습 데이터셋 제작 경험이 있으신 분 - 영상 전처리, 결과물 후처리, 학습 데이터 증강 기법(Augmentation) 등에 대한 경험이 있고 학습에 어떤 영향을 미치는 지에 관한 이해 가능한 자. 2) Python, PyTorch 원활히 사용 가능하신 분 - PyTorch를 사용해 Vision AI 모델 학습 및 배포 경험 보유자. - CNN, ViT, Detection, Instance Segmentation 모델의 구조에 대한 이해가 있으신 분. - 주요 모델의 구조 및 알고리즘 측면에서 장단점, 연산량 등에 대한 이해 가능한 자. 3) 해외 출국 및 지방 출장에 결격사유가 없으신 분. 4) 4대보험 가입이 가능한 분. 딥러닝 기반 2D/3D 컴퓨터 비전 분야 인재를 모십니다. 에이플라(주)는 서울대학교 출신 석박사 개발자를 주축으로 설립되어 Physical AI 및 Vision AI, 로봇 학습 데이터를 핵심 축으로 삼아 가파르게 성장하고있는 딥테크 스타트업입니다. SOTA(State-of-the-Art) 수준의 알고리즘과 엣지 단말 최적화 기술력을 바탕으로 실생활에 적용되는 AI 기술의 사업화 및 필드 상용화를 함께 경험할 수 있습니다. 창업 생태계 및 여러 기업과의 즉각 협업을 희망하는 인재의 많은 지원을 바랍니다."
+    },
+    {
+      "id": "wanted:0605329a34bd",
+      "title": "[인턴] 휴머노이드 Physical AI / Robotics R&D",
+      "company": "투모로로보틱스",
+      "location": "서울",
+      "deadline": "상시채용",
+      "postedAt": "2026-08-19T17:00:03.062Z",
+      "source": "wanted",
+      "url": "https://www.wanted.co.kr/wd/381292",
+      "tags": [
+        "a",
+        "robot",
+        "r&d"
+      ],
+      "description": "• 로봇의 인식·판단·행동을 위한 Physical AI 기술 연구 및 구현 • 시뮬레이션 환경 구축 및 가상 데이터 기반 실험 • 카메라, 거리, 힘, 촉각 등 다양한 센서 데이터를 활용한 로봇 상태 및 위치 인식 • 로봇의 공간·자세·동작 정보를 추정하고 이를 2족 보행 / Whole-body Control 등 제어 시스템과 연계 • 로봇 학습을 위한 데이터 수집, 전처리, 정제 및 증강 파이프라인 개발 • 연구·개발된 로봇 기술을 실제 환경 및 실증 프로젝트에 적용하고 성능 검증 • 로봇공학, 기계공학, 전기·전자공학, 컴퓨터공학, 인공지능 등 관련 전공 • 학사 또는 석사 졸업자, 졸업 예정자 • Python 또는 C/C++ 기반 개발 경험 • 로봇, 인공지능, 제어, 컴퓨터 비전 중 하나 이상의 분야에 대한 관심 • 새로운 기술을 학습하고 직접 구현해보는 태도 투모로로보틱스는 휴머노이드 로봇이 실제 환경을 이해하고, 사람과 같은 방식으로 작업을 수행하며, 다양한 상황에 대응할 수 있도록 하는 Physical AI 기술을 개발하고 있습니다. 휴머노이드 로봇의 지능화와 실제 로봇 시스템 적용에 필요한 연구·개발 과제를 수행하며, 시뮬레이션, 센서 기반 인식, 로봇 데이터, 제어 및 시스템 통합 등 다양한 분야에서 실질적인 프로젝트 경험을 제공합니다. 1. 프론티어 레벨 Physical AI 기술 개발 2. 다양한 로봇 시스템 통합 경험 3. 실질적인 프로젝트 기반 학습 기회 본 인턴십은 졸업 예정자 또는 졸업생이 로보틱스·AI 분야의 연구개발 경험을 쌓을 수 있는 기회입니다. 프로젝트 수행 결과와 역량에 따라 정규직 전환을 검토할 수 있습니다."
+    }
+  ]
 }

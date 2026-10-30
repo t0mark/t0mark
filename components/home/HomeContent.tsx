@@ -36,10 +36,11 @@ export default function HomeContent() {
 
   const save = useCallback((updated: CalendarData) => {
     setData(updated)
+    window.dispatchEvent(new CustomEvent('calendar:todos', { detail: updated.todos }))
     fetch('/api/calendar', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updated),
+      body: JSON.stringify({ todos: updated.todos, priorityOrder: updated.priorityOrder }),
     }).then(() => syncNotion())
   }, [syncNotion])
 

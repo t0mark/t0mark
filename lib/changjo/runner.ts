@@ -37,7 +37,8 @@ export function parseIsoDate(str: string): Date | null {
  * 호출자는 handle.child.kill() 로 언제든 중단할 수 있다.
  */
 export function runVisit(opts: RunOptions, onLine: (line: string) => void): RunHandle {
-  const args = ['--date', opts.date]
+  // 서버(웹 요청·크론)에는 X 서버가 없으므로 항상 headless 로 띄운다.
+  const args = ['--date', opts.date, '--headless']
   if (opts.dryRun) args.push('--dry-run')
   for (const id of opts.only ?? []) args.push('--only', id)
 

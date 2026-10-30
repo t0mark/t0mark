@@ -1,40 +1,41 @@
 dDay:
-  ICRA:
-    targetDate: '2026-09-16'
-  ICLR:
-    targetDate: '2026-09-19'
+  CVPR 초록 마감:
+    targetDate: '2026-11-11'
+  CVPR 제출 마감:
+    targetDate: '2026-11-17'
+  KRoC 마감:
+    targetDate: '2026-11-26'
 tasks: {}
 todos:
-  학습 (논문 / 이론):
-    icon: 🔬
-    items:
-      - text: ICRA - VLN
-        deadline: ASAP
-        notionPageId: 3b0923d8-3eb5-812e-b42f-e6c5b7dc164c
-      - text: ICRA - VLA 주제
-        deadline: ASAP
-        notionPageId: 3b0923d8-3eb5-81db-8ae5-f229cce1a354
-  기술 구현:
-    icon: 🧑🏻‍💻
-    items:
-      - text: VR Teleop 수정
-        deadline: TYT
-        notionPageId: 3ae923d8-3eb5-81fa-bc93-c545e90301aa
-  프로그래밍:
-    icon: 🖥️
-    items: []
-  영어:
-    icon: 🔠
-    items: []
-  주간 통합 & 계획:
-    icon: 🗓️
-    items: []
-  과제:
+  수업:
     icon: 📚
     items:
-      - text: DIY 로봇 청소기 키트
+      - text: 전시설
         deadline: ASAP
         notionPageId: 3b0923d8-3eb5-81ca-b134-c1e8b7b30bfa
-  개인 공부:
-    icon: 👨‍💻
-    items: []
+      - text: 캡스톤 디자인
+        deadline: '2026-12-09'
+  코딩:
+    icon: 🧑🏻‍💻
+    items:
+      - text: MANSION-World
+        deadline: ASAP
+        notionPageId: 400923d8-3eb5-81ea-8f52-f182ba3012be
+  연구과제:
+    icon: 🔬
+    items:
+      - text: 인공 신장 연구
+        deadline: ASAP
+        notionPageId: 3c1923d8-3eb5-81f1-bc89-e3eaad7a9fd8
+      - text: 시설농업
+        deadline: ASAP
+        notionPageId: 400923d8-3eb5-8111-b99f-c758a03f1bc6
+priorityOrder:
+  - category: 수업
+    text: 전시설
+  - category: 연구과제
+    text: 시설농업
+  - category: 코딩
+    text: MANSION-World
+  - category: 연구과제
+    text: 인공 신장 연구

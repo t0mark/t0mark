@@ -18,7 +18,10 @@ export async function GET() {
 
 export async function PUT(request: Request) {
   try {
-    const body = await request.json() as CalendarData
+    // 홈의 D-DAY 와 TODO 는 각자 따로 불러온 데이터를 저장하므로, 보낸 항목(dDay, todos 등)만 현재 파일 위에 덮어쓴다.
+    // 전체를 통째로 덮어쓰면 한쪽에서 저장할 때 다른 쪽의 최근 변경이 지워진다.
+    const current = yaml.load(readFileSync(filePath, 'utf-8')) as CalendarData
+    const body = { ...current, ...(await request.json() as Partial<CalendarData>) }
     // Remove stale priorityOrder entries that no longer exist in todos
     if (body.priorityOrder && body.todos) {
       const validKeys = new Set(

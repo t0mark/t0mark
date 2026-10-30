@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { readFileSync, writeFileSync, renameSync } from 'fs'
+import { readFileSync } from 'fs'
 import { join } from 'path'
 import yaml from 'js-yaml'
 import { Client } from '@notionhq/client'
@@ -7,22 +7,25 @@ import type { CalendarData } from '@/types/calendar'
 
 const filePath = join(process.cwd(), 'data', 'calendar-data.yaml')
 
+// TODO 항목과 Notion 페이지는 제목(이름)으로만 매칭한다.
+// 페이지 id 를 저장하지 않으므로 Notion 에서 위치를 옮기거나, 앱에서 항목을 지우거나 옮겨도 서로 깨지지 않는다.
+// 서버는 페이지를 만들기만 하고, 이름 변경·삭제(archive)는 하지 않는다.
+
 interface NotionPage {
   id: string
   url: string
+  object?: string
   properties?: Record<string, unknown>
-  icon?: unknown
   archived?: boolean
   in_trash?: boolean
-  parent?: { type?: string; page_id?: string }
 }
 
 interface NotionBlock {
   id: string
   type: string
+  has_children?: boolean
   archived?: boolean
   in_trash?: boolean
-  heading_3?: { rich_text?: Array<{ plain_text?: string; text?: { content?: string } }> }
   child_page?: { title?: string }
 }
 
@@ -45,82 +48,39 @@ function extractTitle(page: NotionPage): string {
   return ''
 }
 
-type Notion = InstanceType<typeof Client>
-
-async function ensureItemPage(
-  notion: Notion,
-  opts: { existingId: string | undefined; parentId: string; title: string }
-): Promise<{ id: string; url: string } | null> {
-  const { existingId, parentId, title } = opts
-
-  if (existingId) {
-    try {
-      const page = (await notion.pages.retrieve({ page_id: existingId })) as unknown as NotionPage
-      if (page.archived || page.in_trash) {
-        // fall through to create
-      } else {
-        const parentMatches = page.parent?.type === 'page_id'
-          && page.parent.page_id?.replace(/-/g, '') === parentId.replace(/-/g, '')
-        if (!parentMatches) {
-          // 이전에 category 페이지 하위에 있던 것 → archive 후 root 아래로 재생성
-          try { await notion.pages.update({ page_id: existingId, archived: true }) } catch { /* ignore */ }
-        } else {
-          if (extractTitle(page) !== title) {
-            await notion.pages.update({
-              page_id: existingId,
-              properties: { title: { title: [{ text: { content: title } }] } },
-            })
-          }
-          return { id: page.id, url: page.url }
-        }
-      }
-    } catch (err) {
-      console.warn(`Notion page ${existingId} 조회 실패, 재생성:`, err instanceof Error ? err.message : err)
-    }
-  }
-
-  try {
-    const created = (await notion.pages.create({
-      parent: { page_id: parentId },
-      properties: { title: { title: [{ text: { content: title } }] } },
-    })) as unknown as NotionPage
-    return { id: created.id, url: created.url }
-  } catch (err) {
-    console.error(`Notion page 생성 실패 (${title}):`, err instanceof Error ? err.message : err)
-    return null
-  }
+function pageUrl(id: string): string {
+  return `https://www.notion.so/${id.replace(/-/g, '')}`
 }
 
-async function cleanupOrphans(
-  notion: Notion,
-  parentId: string,
-  calendar: CalendarData
-) {
-  // Parent 의 모든 블록 조회
-  const blocks: NotionBlock[] = []
+type Notion = InstanceType<typeof Client>
+
+// parent 페이지 안의 하위 페이지를 제목 → id 로 모은다.
+// 컬럼·토글 같은 컨테이너 블록 안까지 내려가지만, 하위 페이지의 본문 안으로는 들어가지 않는다.
+async function collectChildPages(notion: Notion, blockId: string, out: Map<string, string>) {
   let cursor: string | undefined = undefined
   do {
-    const res = await notion.blocks.children.list({ block_id: parentId, start_cursor: cursor })
-    blocks.push(...(res.results as unknown as NotionBlock[]))
+    const res = await notion.blocks.children.list({ block_id: blockId, start_cursor: cursor })
+    for (const block of res.results as unknown as NotionBlock[]) {
+      if (block.archived || block.in_trash) continue
+      if (block.type === 'child_page') {
+        const title = block.child_page?.title?.trim()
+        if (title && !out.has(title)) out.set(title, block.id)
+      } else if (block.has_children && block.type !== 'child_database') {
+        await collectChildPages(notion, block.id, out)
+      }
+    }
     cursor = res.has_more ? (res.next_cursor ?? undefined) : undefined
   } while (cursor)
+}
 
-  const validItemIds = new Set(
-    Object.values(calendar.todos ?? {})
-      .flatMap((cat) => cat.items.map((it) => it.notionPageId))
-      .filter((pid): pid is string => !!pid)
-      .map((pid) => pid.replace(/-/g, ''))
-  )
-
-  // 유효 pageId 집합에 없는 모든 child_page 는 우리가 만든 orphan (중복 sync 결과) → archive
-  for (const block of blocks) {
-    if (block.type !== 'child_page') continue
-    const normalizedId = block.id.replace(/-/g, '')
-    if (validItemIds.has(normalizedId)) continue
-    try {
-      await notion.pages.update({ page_id: block.id, archived: true })
-    } catch { /* ignore */ }
+// TODO 페이지 밖(다른 페이지 안 등)으로 옮겨진 페이지는 검색으로 찾는다.
+async function searchPageByTitle(notion: Notion, title: string): Promise<string | null> {
+  const res = await notion.search({ query: title, filter: { property: 'object', value: 'page' } })
+  for (const page of res.results as unknown as NotionPage[]) {
+    if (page.archived || page.in_trash) continue
+    if (extractTitle(page).trim() === title) return page.id
   }
+  return null
 }
 
 // 서버 mutex — 동시 sync 방지. 진행 중이면 후속 요청은 기다렸다가 그 결과를 공유.
@@ -155,50 +115,40 @@ async function runSync(apiKey: string, parentId: string): Promise<Record<string,
   const notion = new Client({ auth: apiKey })
   const calendar = yaml.load(readFileSync(filePath, 'utf-8')) as CalendarData
 
+  const pagesByTitle = new Map<string, string>()
+  await collectChildPages(notion, parentId, pagesByTitle)
+
   const urls: Record<string, string> = {}
-  let dirty = false
 
   for (const [categoryName, catData] of Object.entries(calendar.todos ?? {})) {
-    // 이전에 만들어졌던 category 페이지는 더 이상 안 씀 (남은 값은 정리)
-    if (catData.notionPageId !== undefined) {
-      delete catData.notionPageId
-      dirty = true
-    }
-
     for (const item of catData.items) {
       const text = item.text?.trim()
       if (!text) continue
 
-      const result = await ensureItemPage(notion, {
-        existingId: item.notionPageId,
-        parentId,
-        title: text,
-      })
-      if (!result) continue
-      if (item.notionPageId !== result.id) {
-        item.notionPageId = result.id
-        dirty = true
+      let pageId = pagesByTitle.get(text) ?? null
+      if (!pageId) {
+        try {
+          pageId = await searchPageByTitle(notion, text)
+        } catch (err) {
+          console.warn(`Notion 검색 실패 (${text}):`, err instanceof Error ? err.message : err)
+        }
       }
-      urls[`${categoryName}::${text}`] = result.url
-    }
-  }
+      if (!pageId) {
+        try {
+          const created = (await notion.pages.create({
+            parent: { page_id: parentId },
+            properties: { title: { title: [{ text: { content: text } }] } },
+          })) as unknown as NotionPage
+          pageId = created.id
+        } catch (err) {
+          console.error(`Notion page 생성 실패 (${text}):`, err instanceof Error ? err.message : err)
+          continue
+        }
+      }
 
-  if (dirty) {
-    try {
-      const yamlStr = yaml.dump(calendar, { lineWidth: -1 })
-      const tmpPath = filePath + '.tmp'
-      writeFileSync(tmpPath, yamlStr, 'utf-8')
-      renameSync(tmpPath, filePath)
-    } catch (err) {
-      console.error('calendar-data.yaml 저장 실패:', err)
+      pagesByTitle.set(text, pageId)
+      urls[`${categoryName}::${text}`] = pageUrl(pageId)
     }
-  }
-
-  // Orphan 정리: yaml 에 없는 모든 child_page archive
-  try {
-    await cleanupOrphans(notion, parentId, calendar)
-  } catch (err) {
-    console.error('orphan 정리 실패:', err instanceof Error ? err.message : err)
   }
 
   return urls
