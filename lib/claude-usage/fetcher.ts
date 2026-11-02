@@ -15,12 +15,19 @@ const CLI_BINARY_SUBPATH = join('resources', 'native-binary', 'claude')
 const USAGE_COMMAND_ARGS = ['-p', '/usage', '--output-format', 'json', '--no-session-persistence']
 const SESSION_LABEL = 'Current session'
 const WEEK_LABEL = 'Current week (all models)'
+const ACCOUNT_DISPLAY_ORDER = ['woong5297', 'iwagoho', 'a96536009', 'tomark']
 
 const execFileAsync = promisify(execFile)
 
-let cachedUsage: ClaudeUsageResponse | null = null
-let cachedAt = 0
-let pendingUsage: Promise<ClaudeUsageResponse> | null = null
+interface ClaudeUsageCacheState {
+  cachedUsage: ClaudeUsageResponse | null
+  cachedAt: number
+  pendingUsage: Promise<ClaudeUsageResponse> | null
+}
+
+// 서버 시작 코드와 API 라우트가 같은 캐시를 쓰도록 전역 객체에 보관
+const globalCacheHolder = globalThis as typeof globalThis & { __claudeUsageCache?: ClaudeUsageCacheState }
+const usageCache = (globalCacheHolder.__claudeUsageCache ??= { cachedUsage: null, cachedAt: 0, pendingUsage: null })
 
 // 환경변수, VS Code 확장의 최신 버전, PATH 순서로 CLI 실행 파일을 찾음
 function resolveCliPath(): string {
@@ -35,11 +42,18 @@ function resolveCliPath(): string {
   return cliPaths.find((cliPath) => existsSync(cliPath)) ?? 'claude'
 }
 
-// 계정별 로그인 폴더 이름을 계정 목록으로 사용
+// 지정한 표시 순서의 위치를 반환하고, 목록에 없는 계정은 맨 뒤로 보냄
+function displayOrderIndex(label: string): number {
+  const orderIndex = ACCOUNT_DISPLAY_ORDER.indexOf(label)
+  return orderIndex === -1 ? ACCOUNT_DISPLAY_ORDER.length : orderIndex
+}
+
+// 계정별 로그인 폴더 이름을 표시 순서대로 정렬해 계정 목록으로 사용
 function listAccountLabels(): string[] {
   return readdirSync(ACCOUNTS_DIR, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
+    .sort((a, b) => displayOrderIndex(a) - displayOrderIndex(b) || a.localeCompare(b))
 }
 
 // "Nov 4, 1am" 또는 "4:50am" 형식의 리셋 시각을 ISO 문자열로 변환
@@ -104,16 +118,25 @@ async function fetchAccountUsage(cliPath: string, label: string): Promise<Claude
 async function refreshUsage(): Promise<ClaudeUsageResponse> {
   const cliPath = resolveCliPath()
   const accounts = await Promise.all(listAccountLabels().map((label) => fetchAccountUsage(cliPath, label)))
-  cachedUsage = { accounts, fetchedAt: new Date().toISOString() }
-  cachedAt = Date.now()
+  const usage = { accounts, fetchedAt: new Date().toISOString() }
+  usageCache.cachedUsage = usage
+  usageCache.cachedAt = Date.now()
   console.log(`[ClaudeUsage] ${accounts.length}개 계정 조회 완료`)
-  return cachedUsage
+  return usage
 }
 
-// 캐시가 유효하면 재사용하고, 동시 요청은 진행 중인 조회 하나로 합침
-export async function getClaudeUsage(): Promise<ClaudeUsageResponse> {
-  if (cachedUsage && Date.now() - cachedAt < CACHE_TTL_MS) return cachedUsage
+// 사용량을 새로 조회하고, 동시 요청은 진행 중인 조회 하나로 합침
+export function refreshClaudeUsage(): Promise<ClaudeUsageResponse> {
+  usageCache.pendingUsage ??= refreshUsage().finally(() => { usageCache.pendingUsage = null })
+  return usageCache.pendingUsage
+}
 
-  pendingUsage ??= refreshUsage().finally(() => { pendingUsage = null })
-  return pendingUsage
+// 캐시가 있으면 즉시 반환하고, 만료된 경우 백그라운드에서 갱신
+export async function getClaudeUsage(): Promise<ClaudeUsageResponse> {
+  if (!usageCache.cachedUsage) return refreshClaudeUsage()
+
+  if (Date.now() - usageCache.cachedAt >= CACHE_TTL_MS) {
+    refreshClaudeUsage().catch((error) => console.error('[ClaudeUsage] 백그라운드 갱신 실패:', error))
+  }
+  return usageCache.cachedUsage
 }

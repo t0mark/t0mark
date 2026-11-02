@@ -6,9 +6,7 @@ import type { ClaudeUsageResponse, ClaudeUsageWindow } from '@/types/claude-usag
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000
 const WARNING_PERCENT = 70
 const DANGER_PERCENT = 90
-const MINUTE_MS = 60 * 1000
-const HOUR_MS = 60 * MINUTE_MS
-const DAY_MS = 24 * HOUR_MS
+const WEEKDAY_NAMES = ['일', '월', '화', '수', '목', '금', '토']
 
 // 사용률 구간에 맞는 막대 색상 선택
 function barColorClass(utilization: number): string {
@@ -17,14 +15,15 @@ function barColorClass(utilization: number): string {
   return 'bg-primary'
 }
 
-// 리셋까지 남은 시간을 짧은 문구로 변환
-function formatRemaining(resetsAt: string | null): string {
+// 리셋 시각을 오늘이면 "HH:mm", 다른 날이면 "M/D(요일) HH:mm" 형식으로 변환
+function formatResetTime(resetsAt: string | null): string {
   if (!resetsAt) return ''
-  const remainingMs = new Date(resetsAt).getTime() - Date.now()
-  if (isNaN(remainingMs) || remainingMs <= 0) return ''
-  if (remainingMs >= DAY_MS) return `${Math.floor(remainingMs / DAY_MS)}일 ${Math.floor((remainingMs % DAY_MS) / HOUR_MS)}시간`
-  if (remainingMs >= HOUR_MS) return `${Math.floor(remainingMs / HOUR_MS)}시간 ${Math.floor((remainingMs % HOUR_MS) / MINUTE_MS)}분`
-  return `${Math.max(1, Math.floor(remainingMs / MINUTE_MS))}분`
+  const resetDate = new Date(resetsAt)
+  if (isNaN(resetDate.getTime())) return ''
+
+  const clockText = `${String(resetDate.getHours()).padStart(2, '0')}:${String(resetDate.getMinutes()).padStart(2, '0')}`
+  if (resetDate.toDateString() === new Date().toDateString()) return clockText
+  return `${resetDate.getMonth() + 1}/${resetDate.getDate()}(${WEEKDAY_NAMES[resetDate.getDay()]}) ${clockText}`
 }
 
 export default function HomeClaudeUsage() {
@@ -82,12 +81,12 @@ interface UsageBarProps {
 
 function UsageBar({ name, usageWindow }: UsageBarProps) {
   const utilization = usageWindow?.utilization ?? 0
-  const remaining = usageWindow ? formatRemaining(usageWindow.resetsAt) : ''
+  const resetTime = usageWindow ? formatResetTime(usageWindow.resetsAt) : ''
 
   return (
-    <div title={remaining ? `${remaining} 후 리셋` : undefined}>
+    <div title={resetTime ? `${resetTime} 초기화` : undefined}>
       <div className="flex justify-between text-[11px] text-text-muted mb-0.5">
-        <span>{name}{remaining && ` · ${remaining}`}</span>
+        <span>{name}{resetTime && ` · ${resetTime}`}</span>
         <span>{usageWindow ? `${Math.round(utilization)}%` : '-'}</span>
       </div>
       <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">

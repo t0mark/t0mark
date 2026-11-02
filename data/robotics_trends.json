@@ -1,89 +1,427 @@
 {
-  "lastUpdated": "2026-10-29T19:02:03.249Z",
+  "lastUpdated": "2026-11-01T19:01:41.799Z",
   "items": [
     {
-      "id": "rosdiscourse:20256f0191bf",
-      "title": "Community meeting: How OTTO by Rockwell Automation uses Gazebo",
-      "abstract": "Hello Community! Here’s the information for our November Meeting where we’ll talk about how Gazebo is used to simulate industrial and manufacturing workflows. “At OTTO by Rockwell Automation, we use Gazebo as our primary simulator for developing and testing our AMRs. It can also be used with our OTTO Fleet Manager software, enabling anyone at OTTO to bring up a multi-robot simulation for their own use. This talk will cover how we use Gazebo, ROS 2, and our internal tooling to simulate realistic industrial and manufacturing workflows.” Agenda: Latest news from Open Robotics about Gazebo - Addis",
+      "id": "rosdiscourse:f26749900a46",
+      "title": "[Open Source] DDS AutoDiag v0.1.0 — ROS 2 DDS Diagnostics with AI-Assisted Troubleshooting",
+      "abstract": "Hi ROS community! Ever had two ROS 2 systems that could ping each other, use the same ROS_DOMAIN_ID , but still couldn’t discover each other’s topics? I’ve encountered similar issues while working with distributed ROS 2 systems. Troubleshooting often means manually investigating DDS discovery, middleware configurations, QoS policies, and container networking. To make this process more systematic, I developed DDS AutoDiag v0.1.0, an independent, MIT-licensed open-source tool for diagnosing ROS 2 communication problems across robots, computers, and containers. What does it offer? 23 diagnostic c",
       "source": "rosdiscourse",
-      "url": "https://discourse.openrobotics.org/t/community-meeting-how-otto-by-rockwell-automation-uses-gazebo/59334",
-      "publishedAt": "2026-10-29T16:30:32.000Z",
+      "url": "https://discourse.openrobotics.org/t/open-source-dds-autodiag-v0-1-0-ros-2-dds-diagnostics-with-ai-assisted-troubleshooting/59419",
+      "publishedAt": "2026-11-01T17:40:23.000Z",
       "authors": [
-        "caguero"
+        "Animesh_Gunaki"
       ],
       "tags": [],
-      "titleKo": "커뮤니티 미팅: Rockwell Automation의 OTTO는 Gazebo를 어떻게 활용하는가",
-      "abstractKo": "커뮤니티 여러분, 안녕하세요! 11월 미팅 안내입니다. 이번 모임에서는 Gazebo가 산업 및 제조 워크플로를 시뮬레이션하는 데 어떻게 사용되는지를 다룹니다. OTTO by Rockwell Automation에서는 Gazebo를 자율 이동 로봇(AMR) 개발 및 테스트를 위한 주요 시뮬레이터로 사용합니다. 또한 Gazebo는 OTTO Fleet Manager 소프트웨어와 연동되어, OTTO 내 누구나 자신들의 용도로 다중 로봇 시뮬레이션을 손쉽게 실행할 수 있게 해줍니다. 이번 발표에서는 Gazebo, ROS 2, 그리고 사내 툴링을 어떻게 활용해 실제와 유사한 산업·제조 워크플로를 시뮬레이션하는지에 대해 다룰 예정입니다. 의제: Gazebo 관련 Open Robotics의 최신 소식 - Addis"
+      "titleKo": "[오픈 소스] DDS AutoDiag v0.1.0 — AI 보조 문제해결을 통한 ROS 2 DDS 진단",
+      "abstractKo": "안녕하세요 ROS 커뮤니티 여러분! 두 개의 ROS 2 시스템이 서로 핑이 되고 동일한 ROS_DOMAIN_ID를 사용함에도 불구하고 서로의 토픽을 발견하지 못한 적이 있나요? 분산된 ROS 2 시스템을 다루다 보면 저도 비슷한 문제를 겪었습니다. 문제 해결은 종종 DDS 디스커버리, 미들웨어 구성, QoS 정책, 컨테이너 네트워킹을 수동으로 조사해야 하는 과정을 수반합니다. 이 과정을 보다 체계화하기 위해 로봇, 컴퓨터, 컨테이너 전반의 ROS 2 통신 문제를 진단하기 위한 독립적이며 MIT 라이선스의 오픈 소스 도구 DDS AutoDiag v0.1.0을 개발했습니다. 무엇을 제공하나요? 23개의 진단 c"
     },
     {
-      "id": "rosdiscourse:129c2a98fa1d",
-      "title": "FOSDEM 2027: Robotics & Simulation Devroom, 3rd edition!",
-      "abstract": "Hi folks! We have done it again, the 3rd edition of the Robotics and Simulation Devroom got accepted at FOSDEM . It will take place on Sun, Jan 31, 2027 8:00 AM UTC → Sun, Jan 31, 2027 6:00 PM UTC and is on the ULB campus, in Brussel, Belgium. archive.fosdem.org FOSDEM 2026 - Home The call for participation is open to submit talk proposals for all things robotics, as long it is open source! And of course ROS and Gazebo are included! If you have attended 5 ROSCons already, then you can talk about something else robotics/simulation related that is the beauty of FOSDEM, we invite all you crazy ro",
+      "id": "rosdiscourse:9b263607d22e",
+      "title": "livox_gz_sim: Livox Mid-360 and HAP simulation for Gazebo Harmonic",
+      "abstract": "Hi all, I’ve released livox_gz_sim, a Gazebo Harmonic plugin that simulates Livox Mid-360 and HAP lidars and publishes exactly what livox_ros_driver2 publishes. As far as I know it’s the first gpu agnostic Livox simulator for Gazebo Harmonic; the existing ones target Gazebo Classic or require CUDA. What it does Uses Livox’s recorded non-repetitive scan patterns, so coverage builds up over frames like on the real sensor Publishes livox_ros_driver2/CustomMsg or PointCloud2 in the driver’s 26-byte layout ( xfer_format 0/1), with per-point timestamps Simulates the Mid-360’s IMU at 200 Hz Adds rang",
       "source": "rosdiscourse",
-      "url": "https://discourse.openrobotics.org/t/fosdem-2027-robotics-simulation-devroom-3rd-edition/59333",
-      "publishedAt": "2026-10-29T15:39:56.000Z",
+      "url": "https://discourse.openrobotics.org/t/livox-gz-sim-livox-mid-360-and-hap-simulation-for-gazebo-harmonic/59418",
+      "publishedAt": "2026-11-01T17:40:05.000Z",
       "authors": [
-        "KimMcG"
+        "mathai"
       ],
       "tags": [],
-      "titleKo": "FOSDEM 2027: Robotics & Simulation Devroom — 제3회",
-      "abstractKo": "안녕하세요 여러분! 다시 해냈습니다. Robotics and Simulation Devroom의 제3회 에디션이 FOSDEM에 채택되었습니다. 행사는 2027년 1월 31일(일) 08:00 UTC부터 2027년 1월 31일(일) 18:00 UTC까지 열리며, 벨기에 브뤼셀의 ULB 캠퍼스에서 진행됩니다. archive.fosdem.org FOSDEM 2026 - Home 참여 신청(call for participation)이 열려 있으며, 오픈 소스인 한 로보틱스 관련 모든 주제의 강연 제안서를 제출할 수 있습니다! 물론 ROS와 Gazebo도 포함됩니다. 이미 ROSCon에 5회 참석하셨다면 로보틱스/시뮬레이션 관련 다른 주제로 발표하실 수 있습니다 — 이게 바로 FOSDEM의 매력입니다. 우리는 모든 미친 ro"
+      "titleKo": "livox_gz_sim: Gazebo Harmonic용 Livox Mid-360 및 HAP 시뮬레이션",
+      "abstractKo": "안녕하세요. livox_gz_sim을 공개했습니다. 이 Gazebo Harmonic 플러그인은 Livox Mid-360 및 HAP 라이다를 시뮬레이션하며, livox_ros_driver2가 퍼블리시하는 데이터와 정확히 동일한 내용을 퍼블리시합니다. 제가 알기로 Gazebo Harmonic용으로 GPU에 구애받지 않는 최초의 Livox 시뮬레이터이며, 기존 시뮬레이터는 Gazebo Classic을 대상으로 하거나 CUDA를 필요로 합니다.\n주요 기능:\n- Livox가 기록한 비반복(Non-repetitive) 스캔 패턴을 사용하므로 실제 센서처럼 프레임을 거치며 커버리지가 누적됩니다.\n- 드라이버의 26바이트 레이아웃(xfer_format 0/1)으로 livox_ros_driver2/CustomMsg 또는 PointCloud2를 포인트별 타임스탬프와 함께 퍼블리시합니다.\n- Mid-360의 IMU를 200 Hz로 시뮬레이션합니다.\n- Adds rang(원문이 중단됨)"
     },
     {
-      "id": "rosdiscourse:c8104e08b96e",
-      "title": "Dedicated meeting to discuss REP 0157: Wednesday, 4 November 2026",
-      "abstract": "Dedicated meeting to discuss REP 0157: Wednesday, 4 November 2026 Hi everyone, At the ROS 2 PMC meeting on 27 October 2026 we discussed REP 0157 . There is a lot to cover, so the PMC agreed to hold a dedicated meeting on this REP. Anyone interested in REP 0157 is welcome to join. What is REP 0157? REP 0157 redesigns the rosidl messaging system so that ROS 2 gets native, universal zero-copy transport across process boundaries with minimal overhead. Key features: language-agnostic memory layouts, strict message constraints, and standardizing on XCDRv1 as the in-memory representation. Compatibili",
+      "id": "rosdiscourse:963d75a61ced",
+      "title": "A small deterministic gate between the planner and the wheels: ROS 2 Jazzy node, simulation and CI only",
+      "abstract": "I’ve been building a small supervisor node for differential-drive mobile robots that sits between a high-level velocity source (such as Nav2, an LLM agent, or teleoperation) and the base controller. Following the classic Simplex architecture (Sha et al.), the node treats complex high-level planners as unverified proposers and acts as a minimal, deterministic gatekeeper on /cmd_vel. I work alone and I’m self-taught, based in Greece. I have no access to physical robot hardware, so everything described below is evaluated in Webots simulation (PAL Robotics TIAGo base) and verified in GitHub Action",
       "source": "rosdiscourse",
-      "url": "https://discourse.openrobotics.org/t/dedicated-meeting-to-discuss-rep-0157-wednesday-4-november-2026/59331",
-      "publishedAt": "2026-10-29T14:45:09.000Z",
+      "url": "https://discourse.openrobotics.org/t/a-small-deterministic-gate-between-the-planner-and-the-wheels-ros-2-jazzy-node-simulation-and-ci-only/59400",
+      "publishedAt": "2026-11-01T11:04:55.000Z",
       "authors": [
-        "ahcorde"
+        "marunigno-ship-it"
       ],
       "tags": [],
-      "titleKo": "REP 0157 논의를 위한 전용 회의: 2026년 11월 4일(수)",
-      "abstractKo": "안녕하세요. 2026년 10월 27일 열린 ROS 2 PMC 회의에서 REP 0157에 대해 논의했습니다. 다룰 내용이 많아 PMC는 이 REP에 대해 별도의 전용 회의를 열기로 했으며, REP 0157에 관심 있는 누구나 참석할 수 있습니다. REP 0157이란? REP 0157은 rosidl 메시징 시스템을 재설계하여 ROS 2가 프로세스 경계를 넘는 네이티브하고 범용적인 제로 카피 전송을 최소한의 오버헤드로 제공하도록 하는 제안입니다. 주요 특징은 언어에 구애받지 않는 메모리 레이아웃, 엄격한 메시지 제약사항, 그리고 메모리 내 표현으로 XCDRv1 표준화를 포함합니다. 호환성"
+      "titleKo": "플래너와 바퀴 사이의 소형 결정론적 게이트: ROS 2 Jazzy 노드 — 시뮬레이션 및 CI 전용",
+      "abstractKo": "저는 차동 구동 모바일 로봇을 위해 고수준 속도 명령원(예: Nav2, LLM 에이전트, 원격 조종)과 베이스 컨트롤러 사이에 위치하는 소형 감독 노드를 만들어 왔습니다. 고전적인 Simplex 아키텍처(Sha et al.)를 따르며, 이 노드는 복잡한 고수준 플래너를 검증되지 않은 제안자(unverified proposers)로 취급하고 /cmd_vel에 대해 최소한의 결정론적 게이트키퍼 역할을 수행합니다. 저는 그리스에 거주하는 독학의 단독 개발자이며 물리 로봇 하드웨어에 접근할 수 없기 때문에, 아래에 기술된 모든 내용은 Webots 시뮬레이션(PAL Robotics TIAGo 베이스)에서 평가되었고 GitHub Actions에서 검증되었습니다."
     },
     {
-      "id": "rosdiscourse:108e8ce2d4a4",
-      "title": "lightBot: rebuilt a ROSOrin Pro from a blank drive after apt update broke it (ROS 2 Humble, Orin NX, 37-chapter guide)",
-      "abstract": "Bought a Hiwonder ROSOrin Pro. Ran apt update . Robot stopped working. The vendor image was a pile of pinned packages and hand-edited files nobody wrote down, and one upgrade broke the lot. So I wiped it and rebuilt from a blank NVMe, writing every step as I went, so the robot has a clean bill of health and I can do it again from nothing. Jetson Orin NX 16 GB, JetPack 6, ROS 2 Humble, Nav2 + SLAM Toolbox, no wheel encoders (rf2o laser odometry + cuVSLAM into an EKF), 5-DOF arm on MoveIt, open-vocabulary vision on the GPU. The local AI can suggest; it can’t move anything without me. Every chapt",
-      "source": "rosdiscourse",
-      "url": "https://discourse.openrobotics.org/t/lightbot-rebuilt-a-rosorin-pro-from-a-blank-drive-after-apt-update-broke-it-ros-2-humble-orin-nx-37-chapter-guide/59328",
-      "publishedAt": "2026-10-29T14:25:00.000Z",
+      "id": "arxiv:2610.40646",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+      "abstract": "Robot manipulation in everyday environments inherently involves substantial tool usage. Seemingly simple household tasks, such as cooking pan-fried tofu, require forceful cutting, delicate brushing, and precise placement using different tools under contact-rich interaction. Thus, the ability to autonomously swap and use task-appropriate tools is important for tool-centric manipulation. We introduce SwapBot, a modular, tool-centric end effector system featuring low-cost adapters that quickly convert common household tools into robot end effectors. Rather than pursuing a single universal gripper, SwapBot adopts a unified design principle that combines a fixed robot-side coupling interface with low-cost, tool-side adapters, enabling compatibility with diverse tools, including articulated ones, and multiple robot platforms. Each adapter integrates compact tactile sensors, supports fast autonomous swapping, and interfaces with an intuitive teleoperation system for efficient demonstration collection. User studies show that, during teleoperation, SwapBot reduces task completion time and operator workload. Using collected demonstrations on the robot, we train imitation learning policies to successfully perform tool-centric tasks like cooking tofu, stirring salad, flipping meat. Our ablation study shows that using tactile-augmented demonstrations improves policy performance across contact-rich skills, increasing success rates by 15 to 25 percentage points over RGB-only policies. These results highlight modular, tactile-equipped tools as a practical and extensible pathway toward robust and capable robot manipulation. Project website https://personalrobotics.github.io/SwapBot.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40646",
+      "publishedAt": "2026-10-29T17:59:20Z",
       "authors": [
-        "burgerbarn"
+        "Yunchu Zhang",
+        "Ray Song",
+        "Junhan Jiao",
+        "Liyiming Ke",
+        "Yuchen Yang",
+        "Ruihan Gao",
+        "Emma Romig",
+        "Siddhartha Srinivasa",
+        "Yiyue Luo"
       ],
-      "tags": [],
-      "titleKo": "lightBot: apt update로 망가진 ROSOrin Pro를 빈 드라이브에서 재구축(ROS 2 Humble, Orin NX, 37장 가이드)",
-      "abstractKo": "Hiwonder ROSOrin Pro를 구입했다. apt update를 실행한 뒤 로봇이 작동을 멈췄다. 공급업체 이미지에는 고정된(pinned) 패키지들과 아무도 문서화하지 않은 수작업 편집 파일들이 쌓여 있었고, 한 번의 업그레이드로 전부 깨졌다. 그래서 NVMe를 완전히 지우고 빈 상태에서 다시 빌드했으며, 그 과정의 모든 단계를 기록했다. 덕분에 로봇은 깨끗한 상태가 되었고 동일한 과정을 처음부터 다시 수행할 수 있게 되었다. 사용한 환경은 Jetson Orin NX 16GB, JetPack 6, ROS 2 Humble이며 Nav2 + SLAM Toolbox를 사용한다. 휠 엔코더는 없고(rf2o 레이저 오도메트리 + cuVSLAM을 EKF로 융합), MoveIt에서 5자유도 암을 제어하며 GPU에서 오픈 보캐뷸러리 비전(오픈 보캐뷸러리 비전)을 실행한다. 로컬 AI는 제안을 할 수는 있지만, 내가 직접 조작하지 않으면 아무것도 움직이지 않는다. 각 장..."
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "SwapBot: 교체 가능한 엔드이펙터와 촉각 센싱을 이용한 도구 중심 로봇 조작",
+      "abstractKo": "일상 환경에서의 로봇 조작은 본질적으로 상당한 도구 사용을 수반한다. 예컨대 팬에 구운 두부를 요리하는 것처럼 겉보기에는 단순한 가정용 작업도 강한 절단, 섬세한 브러싱, 접촉이 많은 상호작용 하에서의 정밀한 배치 등 서로 다른 도구들을 필요로 한다. 따라서 작업에 적합한 도구를 자율적으로 교체하고 사용하는 능력은 도구 중심 조작에서 중요하다. 우리는 SwapBot을 소개하는데, SwapBot은 일반 가정용 도구를 빠르게 로봇용 엔드이펙터로 전환할 수 있는 저비용 어댑터를 특징으로 하는 모듈식 도구 중심 엔드이펙터 시스템이다. 단일 범용 그리퍼를 추구하기보다는"
     },
     {
-      "id": "rosdiscourse:694693e7006b",
-      "title": "ROS Deliberation Community Group Meeting - November 2, 2026",
-      "abstract": "We’re back after a ROSCon and post-ROSCon recovery break! The next ROS Deliberation Community Group meeting will be held on Mon, Nov 2, 2026 4:00 PM UTC . Please keep in mind the US will just be having a Daylight Savings “jump”, so this might be an hour difference from previous meetings in your local time zone. Google Meet link: Google Meet meeting Agenda: Spotlight: NASA Deep Space Autonomous Robotics Challenge (DSpARC) Presentation: Christian Henkel and Marcus Gualtieri (Bosch) will go through Code as Policies (CaP) and its more recent successor, Graph-as-Policy (GaP) We are always looking f",
-      "source": "rosdiscourse",
-      "url": "https://discourse.openrobotics.org/t/ros-deliberation-community-group-meeting-november-2-2026/59323",
-      "publishedAt": "2026-10-29T11:49:09.000Z",
+      "id": "arxiv:2610.40632",
+      "title": "SymAnt: Grounding Long-Horizon Action Anticipation with Adaptable Symbolic Priors",
+      "abstract": "As robots and intelligent systems increasingly interact with humans, they must anticipate long sequences of future actions from only brief observations. While purely neural models typically require extensive observations to predict future actions and remain difficult to interpret and adjust, symbolic priors offer a structured alternative. To this end, we introduce SymAnt, a novel neuro-symbolic approach that unifies the expressiveness of neural networks with the structured reasoning of scene and knowledge graphs. Given a short video, SymAnt performs a joint-search over both graphs to construct a symbolic context, enabling unified reasoning over spatial relationships, object attributes, affordances, and associated actions. This symbolic context serves as a prior for an iterative refinement process that progressively generates and improves the sequence of future actions. By grounding predictions in symbolic context, SymAnt anticipates long-horizon actions from short observation windows in a parameter-efficient manner, while enabling users to directly edit the underlying knowledge to adjust predictions without further training. Through our experiments, we demonstrate the effectiveness of SymAnt, particularly when only short observation contexts are available, across five diverse datasets: Breakfast, 50 Salads, EPIC-KITCHENS, EGTEA Gaze+, and Assembly101.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40632",
+      "publishedAt": "2026-10-29T17:58:00Z",
       "authors": [
-        "scastro"
+        "Fnu Aryan",
+        "Yaqi Xie",
+        "Joseph Campbell",
+        "Woojun Kim",
+        "Kwonjoon Lee",
+        "Hossein Nourkhiz Mahjoub",
+        "Ehsan Moradi-Pari",
+        "Katia Sycara",
+        "Simon Stepputtis"
       ],
-      "tags": [],
-      "titleKo": "ROS Deliberation 커뮤니티 그룹 회의 - 2026년 11월 2일",
-      "abstractKo": "ROSCon과 이후 회복 기간을 마치고 돌아왔습니다! 다음 ROS Deliberation 커뮤니티 그룹 회의는 2026년 11월 2일(월) 오후 4시(UTC)에 개최됩니다. 미국이 일광절약시간(Daylight Savings) 적용으로 시계를 한 시간 조정하므로, 귀하의 현지 시간은 이전 회의와 비교해 1시간 차이가 날 수 있음을 유의해 주세요. Google Meet 링크: Google Meet 회의. 의제: 스포트라이트 — NASA Deep Space Autonomous Robotics Challenge(DSpARC). 발표 — Christian Henkel과 Marcus Gualtieri(보쉬)가 Code as Policies(CaP)와 최신 후속 개념인 Graph-as-Policy(GaP)를 다룹니다. 우리는 항상 ..."
+      "tags": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "titleKo": "SymAnt: 적응 가능한 기호적 사전 지식을 통한 장기 행동 예측의 구체화",
+      "abstractKo": "로봇과 지능형 시스템이 인간과 점점 더 많이 상호작용함에 따라, 이들은 짧은 관찰만으로도 미래 행동의 긴 시퀀스를 예측할 수 있어야 한다. 순수 신경망 기반 모델은 일반적으로 미래 행동을 예측하기 위해 많은 관찰을 필요로 하고 해석하거나 조정하기 어렵지만, 기호적 사전 지식은 구조화된 대안을 제공한다. 이를 위해 우리는 SymAnt를 도입한다. SymAnt는 신경망의 표현력과 장면 그래프 및 지식 그래프의 구조적 추론을 통합한 새로운 신경-기호적 접근법이다. 짧은 비디오가 주어지면, SymAnt는 두 그래프 모두에 대해 공동 탐색을 수행하여 구성"
     },
     {
-      "id": "rosdiscourse:84f67de8da7f",
-      "title": "String command and state interfaces in ros2_control",
-      "abstract": "Hello ros control friends. I have a issue here that I was looking to get opinions on: strings for command and state interfaces · Issue #3491 · ros-controls/ros2_control · GitHub Basically it is very common for us to have to read strings from the hardware devices that we support. Software/firmware versions are a big one. Checksums for interlocking, diagnostics and metrics, etc. I think using `control_msgs/msgs/GenericHardwareStatus` helps in some use cases. But I do feel there are some cases where we’d want the get a string from a device and map it into an existing message (like the battery sta",
-      "source": "rosdiscourse",
-      "url": "https://discourse.openrobotics.org/t/string-command-and-state-interfaces-in-ros2-control/59304",
-      "publishedAt": "2026-10-29T02:49:38.000Z",
+      "id": "arxiv:2610.40600",
+      "title": "A Conveyor Belt Mechanism for Repositionable Magnetic Coupling Between Continuum Robots",
+      "abstract": "This work proposes a novel conveyor belt mechanism enabling continuous, active repositioning of functional elements along the body of a tendon-driven continuum robot. Up to three conveyor belt mechanisms are integrated within a 9 mm diameter continuum robot. We demonstrate equivalent or reduced conveyor belt actuation forces compared to robot tendon actuation forces. As a case study, we mount permanent magnets along two conveyor belts, and demonstrate actively reconfigurable inter-robot coupling. Coupling point location and quantity can be adjusted during robot operation to actively tune the effective stiffness of the coupled multi-robot system. We show that effective stiffness follows a predictable inverse-cubic relationship with coupling location, and increases with the number of coupling points. These findings demonstrate that the conveyor belt mechanism enables active functional element repositioning for changing tasks requirements, with magnetic inter-robot coupling as one proof-of-concept.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40600",
+      "publishedAt": "2026-10-29T17:50:56Z",
       "authors": [
-        "nnarain"
+        "Ella Walsh",
+        "Eric Diller",
+        "Jessica Burgner-Kahrs"
       ],
-      "tags": [],
-      "titleKo": "ros2_control의 문자열 명령 및 상태 인터페이스",
-      "abstractKo": "안녕하세요 ros control 여러분. 의견을 구하고자 하는 이슈가 있습니다: strings for command and state interfaces · Issue #3491 · ros-controls/ros2_control · GitHub. 우리가 지원하는 하드웨어 장치에서 문자열을 읽어야 하는 경우가 매우 흔합니다. 소프트웨어/펌웨어 버전이 대표적이며, 인터로킹용 체크섬, 진단 및 메트릭 등도 있습니다. `control_msgs/msgs/GenericHardwareStatus`를 사용하는 것이 일부 사용 사례에서 도움이 된다고 생각합니다. 하지만 장치에서 문자열을 가져와 기존 메시지에 매핑하고 싶은 경우도 있다고 느낍니다 (예: 배터리 sta"
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "연속체 로봇 간 재배치 가능한 자기 결합을 위한 컨베이어 벨트 메커니즘",
+      "abstractKo": "본 연구는 텐던 구동 연속체 로봇의 몸체를 따라 기능 요소를 연속적이고 능동적으로 재배치할 수 있게 해주는 새로운 컨베이어 벨트 메커니즘을 제안한다. 최대 세 개의 컨베이어 벨트 메커니즘이 직경 9 mm의 연속체 로봇 내부에 통합된다. 본 메커니즘은 컨베이어 벨트의 구동력이 로봇의 텐던 구동력에 비해 동등하거나 더 낮음을 보여준다. 사례 연구로 영구자석을 두 개의 컨베이어 벨트에 장착하여 능동적으로 재구성 가능한 로봇 간 결합을 시연한다. 결합 지점의 위치와 수는 로봇 동작 중에 조정할 수 있어 능동적으로 e를 조정할 수 있다."
+    },
+    {
+      "id": "arxiv:2610.40565",
+      "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+      "abstract": "Realistic, fast robotics simulations could enable large-scale training of embodied AI models that transfer to the real world. However, despite decades of progress, available simulations cover only a narrow range of real-world tasks and physical phenomena. The core bottleneck is that creating better simulations requires significant expert effort and therefore does not scale. To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations. Our core insight is that simulation creation is a coding agent task, so improvements in coding agents translate directly into richer and more faithful simulations. We select simulations based on U.S. GDP data to cover economically valuable physical work, define what makes a good simulation and a good task, and develop an adversarial creation-audit loop that checks each simulation and task against these definitions. Using this pipeline, we build RoboWorld, a set of 25 simulations with 25 test and 175 training RL environments of varying difficulty. Even the best frontier models fail on every RoboWorld test task, achieving an average reward of only 0.06. Building on RoboWorld, we introduce several new ways for frontier models to improve, including in-context learning across repeated attempts, a privileged teacher that reads the simulator state and teaches a student in context, self-assisted learning from the model's own privileged experience, and code policies that generate demonstrations across varied scenes to train vision-language-action models (VLAs) such as $π_{0.5}$. Each of these substantially improves performance. We release our pipeline, RL environments, and benchmark to facilitate future research. Code and data are available at https://gym-anything.github.io/robotics",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40565",
+      "publishedAt": "2026-10-29T17:42:32Z",
+      "authors": [
+        "Pranjal Aggarwal",
+        "Sean Welleck"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "titleKo": "로보틱스용 Gym-Anything: 디지털 에이전트로 물리 시뮬레이션 확장",
+      "abstractKo": "현실적이고 빠른 로보틱스 시뮬레이션은 실제 세계로 전이되는 체현형(embodied) AI 모델을 대규모로 학습시키는 것을 가능하게 할 수 있다. 그러나 수십 년의 진전에도 불구하고, 현재 이용 가능한 시뮬레이션은 실제 작업과 물리적 현상의 좁은 범위만을 다룬다. 핵심 병목은 더 나은 시뮬레이션을 만드는 데 상당한 전문가의 노력이 필요하다는 점으로, 따라서 확장 가능하지 않다는 것이다. 이를 해결하기 위해 우리는 코딩 에이전트가 현실적인 로보틱스 시뮬레이션을 생성하는 프레임워크인 Gym-Anything for Robotics를 도입한다. 우리의 핵심 통찰은 시뮬레이션 생성이 코딩 에이전트의 과제라는 점이므로, 코딩... (원문 중단)"
+    },
+    {
+      "id": "arxiv:2610.40559",
+      "title": "A Tutorial on Shape Servoing of Deformable Objects-Part I: Fundamentals",
+      "abstract": "In robotics, shape control (or shape servoing) refers to the automatic manipulation of a deformable object to achieve a desired shape. It involves a feedback loop that exploits the relation between robot motion and changes in the measured shape. This relation, known as the interaction Jacobian or, in this context, the deformation Jacobian, depends on the object's mechanical properties, geometry, and boundary conditions (e.g., where the object is grasped). Because these factors are often difficult to model accurately, the deformation Jacobian can be estimated locally from observed shape changes produced by commanded robot motions, without requiring a fine-tuned mechanical model. This article is the first of a two-part tutorial on data-driven Jacobian-based shape control of deformable objects. It introduces the central elements of the approach: the formulation of the shape-control problem, shape representation, estimation and online update of the deformation Jacobian, and a standard control law from the literature. It then assembles these elements into a complete shape-servoing loop, derives a local stability condition for this loop, and illustrates why some target shapes cannot be reached. Part II covers more advanced topics. Throughout both parts, a simulated planar example in which two robot arms manipulate an elastic rod observed by a camera illustrates the concepts.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40559",
+      "publishedAt": "2026-10-29T17:40:56Z",
+      "authors": [
+        "Ignacio Cuiral-Zueco",
+        "Alessio Caporali",
+        "Miguel Aranda",
+        "Gianluca Palli",
+        "Gonzalo López-Nicolás",
+        "Youcef Mezouar"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "titleKo": "변형 물체의 형상 서보 튜토리얼 — 제1부: 기초",
+      "abstractKo": "로보틱스에서 형상 제어(또는 형상 서보)는 변형 가능한 물체를 원하는 형상으로 자동 조작하는 것을 말한다. 이는 로봇의 동작과 측정된 형상의 변화 사이 관계를 이용하는 피드백 루프를 포함한다. 상호작용 야코비안(interaction Jacobian)으로 알려진 이 관계는 본 문맥에서는 변형 야코비안이라 불리며, 물체의 기계적 특성, 기하학적 형태 및 경계 조건(예: 물체가 잡혀 있는 지점)에 따라 달라진다. 이러한 요인들은 정확히 모델링하기 어려운 경우가 많기 때문에 변형 야코비안은 관찰된 형상 변화로부터 국소적으로 추정될 수 있다."
+    },
+    {
+      "id": "arxiv:2610.40539",
+      "title": "PhysVLMM: Interaction-Conditioned Physical Belief Maps for Articulated Objects in Robot Scene Maps",
+      "abstract": "Mobile robots must open doors and drawers, yet their scene maps record what each object is and whether it has moved, not how it will respond to a pull. This paper proposes PhysVLMM, a method that maintains a physical belief for every articulated part of a Vision-Language-Motion Map and answers a planner's queries about it, with two algorithms: a map update and a query. Watching a part move provably cannot identify its dynamics, and a measured pull identifies only the pulled part, up to one direction. PhysVLMM therefore (i) keeps that direction as a posterior instead of a point estimate, (ii) passes the evidence of each pull in closed form to the untouched look-alike parts of the map, and (iii) answers whether an action will succeed at a stated risk, or abstains. On real doors and drawers in 18 homes, it identifies the joint type in 86% of held-out pulls (48% for a learned single-view method) and predicts the response to a pull with 41% lower error than differentiable simulation (CRPS 0.323 vs. 0.544), four orders of magnitude faster (13 ms vs. 230 s per case). The posterior lowers the final-position error from 0.460 to 0.270, sharing lowers the force error of untouched parts from 56% to 42%, and at every stated risk from 0.02 to 0.30 the false-safe answers stay within it. Pooling all measured parts of a home does as well as the look-alike groups, and simpler variants predict where a pulled part stops at least as well.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40539",
+      "publishedAt": "2026-10-29T17:35:40Z",
+      "authors": [
+        "Dibyendu Ghosh"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "PhysVLMM: 로봇 장면 지도에서 관절형 객체를 위한 상호작용에 조건화된 물리적 신념 맵",
+      "abstractKo": "이동 로봇은 문과 서랍을 열어야 하지만, 장면 지도는 각 객체가 무엇인지와 이동했는지만 기록할 뿐, 당겼을 때 어떻게 반응할지는 기록하지 않는다. 본 논문은 PhysVLMM을 제안한다. 이 방법은 시각-언어-동작 맵(Vision-Language-Motion Map)의 각 관절 부분에 대해 물리적 신념을 유지하고, 플래너의 쿼리에 응답하는 두 가지 알고리즘(맵 업데이트와 쿼리)을 제공한다. 어떤 부품의 움직임을 관찰하는 것만으로는 그 역학을 식별할 수 없다는 것이 증명되며, 측정된 당김은 오직 당겨진 부품만을 방향의 부호 불확실성을 제외하고 식별한다. 따라서 PhysVLMM은 (i) 그 방향을 점 추정치 대신 사후확률로 유지하고, (ii) p"
+    },
+    {
+      "id": "arxiv:2610.40537",
+      "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+      "abstract": "We present DAWN (Diffusion-based Alignment and unfastening Workflow Network), a hierarchical robotic framework designed to perform real-world, unfastening tasks through multi-modal sensory integration. Autonomous robotic unfastening is crucial for improving recycling processes, enhancing safety, and reducing operational costs; yet, it remains predominantly manual due to inherent challenges in precise screwdriver engagement with fasteners, detailed force execution, and robustness to environmental variability. To address the complexity of learning long-horizon, contact-rich manipulation tasks, we subdivide the unfastening task procedure into two sequential stages: (1) alignment & insertion, and (2) unfastening. DAWN consists of three key components: AlignNet, a diffusion-based policy ensuring precise screwdriver tip engagement; LatchNet, a multi-modal classifier reliably detecting successful stage transitions; and UnfastNet, which achieves stable, force-controlled screw removal. Experimental validation on a Franka Emika robot demonstrates that DAWN achieves alignment & insertion success rates comparable to trained human operators, robustly transitions between stages, and attains an impressive success rate in unfastening across various unseen scenarios. Ablation studies further elucidate critical input modalities and effective training strategies, highlighting DAWN's scalability, robustness, and data efficiency.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40537",
+      "publishedAt": "2026-10-29T17:35:16Z",
+      "authors": [
+        "Hemant Kumar",
+        "Piyush Goenka",
+        "Nikhil Chopra"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "DAWN: 확산 기반 정렬 및 풀기 워크플로우 네트워크",
+      "abstractKo": "우리는 DAWN(확산 기반 정렬 및 풀기 워크플로우 네트워크)를 제안한다. 이 계층적 로봇 프레임워크는 다중 모달 센서 통합을 통해 실제 환경에서의 풀기 작업을 수행하도록 설계되었다. 자율 로봇 풀기 작업은 재활용 공정의 개선, 안전성 향상, 운영 비용 절감에 중요한 역할을 하지만, 드라이버와 패스너의 정밀한 맞물림, 세밀한 힘 제어의 수행, 환경 변화에 대한 강건성 등 내재된 어려움으로 인해 여전히 대부분 수작업으로 이루어지고 있다. 장기간에 걸친 접촉 중심의 조작 과제를 학습하는 복잡성을 해결하기 위해, w"
+    },
+    {
+      "id": "arxiv:2610.40532",
+      "title": "BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing",
+      "abstract": "How effectively can vision-language-action (VLA) models learn diverse language-conditioned behaviors as training data scales? Investigating this question requires large and varied robot datasets, whose collection on physical robots remains costly. We introduce BURGER, a language-conditioned robotic drawing benchmark with a scalable, prompt-driven pipeline for generating continuous drawing trajectories, both in simulation and the real world. In BURGER, an agent starts from the same blank canvas and controls a robot arm to draw the object or spatial composition specified by language, while each instruction allows an open-ended variety of valid drawings and stroke orders. Using 28,200 simulated demonstrations spanning 282 drawing tasks, we evaluate five representative VLA models across data scales, language grounding, and multimodal behavior. BURGER supports fine-grained analysis of language grounding, spatial composition, and action generation, revealing distinct failure patterns across VLA models. Our experiments suggest that some VLA models can benefit from greater task diversity and demonstration scale, capture multimodal drawing behaviors, and generalize to unseen compositions of familiar objects. Finally, we deploy a trained policy on a Franka Panda arm, demonstrating the ability to draw reactively under human intervention. Project homepage and code can be found at https://siyingzhao.github.io/BURGER/.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40532",
+      "publishedAt": "2026-10-29T17:34:04Z",
+      "authors": [
+        "Xiangyu Xu",
+        "Bangshuai Peng",
+        "Ziyi Liu",
+        "Mengjie Zhao",
+        "Chenhao Lu",
+        "Zhengyang Fan",
+        "Huazhe Xu",
+        "Kaizhe Hu"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "titleKo": "BURGER: 체현된 드로잉을 통한 로봇 일반화의 벤치마킹 및 이해",
+      "abstractKo": "학습 데이터가 증가할 때 비전-언어-행동(VLA) 모델이 언어 조건화된 다양한 행동을 얼마나 효과적으로 학습할 수 있는가? 이 질문을 조사하려면 크고 다양한 로봇 데이터셋이 필요하며, 물리적 로봇에서 이를 수집하는 비용은 여전히 매우 높다. 우리는 BURGER를 제안한다. BURGER는 언어 조건화된 로봇 드로잉 벤치마크로서, 시뮬레이션과 실제 환경 모두에서 연속적인 드로잉 궤적을 생성할 수 있는 확장 가능하고 프롬프트 기반의 파이프라인을 제공한다. BURGER에서는 에이전트가 동일한 빈 캔버스에서 시작해 로봇 팔을 제어하여 언어로 지정된 객체나 공간적 구성을 그리며, 각각의"
+    },
+    {
+      "id": "arxiv:2610.40502",
+      "title": "A Two-Wheeled Quadrotor with All-Clockwise Tilted Rotors for Level-Attitude Surface Locomotnion",
+      "abstract": "Conventional wheel-equipped quadrotor UAVs must tilt their bodies to generate lateral forces, limiting their ability to maintain a desired attitude during lateral motion. This paper proposes a wheeled quadrotor with all-clockwise tilted rotors that uses surface contact as a constraint to generate propulsion along the contact surface without tilting the vehicle. We analyze feasible forces and system controllability under surface contact and optimize the vehicle design considering different rotor-spin configurations. The optimization results show that a configuration in which all four rotors spin clockwise can generate a larger tangential force than the conventional alternating-spin configuration. This approach enables both aerial and contact-based locomotion without additional rotor-tilting actuators or mechanisms. Simulation results demonstrate both hovering in free space and horizontal locomotion on a floor while maintaining a level attitude.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40502",
+      "publishedAt": "2026-10-29T17:20:22Z",
+      "authors": [
+        "Takumi Ito",
+        "Satoshi Nakano"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "titleKo": "수평 자세 유지형 표면 주행을 위한 모든 로터가 시계 방향으로 기울어진 2륜 쿼드로터",
+      "abstractKo": "기존의 바퀴 장착 쿼드로터 UAV는 횡방향 힘을 발생시키기 위해 기체를 기울여야 하므로 횡방향 이동 중 원하는 자세를 유지하는 능력이 제한된다. 본 논문은 모든 로터가 시계 방향으로 기울어진 바퀴 달린 쿼드로터를 제안하며, 이 기체는 표면 접촉을 제약 조건으로 활용해 기체를 기울이지 않고도 접촉면을 따라 추진력을 생성한다. 우리는 표면 접촉 하에서 가능한 힘과 시스템의 제어 가능성을 분석하고, 서로 다른 로터 회전 구성들을 고려하여 기체 설계를 최적화한다. 최적화 결과는 모든 네 로터가 회… [요약 원문이 중단됨]"
+    },
+    {
+      "id": "arxiv:2610.40473",
+      "title": "Fundamental Limits of Sampling-Based Reachability: Geometry and Flow Distortion",
+      "abstract": "Sampling-based reachability estimates reachable sets from finitely many simulated trajectory endpoints. Existing guarantees often control missed probability mass or approximation error relative to the convex hull of the reachable set, leaving the geometric error relative to the reachable set incompletely characterized. We study this error as a problem of support estimation under flow distortion. Our assumptions combine a uniform lower bound on the local volume density of the initial set, a lower bound on the sampling density, and a one-sided Lipschitz constant $μ$ for the vector field. These conditions admit initial sets with corners and dynamics that may expand or contract. In the fine-accuracy regime, $\\tilde{\\mathcal O}\\bigl(2^ne^{nμT}(R/r)^n/(ρκ)\\bigr)$ independent endpoint samples suffice for Hausdorff accuracy $r$ using the endpoint cloud. Here, $n$ is the state dimension, $T$ is the horizon, $R$ is the volume-equivalent radius, and $ρ$ and $κ$ quantify sampling density and local volume density. For $n\\ge2$ and sufficiently small $κ$, a minimax lower bound over all estimators based only on independent endpoints matches these dependencies up to a dimension-dependent factor $2\\cdot4^n$ and logarithmic factors, within the stated parameter range and when the state domain accommodates the construction. The exponential burden in dimension, and in the horizon for expanding systems, is therefore intrinsic to this observation model. Planar experiments illustrate the predicted effects of corners and contraction; robot-arm experiments show how empirical accuracy deteriorates with dimension.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40473",
+      "publishedAt": "2026-10-29T17:08:36Z",
+      "authors": [
+        "Jixian Liu",
+        "Ihab Tabbara",
+        "Hussein Sibai",
+        "Enrique Mallada"
+      ],
+      "tags": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "titleKo": "샘플링 기반 도달성의 근본적 한계: 기하학과 흐름 왜곡",
+      "abstractKo": "샘플링 기반 도달성은 유한 개의 시뮬레이션된 궤적 종단점들로부터 도달 가능 집합을 추정한다. 기존의 보장들은 대개 놓친 확률 질량이나 도달 가능 집합의 볼록 껍질(convex hull)에 대한 근사 오차를 제어하는 데 중점을 두어, 도달 가능 집합 자체에 대한 기하학적 오차는 불충분하게 특성화되어 있다. 우리는 이 오차를 흐름 왜곡(flow distortion) 하에서의 지지(서포트) 추정 문제로 연구한다. 우리의 가정은 초기 집합의 국소 체적 밀도에 대한 균일한 하한, 샘플링 밀도에 대한 하한, 그리고 벡터장에 대한 단측 리프시츠 상수 μ를 결합한다. (원문이 'These c'로 미완성되어 있어 이후 내용은 제공된 원문에 없음)"
+    },
+    {
+      "id": "arxiv:2610.40431",
+      "title": "Adaptive search with path-constrained mobile sensors using multi-arm bandits",
+      "abstract": "We study a constrained sequential decision problem for detecting regions of interest from noisy online measurements collected by a team of energy-constrained mobile sensors. The sensor motion is restricted to a precomputed set of feasible paths that satisfy mobility constraints, limited available energy by requiring return to charging stations, and avoidance of known obstacles. We cast the resulting active path selection as a multi-armed bandit problem and propose an iterative search algorithm that adaptively assigns paths using confidence bounds computed from the collected data. We also propose a graph-based method to construct low-cardinality path covers under the team's constraints. We establish finite-time and anytime probabilistic correctness guarantees for the proposed algorithm, derive non-asymptotic upper bounds on the times required to detect all regions of interest and to label all nodes, and show that these bounds match algorithm-independent lower bounds up to constant factors for a broad class of problem instances. Using numerical simulations, we illustrate the behavior of the proposed approach and the effect of path redundancy and team size on search performance.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40431",
+      "publishedAt": "2026-10-29T16:52:23Z",
+      "authors": [
+        "Abraham P. Vinod",
+        "Parth K. Thaker",
+        "Gautam Dasarathy",
+        "Stefano Di Cairano"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.LG",
+        "math.OC"
+      ],
+      "titleKo": "경로 제약이 있는 모바일 센서를 위한 멀티암드 밴딧 기반 적응적 탐색",
+      "abstractKo": "우리는 에너지 제약을 가진 모바일 센서 팀이 수집한 잡음이 섞인 온라인 측정값으로부터 관심 영역을 탐지하는 제약된 순차 의사결정 문제를 연구한다. 센서의 이동은 이동성 제약을 만족하고 충전소로 복귀해야 하는 제한된 가용 에너지 및 알려진 장애물의 회피를 고려하여 사전 계산된 유효 경로 집합으로 제한된다. 본 연구에서는 이러한 능동적 경로 선택 문제를 멀티암드 밴딧 문제로 정형화하고, 수집된 데이터로부터 계산한 신뢰구간을 사용해 경로를 적응적으로 할당하는 반복적 탐색 알고리즘을 제안한다. 또한 제안..."
+    },
+    {
+      "id": "arxiv:2610.40430",
+      "title": "Improving Fine-Grained Manipulation through Demonstration Expansion and Execution Design",
+      "abstract": "Fine-grained manipulation requires a robot policy to follow instructions, remain robust to visual variations, and translate predicted actions into precise robot control. We present Demonstration Expansion and Execution Design (DEED), a framework for adapting a pretrained vision-language-action policy to the five MetaFine tasks through structured demonstration expansion and execution design. DEED generates demonstrations for different instructions from the same initial scene and renders each physical trajectory under different camera positions and lighting conditions while preserving its original states and action targets. A hierarchical sampling strategy balances instructions, trajectories, and visual conditions during supervised adaptation. At deployment, DEED converts predicted action chunks into robot commands using inverse kinematics, gripper mappings selected for each task, and closed-loop replanning. DEED achieves an official Overall score of 85.55%. Fixed-policy evaluations show that performance varies with execution horizon, denoising budget, and gripper mapping.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40430",
+      "publishedAt": "2026-10-29T16:51:45Z",
+      "authors": [
+        "Jingxu Gu",
+        "Dongze Lian"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "시연 확장 및 실행 설계를 통한 세밀한 조작 성능 향상",
+      "abstractKo": "세밀한 조작은 로봇 정책이 지시를 충실히 따르고 시각적 변화에 강인하며, 예측된 동작을 정밀한 로봇 제어로 변환할 수 있어야 한다. 우리는 Demonstration Expansion and Execution Design(DEED)라는 프레임워크를 제시한다. DEED는 사전 학습된 비전-언어-동작 정책을 구조화된 시연 확장과 실행 설계를 통해 MetaFine의 다섯 과제에 적응시키기 위한 방법이다. DEED는 동일한 초기 장면으로부터 서로 다른 지시문에 대한 시연을 생성하고, 각 물리적 궤적을 원래의 물리적 특성을 보존하면서 서로 다른 카메라 위치와 조명 조건에서 렌더링한다."
+    },
+    {
+      "id": "arxiv:2610.40429",
+      "title": "Optimal Path Planning with Localization constraints",
+      "abstract": "This paper studies UAV path planning in areas where GPS signals are not present. Because these drones can easily get lost when they don't have GPS, they must rely on dead reckoning and occasionally pass near cellular towers, which act as landmarks to reset and fix their position. The goal is to find the shortest path from a start to a goal location while keeping the estimation uncertainty within a given bound. To solve this problem, we propose a localization-constrained A* planner that treats uncertainty as a hard constraint during search. The robot state and covariance are propagated using an Extended Kalman Filter (EKF), and only paths that satisfy the covariance limit are considered. We also show that the proposed method does not affect heuristic used in A* and remains admissible and consistent, ensuring optimality among all feasible paths. Extensive Monte Carlo simulations and PyBullet quadrotor test show that the proposed method finds shorter and more reliable paths compared to RRT* and PRM, while always satisfying the uncertainty constraint.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40429",
+      "publishedAt": "2026-10-29T16:51:33Z",
+      "authors": [
+        "Chinmay Mundane",
+        "Manav Mishra",
+        "PB Sujit"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "로컬라이제이션 제약을 고려한 최적 경로 계획",
+      "abstractKo": "본 논문은 GPS 신호가 닿지 않는 지역에서의 UAV 경로 계획을 연구한다. GPS가 없으면 드론은 쉽게 위치를 잃을 수 있으므로 관성항법(데드 레코닝)에 의존하고, 때때로 셀룰러 기지국 근처를 지나 이들 기지국을 위치 재설정용 랜드마크로 활용한다. 목표는 추정 불확실성을 주어진 한계 이내로 유지하면서 시작 지점에서 목표 지점까지의 최단 경로를 찾는 것이다. 이를 해결하기 위해 탐색 중 불확실성을 강한 제약으로 취급하는 로컬라이제이션 제약 A* 플래너를 제안한다. 로봇 상태와 공분산은 사용하여"
+    },
+    {
+      "id": "arxiv:2610.40427",
+      "title": "socx: GPU-Accelerated Chance-Constrained Stochastic Optimal Control using JAX",
+      "abstract": "In this article, we present socx, a GPU-accelerated solver for lifted convex reformulations of linear stochastic optimal control under chance constraints, implemented in JAX. We demonstrate that by exploiting the sparse and independent structure of the problem, distributed optimization can reduce it to simpler problems: independent linear-quadratic tracking (LQT) problems and Euclidean projections onto sets. These simpler problems can be solved in parallel and then coupled using the constraints. To validate our solver, we run it on a hover-linearized 3D quadrotor and show a speed-up of up to $98\\times$ over MOSEK and up to $2224\\times$ over SCS. socx also solves horizons up to $N=1120$, whereas MOSEK runs out of memory at $N=320$. We present ablations to isolate the key components that enable the speed-up.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40427",
+      "publishedAt": "2026-10-29T16:50:11Z",
+      "authors": [
+        "Tanmay Dokania",
+        "Yashwanth Kumar Nakka"
+      ],
+      "tags": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "titleKo": "socx: JAX를 이용한 GPU 가속 확률 제약 선형 확률적 최적 제어",
+      "abstractKo": "본 논문에서는 JAX로 구현한, 리프팅된 볼록 재수식화(lifted convex reformulation)를 이용한 확률 제약을 갖는 선형 확률적 최적 제어용 GPU 가속 솔버 socx를 소개한다. 문제의 희소하고 독립적인 구조를 활용하면 분산 최적화로 문제를 더 단순한 문제들—독립적인 선형-이차 추적(LQT) 문제들과 집합에 대한 유클리드 투영—로 환원할 수 있음을 보인다. 이러한 단순 문제들은 병렬로 해결한 뒤 제약을 통해 결합할 수 있다. 솔버를 검증하기 위해 호버 선형화된 3D 쿼드로터에 적용한 결과 최대 $의 속도 향상을 보였다."
+    },
+    {
+      "id": "arxiv:2610.40401",
+      "title": "Continuous-Action World Models: Learning Cross-Embodiment Spatiotemporal Dynamics Priors",
+      "abstract": "We introduce Continuous-Action World Models (CoAWM), a framework for learning cross-embodiment spatiotemporal dynamics priors that support robot action generation across embodiments and execution frequencies. At its core is a shared latent function space that captures the spatial and temporal structure of robot actions. We learn this space through two stages. First, function pretraining brings trajectories from different embodiments and sampling frequencies into a common representation, learning shared dynamics priors through action reconstruction and consistency across temporal sampling views. By accommodating heterogeneous robot trajectories, this stage broadens the range of data sources available for pretraining and facilitates scaling to larger and more diverse datasets. Second, we connect the pretrained function space to a world-model backbone, enabling observations, language instructions, and the current robot state to condition the prediction of a latent action function. A single decoder takes any query time and returns the corresponding end-effector action. By separating shared dynamics priors from task-conditioned action selection and temporal sampling, our approach provides a unified foundation for transferring robot experience across embodiments and control frequencies.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40401",
+      "publishedAt": "2026-10-29T16:34:54Z",
+      "authors": [
+        "Liangyu Li",
+        "Qingwen Liu"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "titleKo": "연속 행동 월드 모델: 다양한 로봇 형상 간 시공간 동역학 사전 학습",
+      "abstractKo": "우리는 Continuous-Action World Models(CoAWM)를 도입한다. 이 프레임워크는 다양한 로봇 형상(embodiments)과 실행 빈도에 걸쳐 로봇 행동 생성을 지원하는 교차-형상 시공간 동역학 사전(cross-embodiment spatiotemporal dynamics priors)을 학습한다. 핵심은 로봇 행동의 공간적·시간적 구조를 포착하는 공유 잠재 함수 공간이다. 이 공간은 두 단계로 학습된다. 첫째, 함수 사전학습(function pretraining)은 서로 다른 형상과 샘플링 빈도의 궤적을 공통 표현으로 변환하여, 행동 재구성과 시간적 샘플링 관점 간의 일관성을 통해 공유 동역학 사전을 학습한다."
+    },
+    {
+      "id": "arxiv:2610.40385",
+      "title": "Securing the Robotics Supply Chain",
+      "abstract": "This paper sets out what a sustained federal research and investment agenda would need to include to close that gap--not within a single budget cycle, but over the decade such an undertaking will realistically require. It identifies where the gap is most pronounced today: in the methods needed to verify and certify components of uncertain origin, in the foundational hardware research that has long been underfunded relative to software, in the physical infrastructure researchers need to test systems at scale, and in the workforce required to build and sustain all of it. Robotics should not be treated merely as a downstream beneficiary of a broader artificial intelligence investment strategy. It constitutes its own supply chain, with its own points of failure, and merits its own sustained federal commitment.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40385",
+      "publishedAt": "2026-10-29T16:26:33Z",
+      "authors": [
+        "Cindy L. Bethel",
+        "Henrik I. Christensen",
+        "Odest Chadwicke Jenkins",
+        "George Pappas",
+        "Holly Yanco",
+        "Haley Griffin"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "로봇 공급망 보안 확보",
+      "abstractKo": "이 논문은 그 격차를 해소하기 위해 장기적으로 연방 정부가 추진해야 할 연구 및 투자 의제가 어떤 내용을 포함해야 하는지를 제시한다—한 번의 예산 주기가 아니라, 이러한 과제가 현실적으로 요구하는 10년에 걸쳐서다. 현재 그 격차가 가장 두드러지게 나타나는 분야는 다음과 같다: 출처가 불확실한 구성 요소를 검증하고 인증하는 데 필요한 방법, 소프트웨어에 비해 오랫동안 상대적으로 저조한 자금 지원을 받아온 기초 하드웨어 연구, 연구자들이 시스템을 대규모로 시험하기 위해 필요한 물리적 인프라, 그리고 이 모든 것을 구축하고 유지할 인력이다. 로보틱스는..."
+    },
+    {
+      "id": "arxiv:2610.40373",
+      "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
+      "abstract": "Vision-Language-Action (VLA) models have demonstrated promising capabilities in robotic manipulation by integrating visual perception, language understanding, and action generation. Recent advances have further incorporated future prediction to enhance the understanding of environmental dynamics and task progression. However, existing methods often model short-term dynamics and long-term task objectives separately, while directly incorporating predicted futures into action policies without sufficiently considering their relevance to current action requirements. To address these limitations, we propose HiFOR, a hierarchical foresight framework with action-guided world retrieval. Specifically, Hierarchical Foresight Prediction jointly predicts short-term state evolution, semantic milestones, and final goal states through a Hierarchical Dependency Mask (HDM), establishing dependencies across temporal horizons. Building upon these predictions, Structure-Aware Latent World Modeling organizes future latent representations along the horizon, view, and spatial dimensions to facilitate fine-grained retrieval. Furthermore, Action-Guided Factorized World Retrieval adaptively retrieves relevant future information from the structured latent world based on evolving action representations during denoising, providing targeted guidance for action generation. Extensive experiments on two simulation benchmarks and six real-world robotic manipulation tasks demonstrate the effectiveness of our approach.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40373",
+      "publishedAt": "2026-10-29T16:21:06Z",
+      "authors": [
+        "Rongxing Ding",
+        "Hongyu Qu",
+        "Kehong Wu",
+        "Xudong Wang",
+        "Fan Zhang",
+        "Xinguang Xiang",
+        "Xiangbo Shu"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "titleKo": "HiFOR: 행동 유도형 세계 접지를 통한 계층적 예측 기반 비전-언어-액션 모델",
+      "abstractKo": "비전-언어-액션(Vision-Language-Action, VLA) 모델은 시각 인식, 언어 이해, 행동 생성의 통합을 통해 로봇 조작 분야에서 유망한 능력을 입증해 왔다. 최근 연구에서는 환경 동역학과 과제 진행의 이해를 높이기 위해 미래 예측을 추가로 도입했다. 그러나 기존 방법들은 단기 동역학과 장기 과제 목표를 종종 별도로 모델링하며, 예측된 미래를 현재 행동 요구와의 관련성을 충분히 고려하지 않은 채 행동 정책에 직접 통합하는 경우가 많다. 이를 해결하기 위해 우리는"
+    },
+    {
+      "id": "arxiv:2610.40364",
+      "title": "Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds",
+      "abstract": "Unsupervised environment design (UED) methods such as PLR, ACCEL, SFL and PAIRED are compared mostly on 2D mazes, grid worlds and BipedalWalker, while terrain curricula for legged robots are hand-designed and evaluated against a few baselines. We present a benchmark that runs fourteen UED, domain-randomisation and robotics curricula under one protocol on five 3D quadrupeds in MuJoCo MJX: the closed-chain W01-TEK and the open-chain Unitree Go1 and Go2, Google Barkour vB and Boston Dynamics Spot. Levels are vectors of eight interpretable terrain parameters, and all curricula drive the same PPO student at matched environment-step budgets. The evaluation reports success on random and held-out structured terrains, interquartile means with stratified bootstrap intervals, capability envelopes and a level-by-level domination comparison. We compare methods within each robot and report, per level set, the top group of methods not significantly below the best. No method is in the top group on every robot and level set. Methods with easy or low-difficulty training levels, curated or not, fill the top groups on in-distribution random levels of Go1 and Barkour, and of W01-TEK apart from PAIRED+BiBC. The success-driven terrain curriculum from legged-robot practice is in a top group most often, domain randomisation on uniform levels in none, and PAIRED in none outside Spot, where the fourteen methods lie within 3.8 points on random levels of difficulty 0.25. On three robots the leader on in-distribution random levels is not the leader on held-out terrain. We collect the results into a per-robot guide to choosing a curriculum.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40364",
+      "publishedAt": "2026-10-29T16:15:44Z",
+      "authors": [
+        "Jakub Gilewicz",
+        "Dominik Galus",
+        "Piotr Wojdas"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "titleKo": "커리큘럼의 효과인가, 단지 쉬운 출발일 뿐인가? 사족 보행 로봇에서의 비지도 환경 설계 벤치마크",
+      "abstractKo": "PLR, ACCEL, SFL, PAIRED와 같은 비지도 환경 설계(UED) 방법들은 주로 2D 미로, 그리드 월드 및 BipedalWalker에서 비교되며, 다리 달린 로봇을 위한 지형 커리큘럼은 수작업으로 설계되어 몇 가지 기준선과 비교 평가된다. 본 연구는 MuJoCo MJX에서 다섯 대의 3D 사족 보행 로봇을 대상으로 하나의 프로토콜로 14개의 UED, 도메인 랜덤화 및 로보틱스 커리큘럼을 실행하는 벤치마크를 제시한다: 폐쇄형 체인 W01-TEK와 개방형 체인 Unitree Go1 및 Go2, Google Barkour vB, Boston Dynamics Spot. 레벨은 해석 가능한 8개의 지형 매개변수 벡터로 표현되며, 모든 커리큘럼은 동일한 PPO s"
+    },
+    {
+      "id": "arxiv:2610.40356",
+      "title": "JEDI: Joint-Embedding Demonstration Compression for In-Context Imitation Learning",
+      "abstract": "In-context imitation learning (ICIL) adapts robot policies through test-time demonstrations, but long multimodal trajectories constrain how many examples fit in context. We ask what a compressed demonstration should preserve. We propose JEDI, which compresses demonstrations into latent slots trained to predict the query episode's next-stage keyframe in a frozen video-JEPA space. Task and process counterfactuals help the slots preserve execution details, while the predictor selects demonstrations from a bank. Post-training with keypoint tokens enables human-hand conditioning on robots. Experiments on LIBERO and real robots show that JEDI supports many-shot context; LIBERO objective controls show improved success and demonstration following over action-only compression. These findings support query-future prediction as a training objective for preserving execution-relevant information in compressed demonstrations.",
+      "source": "arxiv",
+      "url": "https://arxiv.org/abs/2610.40356",
+      "publishedAt": "2026-10-29T16:11:05Z",
+      "authors": [
+        "Jiazhao Liang",
+        "Zhewen He",
+        "Shuaihang Yuan",
+        "Hao Huang",
+        "Yi Fang"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "titleKo": "JEDI: 문맥 내 모방 학습을 위한 공동 임베딩 기반 시연 압축",
+      "abstractKo": "문맥 내 모방 학습(ICIL)은 테스트 시점의 시연을 통해 로봇 정책을 적응시키지만, 길고 멀티모달한 궤적은 문맥에 들어갈 수 있는 시연 수를 제약한다. 우리는 압축된 시연이 무엇을 보존해야 하는지를 묻는다. 본 논문에서는 JEDI를 제안한다. JEDI는 시연을 잠재 슬롯으로 압축하며, 이 슬롯들은 동결된 비디오-JEPA 공간에서 질의 에피소드의 다음 단계 키프레임을 예측하도록 학습된다. 작업 및 수행 과정에 대한 반사실적(counterfactual) 예시는 슬롯이 실행 세부사항을 보존하도록 돕고, 예측기는 시연 뱅크에서 시연을 선택한다. 키포인트 토큰을 이용한 사후 학습은 인간 손 입력에 대한 로봇의 조건화를 가능하게 한다. Experime"
     },
     {
       "id": "arxiv:2610.37666",
@@ -16962,6 +17300,202 @@
       "abstractKo": "비전-언어-행동(VLA) 정책은 일반적으로 장기 모바일 매니퓰레이션을 오픈루프 행동 청크로 실행하며, 새로운 고수준 시각 입력을 받지 않고 연속적인 여러 행동을 발행한다. 따라서 커밋된 청크는 관찰이 어떻게 변해야 하는지를 암시하지만, 우발적인 편차는 이 기대를 위배할 수 있고 나머지 행동들이 계속해서 오류를 전파할 수 있다. 커밋 시의 정책 신뢰도는 전송 후 발생한 편차에 반응할 수 없고, 관찰 기반의 이상치 점수만으로는 예상되는 영향과 설명되지 않는 변화를 구분할 수 있는 행동-조건화된 참조가 결여되어 있다. (원문이 중단됨)"
     },
     {
+      "id": "robohub:18da4a49ad9b",
+      "title": "Neurosymbolic planning using natural language communication for cooperative autonomous vehicles",
+      "abstract": "Imagine you are driving toward an intersection. A truck parked on the corner blocks your view of a car speeding toward the intersection from the right. You can’t see it, but the car next to you can. What if that neighboring vehicle could simply tell your car, “Vehicle merging from the right, about 15 meters […]",
+      "source": "robohub",
+      "url": "https://robohub.org/neurosymbolic-planning-using-natural-language-communication-for-cooperative-autonomous-vehicles/",
+      "publishedAt": "2026-10-14T09:14:30.000Z",
+      "authors": [
+        "Neel P. Bhatt"
+      ],
+      "tags": [],
+      "titleKo": "협력 자율주행차를 위한 자연어 통신 기반 뉴로심볼릭 계획",
+      "abstractKo": "교차로를 향해 운전하고 있다고 상상해 보자. 모퉁이에 주차된 트럭 때문에 오른쪽에서 교차로로 빠르게 접근하는 차량이 보이지 않는다. 당신은 볼 수 없지만 옆에 있는 차량은 그 차량을 볼 수 있다. 만약 그 이웃 차량이 단순히 당신의 차에 '오른쪽에서 차량이 합류합니다, 약 15미터'라고 알려줄 수 있다면…"
+    },
+    {
+      "id": "robohub:ee93e0b48da8",
+      "title": "An open source approach to physical AI from Intrinsic",
+      "abstract": "Deborah Lupton / Pop Chips / Licenced by CC-BY 4.0 Intrinsic (an AI robotics group at Google) announced that the company is making parts of its platform open source. Intrinsic Core™ is a set of ROS-compatible capabilities for building sophisticated robotic applications. The capabilities included in the open source package are as follow: Intrinsic Control. [&#8230;]",
+      "source": "robohub",
+      "url": "https://robohub.org/an-open-source-approach-to-physical-ai-from-intrinsic/",
+      "publishedAt": "2026-09-25T08:41:15.000Z",
+      "authors": [
+        "Lucy Smith"
+      ],
+      "tags": [],
+      "titleKo": "Intrinsic의 물리적 AI를 위한 오픈 소스 접근법",
+      "abstractKo": "Deborah Lupton / Pop Chips / CC-BY 4.0 라이선스. 구글의 AI 로보틱스 그룹인 Intrinsic은 자사 플랫폼의 일부를 오픈 소스로 공개한다고 발표했다. Intrinsic Core™는 정교한 로봇 애플리케이션을 구축하기 위한 ROS 호환 기능 세트이다. 오픈 소스 패키지에 포함된 기능은 다음과 같다: Intrinsic Control. …"
+    },
+    {
+      "id": "robohub:fb9b9cb4a8be",
+      "title": "Watch the ICRA keynote and plenary talks",
+      "abstract": "The 2026 IEEE International Conference on Robotics &#038; Automation (ICRA) was held in Vienna from the 1 &#8211; 5 June. The event brought together researchers and industry professionals with expertise spanning many different aspects of robotics. IEEE have made the keynote and plenary talk recordings available to watch. You can also catch the panel discussions [&#8230;]",
+      "source": "robohub",
+      "url": "https://robohub.org/watch-the-icra-keynote-and-plenary-talks/",
+      "publishedAt": "2026-09-16T08:47:13.000Z",
+      "authors": [
+        "Lucy Smith"
+      ],
+      "tags": [],
+      "titleKo": "ICRA 기조연설 및 플레너리 강연 시청하기",
+      "abstractKo": "2026 IEEE 국제 로보틱스 및 자동화 학회(ICRA)가 6월 1일부터 5일까지 비엔나에서 개최되었습니다. 이 행사는 로보틱스의 다양한 분야에 걸친 전문성을 가진 연구자와 산업계 관계자들을 한자리에 모았습니다. IEEE는 기조연설과 플레너리 강연의 녹화 영상을 공개했으며, 패널 토론 영상도 확인할 수 있습니다."
+    },
+    {
+      "id": "robohub:4619d04eaa8d",
+      "title": "#AAMAS2026 blue sky award winner: Foundation world models for agents in changing environments",
+      "abstract": "Florent Delgrange won the Best Blue Sky Paper Award at AAMAS 2026 for his work Foundation World Models for Agents that Learn, Verify, and Adapt Reliably Beyond Static Environments. We caught up with him to find out more about his vision for agent learning. What is the topic of your Blue Sky Ideas paper and […]",
+      "source": "robohub",
+      "url": "https://robohub.org/aamas2026-blue-sky-award-winner-foundation-world-models-for-agents-in-changing-environments/",
+      "publishedAt": "2026-08-21T08:23:06.000Z",
+      "authors": [
+        "AIhub"
+      ],
+      "tags": [],
+      "titleKo": "#AAMAS2026 블루스카이 상 수상작: 변화하는 환경에서의 에이전트를 위한 파운데이션 월드 모델",
+      "abstractKo": "플로랑 델그랑은 ‘정적 환경을 넘어 신뢰성 있게 학습하고 검증하며 적응하는 에이전트를 위한 파운데이션 월드 모델(Foundation World Models for Agents that Learn, Verify, and Adapt Reliably Beyond Static Environments)’로 AAMAS 2026에서 베스트 블루스카이 페이퍼 상을 수상했다. 우리는 그의 에이전트 학습에 대한 비전을 더 알아보기 위해 그를 만나 이야기를 나눴다. 블루스카이 아이디어 논문의 주제는 무엇이며 …"
+    },
+    {
+      "id": "robohub:539026489da6",
+      "title": "AI agents create virtual playgrounds to help robots get crucial training data",
+      "abstract": "A new system developed at MIT uses three agents to piece together the objects, walls, and overall look of a 3D scene. Its realistic recreations of indoor spaces help robots practice skills and try out different ways of doing tasks before they’re powered on. Image: Tim Malieckal/MIT CSAIL using assets from the researchers. By Alex [&#8230;]",
+      "source": "robohub",
+      "url": "https://robohub.org/ai-agents-create-virtual-playgrounds-to-help-robots-get-crucial-training-data/",
+      "publishedAt": "2026-08-07T07:17:33.000Z",
+      "authors": [
+        "MIT News"
+      ],
+      "tags": [],
+      "titleKo": "AI 에이전트가 로봇의 핵심 학습 데이터를 얻도록 돕는 가상 시뮬레이션 환경 생성",
+      "abstractKo": "MIT에서 개발한 새로운 시스템은 세 개의 에이전트가 객체, 벽, 전체적인 모습을 조합해 3D 장면을 구성한다. 실내 공간을 사실적으로 재현하여 로봇이 전원이 켜지기 전에 기술을 연습하고 다양한 작업 수행 방식을 시험해볼 수 있도록 돕는다. 이미지: Tim Malieckal/MIT CSAIL(연구진 제공 자산 사용). 작성: Alex [...]"
+    },
+    {
+      "id": "robohub:eaac67b3780c",
+      "title": "Surviving the paper deluge: a one-year study in learning from demonstration",
+      "abstract": "With the explosion of robotics research, staying current in fields like Learning from Demonstration (LfD) is a monumental challenge. Is AI the solution to the “paper deluge,” or is it part of the problem? Read the article preview below to learn more! Download the full paper: Surviving the Paper Deluge. Authors: Aude Billard, Renaud Detry, [&#8230;]",
+      "source": "robohub",
+      "url": "https://robohub.org/surviving-the-paper-deluge-a-one-year-study-in-learning-from-demonstration/",
+      "publishedAt": "2026-07-29T09:16:32.000Z",
+      "authors": [
+        "IEEE Robotics and Automation Society (RAS)"
+      ],
+      "tags": [],
+      "titleKo": "논문 홍수에서 살아남기: 시연 학습(LfD)에 대한 1년 연구",
+      "abstractKo": "로보틱스 연구의 폭발적 증가로 시연 학습(LfD)과 같은 분야의 최신 동향을 따라잡는 것은 거대한 과제입니다. AI가 이른바 ‘논문 홍수’의 해법일까요, 아니면 문제의 일부일까요? 아래 기사 미리보기를 읽고 자세한 내용을 확인하세요. 전체 논문 다운로드: Surviving the Paper Deluge. 저자: Aude Billard, Renaud Detry, […]"
+    },
+    {
+      "id": "robohub:f81ccc28d43d",
+      "title": "Interactive world simulator for robot policy training and evaluation",
+      "abstract": "Imagine you want to teach a robot to push an object on a table. The standard recipe in robot learning is to collect hundreds of expert demonstrations on a real robot, train an imitation learning policy on that data, and then evaluate the policy by running it many times on the same real robot. Both […]",
+      "source": "robohub",
+      "url": "https://robohub.org/interactive-world-simulator-for-robot-policy-training-and-evaluation/",
+      "publishedAt": "2026-07-20T08:39:44.000Z",
+      "authors": [
+        "Yixuan Wang"
+      ],
+      "tags": [],
+      "titleKo": "로봇 정책 학습 및 평가를 위한 상호작용형 세계 시뮬레이터",
+      "abstractKo": "테이블 위의 물체를 로봇에게 밀도록 가르치고 싶다고 상상해 보자. 로봇 학습의 일반적인 방법은 실제 로봇에서 수백 건의 전문가 시연을 수집하고, 그 데이터를 사용해 모방 학습 정책을 학습한 뒤, 같은 실제 로봇에서 그 정책을 여러 번 실행하여 평가하는 것이다. 둘 다 …"
+    },
+    {
+      "id": "rosdiscourse:4721422ec394",
+      "title": "Space Station OS v0.9.0 released — ROS 2 Jazzy, Pixi, and a new development baseline",
+      "abstract": "Space Station OS v0.9.0 released — ROS 2 Jazzy, Pixi, and a new development baseline We are pleased to announce the release of Space Station OS v0.9.0 . Demo video: https://www.youtube.com/watch?v=O37aDPzUH4w Space Station OS (SSOS) is an open-source ROS 2–based platform for simulating, integrating, and operating the subsystems of a crewed space station. v0.9.0 is a major integration milestone for the project. It establishes a new public and development baseline as we continue toward v1.0. ROS 2 Jazzy and Ubuntu 24.04 The native development and system-integration baseline is now: Ubuntu 24.04 ",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/space-station-os-v0-9-0-released-ros-2-jazzy-pixi-and-a-new-development-baseline/59382",
+      "publishedAt": "2026-10-31T16:19:01.000Z",
+      "authors": [
+        "yuyuqq"
+      ],
+      "tags": [],
+      "titleKo": "Space Station OS v0.9.0 출시 — ROS 2 Jazzy, Pixi, 그리고 새로운 개발 기준",
+      "abstractKo": "Space Station OS v0.9.0가 출시되었습니다 — ROS 2 Jazzy, Pixi, 그리고 새로운 개발 기준. 데모 비디오: https://www.youtube.com/watch?v=O37aDPzUH4w. Space Station OS(SSOS)는 유인 우주 정거장의 하위 시스템을 시뮬레이션하고 통합하며 운용하기 위한 오픈소스 ROS 2 기반 플랫폼입니다. v0.9.0은 프로젝트의 주요 통합 이정표로서, v1.0을 향해 나아가는 과정에서 새로운 공개 및 개발 기준을 수립합니다. 네이티브 개발 및 시스템 통합 기준은 ROS 2 Jazzy와 Ubuntu 24.04로 설정되었습니다."
+    },
+    {
+      "id": "rosdiscourse:20256f0191bf",
+      "title": "Community meeting: How OTTO by Rockwell Automation uses Gazebo",
+      "abstract": "Hello Community! Here’s the information for our November Meeting where we’ll talk about how Gazebo is used to simulate industrial and manufacturing workflows. “At OTTO by Rockwell Automation, we use Gazebo as our primary simulator for developing and testing our AMRs. It can also be used with our OTTO Fleet Manager software, enabling anyone at OTTO to bring up a multi-robot simulation for their own use. This talk will cover how we use Gazebo, ROS 2, and our internal tooling to simulate realistic industrial and manufacturing workflows.” Agenda: Latest news from Open Robotics about Gazebo - Addis",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/community-meeting-how-otto-by-rockwell-automation-uses-gazebo/59334",
+      "publishedAt": "2026-10-29T16:30:32.000Z",
+      "authors": [
+        "caguero"
+      ],
+      "tags": [],
+      "titleKo": "커뮤니티 미팅: Rockwell Automation의 OTTO는 Gazebo를 어떻게 활용하는가",
+      "abstractKo": "커뮤니티 여러분, 안녕하세요! 11월 미팅 안내입니다. 이번 모임에서는 Gazebo가 산업 및 제조 워크플로를 시뮬레이션하는 데 어떻게 사용되는지를 다룹니다. OTTO by Rockwell Automation에서는 Gazebo를 자율 이동 로봇(AMR) 개발 및 테스트를 위한 주요 시뮬레이터로 사용합니다. 또한 Gazebo는 OTTO Fleet Manager 소프트웨어와 연동되어, OTTO 내 누구나 자신들의 용도로 다중 로봇 시뮬레이션을 손쉽게 실행할 수 있게 해줍니다. 이번 발표에서는 Gazebo, ROS 2, 그리고 사내 툴링을 어떻게 활용해 실제와 유사한 산업·제조 워크플로를 시뮬레이션하는지에 대해 다룰 예정입니다. 의제: Gazebo 관련 Open Robotics의 최신 소식 - Addis"
+    },
+    {
+      "id": "rosdiscourse:129c2a98fa1d",
+      "title": "FOSDEM 2027: Robotics & Simulation Devroom, 3rd edition!",
+      "abstract": "Hi folks! We have done it again, the 3rd edition of the Robotics and Simulation Devroom got accepted at FOSDEM . It will take place on Sun, Jan 31, 2027 8:00 AM UTC → Sun, Jan 31, 2027 6:00 PM UTC and is on the ULB campus, in Brussel, Belgium. archive.fosdem.org FOSDEM 2026 - Home The call for participation is open to submit talk proposals for all things robotics, as long it is open source! And of course ROS and Gazebo are included! If you have attended 5 ROSCons already, then you can talk about something else robotics/simulation related that is the beauty of FOSDEM, we invite all you crazy ro",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/fosdem-2027-robotics-simulation-devroom-3rd-edition/59333",
+      "publishedAt": "2026-10-29T15:39:56.000Z",
+      "authors": [
+        "KimMcG"
+      ],
+      "tags": [],
+      "titleKo": "FOSDEM 2027: Robotics & Simulation Devroom — 제3회",
+      "abstractKo": "안녕하세요 여러분! 다시 해냈습니다. Robotics and Simulation Devroom의 제3회 에디션이 FOSDEM에 채택되었습니다. 행사는 2027년 1월 31일(일) 08:00 UTC부터 2027년 1월 31일(일) 18:00 UTC까지 열리며, 벨기에 브뤼셀의 ULB 캠퍼스에서 진행됩니다. archive.fosdem.org FOSDEM 2026 - Home 참여 신청(call for participation)이 열려 있으며, 오픈 소스인 한 로보틱스 관련 모든 주제의 강연 제안서를 제출할 수 있습니다! 물론 ROS와 Gazebo도 포함됩니다. 이미 ROSCon에 5회 참석하셨다면 로보틱스/시뮬레이션 관련 다른 주제로 발표하실 수 있습니다 — 이게 바로 FOSDEM의 매력입니다. 우리는 모든 미친 ro"
+    },
+    {
+      "id": "rosdiscourse:c8104e08b96e",
+      "title": "Dedicated meeting to discuss REP 0157: Wednesday, 4 November 2026",
+      "abstract": "Dedicated meeting to discuss REP 0157: Wednesday, 4 November 2026 Hi everyone, At the ROS 2 PMC meeting on 27 October 2026 we discussed REP 0157 . There is a lot to cover, so the PMC agreed to hold a dedicated meeting on this REP. Anyone interested in REP 0157 is welcome to join. What is REP 0157? REP 0157 redesigns the rosidl messaging system so that ROS 2 gets native, universal zero-copy transport across process boundaries with minimal overhead. Key features: language-agnostic memory layouts, strict message constraints, and standardizing on XCDRv1 as the in-memory representation. Compatibili",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/dedicated-meeting-to-discuss-rep-0157-wednesday-4-november-2026/59331",
+      "publishedAt": "2026-10-29T14:45:09.000Z",
+      "authors": [
+        "ahcorde"
+      ],
+      "tags": [],
+      "titleKo": "REP 0157 논의를 위한 전용 회의: 2026년 11월 4일(수)",
+      "abstractKo": "안녕하세요. 2026년 10월 27일 열린 ROS 2 PMC 회의에서 REP 0157에 대해 논의했습니다. 다룰 내용이 많아 PMC는 이 REP에 대해 별도의 전용 회의를 열기로 했으며, REP 0157에 관심 있는 누구나 참석할 수 있습니다. REP 0157이란? REP 0157은 rosidl 메시징 시스템을 재설계하여 ROS 2가 프로세스 경계를 넘는 네이티브하고 범용적인 제로 카피 전송을 최소한의 오버헤드로 제공하도록 하는 제안입니다. 주요 특징은 언어에 구애받지 않는 메모리 레이아웃, 엄격한 메시지 제약사항, 그리고 메모리 내 표현으로 XCDRv1 표준화를 포함합니다. 호환성"
+    },
+    {
+      "id": "rosdiscourse:108e8ce2d4a4",
+      "title": "lightBot: rebuilt a ROSOrin Pro from a blank drive after apt update broke it (ROS 2 Humble, Orin NX, 37-chapter guide)",
+      "abstract": "Bought a Hiwonder ROSOrin Pro. Ran apt update . Robot stopped working. The vendor image was a pile of pinned packages and hand-edited files nobody wrote down, and one upgrade broke the lot. So I wiped it and rebuilt from a blank NVMe, writing every step as I went, so the robot has a clean bill of health and I can do it again from nothing. Jetson Orin NX 16 GB, JetPack 6, ROS 2 Humble, Nav2 + SLAM Toolbox, no wheel encoders (rf2o laser odometry + cuVSLAM into an EKF), 5-DOF arm on MoveIt, open-vocabulary vision on the GPU. The local AI can suggest; it can’t move anything without me. Every chapt",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/lightbot-rebuilt-a-rosorin-pro-from-a-blank-drive-after-apt-update-broke-it-ros-2-humble-orin-nx-37-chapter-guide/59328",
+      "publishedAt": "2026-10-29T14:25:00.000Z",
+      "authors": [
+        "burgerbarn"
+      ],
+      "tags": [],
+      "titleKo": "lightBot: apt update로 망가진 ROSOrin Pro를 빈 드라이브에서 재구축(ROS 2 Humble, Orin NX, 37장 가이드)",
+      "abstractKo": "Hiwonder ROSOrin Pro를 구입했다. apt update를 실행한 뒤 로봇이 작동을 멈췄다. 공급업체 이미지에는 고정된(pinned) 패키지들과 아무도 문서화하지 않은 수작업 편집 파일들이 쌓여 있었고, 한 번의 업그레이드로 전부 깨졌다. 그래서 NVMe를 완전히 지우고 빈 상태에서 다시 빌드했으며, 그 과정의 모든 단계를 기록했다. 덕분에 로봇은 깨끗한 상태가 되었고 동일한 과정을 처음부터 다시 수행할 수 있게 되었다. 사용한 환경은 Jetson Orin NX 16GB, JetPack 6, ROS 2 Humble이며 Nav2 + SLAM Toolbox를 사용한다. 휠 엔코더는 없고(rf2o 레이저 오도메트리 + cuVSLAM을 EKF로 융합), MoveIt에서 5자유도 암을 제어하며 GPU에서 오픈 보캐뷸러리 비전(오픈 보캐뷸러리 비전)을 실행한다. 로컬 AI는 제안을 할 수는 있지만, 내가 직접 조작하지 않으면 아무것도 움직이지 않는다. 각 장..."
+    },
+    {
+      "id": "rosdiscourse:694693e7006b",
+      "title": "ROS Deliberation Community Group Meeting - November 2, 2026",
+      "abstract": "We’re back after a ROSCon and post-ROSCon recovery break! The next ROS Deliberation Community Group meeting will be held on Mon, Nov 2, 2026 4:00 PM UTC . Please keep in mind the US will just be having a Daylight Savings “jump”, so this might be an hour difference from previous meetings in your local time zone. Google Meet link: Google Meet meeting Agenda: Spotlight: NASA Deep Space Autonomous Robotics Challenge (DSpARC) Presentation: Christian Henkel and Marcus Gualtieri (Bosch) will go through Code as Policies (CaP) and its more recent successor, Graph-as-Policy (GaP) We are always looking f",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/ros-deliberation-community-group-meeting-november-2-2026/59323",
+      "publishedAt": "2026-10-29T11:49:09.000Z",
+      "authors": [
+        "scastro"
+      ],
+      "tags": [],
+      "titleKo": "ROS Deliberation 커뮤니티 그룹 회의 - 2026년 11월 2일",
+      "abstractKo": "ROSCon과 이후 회복 기간을 마치고 돌아왔습니다! 다음 ROS Deliberation 커뮤니티 그룹 회의는 2026년 11월 2일(월) 오후 4시(UTC)에 개최됩니다. 미국이 일광절약시간(Daylight Savings) 적용으로 시계를 한 시간 조정하므로, 귀하의 현지 시간은 이전 회의와 비교해 1시간 차이가 날 수 있음을 유의해 주세요. Google Meet 링크: Google Meet 회의. 의제: 스포트라이트 — NASA Deep Space Autonomous Robotics Challenge(DSpARC). 발표 — Christian Henkel과 Marcus Gualtieri(보쉬)가 Code as Policies(CaP)와 최신 후속 개념인 Graph-as-Policy(GaP)를 다룹니다. 우리는 항상 ..."
+    },
+    {
+      "id": "rosdiscourse:84f67de8da7f",
+      "title": "String command and state interfaces in ros2_control",
+      "abstract": "Hello ros control friends. I have a issue here that I was looking to get opinions on: strings for command and state interfaces · Issue #3491 · ros-controls/ros2_control · GitHub Basically it is very common for us to have to read strings from the hardware devices that we support. Software/firmware versions are a big one. Checksums for interlocking, diagnostics and metrics, etc. I think using `control_msgs/msgs/GenericHardwareStatus` helps in some use cases. But I do feel there are some cases where we’d want the get a string from a device and map it into an existing message (like the battery sta",
+      "source": "rosdiscourse",
+      "url": "https://discourse.openrobotics.org/t/string-command-and-state-interfaces-in-ros2-control/59304",
+      "publishedAt": "2026-10-29T02:49:38.000Z",
+      "authors": [
+        "nnarain"
+      ],
+      "tags": [],
+      "titleKo": "ros2_control의 문자열 명령 및 상태 인터페이스",
+      "abstractKo": "안녕하세요 ros control 여러분. 의견을 구하고자 하는 이슈가 있습니다: strings for command and state interfaces · Issue #3491 · ros-controls/ros2_control · GitHub. 우리가 지원하는 하드웨어 장치에서 문자열을 읽어야 하는 경우가 매우 흔합니다. 소프트웨어/펌웨어 버전이 대표적이며, 인터로킹용 체크섬, 진단 및 메트릭 등도 있습니다. `control_msgs/msgs/GenericHardwareStatus`를 사용하는 것이 일부 사용 사례에서 도움이 된다고 생각합니다. 하지만 장치에서 문자열을 가져와 기존 메시지에 매핑하고 싶은 경우도 있다고 느낍니다 (예: 배터리 sta"
+    },
+    {
       "id": "rosdiscourse:1ab7fdc8de57",
       "title": "[STVL] New Obstruction Zones!",
       "abstract": "Howdy everyone - your friendly neighborhood navigator here! I wanted to let you know quickly about a new feature in STVL that I think is very useful for the community - Obstruction Zones ! Courtesy of Remco , these allow you to specify occlusions to your sensors to treat them specially in the decay functions so that they remain present when in-bounds of the sensor frustum so they aren’t actively decayed. STVL was originally designed with high-visibility sensor configurations in mind (8+ RGBD cameras; top mounted 3D lidar) so this is a wonderful addition for those with dead areas in the sensor ",
@@ -19494,90 +20028,6 @@
       "tags": [],
       "titleKo": "NVIDIA, 최초의 GPU 가속 의료 물리 시뮬레이션 프레임워크를 오픈소스로 공개",
       "abstractKo": "의료용 로봇이 실제 환경에서 유용하려면 물리적 세계가 어떻게 반응하는지를 학습해야 한다. 해부학적 구조는 개인마다 다르고, 기구는 휘어지고 누르고 미끄러지며 조직과 상호작용한다. 영상은 잡음이 있거나 불완전할 수 있다. 개발자가 가장 이해해야 할 희귀한 엣지 케이스는 일정에 맞춰 나타나지 않는다. 이는 …"
-    },
-    {
-      "id": "robohub:ee93e0b48da8",
-      "title": "An open source approach to physical AI from Intrinsic",
-      "abstract": "Deborah Lupton / Pop Chips / Licenced by CC-BY 4.0 Intrinsic (an AI robotics group at Google) announced that the company is making parts of its platform open source. Intrinsic Core™ is a set of ROS-compatible capabilities for building sophisticated robotic applications. The capabilities included in the open source package are as follow: Intrinsic Control. [&#8230;]",
-      "source": "robohub",
-      "url": "https://robohub.org/an-open-source-approach-to-physical-ai-from-intrinsic/",
-      "publishedAt": "2026-09-25T08:41:15.000Z",
-      "authors": [
-        "Lucy Smith"
-      ],
-      "tags": [],
-      "titleKo": "Intrinsic의 물리적 AI를 위한 오픈 소스 접근법",
-      "abstractKo": "Deborah Lupton / Pop Chips / CC-BY 4.0 라이선스. 구글의 AI 로보틱스 그룹인 Intrinsic은 자사 플랫폼의 일부를 오픈 소스로 공개한다고 발표했다. Intrinsic Core™는 정교한 로봇 애플리케이션을 구축하기 위한 ROS 호환 기능 세트이다. 오픈 소스 패키지에 포함된 기능은 다음과 같다: Intrinsic Control. …"
-    },
-    {
-      "id": "robohub:fb9b9cb4a8be",
-      "title": "Watch the ICRA keynote and plenary talks",
-      "abstract": "The 2026 IEEE International Conference on Robotics &#038; Automation (ICRA) was held in Vienna from the 1 &#8211; 5 June. The event brought together researchers and industry professionals with expertise spanning many different aspects of robotics. IEEE have made the keynote and plenary talk recordings available to watch. You can also catch the panel discussions [&#8230;]",
-      "source": "robohub",
-      "url": "https://robohub.org/watch-the-icra-keynote-and-plenary-talks/",
-      "publishedAt": "2026-09-16T08:47:13.000Z",
-      "authors": [
-        "Lucy Smith"
-      ],
-      "tags": [],
-      "titleKo": "ICRA 기조연설 및 플레너리 강연 시청하기",
-      "abstractKo": "2026 IEEE 국제 로보틱스 및 자동화 학회(ICRA)가 6월 1일부터 5일까지 비엔나에서 개최되었습니다. 이 행사는 로보틱스의 다양한 분야에 걸친 전문성을 가진 연구자와 산업계 관계자들을 한자리에 모았습니다. IEEE는 기조연설과 플레너리 강연의 녹화 영상을 공개했으며, 패널 토론 영상도 확인할 수 있습니다."
-    },
-    {
-      "id": "robohub:4619d04eaa8d",
-      "title": "#AAMAS2026 blue sky award winner: Foundation world models for agents in changing environments",
-      "abstract": "Florent Delgrange won the Best Blue Sky Paper Award at AAMAS 2026 for his work Foundation World Models for Agents that Learn, Verify, and Adapt Reliably Beyond Static Environments. We caught up with him to find out more about his vision for agent learning. What is the topic of your Blue Sky Ideas paper and […]",
-      "source": "robohub",
-      "url": "https://robohub.org/aamas2026-blue-sky-award-winner-foundation-world-models-for-agents-in-changing-environments/",
-      "publishedAt": "2026-08-21T08:23:06.000Z",
-      "authors": [
-        "AIhub"
-      ],
-      "tags": [],
-      "titleKo": "#AAMAS2026 블루스카이 상 수상작: 변화하는 환경에서의 에이전트를 위한 파운데이션 월드 모델",
-      "abstractKo": "플로랑 델그랑은 ‘정적 환경을 넘어 신뢰성 있게 학습하고 검증하며 적응하는 에이전트를 위한 파운데이션 월드 모델(Foundation World Models for Agents that Learn, Verify, and Adapt Reliably Beyond Static Environments)’로 AAMAS 2026에서 베스트 블루스카이 페이퍼 상을 수상했다. 우리는 그의 에이전트 학습에 대한 비전을 더 알아보기 위해 그를 만나 이야기를 나눴다. 블루스카이 아이디어 논문의 주제는 무엇이며 …"
-    },
-    {
-      "id": "robohub:539026489da6",
-      "title": "AI agents create virtual playgrounds to help robots get crucial training data",
-      "abstract": "A new system developed at MIT uses three agents to piece together the objects, walls, and overall look of a 3D scene. Its realistic recreations of indoor spaces help robots practice skills and try out different ways of doing tasks before they’re powered on. Image: Tim Malieckal/MIT CSAIL using assets from the researchers. By Alex [&#8230;]",
-      "source": "robohub",
-      "url": "https://robohub.org/ai-agents-create-virtual-playgrounds-to-help-robots-get-crucial-training-data/",
-      "publishedAt": "2026-08-07T07:17:33.000Z",
-      "authors": [
-        "MIT News"
-      ],
-      "tags": [],
-      "titleKo": "AI 에이전트가 로봇의 핵심 학습 데이터를 얻도록 돕는 가상 시뮬레이션 환경 생성",
-      "abstractKo": "MIT에서 개발한 새로운 시스템은 세 개의 에이전트가 객체, 벽, 전체적인 모습을 조합해 3D 장면을 구성한다. 실내 공간을 사실적으로 재현하여 로봇이 전원이 켜지기 전에 기술을 연습하고 다양한 작업 수행 방식을 시험해볼 수 있도록 돕는다. 이미지: Tim Malieckal/MIT CSAIL(연구진 제공 자산 사용). 작성: Alex [...]"
-    },
-    {
-      "id": "robohub:eaac67b3780c",
-      "title": "Surviving the paper deluge: a one-year study in learning from demonstration",
-      "abstract": "With the explosion of robotics research, staying current in fields like Learning from Demonstration (LfD) is a monumental challenge. Is AI the solution to the “paper deluge,” or is it part of the problem? Read the article preview below to learn more! Download the full paper: Surviving the Paper Deluge. Authors: Aude Billard, Renaud Detry, [&#8230;]",
-      "source": "robohub",
-      "url": "https://robohub.org/surviving-the-paper-deluge-a-one-year-study-in-learning-from-demonstration/",
-      "publishedAt": "2026-07-29T09:16:32.000Z",
-      "authors": [
-        "IEEE Robotics and Automation Society (RAS)"
-      ],
-      "tags": [],
-      "titleKo": "논문 홍수에서 살아남기: 시연 학습(LfD)에 대한 1년 연구",
-      "abstractKo": "로보틱스 연구의 폭발적 증가로 시연 학습(LfD)과 같은 분야의 최신 동향을 따라잡는 것은 거대한 과제입니다. AI가 이른바 ‘논문 홍수’의 해법일까요, 아니면 문제의 일부일까요? 아래 기사 미리보기를 읽고 자세한 내용을 확인하세요. 전체 논문 다운로드: Surviving the Paper Deluge. 저자: Aude Billard, Renaud Detry, […]"
-    },
-    {
-      "id": "robohub:f81ccc28d43d",
-      "title": "Interactive world simulator for robot policy training and evaluation",
-      "abstract": "Imagine you want to teach a robot to push an object on a table. The standard recipe in robot learning is to collect hundreds of expert demonstrations on a real robot, train an imitation learning policy on that data, and then evaluate the policy by running it many times on the same real robot. Both […]",
-      "source": "robohub",
-      "url": "https://robohub.org/interactive-world-simulator-for-robot-policy-training-and-evaluation/",
-      "publishedAt": "2026-07-20T08:39:44.000Z",
-      "authors": [
-        "Yixuan Wang"
-      ],
-      "tags": [],
-      "titleKo": "로봇 정책 학습 및 평가를 위한 상호작용형 세계 시뮬레이터",
-      "abstractKo": "테이블 위의 물체를 로봇에게 밀도록 가르치고 싶다고 상상해 보자. 로봇 학습의 일반적인 방법은 실제 로봇에서 수백 건의 전문가 시연을 수집하고, 그 데이터를 사용해 모방 학습 정책을 학습한 뒤, 같은 실제 로봇에서 그 정책을 여러 번 실행하여 평가하는 것이다. 둘 다 …"
     },
     {
       "id": "robotreport:bed1f9270acd",

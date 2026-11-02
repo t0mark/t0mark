@@ -33,6 +33,15 @@ export async function register() {
 
     console.log('[Cron] 인턴/산학장학생/연구동향 수집 스케줄 등록 완료 (매일 02:00 / 03:00 / 04:00)')
 
+    // 서버 시작 시와 5분마다 Claude 사용량을 미리 조회해 캐시 유지
+    const { refreshClaudeUsage } = await import('./lib/claude-usage/fetcher')
+    const refreshClaudeUsageCache = () => {
+      refreshClaudeUsage().catch((err) => console.error('[Cron] Claude 사용량 갱신 실패:', err))
+    }
+    refreshClaudeUsageCache()
+    cron.schedule('*/5 * * * *', refreshClaudeUsageCache)
+    console.log('[Cron] Claude 사용량 갱신 등록 (5분마다)')
+
     // 세미나 논문 자동 동기화 (설정된 요일/시간에 실행)
     const { registerSeminarCron } = await import('./lib/seminar/cron')
     await registerSeminarCron()

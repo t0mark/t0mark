@@ -24,19 +24,21 @@ export default function InsightsClient() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
       {/* 탭 네비게이션 */}
-      <nav className="flex gap-1 bg-white rounded-xl p-1 shadow-card mb-6 w-fit">
+      <nav className="flex gap-1 bg-white rounded-xl p-1 shadow-card mb-6 w-full md:w-fit">
         {TABS.map(({ id, label, icon: Icon }) => (
           <button
             key={id}
             onClick={() => setActiveTab(id)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+            title={label}
+            aria-label={label}
+            className={`flex flex-1 md:flex-none items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
               activeTab === id
                 ? 'bg-primary text-white shadow-sm'
                 : 'text-text-light hover:text-primary hover:bg-bg-light'
             }`}
           >
             <Icon className="w-4 h-4" />
-            {label}
+            <span className="hidden md:inline">{label}</span>
           </button>
         ))}
       </nav>
